@@ -1,0 +1,602 @@
+<!-- @dsCard group="Screens" viewport="1440x900" subtitle="Pinned identity rail + scrolling work feed" name="Homepage" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crystal Langley — Creative Director + Strategist | Brand & AI Creative Systems</title>
+<meta name="description" content="Creative Director and Strategist building brand systems and AI-integrated creative pipelines. 15+ years leading brand, product, and creative across gaming, wine, health, and AI. Based in Northern California, available globally." />
+<link rel="canonical" href="https://www.crystallangley.com/" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Crystal Langley — Creative Director + Strategist | Brand & AI Creative Systems" />
+<meta property="og:description" content="Creative Director and Strategist building brand systems and AI-integrated creative pipelines. 15+ years leading brand, product, and creative across gaming, wine, health, and AI. Based in Northern California, available globally." />
+<meta property="og:url" content="https://www.crystallangley.com/" />
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/71a41ace-389c-476a-80ff-c8767793aa0d/sommsation+512x512.png?content-type=image%2Fpng" />
+<meta property="og:site_name" content="Standard. — Crystal Langley" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Crystal Langley — Creative Director + Strategist | Brand & AI Creative Systems" />
+<meta name="twitter:description" content="Creative Director and Strategist building brand systems and AI-integrated creative pipelines. 15+ years leading brand, product, and creative across gaming, wine, health, and AI. Based in Northern California, available globally." />
+<meta name="twitter:image" content="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/71a41ace-389c-476a-80ff-c8767793aa0d/sommsation+512x512.png?content-type=image%2Fpng" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Crystal Langley",
+  "jobTitle": "Creative Director & Strategist",
+  "url": "https://www.crystallangley.com",
+  "worksFor": { "@type": "Organization", "name": "Standard." },
+  "address": { "@type": "PostalAddress", "addressRegion": "California", "addressCountry": "US" },
+  "knowsAbout": ["Brand Strategy", "Creative Direction", "Design Systems", "AI Creative Pipelines", "Product Design"]
+}
+</script>
+<script>document.documentElement.className += ' js';document.documentElement.setAttribute('data-theme','bone');</script>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --cream:#FAF5F0;
+    --cream-deep:#F3ECE2;
+    --ink:#1A1A1A;
+    --coral:#E56A4E;
+    --coral-soft:#F4C5B5;
+    --muted:#6B6B6B;
+    --rule:rgba(26,26,26,0.14);
+    --rule-soft:rgba(26,26,26,0.07);
+    --radius:14px;
+    --radius-pill:999px;
+    --serif:'Instrument Serif', Georgia, serif;
+    --mono:'IBM Plex Mono', Menlo, monospace;
+    --railw:clamp(300px, 30vw, 400px);
+    --gpad:clamp(20px, 4vw, 60px);
+    /* dark interlude band — theme-driven */
+    --band-bg:#1A1A1A;
+    --band-fg:#FAF5F0;
+    --band-accent:var(--coral);
+    --band-accent-soft:var(--coral-soft);
+    --band-line:rgba(250,245,240,0.14);
+    --band-line-soft:rgba(250,245,240,0.12);
+    --band-muted:rgba(250,245,240,0.62);
+  }
+
+  /* ============ THEMES ============ */
+  /* Sienna — the original warm cream + coral (default above) */
+  /* Slate — cool graphite paper, muted clay accent */  /* Bone — warm paper, restrained oxblood accent */
+  html[data-theme="bone"]{
+    --cream:#F6F4EF;--cream-deep:#ECE8DF;--ink:#191712;--coral:#A8452F;--coral-soft:#D9B29F;
+    --muted:#726C61;--rule:rgba(25,23,18,0.14);--rule-soft:rgba(25,23,18,0.07);
+    --band-bg:#191712;--band-fg:#F1EDE4;--band-line:rgba(241,237,228,0.14);--band-line-soft:rgba(241,237,228,0.11);--band-muted:rgba(241,237,228,0.6);
+  }
+  /* Noir — inverted, dark canvas with warm ember accent */  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--mono);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;}
+  .coral{color:var(--coral);}
+
+  /* ============ SHELL ============ */
+  .shell{display:grid;grid-template-columns:1fr;}
+  @media (min-width:900px){ .shell{grid-template-columns:var(--railw) 1fr;} }
+
+  /* ============ RAIL ============ */
+  .rail{background:var(--cream);border-bottom:1px solid var(--rule);}
+  @media (min-width:900px){
+    .rail{position:sticky;top:0;align-self:start;height:100vh;border-bottom:0;border-right:1px solid var(--rule);
+      display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,3vw,44px) clamp(24px,2.4vw,40px);}
+  }
+  .rail__inner{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,34px);}
+  .brand{display:block;text-decoration:none;color:var(--ink);}
+  .brand__mark{font-family:var(--serif);font-size:clamp(40px,4.4vw,62px);line-height:0.9;letter-spacing:-0.015em;display:block;}
+  .brand__mark .dot{color:var(--coral);}
+  .brand__role{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:14px;display:block;line-height:1.6;}
+
+  .rail__status{display:flex;flex-direction:column;gap:9px;color:var(--muted);font-size:11px;letter-spacing:0.06em;}
+  .rail__status .live{display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-transform:uppercase;letter-spacing:0.14em;}
+  .dot-live{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,106,78,0.55);}70%{box-shadow:0 0 0 8px rgba(229,106,78,0);}100%{box-shadow:0 0 0 0 rgba(229,106,78,0);}}
+  .rail__row{display:flex;justify-content:space-between;gap:12px;}
+
+  .rail__nav{display:flex;flex-direction:column;gap:2px;}
+  .rail__link{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:8px 0;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule-soft);transition:padding 240ms ease,color 240ms ease;}
+  .rail__link .idx{font-size:10px;color:var(--coral);width:22px;}
+  .rail__link .arw{margin-left:auto;opacity:0;transform:translateX(-6px);transition:opacity 220ms ease,transform 220ms ease;}
+  .rail__link:hover{padding-left:8px;color:var(--coral);}
+  .rail__link:hover .arw{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--cream);background:var(--coral);border-radius:var(--radius-pill);padding:13px 22px;transition:transform 220ms ease,box-shadow 220ms ease,background 220ms ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px -14px var(--coral);background:#d95d42;}
+  .rail__foot{font-size:10px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;line-height:1.7;}
+
+  /* Rail top bar (mobile) */
+  .rail__bar{display:flex;align-items:center;justify-content:space-between;padding:16px var(--gpad);}
+  .rail__bar .brand__mark{font-size:30px;}
+  .rail__desktop{display:none;}
+  @media (min-width:900px){
+    .rail__bar{display:none;}
+    .rail__desktop{display:contents;}
+  }
+
+  /* ============ FEED ============ */
+  .feed{min-width:0;}
+  .block{padding:clamp(48px,7vw,110px) var(--gpad);border-bottom:1px solid var(--rule);}
+  .block--flush{padding-top:clamp(40px,6vw,80px);}
+  .kicker{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(24px,3vw,40px);}
+  .kicker__no{color:var(--coral);}
+  .kicker__t{color:var(--muted);}
+
+  /* ---- HERO ---- */
+  .hero{padding:clamp(44px,6vw,90px) var(--gpad) clamp(40px,5vw,70px);border-bottom:1px solid var(--rule);}
+  .hero__eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--coral);margin-bottom:clamp(24px,3vw,40px);}
+  .hero__eyebrow::before{content:"";width:38px;height:1px;background:var(--coral);}
+  .hero__headline{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:0.92;margin:0;color:var(--ink);
+    font-size:clamp(58px,11vw,150px);text-transform:uppercase;}
+  .hero__headline em{font-style:italic;text-transform:none;color:var(--coral);}
+  .hero__headline .out{color:transparent;-webkit-text-stroke:clamp(1.2px,0.16vw,2.4px) var(--ink);transition:color 450ms ease,-webkit-text-stroke-color 450ms ease;}
+  .hero__headline:hover .out,.hero__headline.is-lit .out{color:var(--coral);-webkit-text-stroke-color:var(--coral);}
+  .hero__lede{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,34px);line-height:1.18;letter-spacing:-0.01em;margin:clamp(28px,3.5vw,48px) 0 0;max-width:26ch;color:var(--ink);}
+  .hero__stats{display:flex;flex-wrap:wrap;gap:22px 48px;margin-top:clamp(30px,4vw,52px);padding-top:26px;border-top:1px solid var(--rule);}
+  .stat__k{font-family:var(--serif);font-size:clamp(32px,3.6vw,48px);line-height:0.9;letter-spacing:-0.02em;}
+  .stat__l{color:var(--muted);margin-top:8px;max-width:18ch;line-height:1.5;}
+
+  /* ---- WORK FEED ---- */
+  .work{padding:0;border-bottom:1px solid var(--rule);}
+  .work__head{padding:clamp(48px,6vw,90px) var(--gpad) clamp(28px,3vw,44px);display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .work__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.02em;margin:0;}
+  .work__head .note{color:var(--muted);max-width:34ch;line-height:1.7;}
+  .row{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,28px);align-items:center;
+    padding:clamp(22px,2.6vw,34px) var(--gpad);border-top:1px solid var(--rule);text-decoration:none;color:var(--ink);position:relative;overflow:hidden;}
+  .row::before{content:"";position:absolute;inset:0;background:var(--cream-deep);transform:translateY(101%);transition:transform 500ms cubic-bezier(.2,.7,.2,1);z-index:0;}
+  .row:hover::before{transform:translateY(0);}
+  .row > *{position:relative;z-index:1;}
+  .row__top{display:flex;align-items:center;gap:16px;}
+  .row__no{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--coral);}
+  .row__badge{font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);background:var(--coral);border-radius:var(--radius-pill);padding:5px 11px;}
+  .row__badge--wip{background:rgba(26,26,26,0.85);}
+  .row__title{font-family:var(--serif);font-size:clamp(34px,5.2vw,72px);line-height:0.98;letter-spacing:-0.02em;margin:6px 0 0;transition:transform 500ms cubic-bezier(.2,.7,.2,1);}
+  .row:hover .row__title{transform:translateX(clamp(6px,1vw,16px));}
+  .row__meta{color:var(--muted);letter-spacing:0.06em;margin-top:12px;font-size:12px;text-transform:uppercase;}
+  .row__thumb{width:100%;aspect-ratio:16/10;border-radius:var(--radius);background-size:cover;background-position:center;background-color:var(--cream-deep);
+    opacity:0;max-height:0;transform:scale(0.98);transition:opacity 460ms ease,max-height 560ms ease,transform 560ms cubic-bezier(.2,.7,.2,1);}
+  .row:hover .row__thumb{opacity:1;max-height:60vh;transform:none;}
+  .row__go{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);opacity:0;transform:translateX(-8px);transition:opacity 300ms ease,transform 300ms ease;}
+  .row:hover .row__go{opacity:1;transform:none;}
+  .row[data-wip] .row__go{display:none;}
+  .row[data-wip]{cursor:default;}
+  @media (min-width:720px){
+    .row{grid-template-columns:1.3fr 1fr;gap:clamp(24px,3vw,56px);}
+    .row__thumb{opacity:1;max-height:none;transform:none;aspect-ratio:16/11;}
+  }
+
+  /* ---- CAPABILITIES ---- */
+  .caps__grid{display:grid;grid-template-columns:1fr;gap:0;}
+  @media (min-width:620px){ .caps__grid{grid-template-columns:1fr 1fr;} }
+  .caps__item{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid var(--rule-soft);}
+  .caps__item:first-child,.caps__item:nth-child(2){border-top:0;}
+  @media (max-width:619px){ .caps__item:nth-child(2){border-top:1px solid var(--rule-soft);} }
+  .caps__no{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--coral);}
+  .caps__name{font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);line-height:1.05;}
+
+  /* ---- ABOUT ---- */
+  .about{display:grid;grid-template-columns:1fr;gap:clamp(26px,3vw,52px);}
+  @media (min-width:820px){ .about{grid-template-columns:0.85fr 1fr;} }
+  .pull{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,44px);line-height:1.1;letter-spacing:-0.01em;margin:0;padding-left:22px;border-left:2px solid var(--coral);}
+  .bio{font-size:14px;line-height:1.9;max-width:60ch;}
+  .bio p{margin:0 0 20px;}
+  .bio p:last-child{margin-bottom:0;}
+  .bio p:first-child::first-letter{font-family:var(--serif);font-size:4.2em;line-height:0.7;float:left;padding:6px 12px 0 0;color:var(--coral);}
+
+  /* ---- APPROACH BAND ---- */
+  .band{background:var(--band-bg);color:var(--band-fg);padding:clamp(52px,7vw,110px) var(--gpad);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+  .band__eyebrow{display:flex;align-items:center;gap:14px;color:var(--band-accent-soft);margin-bottom:26px;}
+  .band__eyebrow::before{content:"";width:38px;height:1px;background:var(--coral);}
+  .band__grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,60px);align-items:start;}
+  @media (min-width:820px){ .band__grid{grid-template-columns:1.15fr 0.85fr;} }
+  .band__title{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,4vw,52px);line-height:1.08;letter-spacing:-0.01em;color:var(--band-accent);margin:0;max-width:18ch;}
+  .band__link{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--band-fg);text-decoration:none;margin-top:32px;border-bottom:1px solid var(--band-line);padding-bottom:5px;transition:gap 220ms ease,border-color 220ms ease;}
+  .band__link:hover{gap:16px;border-color:var(--band-accent);}
+  .band__step{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--band-line-soft);}
+  .band__step:last-child{border-bottom:0;}
+  .band__step .n{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--band-accent-soft);padding-top:5px;}
+  .band__step .t{font-family:var(--serif);font-size:22px;line-height:1.1;}
+  .band__step .d{font-size:11px;line-height:1.6;color:var(--band-muted);margin-top:4px;letter-spacing:0.02em;}
+
+  /* ---- CONTACT ---- */
+  .cta__title{font-family:var(--serif);font-weight:400;font-size:clamp(48px,9vw,130px);line-height:0.9;letter-spacing:-0.02em;margin:0;}
+  .cta__title em{font-style:italic;color:var(--coral);}
+  .cta__row{display:flex;flex-wrap:wrap;align-items:center;gap:18px clamp(20px,3vw,40px);margin-top:clamp(28px,3.5vw,48px);}
+  .cta__email{font-family:var(--mono);font-size:clamp(15px,1.8vw,20px);letter-spacing:0.02em;text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:4px;transition:color 200ms ease;word-break:break-word;}
+  .cta__email:hover{color:var(--coral);}
+  .cta__meta{color:var(--muted);line-height:1.7;}
+
+  /* ---- FOOTER WORDMARK ---- */
+  .foot{padding:clamp(36px,4vw,64px) var(--gpad) 22px;}
+  .foot__markwrap{width:100%;overflow:hidden;}
+  .foot__mark{font-family:var(--serif);font-weight:400;text-transform:uppercase;line-height:0.76;letter-spacing:-0.03em;color:var(--ink);margin:0;white-space:nowrap;display:inline-block;transform-origin:left top;font-size:100px;}
+  .foot__mark .dot{color:var(--coral);}
+  .foot__bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;border-top:1px solid var(--rule);margin-top:20px;padding-top:20px;color:var(--muted);}
+
+  /* ============ REVEAL ============ */
+  .js .reveal{transition:opacity 800ms ease,transform 800ms cubic-bezier(.2,.7,.2,1);}
+  .js .reveal.pre-reveal{opacity:0;transform:translateY(24px);}
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal,.js .reveal.pre-reveal{opacity:1;transform:none;transition:none;}
+    .dot-live{animation:none;}
+  }
+
+  /* ============ MOBILE DRAWER ============ */
+  .navToggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;}
+  .navToggle span{width:24px;height:2px;background:var(--ink);transition:transform 260ms ease,opacity 200ms ease;}
+  .navToggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .navToggle.is-open span:nth-child(2){opacity:0;}
+  .navToggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .drawer{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);background:var(--cream);z-index:120;transform:translateX(100%);transition:transform 340ms cubic-bezier(.2,.7,.2,1);box-shadow:-24px 0 60px -30px rgba(0,0,0,0.45);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 34px;}
+  .drawer.is-open{transform:none;}
+  .drawer a{font-family:var(--mono);font-size:14px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--rule-soft);}
+  .drawer .btn{margin-top:16px;}
+  .scrim{position:fixed;inset:0;background:rgba(26,26,26,0.35);opacity:0;visibility:hidden;transition:opacity 300ms ease;z-index:110;}
+  .scrim.is-open{opacity:1;visibility:visible;}
+  @media (min-width:900px){ .navToggle,.drawer,.scrim{display:none;} }
+
+</style>
+</head>
+<body>
+  <h1 class="sr-only">Crystal Langley — Creative Director &amp; Strategist building brand systems and AI-integrated creative pipelines.</h1>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+  <nav class="drawer" id="drawer" aria-label="Mobile">
+    <a href="#work">Work</a>
+    <a href="#approach">Approach</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+  </nav>
+
+  <div class="shell">
+
+    <!-- ============ RAIL ============ -->
+    <aside class="rail">
+      <!-- mobile bar -->
+      <div class="rail__bar">
+        <a class="brand" href="/"><span class="brand__mark">Standard<span class="dot">.</span></span></a>
+        <button class="navToggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+
+      <!-- desktop rail -->
+      <div class="rail__desktop">
+        <div class="rail__inner">
+          <a class="brand" href="/">
+            <span class="brand__mark">Standard<span class="dot">.</span></span>
+            <span class="brand__role">Crystal Langley<br>Creative Director + Strategist</span>
+          </a>
+          <div class="rail__status">
+            <span class="live"><span class="dot-live"></span> Open — Q2 2026</span>
+            <div class="rail__row"><span>Northern California</span><span id="clock">—</span></div>
+          </div>
+          <nav class="rail__nav">
+            <a class="rail__link" href="#work"><span class="idx">01</span>Work<span class="arw">→</span></a>
+            <a class="rail__link" href="#about"><span class="idx">02</span>About<span class="arw">→</span></a>
+            <a class="rail__link" href="#approach"><span class="idx">03</span>Approach<span class="arw">→</span></a>
+            <a class="rail__link" href="#services"><span class="idx">04</span>Services<span class="arw">→</span></a>
+          </nav>
+          <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+        </div>
+        <div class="rail__foot">Standard. — Est. 2026<br>Fifteen years in · Still making cool shit</div>
+      </div>
+    </aside>
+
+    <!-- ============ FEED ============ -->
+    <main class="feed">
+
+      <!-- HERO -->
+      <section class="hero">
+        <span class="hero__eyebrow label">Creative Director + Strategist</span>
+        <h2 class="hero__headline reveal" id="headline">I <em>love</em> to build <span class="out">things.</span></h2>
+        <p class="hero__lede reveal">I don't just make things look good. I build the systems that make good work repeatable.</p>
+        <div class="hero__stats reveal">
+          <div class="stat"><div class="stat__k"><span class="coral">15</span>+</div><div class="stat__l label">Years leading brand, product &amp; creative</div></div>
+          <div class="stat"><div class="stat__k">05</div><div class="stat__l label">Selected engagements</div></div>
+          <div class="stat"><div class="stat__k">AI</div><div class="stat__l label">Integrated creative pipelines</div></div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="work" id="work">
+        <div class="work__head">
+          <h2 class="reveal">Selected&nbsp;Work</h2>
+          <p class="note label">Case studies across gaming, health, wine &amp; AI. Some locked — ask for a walkthrough.</p>
+        </div>
+
+        <a class="row" href="/sommsation">
+          <div>
+            <div class="row__top"><span class="row__no">01 / 05</span><span class="row__badge">Password</span></div>
+            <h3 class="row__title">Sommsation</h3>
+            <div class="row__meta">VP Design &amp; Creative · 2020</div>
+            <span class="row__go">View case study →</span>
+          </div>
+          <div class="row__thumb" style="background-image:url('https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/71a41ace-389c-476a-80ff-c8767793aa0d/sommsation+512x512.png?content-type=image%2Fpng');"></div>
+        </a>
+
+        <a class="row" href="/strivers">
+          <div>
+            <div class="row__top"><span class="row__no">02 / 05</span><span class="row__badge">Password</span></div>
+            <h3 class="row__title">Strivers</h3>
+            <div class="row__meta">Consulting Lead Designer · 2020 – 2022</div>
+            <span class="row__go">View case study →</span>
+          </div>
+          <div class="row__thumb" style="background-image:url('https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/01e7f3de-e374-4334-b7bd-e297685b9127/strivers_512.png?content-type=image%2Fpng');"></div>
+        </a>
+
+        <a class="row" href="/sequoia-benefits">
+          <div>
+            <div class="row__top"><span class="row__no">03 / 05</span><span class="row__badge">Password</span></div>
+            <h3 class="row__title">Sequoia Benefits</h3>
+            <div class="row__meta">Product Designer · 2019 – 2020</div>
+            <span class="row__go">View case study →</span>
+          </div>
+          <div class="row__thumb" style="background-image:url('https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/e0b6cfdd-0f8f-4064-994a-bdde2b9ea340/sequoia_512.png?content-type=image%2Fpng');"></div>
+        </a>
+
+        <a class="row" href="/donblas">
+          <div>
+            <div class="row__top"><span class="row__no">04 / 05</span><span class="row__badge">Password</span></div>
+            <h3 class="row__title">Donblas.AI</h3>
+            <div class="row__meta">Brand Identity · 2025</div>
+            <span class="row__go">View case study →</span>
+          </div>
+          <div class="row__thumb" style="background-image:url('https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/9f3aab96-0bb1-4c8d-a992-75431f1542ba/donblas+512x512.png?content-type=image%2Fpng');"></div>
+        </a>
+
+        <div class="row" data-wip>
+          <div>
+            <div class="row__top"><span class="row__no">05 / 05</span><span class="row__badge row__badge--wip">In Progress</span></div>
+            <h3 class="row__title">Telltale Games</h3>
+            <div class="row__meta">UI / UX, Promoted to Lead · 2010 – 2018</div>
+          </div>
+          <div class="row__thumb" style="background-image:url('https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/b6be8ff5-150e-4930-84af-4bb561b6c544/telltalegames_512x512.png?content-type=image%2Fpng');"></div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+      <section class="block">
+        <div class="kicker label"><span class="kicker__no">—</span><span class="kicker__t">Capabilities</span></div>
+        <div class="caps__grid">
+          <div class="caps__item"><span class="caps__no">A</span><span class="caps__name">AI Pipelines</span></div>
+          <div class="caps__item"><span class="caps__no">B</span><span class="caps__name">Brand Systems</span></div>
+          <div class="caps__item"><span class="caps__no">C</span><span class="caps__name">Editorial Design</span></div>
+          <div class="caps__item"><span class="caps__no">D</span><span class="caps__name">Brand Strategy</span></div>
+          <div class="caps__item"><span class="caps__no">E</span><span class="caps__name">Creative Direction</span></div>
+          <div class="caps__item"><span class="caps__no">F</span><span class="caps__name">Platform Design</span></div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="block" id="about">
+        <div class="kicker label"><span class="kicker__no">02</span><span class="kicker__t">About</span></div>
+        <div class="about">
+          <blockquote class="pull reveal">Creative, brand &amp; marketing as operable systems — not one-off projects.</blockquote>
+          <div class="bio reveal">
+            <p>Creative executive. 15+ years building design strategy across gaming, technology, and lifestyle. I work at the intersection of brand, product, and operations. I've led teams, built creative functions from scratch, and collaborated directly with CEOs to scale what their companies look like and how they show up.</p>
+            <p>When I'm not directing and building creative teams, I consult for companies that need senior creative leadership without the full-time hire. My clients have included organizations across healthcare, game development, and humanitarian programs. I've also taught as a design lecturer at San Francisco State University, because I believe the next generation of creative leaders should understand systems, not just aesthetics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROACH BAND -->
+      <!-- APPROACH -->
+      <section id="approach">
+        <div id="cl-appr">
+        <style>
+          #cl-appr{
+            --paper:#F6F4EF;--ink:#191712;--accent:#A8452F;--muted:#726C61;
+            --rule:rgba(25,23,18,.14);--max-w:1240px;
+            --serif:'Instrument Serif',Georgia,serif;--mono:'IBM Plex Mono','Courier New',monospace;
+            --ease:cubic-bezier(.2,.7,.2,1);
+            background:var(--paper);color:var(--ink);font-family:var(--mono);-webkit-font-smoothing:antialiased;
+          }
+          #cl-appr *{margin:0;padding:0;box-sizing:border-box}
+          #cl-appr .ap-inner{max-width:var(--max-w);margin:0 auto;padding:96px 24px 72px}
+          #cl-appr .ap-eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+          #cl-appr .ap-eyebrow::before{content:"";width:44px;height:1px;background:var(--accent)}
+          #cl-appr .ap-h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.5vw,104px);line-height:.98;letter-spacing:-.025em;max-width:14ch}
+          #cl-appr .ap-h1 em{font-style:italic;color:var(--accent)}
+          #cl-appr .ap-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(56px,7vw,96px);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+          #cl-appr .ap-cell{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(32px,4vw,48px) clamp(28px,4vw,52px) clamp(40px,4.5vw,56px)}
+          #cl-appr .ap-cell .n{font-size:12px;font-weight:500;letter-spacing:.14em;color:var(--accent)}
+          #cl-appr .ap-cell .t{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.4vw,30px);line-height:1.12;margin-top:20px;max-width:18ch}
+          #cl-appr .ap-cell .d{font-size:13px;line-height:1.7;color:var(--muted);margin-top:16px;max-width:50ch}
+          #cl-appr .ap-cta{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-top:clamp(48px,6vw,72px);padding:clamp(48px,6vw,72px) 0 8px;border-top:1px solid var(--rule)}
+          #cl-appr .ap-cta .t{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.015em}
+          #cl-appr .ap-cta .t em{font-style:italic;color:var(--accent)}
+          #cl-appr .ap-pill{display:inline-flex;align-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:15px 28px;border-radius:100px;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+          #cl-appr .ap-pill:hover{transform:translateY(-1px);box-shadow:0 14px 30px -12px rgba(25,23,18,.4)}
+          @media (max-width:820px){
+            #cl-appr .ap-inner{padding:64px 24px 48px}
+            #cl-appr .ap-grid{grid-template-columns:1fr}
+          }
+          @media (prefers-reduced-motion:reduce){#cl-appr .ap-pill{transition:none}}
+        </style>
+        <div class="ap-inner">
+          <header>
+            <div class="ap-eyebrow">03 — The Approach</div>
+            <h1 class="ap-h1">Creative, brand, and marketing as <em>operable systems</em>, not one-off projects.</h1>
+          </header>
+          <div class="ap-grid">
+            <div class="ap-cell"><div class="n">01</div><h2 class="t">Creative, brand, and marketing as infrastructure, not decoration.</h2><p class="d">I treat brand and creative as a system that can be designed, documented, and installed, not a series of bespoke, one-off projects. The thinking is the product. Everything else is evidence it works.</p></div>
+            <div class="ap-cell"><div class="n">02</div><h2 class="t">The 10-phase operating system.</h2><p class="d">Foundation through scale: positioning, visual identity, voice, digital presence, MarTech, audience and channel strategy, launch, demand gen, investor readiness, and governance. Every phase has defined inputs, outputs, and costed deliverables. Currently running across four companies at four different growth stages.</p></div>
+            <div class="ap-cell"><div class="n">03</div><h2 class="t">AI as pipeline, not novelty.</h2><p class="d">Midjourney, DALL·E, Runway, and Adobe Firefly aren't tools I use. They're stages in a pipeline I designed, with documented hand-offs between generative output, human craft, and production QA. The pipeline runs across multiple brands simultaneously, because the process was built to be portable.</p></div>
+            <div class="ap-cell"><div class="n">04</div><h2 class="t">Built to outlive me.</h2><p class="d">The work I'm proudest of is the work that holds up after I step back. Design systems that travel without a tour guide. Brand frameworks that stay consistent in someone else's hands. Documentation good enough to be implemented, not just admired.</p></div>
+          </div>
+          <div class="ap-cta"><div class="t">Want to put this <em>to work?</em></div><a class="ap-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a></div>
+        </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div id="cl-svc">
+        <style>
+          #cl-svc{
+            --paper:#F6F4EF;--ink:#191712;--accent:#A8452F;--muted:#726C61;
+            --rule:rgba(25,23,18,.14);--rule-soft:rgba(25,23,18,.07);--max-w:1240px;
+            --serif:'Instrument Serif',Georgia,serif;--mono:'IBM Plex Mono','Courier New',monospace;
+            --ease:cubic-bezier(.2,.7,.2,1);
+            background:var(--paper);color:var(--ink);font-family:var(--mono);-webkit-font-smoothing:antialiased;
+          }
+          #cl-svc *{margin:0;padding:0;box-sizing:border-box}
+          #cl-svc .svc-inner{max-width:var(--max-w);margin:0 auto;padding:96px 24px 72px}
+          #cl-svc .label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+          #cl-svc .svc-headgrid{display:grid;grid-template-columns:1fr 340px;gap:48px 80px;align-items:end}
+          #cl-svc .svc-eyebrow{display:flex;align-items:center;gap:14px;color:var(--accent);font-weight:500;margin-bottom:28px}
+          #cl-svc .svc-eyebrow::before{content:"";width:44px;height:1px;background:var(--accent)}
+          #cl-svc .svc-h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1;letter-spacing:-.02em;max-width:16ch}
+          #cl-svc .svc-h1 em{font-style:italic;color:var(--accent)}
+          #cl-svc .svc-intro{font-size:14.5px;line-height:1.75;color:var(--muted);max-width:60ch;margin-top:30px}
+          #cl-svc .svc-toc{list-style:none;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+          #cl-svc .svc-toc li{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 0;border-top:1px solid var(--rule-soft);color:var(--muted)}
+          #cl-svc .svc-toc li b{font-weight:400;color:var(--ink)}
+          #cl-svc .svc-list{margin-top:72px}
+          #cl-svc .svc-row{padding:52px 0;border-top:1px solid var(--rule)}
+          #cl-svc .svc-row:last-of-type{border-bottom:1px solid var(--rule)}
+          #cl-svc .svc-meta{display:flex;align-items:baseline;gap:20px}
+          #cl-svc .svc-no{color:var(--accent);font-weight:500}
+          #cl-svc .svc-tag{color:var(--muted)}
+          #cl-svc .svc-rowgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px 72px;margin-top:18px}
+          #cl-svc .svc-title{display:inline-block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.1;color:var(--ink);text-decoration:none;transition:color .25s var(--ease)}
+          #cl-svc .svc-title em{font-style:italic;color:var(--accent)}
+          #cl-svc a.svc-title:hover{color:var(--accent)}
+          #cl-svc .svc-summary{font-size:13px;line-height:1.7;color:var(--muted);margin-top:16px;max-width:52ch}
+          #cl-svc .svc-dline{font-size:12.5px;line-height:1.9;color:var(--ink)}
+          #cl-svc .svc-dline .dot{color:var(--accent)}
+          #cl-svc .svc-ctas{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:26px}
+          #cl-svc .svc-pill{display:inline-flex;align-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:15px 28px;border-radius:100px;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+          #cl-svc .svc-pill:hover{transform:translateY(-1px);box-shadow:0 14px 30px -12px rgba(25,23,18,.4)}
+          #cl-svc .svc-upwork{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:4px;text-decoration:none;transition:color .25s var(--ease)}
+          #cl-svc .svc-upwork:hover{color:var(--accent)}
+          #cl-svc .svc-close{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;padding:72px 0 8px}
+          #cl-svc .svc-close-text{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.015em}
+          #cl-svc .svc-close-text em{font-style:italic;color:var(--accent)}
+          @media (max-width:900px){
+            #cl-svc .svc-inner{padding:64px 24px 48px}
+            #cl-svc .svc-headgrid{grid-template-columns:1fr}
+            #cl-svc .svc-rowgrid{grid-template-columns:1fr}
+            #cl-svc .svc-title{font-size:28px}
+            #cl-svc .svc-list{margin-top:48px}
+            #cl-svc .svc-pill{flex:1;justify-content:center}
+            #cl-svc .svc-close{padding:48px 0 8px}
+          }
+          @media (prefers-reduced-motion:reduce){#cl-svc .svc-pill,#cl-svc .svc-upwork,#cl-svc .svc-title{transition:none}}
+        </style>
+        <div class="svc-inner">
+          <header class="svc-headgrid">
+            <div>
+              <div class="svc-eyebrow label">04 — Services</div>
+              <h1 class="svc-h1">Senior, productized <em>engagements.</em></h1>
+              <p class="svc-intro">Scoped audits and builds you can start this week, run by a creative director with fifteen years across brand, product, and marketing. Reach out to scope a fit, or buy a fixed-scope version direct on Upwork.</p>
+            </div>
+            <ul class="svc-toc label">
+              <li><b>Brand health audit</b><span>01</span></li>
+              <li><b>AI pipeline architecture</b><span>02</span></li>
+              <li><b>Klaviyo lifecycle audit</b><span>03</span></li>
+              <li><b>Figma + design system</b><span>04</span></li>
+            </ul>
+          </header>
+          <div class="svc-list">
+            <div class="svc-row">
+              <div class="svc-meta label"><span class="svc-no">01</span><span class="svc-tag">Marketing &middot; Brand</span></div>
+              <div class="svc-rowgrid">
+                <div><span class="svc-title">Brand Health Audit <em>+ Strategy Memo</em></span><p class="svc-summary">Most brand problems aren't design problems. They're decision problems that show up in the design. A senior outside read on what's working, what's leaking, and what to fix in what order. The diagnostic that should happen before a redesign.</p></div>
+                <div><p class="svc-dline">Positioning, voice &amp; identity audit <span class="dot">&middot;</span> Top fixes ranked by impact <span class="dot">&middot;</span> Sequenced implementation roadmap <span class="dot">&middot;</span> Board-ready summary</p>
+                <div class="svc-ctas"><a class="svc-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a><a class="svc-upwork" href="https://www.upwork.com/services/product/marketing-brand-health-audit-strategy-memo-2058008635195806661?ref=fl_profile" target="_blank" rel="noopener noreferrer">Upwork ↗</a></div></div>
+              </div>
+            </div>
+            <div class="svc-row">
+              <div class="svc-meta label"><span class="svc-no">02</span><span class="svc-tag">Marketing &middot; Ops</span></div>
+              <div class="svc-rowgrid">
+                <div><span class="svc-title">AI Creative <em>Pipeline Architecture</em></span><p class="svc-summary">Most teams use AI as a faster way to do what they already do. That's not what it's for. I audit how your team uses AI today, then architect a portable production pipeline with documented hand-offs between generative output, human craft, and QA, the same one running across Sommsation's portfolio.</p></div>
+                <div><p class="svc-dline">AI workflow &amp; QA-gap audit <span class="dot">&middot;</span> Pipeline architecture: stages, hand-offs, QA gates <span class="dot">&middot;</span> Tool selection per stage <span class="dot">&middot;</span> Prompt-library starter</p>
+                <div class="svc-ctas"><a class="svc-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a><a class="svc-upwork" href="https://www.upwork.com/services/product/marketing-ai-creative-pipeline-architecture-senior-workflow-audit-custom-build-2058028112306109473?ref=fl_profile" target="_blank" rel="noopener noreferrer">Upwork ↗</a></div></div>
+              </div>
+            </div>
+            <div class="svc-row">
+              <div class="svc-meta label"><span class="svc-no">03</span><span class="svc-tag">Marketing &middot; Email</span></div>
+              <div class="svc-rowgrid">
+                <div><span class="svc-title">Klaviyo Lifecycle Audit <em>+ 90-Day Roadmap</em></span><p class="svc-summary">Not a flow-technician checklist. A senior creative and lifecycle review from someone who runs an always-on Klaviyo program across overlapping windows and segments, plus a 90-day roadmap of what to send, when, to whom, with what offer.</p></div>
+                <div><p class="svc-dline">Lifecycle, flow &amp; cadence audit <span class="dot">&middot;</span> Segmentation &amp; sender-reputation review <span class="dot">&middot;</span> 90-day campaign calendar <span class="dot">&middot;</span> Naming + brief-template system</p>
+                <div class="svc-ctas"><a class="svc-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a><a class="svc-upwork" href="https://www.upwork.com/services/product/marketing-email-marketing-lifecycle-audit-90-day-roadmap-2058023904980375650?ref=fl_profile" target="_blank" rel="noopener noreferrer">Upwork ↗</a></div></div>
+              </div>
+            </div>
+            <div class="svc-row">
+              <div class="svc-meta label"><span class="svc-no">04</span><span class="svc-tag">Design</span></div>
+              <div class="svc-rowgrid">
+                <div><span class="svc-title">Figma Cleanup <em>+ Design System Audit</em></span><p class="svc-summary">When your Figma file has grown faster than your team can govern it, that's not a design problem. It's a design operations problem. I audit structure, components, tokens, and accessibility, then hand back a cleanup roadmap and a system that travels without a tour guide.</p></div>
+                <div><p class="svc-dline">File structure &amp; component audit <span class="dot">&middot;</span> Variant, token &amp; naming review <span class="dot">&middot;</span> Accessibility readiness <span class="dot">&middot;</span> Prioritized cleanup roadmap</p>
+                <div class="svc-ctas"><a class="svc-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a><a class="svc-upwork" href="https://www.upwork.com/services/product/design-figma-file-cleanup-design-system-audit-2058014733987472897?ref=fl_profile" target="_blank" rel="noopener noreferrer">Upwork ↗</a></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="svc-close">
+            <div class="svc-close-text">Not sure which fits? <em>Let's talk.</em></div>
+            <a class="svc-pill" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer">Book an intro</a>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="block" id="contact">
+        <div class="kicker label"><span class="kicker__no">05</span><span class="kicker__t">Contact</span></div>
+        <h2 class="cta__title reveal">Let's build <em>together</em>.</h2>
+        <div class="cta__row">
+          <a class="cta__email" href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a>
+          <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+          <p class="cta__meta label">Northern California · Available Globally<br>Q2 2026 — Open</p>
+        </div>
+      </section>
+
+      <!-- FOOTER WORDMARK -->
+      <footer class="foot">
+        <div class="foot__markwrap"><p class="foot__mark" id="bigmark">Standard<span class="dot">.</span></p></div>
+        <div class="foot__bar label">
+          <span>Standard. — Crystal Langley</span>
+          <span>Northern California · <span id="clock2">—</span></span>
+          <span>Est. 2026 · Fifteen years in</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+<script>
+  (function(){
+    /* Mobile drawer */
+    var toggle=document.getElementById('navToggle'), drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim');
+    function setMenu(open){ drawer.classList.toggle('is-open',open); toggle.classList.toggle('is-open',open); scrim.classList.toggle('is-open',open); toggle.setAttribute('aria-expanded',open?'true':'false'); }
+    toggle.addEventListener('click',function(){ setMenu(!drawer.classList.contains('is-open')); });
+    scrim.addEventListener('click',function(){ setMenu(false); });
+    drawer.addEventListener('click',function(e){ if(e.target.tagName==='A') setMenu(false); });
+
+    /* Clock (PT) */
+    function tick(){ var t=new Date().toLocaleTimeString('en-US',{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit'})+' PT'; var a=document.getElementById('clock'),b=document.getElementById('clock2'); if(a)a.textContent=t; if(b)b.textContent=t; }
+    tick(); setInterval(tick,30000);
+
+    /* Headline outline flash on load */
+    var hl=document.getElementById('headline');
+    if(hl){ setTimeout(function(){hl.classList.add('is-lit');},700); setTimeout(function(){hl.classList.remove('is-lit');},2100); }
+
+    /* Fit footer wordmark */
+    var mark=document.getElementById('bigmark');
+    function fitMark(){ if(!mark)return; mark.style.fontSize='100px'; var natural=mark.scrollWidth, avail=mark.parentElement.clientWidth; if(natural>0) mark.style.fontSize=Math.floor(100*(avail/natural))+'px'; }
+    fitMark(); window.addEventListener('resize',fitMark,{passive:true}); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitMark);} setTimeout(fitMark,400);
+
+    /* Reveal */
+    var vh=window.innerHeight||800;
+    var armed=[].slice.call(document.querySelectorAll('.reveal')).filter(function(el){ if(el.getBoundingClientRect().top>vh*0.9){el.classList.add('pre-reveal');return true;} return false; });
+    var show=function(el){ el.classList.remove('pre-reveal'); };
+    if('IntersectionObserver' in window && armed.length){
+      var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){show(en.target);io.unobserve(en.target);} }); },{threshold:0.1,rootMargin:'0px 0px -8% 0px'});
+      armed.forEach(function(el){io.observe(el);});
+    } else { armed.forEach(show); }
+    setTimeout(function(){ document.querySelectorAll('.pre-reveal').forEach(show); },2500);
+  })();
+</script>
+</body>
+</html>

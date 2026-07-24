@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Donblas Case Study — Brand & Creative Direction for Legal AI | Crystal Langley</title>
+<meta name="description" content="How Crystal Langley is taking Donblas, a legal AI platform, from a stock-photo homepage to a category-defining brand system — Mythic Precision direction, proven in working code." />
+<link rel="canonical" href="https://www.crystallangley.com/donblas" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Donblas Case Study — Brand & Creative Direction for Legal AI | Crystal Langley" />
+<meta property="og:description" content="How Crystal Langley is taking Donblas, a legal AI platform, from a stock-photo homepage to a category-defining brand system — Mythic Precision direction, proven in working code." />
+<meta property="og:url" content="https://www.crystallangley.com/donblas" />
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/71a41ace-389c-476a-80ff-c8767793aa0d/sommsation+512x512.png?content-type=image%2Fpng" />
+<meta property="og:site_name" content="Standard. — Crystal Langley" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Donblas Case Study — Brand & Creative Direction for Legal AI | Crystal Langley" />
+<meta name="twitter:description" content="How Crystal Langley is taking Donblas, a legal AI platform, from a stock-photo homepage to a category-defining brand system — Mythic Precision direction, proven in working code." />
+<meta name="twitter:image" content="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/71a41ace-389c-476a-80ff-c8767793aa0d/sommsation+512x512.png?content-type=image%2Fpng" />
+<script>document.documentElement.className += ' js';document.documentElement.setAttribute('data-theme','bone');</script>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  /* ===================================================================
+     STANDARD. — Case-study template
+     Reusable across Donblas / Sommsation / Strivers / Sequoia / Handzin / Stead.
+     Chrome = Standard. brand (Bone default + palette switcher, matches homepage).
+     Each project's own aesthetic lives INSIDE its imagery, never the chrome.
+     =================================================================== */
+  :root{
+    --cream:#F6F4EF;--cream-deep:#ECE8DF;--ink:#191712;--coral:#A8452F;--coral-soft:#D9B29F;
+    --muted:#726C61;--rule:rgba(25,23,18,0.14);--rule-soft:rgba(25,23,18,0.07);
+    --band-bg:#191712;--band-fg:#F1EDE4;--band-accent:var(--coral);--band-accent-soft:var(--coral-soft);
+    --band-line:rgba(241,237,228,0.14);--band-line-soft:rgba(241,237,228,0.11);--band-muted:rgba(241,237,228,0.6);
+    --obsidian:#0A0908;
+    --radius:14px;--radius-pill:999px;
+    --serif:'Instrument Serif', Georgia, serif;
+    --mono:'IBM Plex Mono', Menlo, monospace;
+    --railw:clamp(300px, 30vw, 400px);
+    --gpad:clamp(20px, 4vw, 60px);
+  }
+  /* Themes — identical to homepage, so a visitor's palette choice carries over */  html[data-theme="bone"]{--cream:#F6F4EF;--cream-deep:#ECE8DF;--ink:#191712;--coral:#A8452F;--coral-soft:#D9B29F;--muted:#726C61;--rule:rgba(25,23,18,0.14);--rule-soft:rgba(25,23,18,0.07);--band-bg:#191712;--band-fg:#F1EDE4;--band-line:rgba(241,237,228,0.14);--band-line-soft:rgba(241,237,228,0.11);--band-muted:rgba(241,237,228,0.6);}
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--mono);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;}
+  .coral{color:var(--coral);}
+
+  /* ============ SHELL ============ */
+  .shell{display:grid;grid-template-columns:1fr;}
+  @media (min-width:900px){ .shell{grid-template-columns:var(--railw) 1fr;} }
+
+  /* ============ META RAIL ============ */
+  .rail{background:var(--cream);border-bottom:1px solid var(--rule);}
+  @media (min-width:900px){
+    .rail{position:sticky;top:0;align-self:start;height:100vh;border-bottom:0;border-right:1px solid var(--rule);
+      display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,3vw,44px) clamp(24px,2.4vw,40px);}
+  }
+  .rail__top{display:flex;flex-direction:column;gap:clamp(18px,2.2vw,30px);}
+  .brand{display:inline-flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink);}
+  .brand__mark{font-family:var(--serif);font-size:26px;line-height:0.9;letter-spacing:-0.015em;}
+  .brand__mark .dot{color:var(--coral);}
+  .brand__sub{font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+  .backlink{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:gap 220ms ease,color 220ms ease;}
+  .backlink:hover{color:var(--coral);gap:12px;}
+  .rail__crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+  .rail__crumb a{text-decoration:none;color:var(--muted);}
+  .rail__crumb a:hover{color:var(--coral);}
+  .rail__title{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,60px);line-height:0.92;letter-spacing:-0.02em;margin:0;}
+  .rail__title em{font-style:italic;color:var(--coral);}
+  .rail__tag{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.5vw,20px);line-height:1.3;color:var(--ink);margin:0;max-width:34ch;}
+  .rail__meta{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;border-top:1px solid var(--rule);padding-top:20px;}
+  .meta__k{font-family:var(--mono);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .meta__v{font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--ink);}
+  .rail__cta{display:flex;flex-direction:column;gap:14px;}
+  .rail__status{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);}
+  .dot-live{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(168,69,47,0.5);}70%{box-shadow:0 0 0 8px rgba(168,69,47,0);}100%{box-shadow:0 0 0 0 rgba(168,69,47,0);}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--cream);background:var(--coral);border-radius:var(--radius-pill);padding:13px 22px;transition:transform 220ms ease,box-shadow 220ms ease,filter 220ms ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px -14px var(--coral);filter:brightness(0.96);}
+
+  /* rail: mobile arrangement */
+  .rail__bar{display:flex;align-items:center;justify-content:space-between;padding:16px var(--gpad);}
+  @media (min-width:900px){ .rail__bar{display:none;} }
+  @media (max-width:899px){
+    .rail__top{padding:0 var(--gpad) 8px;}
+    .rail__cta{padding:20px var(--gpad) 28px;}
+    .rail__title{font-size:clamp(48px,13vw,76px);}
+    .rail__meta{grid-template-columns:1fr 1fr;}
+  }
+
+  /* ============ FEED ============ */
+  .feed{min-width:0;}
+  .hero-media{position:relative;width:100%;aspect-ratio:16/10;max-height:78vh;background:var(--obsidian);overflow:hidden;border-bottom:1px solid var(--rule);}
+  .hero-media img.bg{width:100%;height:100%;object-fit:cover;}
+  .hero-media .logo{position:absolute;inset:0;margin:auto;width:min(360px,52%);height:auto;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.4));}
+
+  .block{padding:clamp(52px,7vw,110px) var(--gpad);border-bottom:1px solid var(--rule);}
+  .block--deep{background:var(--cream-deep);}
+  .block--band{background:var(--band-bg);color:var(--band-fg);}
+  .block__inner{max-width:760px;}
+  .block--wide .block__inner{max-width:none;}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--coral);margin-bottom:clamp(20px,2.4vw,32px);}
+  .eyebrow::before{content:"";width:36px;height:1px;background:var(--coral);}
+  .band .eyebrow{color:var(--band-accent);}
+  .band .eyebrow::before{background:var(--band-accent);}
+  .h-sec{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,68px);line-height:0.98;letter-spacing:-0.02em;margin:0;}
+  .h-sec em{font-style:italic;color:var(--coral);}
+  .band .h-sec{color:var(--band-fg);}
+  .band .h-sec em{color:var(--band-accent);}
+  .body{font-size:14.5px;line-height:1.85;color:var(--muted);max-width:64ch;margin:clamp(22px,2.6vw,34px) 0 0;}
+  .body + .body{margin-top:16px;}
+  .band .body{color:var(--band-muted);}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px;margin-top:clamp(34px,4vw,54px);padding-top:30px;border-top:1px solid var(--rule);}
+  @media (min-width:620px){ .stats{grid-template-columns:repeat(4,1fr);} }
+  .band .stats{border-top-color:var(--band-line);}
+  .stat__k{font-family:var(--serif);font-size:clamp(40px,5vw,62px);line-height:0.85;letter-spacing:-0.02em;color:var(--coral);}
+  .stat__l{font-family:var(--mono);font-size:11px;line-height:1.5;color:var(--muted);margin-top:10px;letter-spacing:0.02em;}
+  .band .stat__l{color:var(--band-muted);}
+
+  /* media treatments */
+  .media{margin-top:clamp(34px,4vw,56px);}
+  .media img{width:100%;height:auto;border-radius:var(--radius);display:block;}
+  .media--dark{background:var(--obsidian);border-radius:var(--radius);padding:0;}
+  .media--dark img{border-radius:var(--radius);}
+  .media--pad{padding:clamp(20px,3vw,44px);}
+  .grid-3{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,24px);margin-top:clamp(34px,4vw,56px);}
+  @media (min-width:680px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
+  .grid-3 .cell{background:var(--obsidian);border-radius:var(--radius);overflow:hidden;}
+  .grid-3 .cell img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;}
+  .caption{font-family:var(--mono);font-size:11px;letter-spacing:0.03em;color:var(--muted);margin-top:16px;}
+  .band .caption{color:var(--band-muted);}
+
+  /* two-column text+image */
+  .split{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,64px);align-items:center;}
+  @media (min-width:860px){ .split{grid-template-columns:1fr 1fr;} .split.rev .split__media{order:-1;} }
+  .split__media{background:var(--obsidian);border-radius:var(--radius);overflow:hidden;}
+  .split__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
+
+  /* feature callouts */
+  .features{display:grid;grid-template-columns:1fr;gap:0;margin-top:clamp(34px,4vw,54px);}
+  @media (min-width:680px){ .features{grid-template-columns:1fr 1fr;gap:0 clamp(32px,4vw,64px);} }
+  .feature{padding:22px 0;border-top:1px solid var(--rule);}
+  .band .feature{border-top-color:var(--band-line-soft);}
+  .feature__t{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);line-height:1.1;margin:0 0 8px;}
+  .band .feature__t{color:var(--band-fg);}
+  .feature__d{font-size:12.5px;line-height:1.7;color:var(--muted);}
+  .band .feature__d{color:var(--band-muted);}
+
+  /* palette token grid */
+  .tokens{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;margin-top:clamp(30px,3.5vw,48px);}
+  @media (min-width:680px){ .tokens{grid-template-columns:repeat(4,1fr);} }
+  .token{display:flex;align-items:center;gap:13px;}
+  .token .sw{flex:0 0 auto;width:42px;height:42px;border-radius:10px;border:1px solid var(--rule);}
+  .token__n{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
+  .token__h{font-family:var(--mono);font-size:11px;color:var(--muted);}
+
+  /* code block */
+  .code{margin-top:clamp(30px,3.5vw,48px);background:#0E0E0E;border-radius:var(--radius);padding:26px 28px;overflow-x:auto;}
+  .code pre{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:rgba(255,255,255,0.78);white-space:pre;margin:0;}
+  .code .com{color:#7A7A7A;}
+  .code .sel{color:var(--coral);}
+  .code .prop{color:rgba(255,255,255,0.5);}
+
+  /* live embed */
+  .embed{margin-top:clamp(34px,4vw,56px);}
+  .embed__frame{border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;background:var(--obsidian);box-shadow:0 40px 90px -50px rgba(0,0,0,0.5);}
+  .embed__bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#0E0E0E;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .led{width:9px;height:9px;border-radius:50%;background:#3A3A3A;}
+  .led-url{margin-left:12px;font-family:var(--mono);font-size:11px;color:#7A7A7A;letter-spacing:0.04em;}
+  .embed__iframe{display:block;width:100%;height:660px;border:0;background:var(--obsidian);}
+  .embed__poster{display:none;}
+  .embed__poster img{width:100%;display:block;}
+  .embed__act{margin-top:22px;}
+  .pill-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(28px,3vw,44px);}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid var(--rule);padding:14px 26px;border-radius:var(--radius-pill);transition:border-color 200ms ease,color 200ms ease,gap 200ms ease;}
+  .pill:hover{border-color:var(--coral);color:var(--coral);gap:12px;}
+  .pill--filled{background:var(--coral);color:var(--cream);border-color:var(--coral);}
+  .pill--filled:hover{color:var(--cream);filter:brightness(0.96);}
+  @media (max-width:859px){ .embed__iframe{display:none;} .embed__poster{display:block;} }
+
+  /* CTA */
+  .cta{padding:clamp(64px,9vw,140px) var(--gpad) clamp(40px,5vw,70px);border-bottom:1px solid var(--rule);}
+  .cta__title{font-family:var(--serif);font-weight:400;font-size:clamp(48px,9vw,130px);line-height:0.9;letter-spacing:-0.02em;margin:0;}
+  .cta__title em{font-style:italic;color:var(--coral);}
+  .cta__row{display:flex;flex-wrap:wrap;align-items:center;gap:18px clamp(20px,3vw,40px);margin-top:clamp(28px,3.5vw,48px);}
+  .cta__email{font-family:var(--mono);font-size:clamp(15px,1.8vw,20px);text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:4px;transition:color 200ms ease;word-break:break-word;}
+  .cta__email:hover{color:var(--coral);}
+  .cta__meta{color:var(--muted);line-height:1.7;}
+  .cta__nav{margin-top:clamp(34px,4vw,56px);display:flex;gap:28px;flex-wrap:wrap;}
+  .cta__nav a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color 200ms ease;}
+  .cta__nav a:hover{color:var(--coral);}
+
+  /* footer wordmark */
+  .foot{padding:clamp(30px,4vw,56px) var(--gpad) 22px;}
+  .foot__markwrap{width:100%;overflow:hidden;}
+  .foot__mark{font-family:var(--serif);font-weight:400;text-transform:uppercase;line-height:0.76;letter-spacing:-0.03em;color:var(--ink);margin:0;white-space:nowrap;display:inline-block;transform-origin:left top;font-size:100px;}
+  .foot__mark .dot{color:var(--coral);}
+  .foot__bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;border-top:1px solid var(--rule);margin-top:20px;padding-top:20px;color:var(--muted);}
+  .foot__bar a{text-decoration:none;color:var(--muted);}
+  .foot__bar a:hover{color:var(--coral);}
+
+  /* reveal */
+  .js .reveal{transition:opacity 800ms ease,transform 800ms cubic-bezier(.2,.7,.2,1);}
+  .js .reveal.pre-reveal{opacity:0;transform:translateY(24px);}
+  @media (prefers-reduced-motion:reduce){ .js .reveal,.js .reveal.pre-reveal{opacity:1;transform:none;transition:none;} .dot-live{animation:none;} }
+
+  /* mobile drawer + toggle (parity with homepage) */
+  .navToggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;}
+  .navToggle span{width:24px;height:2px;background:var(--ink);transition:transform 260ms ease,opacity 200ms ease;}
+  .navToggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .navToggle.is-open span:nth-child(2){opacity:0;}
+  .navToggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .drawer{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);background:var(--cream);z-index:120;transform:translateX(100%);transition:transform 340ms cubic-bezier(.2,.7,.2,1);box-shadow:-24px 0 60px -30px rgba(0,0,0,0.45);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 34px;}
+  .drawer.is-open{transform:none;}
+  .drawer a{font-family:var(--mono);font-size:14px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--rule-soft);}
+  .drawer .btn{margin-top:16px;}
+  .scrim{position:fixed;inset:0;background:rgba(25,23,18,0.35);opacity:0;visibility:hidden;transition:opacity 300ms ease;z-index:110;}
+  .scrim.is-open{opacity:1;visibility:visible;}
+  @media (min-width:900px){ .navToggle,.drawer,.scrim{display:none;} }
+</style>
+</head>
+<body>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+  <nav class="drawer" id="drawer" aria-label="Mobile">
+    <a href="/#work">All work</a>
+    <a href="/#approach">Approach</a>
+    <a href="/#services">Services</a>
+    <a href="/#about">About</a>
+    <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+  </nav>
+
+  <div class="shell">
+
+    <!-- ============ META RAIL ============ -->
+    <aside class="rail">
+      <div class="rail__bar">
+        <a class="brand" href="/"><span class="brand__mark">Standard<span class="dot">.</span></span></a>
+        <button class="navToggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+
+      <div class="rail__top">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+          <a class="brand" href="/"><span class="brand__mark">Standard<span class="dot">.</span></span><span class="brand__sub">Crystal Langley</span></a>
+        </div>
+        <a class="backlink" href="/#work"><span aria-hidden="true">←</span> All work</a>
+        <div class="rail__crumb"><a href="/#work">Work</a> &nbsp;/&nbsp; Donblas</div>
+        <h1 class="rail__title">Donblas</h1>
+        <p class="rail__tag">A legal AI platform that quantifies the law instead of summarizing it — taken from a stock-photo homepage to a category-defining brand system, proven in code.</p>
+        <div class="rail__meta">
+          <div><div class="meta__k">Role</div><div class="meta__v">Brand &amp; Creative Direction</div></div>
+          <div><div class="meta__k">Timeline</div><div class="meta__v">2026</div></div>
+          <div><div class="meta__k">Scope</div><div class="meta__v">Brand · Web · Design System · 3D</div></div>
+          <div><div class="meta__k">Industry</div><div class="meta__v">Legal AI · Litigation</div></div>
+        </div>
+      </div>
+
+      <div class="rail__cta">
+        <span class="rail__status"><span class="dot-live"></span> Direction in motion · 2026</span>
+        <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+      </div>
+    </aside>
+
+    <!-- ============ FEED ============ -->
+    <main class="feed">
+
+      <!-- HERO MEDIA -->
+      <div class="hero-media">
+        <img class="bg" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/f84f3891-ae79-44a4-84b7-50905b4423af/direction-lattice.png?content-type=image%2Fpng" alt="Rendered 3D decision lattice — leaf facts resolving into one cyan outcome">
+        <img class="logo" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/6d7a13ad-ce14-49ff-bc63-f9893c5eea9a/donBlasAi_logo_horizontal_white.png?content-type=image%2Fpng" alt="Donblas">
+      </div>
+
+      <!-- THE CHALLENGE -->
+      <section class="block">
+        <div class="block__inner">
+          <div class="eyebrow label">The Challenge</div>
+          <h2 class="h-sec reveal">The site showed <em>a quarter</em> of the company.</h2>
+          <p class="body">Donblas is auditable AI for litigation. It does not summarize the law, it quantifies it: a probability for every cause of action, with the precedent behind each percentage point. The founders are trial lawyers and ML researchers, and the company is mid seed raise. The product is serious.</p>
+          <p class="body">The website does not show it. The homepage leads with a stock photo of a city skyline, an all-caps headline, and a single waitlist button. No product, no probability output, no proof. My verdict was blunt: the site shows about a quarter of what Donblas actually is.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="stat__k">25%</div><div class="stat__l">of the company the site shows</div></div>
+          <div class="stat"><div class="stat__k">0</div><div class="stat__l">product screenshots shown</div></div>
+          <div class="stat"><div class="stat__k">1</div><div class="stat__l">stock photo carrying the hero</div></div>
+          <div class="stat"><div class="stat__k">1</div><div class="stat__l">CTA, before any proof</div></div>
+        </div>
+      </section>
+
+      <!-- 01 WHERE IT IS TODAY -->
+      <section class="block block--deep block--wide">
+        <div class="block__inner" style="max-width:760px;">
+          <div class="eyebrow label">01 — Where it is today</div>
+          <h2 class="h-sec reveal">A stock skyline, <em>where the product should be.</em></h2>
+          <p class="body">The homepage opens on a stock photo of office towers, dimmed behind an all-caps headline and a single Join the Waitlist button. The pitch sits low-contrast over the image, hard to read. A company whose brand explicitly rules out stock photography is leading with stock photography. Nowhere in the hero is the actual product: the probability engine, the audit trail, the Privacy Gateway, or the founders who are the moat.</p>
+        </div>
+        <div class="media media--dark media--pad reveal">
+          <img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/b7fb533d-7428-40f9-8eb2-45073cbfad23/donblas_current.png?content-type=image%2Fpng" alt="The current donblas.ai homepage: a stock skyline behind an all-caps headline and a single Join the Waitlist button">
+        </div>
+        <p class="caption">The live site today. Captured from donblas.ai, May 2026.</p>
+        <div class="features">
+          <div class="feature"><div class="feature__t">Stock, not story</div><div class="feature__d">Generic office towers for a symbolic reasoning engine. The hero could belong to any bank or brokerage, and the brand's own rules forbid stock photography.</div></div>
+          <div class="feature"><div class="feature__t">None of the product</div><div class="feature__d">No probability output, no audit trail, no Privacy Gateway. The thing that makes Donblas Donblas never appears.</div></div>
+          <div class="feature"><div class="feature__t">Squint-test copy</div><div class="feature__d">The pitch sits low-contrast over a busy photo. A reader has to work to take in the one paragraph that matters.</div></div>
+          <div class="feature"><div class="feature__t">Waitlist before trust</div><div class="feature__d">A single call to action asks for signup before the page has shown a product, a result, or a proof point.</div></div>
+        </div>
+      </section>
+
+      <!-- 02 POSITIONING (dark band) -->
+      <section class="block block--band band block--wide">
+        <div class="split">
+          <div class="split__text">
+            <div class="eyebrow label">02 — Positioning</div>
+            <h2 class="h-sec">Lead with the answer, <em>not the help.</em></h2>
+            <p class="body">I mapped the field. Legora and Harvey are racing to be the lawyer's assistant, and Legora is far ahead on social proof, positioning itself with lawyers. Donblas should not blur into that helper category, because its wedge is different.</p>
+            <p class="body">Donblas gives the answer and shows its work: a calibrated probability, an auditable chain of reasoning, and a Privacy Gateway that keeps client data inside the firm. Built by lawyers, for lawyers. The brand has to lead with that, not with another chat box.</p>
+          </div>
+          <div class="split__media">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/9b436226-d9a3-417a-a032-ed9e9b0ef5bb/direction-authority.png?content-type=image%2Fpng" alt="A rendered 3D burst — one outcome radiating to the authorities behind it">
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature"><div class="feature__t">The wedge is auditability</div><div class="feature__d">A reviewable probability tree, not a black box. The thing that wins motions, made the center of the story.</div></div>
+          <div class="feature"><div class="feature__t">Privacy Gateway as a claim</div><div class="feature__d">The biggest positioning miss on the old site becomes a category line: client data never leaves the firm.</div></div>
+          <div class="feature"><div class="feature__t">Founders as moat</div><div class="feature__d">Esquire and PhD on the same masthead. The combination is the product, and now it is on the page.</div></div>
+          <div class="feature"><div class="feature__t">Own the comparison</div><div class="feature__d">Donblas versus Harvey, Donblas versus Legora. Define the difference instead of defending it.</div></div>
+        </div>
+      </section>
+
+      <!-- 03 THE DIRECTION -->
+      <section class="block block--wide">
+        <div class="block__inner" style="max-width:760px;">
+          <div class="eyebrow label">03 — The direction</div>
+          <h2 class="h-sec reveal">From muddy mauve to <em>Mythic Precision.</em></h2>
+          <p class="body">I set a new visual direction. An obsidian base, forged bronze for the gravitas of the bench, and electric cyan reserved strictly for data. An editorial serif for the argument, a strict monospace for the engine. It should read like a high-end legal instrument, not a SaaS template. This is the direction I am driving the brand toward, away from the navy and mauve "Liberty" system on record.</p>
+        </div>
+        <div class="eyebrow label" style="margin-top:clamp(40px,5vw,72px);">The palette</div>
+        <div class="tokens">
+          <div class="token"><span class="sw" style="background:#0A0908"></span><span><span class="token__n">Obsidian</span><br><span class="token__h">#0A0908</span></span></div>
+          <div class="token"><span class="sw" style="background:#14110F"></span><span><span class="token__n">Surface</span><br><span class="token__h">#14110F</span></span></div>
+          <div class="token"><span class="sw" style="background:#C2935F"></span><span><span class="token__n">Forged Bronze</span><br><span class="token__h">#C2935F</span></span></div>
+          <div class="token"><span class="sw" style="background:#6E4F2A"></span><span><span class="token__n">Bronze Deep</span><br><span class="token__h">#6E4F2A</span></span></div>
+          <div class="token"><span class="sw" style="background:#7DFFE3"></span><span><span class="token__n">Electric Cyan</span><br><span class="token__h">#7DFFE3</span></span></div>
+          <div class="token"><span class="sw" style="background:#EDE7DB"></span><span><span class="token__n">Ink</span><br><span class="token__h">#EDE7DB</span></span></div>
+          <div class="token"><span class="sw" style="background:#B8B2A4"></span><span><span class="token__n">Muted</span><br><span class="token__h">#B8B2A4</span></span></div>
+          <div class="token"><span class="sw" style="background:#E0826A"></span><span><span class="token__n">Coral Signal</span><br><span class="token__h">#E0826A</span></span></div>
+        </div>
+        <div class="features">
+          <div class="feature"><div class="feature__t">Serif for the argument</div><div class="feature__d">A high-contrast display serif carries the headlines, the way precedent carries weight. History and authority, set in type.</div></div>
+          <div class="feature"><div class="feature__t">Monospace for the engine</div><div class="feature__d">JetBrains Mono handles every number, label, and panel. It signals the algorithmic, probabilistic core without a single illustration.</div></div>
+          <div class="feature"><div class="feature__t">Cyan means data, only</div><div class="feature__d">Bronze is the brand. Cyan is reserved for live values and outcomes, so attention always lands on the math.</div></div>
+          <div class="feature"><div class="feature__t">A bracketed voice</div><div class="feature__d">Every action reads like a precise trigger, framed in brackets. Small move, but it makes the whole interface feel engineered.</div></div>
+        </div>
+
+        <div class="embed">
+          <div class="embed__frame">
+            <div class="embed__bar"><span class="led"></span><span class="led"></span><span class="led"></span><span class="led-url">donblas-mythic-rebuild.netlify.app</span></div>
+            <iframe class="embed__iframe" src="https://donblas-mythic-rebuild.netlify.app" title="Donblas — Mythic Precision homepage rebuild, live prototype" loading="lazy"></iframe>
+            <div class="embed__poster"><img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/2e5f93e6-521a-4671-abf4-aa1dbe7ca8b2/after-hero.png?content-type=image%2Fpng" alt="The redesigned Donblas homepage hero in the Mythic Precision system"></div>
+          </div>
+          <div class="pill-row"><a class="pill pill--filled" href="https://donblas-mythic-rebuild.netlify.app" target="_blank" rel="noopener noreferrer">Open the live prototype →</a></div>
+          <p class="caption">The redesigned homepage, built in code. Interactive on desktop; tap to open full screen on mobile.</p>
+        </div>
+      </section>
+
+      <!-- 04 THE HOMEPAGE -->
+      <section class="block block--deep">
+        <div class="block__inner">
+          <div class="eyebrow label">04 — The homepage</div>
+          <h2 class="h-sec reveal">A scrolling argument, <em>not a brochure.</em></h2>
+          <p class="body">I rebuilt the homepage as six numbered chapters that move from the problem to the doctrine to the products to the engine. It is built in real code, not mockups. Each product shows up as a working panel: the Outcome Predictor returns a probability per cause of action, the Privacy Gateway scrubs and substitutes client entities before anything leaves the firm, and the Trial Trainer runs in an isolated sandbox. Hover any statute in the copy and the odds for that rule, in that court, surface in place.</p>
+        </div>
+        <div class="features">
+          <div class="feature"><div class="feature__t">Outcome Predictor</div><div class="feature__d">A live panel: causes of action, the bench filters, and a calibrated probability with the sub-elements that drive it.</div></div>
+          <div class="feature"><div class="feature__t">Privacy Gateway</div><div class="feature__d">A before-and-after scrub. Named parties become deterministic aliases, reversible only inside the firm.</div></div>
+          <div class="feature"><div class="feature__t">Trial Trainer</div><div class="feature__d">An isolated simulation environment, framed as a sandbox terminal. The litigator loses the argument once before it counts.</div></div>
+          <div class="feature"><div class="feature__t">Auditable citations</div><div class="feature__d">Statutes in the body are interrogable. Hover a rule and see what it has been worth, in this court, this year.</div></div>
+        </div>
+      </section>
+
+      <!-- 05 IMAGERY -->
+      <section class="block block--wide">
+        <div class="block__inner" style="max-width:760px;">
+          <div class="eyebrow label">05 — Imagery</div>
+          <h2 class="h-sec reveal">I rendered the data, <em>I did not photograph it.</em></h2>
+          <p class="body">The brand rules out stock photography, so I built the imagery instead. These are abstract 3D renders of the reasoning itself: leaf facts converging through nodes into a single auditable outcome, then radiating back out to the authorities that support it. Real perspective projection, lit additively in the brand palette, on transparent backgrounds. They sit behind the interface and drift on a slow parallax, so the page has depth without a single piece of clip art.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <div class="cell"><img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/f84f3891-ae79-44a4-84b7-50905b4423af/direction-lattice.png?content-type=image%2Fpng" alt="Rendered decision lattice — facts to outcome"></div>
+          <div class="cell"><img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/9b436226-d9a3-417a-a032-ed9e9b0ef5bb/direction-authority.png?content-type=image%2Fpng" alt="Rendered authority burst — outcome to precedent"></div>
+          <div class="cell"><img loading="lazy" src="https://images.squarespace-cdn.com/content/69caf4db34636a4922c96426/a7024a66-dbf7-45f9-99b8-ba6572475a65/direction-cloud.png?content-type=image%2Fpng" alt="Rendered probability cloud — sub-probabilities converging"></div>
+        </div>
+        <div class="code">
+<pre><span class="com">/* the imagery is generated, not sourced. perspective-projected
+   nodes, additive glow, brand palette, transparent background. */</span>
+<span class="sel">def render(structure):</span>
+  <span class="prop">project</span> 3D nodes -> 2D with perspective + depth sort
+  <span class="prop">splat</span>  additive gaussians: bronze facts, cyan outcome
+  <span class="prop">tonemap</span> filmic curve, alpha from luminance -> PNG
+
+<span class="com">/* placed behind the UI, drifting on pointer + scroll parallax,
+   fully disabled under prefers-reduced-motion. */</span></pre>
+        </div>
+      </section>
+
+      <!-- 06 HOW I WORKED (dark band) -->
+      <section class="block block--band band">
+        <div class="block__inner">
+          <div class="eyebrow label">06 — How I worked</div>
+          <h2 class="h-sec">Audit first, <em>then build the system.</em></h2>
+          <p class="body">I did not start with a moodboard. I audited the live site from four points of view, inventoried every page and its bugs, and mapped the competitive set. Then I set the direction and proved it the only way that removes doubt in a build-stage company: in working code, with real tokens, accessible contrast, and motion that respects reduced-motion. I do not just make things look good. I build the systems that make good work repeatable.</p>
+        </div>
+        <div class="features">
+          <div class="feature"><div class="feature__t">Four-point-of-view audit</div><div class="feature__d">Investor, litigator, engineer, and first-time visitor. Each one finds a different gap, and the page has to answer all four.</div></div>
+          <div class="feature"><div class="feature__t">Page inventory and SEO pass</div><div class="feature__d">Every nav item read end to end. Orphan pages, slugs, and title tags fixed before a single pixel moved.</div></div>
+          <div class="feature"><div class="feature__t">Competitor deep-dive</div><div class="feature__d">A close read of Legora and Harvey to find the wedge Donblas can own, then a positioning line to claim it.</div></div>
+          <div class="feature"><div class="feature__t">Coded, not mocked</div><div class="feature__d">A single self-contained homepage in real HTML and CSS. Design tokens, AA contrast on dark, reduced-motion built in.</div></div>
+        </div>
+      </section>
+
+      <!-- STATUS -->
+      <section class="block">
+        <div class="block__inner">
+          <div class="eyebrow label">Status</div>
+          <h2 class="h-sec reveal">A direction in motion, <em>not a finished site.</em></h2>
+          <p class="body">Donblas is mid seed raise, and this is the direction I am driving, shown as a working concept rather than a shipped redesign. See where the company is today, and where I am taking it.</p>
+          <div class="pill-row"><a class="pill" href="https://donblas.ai" target="_blank" rel="noopener noreferrer">See the live site today →</a></div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h2 class="cta__title reveal">Let's build <em>together</em>.</h2>
+        <div class="cta__row">
+          <a class="cta__email" href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a>
+          <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
+          <p class="cta__meta label">Northern California · Available globally · Q2 2026 open</p>
+        </div>
+        <div class="cta__nav">
+          <a href="/#work">← Back to all work</a>
+          <a href="mailto:yocrystallangley@gmail.com">Email</a>
+        </div>
+      </section>
+
+      <!-- FOOTER WORDMARK -->
+      <footer class="foot">
+        <div class="foot__markwrap"><p class="foot__mark" id="bigmark">Standard<span class="dot">.</span></p></div>
+        <div class="foot__bar label">
+          <span>© 2026 Crystal Langley · Northern California</span>
+          <span><a href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a></span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+<script>
+  (function(){
+    /* Mobile drawer */
+    var toggle=document.getElementById('navToggle'), drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim');
+    function setMenu(open){ drawer.classList.toggle('is-open',open); toggle.classList.toggle('is-open',open); scrim.classList.toggle('is-open',open); toggle.setAttribute('aria-expanded',open?'true':'false'); }
+    toggle.addEventListener('click',function(){ setMenu(!drawer.classList.contains('is-open')); });
+    scrim.addEventListener('click',function(){ setMenu(false); });
+    drawer.addEventListener('click',function(e){ if(e.target.tagName==='A') setMenu(false); });
+
+    /* Fit footer wordmark */
+    var mark=document.getElementById('bigmark');
+    function fitMark(){ if(!mark)return; mark.style.fontSize='100px'; var natural=mark.scrollWidth, avail=mark.parentElement.clientWidth; if(natural>0) mark.style.fontSize=Math.floor(100*(avail/natural))+'px'; }
+    fitMark(); window.addEventListener('resize',fitMark,{passive:true}); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitMark);} setTimeout(fitMark,400);
+
+    /* Reveal */
+    var vh=window.innerHeight||800;
+    var armed=[].slice.call(document.querySelectorAll('.reveal')).filter(function(el){ if(el.getBoundingClientRect().top>vh*0.9){el.classList.add('pre-reveal');return true;} return false; });
+    var show=function(el){ el.classList.remove('pre-reveal'); };
+    if('IntersectionObserver' in window && armed.length){
+      var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){show(en.target);io.unobserve(en.target);} }); },{threshold:0.1,rootMargin:'0px 0px -8% 0px'});
+      armed.forEach(function(el){io.observe(el);});
+    } else { armed.forEach(show); }
+    setTimeout(function(){ document.querySelectorAll('.pre-reveal').forEach(show); },2500);
+  })();
+</script>
+</body>
+</html>
