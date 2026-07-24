@@ -1,0 +1,33 @@
+# Static site — no framework, no build. Publish dir is the repo root.
+# The build command only strips repo-internal files from the published output
+# (it runs when Netlify builds from git; manual CLI deploys use a staging copy).
+[build]
+  publish = "."
+  command = "rm -f CLAUDE.md"
+
+# Password gates — see netlify/edge-functions/case-study-auth.ts.
+# Handzin and Stead are intentionally open (no PASSWORD badge on their tiles).
+[[edge_functions]]
+  path = "/sommsation"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/sommsation/*"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/strivers"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/strivers/*"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/sequoia-benefits"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/sequoia-benefits/*"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/donblas"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/donblas/*"
+  function = "case-study-auth"
