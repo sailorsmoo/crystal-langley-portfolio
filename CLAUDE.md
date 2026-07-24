@@ -4,10 +4,11 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 
 ## Deploy
 
-- **GitHub → Netlify auto-deploy is live.** Repo: `sailorsmoo/crystal-langley-portfolio` (public), branch `main`. Netlify site is linked to this repo — any push to `main` deploys automatically. No manual dragging, no Netlify token/CLI needed for routine updates.
-- `netlify.toml`: `publish = "."` (repo root is the publish dir, no build command).
-- Known quirk: recent pushes were done by re-initializing a throwaway local git repo and force-pushing (not maintaining a persistent clone/history). Fine for now; worth switching to a normal clone+commit+push flow if this repo needs real git history later.
-- **api.netlify.com is blocked** by this remote environment's network egress allowlist — direct Netlify API/CLI calls from Claude Code on the web fail with "host not in allowlist." The GitHub-auto-deploy path above exists specifically to route around that; it does not need Netlify network access at all.
+- Netlify site: **silver-malabi-ff4ce6** (site id `75243fae-1118-49a2-8a63-fd4b6aa45a8d`), team PR, account crystal.langley@sommsation.com.
+- **GitHub → Netlify auto-deploy is NOT connected** (verified 2026-07-24 via the Netlify API from Crystal's Mac: `repo_url: None`, all deploys manual). An earlier session's claim that auto-deploy was live was wrong — that session couldn't reach api.netlify.com to check. Connecting the repo in the Netlify UI is still a worthwhile future step; until then, deploys are manual.
+- Manual deploy flow (Netlify CLI, from Crystal's Mac): copy the repo to a staging dir *excluding `.git` and `CLAUDE.md`*, then `netlify deploy --dir . --site 75243fae-1118-49a2-8a63-fd4b6aa45a8d` (add `--prod` after verifying the draft URL). The `[build] command = "rm -f CLAUDE.md"` in `netlify.toml` handles the same exclusion if git-based builds are ever connected.
+- Local canonical clone: `~/Projects/crystal-langley-portfolio`. (`~/Downloads/crystallangleysite` is an older pre-SEO copy — do not deploy from it.)
+- Note for Claude Code on the web: api.netlify.com is blocked by that environment's egress allowlist; deploys must happen from the Mac or via a future GitHub connection.
 
 ## Design system
 
@@ -24,19 +25,21 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 
 ## Password protection
 
-- `_headers` at repo root — HTTP Basic-Auth per case-study path (Netlify reads this natively).
-- **Currently placeholder passwords** (`CHANGE_ME_sommsation`, etc.) — not real. Waiting on the actual passwords from the user before this is production-ready. Do not treat the placeholders as real credentials or tell the user the case studies are actually protected until these are swapped.
+- Implemented as a **Netlify Edge Function**: `netlify/edge-functions/case-study-auth.ts`, wired to paths in `netlify.toml`. It serves a branded, **password-only gate page** (Bone palette, Instrument Serif + Plex Mono, single password field — NO username field; Crystal explicitly rejected the native Basic-Auth prompt because browsers autofill a username into it). Correct password → scoped 30-day cookie → straight through on revisits. The `_headers` Basic-Auth approach was removed — Netlify silently ignores it on this plan (verified with a draft deploy: 200, no `WWW-Authenticate`).
+- Real passwords live in **Netlify site environment variables** (`PW_SOMMSATION`, `PW_STRIVERS`, `PW_SEQUOIA_BENEFITS`, `PW_DONBLAS`) — never in this public repo. The canonical password record is in Crystal's Obsidian vault: `Jobs & Freelance/00 - Foundations/Portfolio Page Passwords.md`. Rotating a password in Netlify instantly invalidates existing cookies (the cookie token is derived from the password).
+- Gated: `/sommsation`, `/strivers`, `/sequoia-benefits`, `/donblas` (the four tiles with PASSWORD badges). **`/handzin` and `/stead` are intentionally open** — matches the homepage UI and the Squarespace-era setup.
+- Gate pages return HTTP 401 (keeps them out of Google) with the form as the body. Fail-open by design: if an env var is missing the page serves openly rather than bricking a client review.
 
 ## SEO
 
 - Added: per-page `<title>`, meta description, canonical URL, Open Graph + Twitter Card tags, JSON-LD `Person` schema on the homepage. `robots.txt` and `sitemap.xml` at repo root.
-- **Sitemap intentionally lists only the homepage.** The 6 case studies are Basic-Auth gated, so Googlebot gets a 401 on them regardless of meta tags — they can't be indexed while password-protected. Don't add them to the sitemap unless the password gate comes off.
+- **Sitemap lists the homepage plus `/handzin` and `/stead`** (the two open case studies). The four password-gated case studies return 401 to Googlebot and can't be indexed — don't add them to the sitemap unless their password gate comes off.
 
-## Known pending work (as of last session)
+## Known pending work
 
-- Real case-study passwords not yet applied (see above).
-- Domain cutover not done: `crystallangley.com` is registered and DNS-managed at **Squarespace** (not GitHub/Netlify-adjacent). Netlify custom-domain + Squarespace DNS records still need to be added — this is a live, customer-facing cutover, confirm timing with the user before touching DNS.
-- **31 images across `/donblas`, `/sequoia-benefits`, `/strivers`, and the homepage work thumbnails are hot-linked from `images.squarespace-cdn.com`.** These keep working only while the user's Squarespace plan stays active. Rehost before that plan is downgraded/cancelled.
+- Domain cutover in progress: `www.crystallangley.com` is set as the Netlify custom domain (apex as alias), but DNS still points at Squarespace until Crystal updates the records in her Squarespace Domains panel (nameservers are ns-cloud-*.googledomains.com, managed via Squarespace after the Google Domains migration). **The domain's MX records are Google Workspace email — never touch them during DNS edits.**
+- GitHub → Netlify auto-deploy not yet connected (see Deploy).
+- ~~Images hot-linked from `images.squarespace-cdn.com`~~ **Done 2026-07-24:** all 64 Squarespace-hosted images were downloaded and rehosted locally under `/assets/squarespace/`, and every HTML reference now points at the local copies (og:image/twitter:image use absolute `https://www.crystallangley.com/assets/squarespace/...` URLs for social scrapers). The Squarespace plan is no longer needed for images — but keep the old Squarespace site up a day or two for DNS stragglers while the domain cutover finishes.
 - User has flagged the case-study/homepage copy as reading "stale" — a content rewrite pass is expected next, once the above is resolved.
 
 ## Source history
