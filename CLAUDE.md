@@ -21,6 +21,7 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 
 - `index.html` — homepage. Sections in the scrolling feed: Hero → Work (`#work`) → Capabilities → About (`#about`) → **Approach** (`#approach`) → **Services** (`#services`) → Contact (`#contact`) → footer.
   - Approach and Services are **inline sections on the homepage, not separate pages** — this was an explicit correction from the user. Do not re-split them into `/approach` or `/services` routes.
+- `/audit` — standalone campaign landing page (UX/design system audit first, brand audit second; Calendly + Upwork CTAs, no site nav). Destination for ads and LinkedIn posts, deliberately NOT in the sitemap or homepage nav. Added 2026-07-26.
 - Six case studies, each its own folder with `index.html`: `/donblas`, `/sommsation`, `/strivers`, `/sequoia-benefits`, `/handzin`, `/stead`. Shared visual template (sticky rail + feed), but `donblas/index.html` is fully self-contained (inline CSS/JS) while the other five link to a shared `case-study.css`/`case-study.js` copied into each folder.
 
 ## Password protection
