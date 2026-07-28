@@ -240,6 +240,22 @@
   @media (min-width:900px){ .navToggle,.drawer,.scrim{display:none;} }
 
 </style>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-689MH1TVSB');
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="calendly.com"], a[href*="upwork.com"]');
+  if (!a) return;
+  gtag('event', a.href.indexOf('calendly.com') > -1 ? 'book_click' : 'upwork_click', {
+    link_url: a.href,
+    page_path: location.pathname
+  });
+});
+</script>
 </head>
 <body>
   <h1 class="sr-only">Crystal Langley, Creative Director and Strategist. Fifteen years of UI/UX and product design across gaming, technology and lifestyle.</h1>
