@@ -31,6 +31,13 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 - Gated: `/sommsation`, `/strivers`, `/sequoia-benefits`, `/donblas` (the four tiles with PASSWORD badges). **`/handzin` and `/stead` are intentionally open** — matches the homepage UI and the Squarespace-era setup.
 - Gate pages return HTTP 401 (keeps them out of Google) with the form as the body. Fail-open by design: if an env var is missing the page serves openly rather than bricking a client review.
 
+## Analytics (set up 2026-07-28)
+
+- **GA4 property "crystallangley.com"** (measurement ID `G-689MH1TVSB`, stream id 15341385902) under Crystal's "Google Ads Account" Analytics account. The gtag snippet is in the `<head>` of every page, including gated case studies (a pageview of a gated page = someone who got past the password, which doubles as an "opened my case study" tracker).
+- **Custom conversion events** fired by the snippet: `book_click` (Calendly links) and `upwork_click` (Upwork links), both registered as key events with a $1 default value. Do not create derived events with these names (double-counting).
+- **Search Console**: URL-prefix property `https://www.crystallangley.com/`, verified via the GA tag, sitemap submitted, linked to the GA4 property (2026-07-28).
+- The old "eclatevibes.myshopify.com" GA property in the same account is unused; safe to trash.
+
 ## SEO
 
 - Added: per-page `<title>`, meta description, canonical URL, Open Graph + Twitter Card tags, JSON-LD `Person` schema on the homepage. `robots.txt` and `sitemap.xml` at repo root.
