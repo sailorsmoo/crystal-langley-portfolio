@@ -1,0 +1,96 @@
+name: Weekly Site Report
+
+on:
+  schedule:
+    # Every Monday at 14:00 UTC (~7am Pacific / 10am Eastern)
+    - cron: "0 14 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every page's status code
+        id: status
+        run: |
+          {
+            echo "PUBLIC PAGES (expect 200):"
+            for path in "/" "/robots.txt" "/sitemap.xml" "/handzin/" "/stead/" "/audit/"; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" "https://www.crystallangley.com${path}")
+              echo "  ${path} -> ${code}"
+            done
+            echo ""
+            echo "PASSWORD-GATED CASE STUDIES (expect 401 — that's correct/expected, keeps them out of Google):"
+            for path in "/sommsation/" "/strivers/" "/sequoia-benefits/" "/donblas/"; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" "https://www.crystallangley.com${path}")
+              echo "  ${path} -> ${code}"
+            done
+          } > status.txt
+          cat status.txt
+
+      - name: Check locally-rehosted image liveness (sample)
+        id: images
+        run: |
+          {
+            echo "IMAGE LIVENESS (/assets/squarespace/ — rehosted locally so this should always be 200; a break here means something got deleted or moved):"
+            find assets/squarespace -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) 2>/dev/null | sort | head -15 | while read -r f; do
+              url="https://www.crystallangley.com/${f}"
+              code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+              echo "  ${code} - ${url}"
+            done
+          } > images.txt
+          cat images.txt
+
+      - name: Lighthouse CI on homepage
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            https://www.crystallangley.com/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        continue-on-error: true
+
+      - name: Open weekly report issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const status = fs.readFileSync('status.txt', 'utf8');
+            const images = fs.readFileSync('images.txt', 'utf8');
+            const date = new Date().toISOString().slice(0, 10);
+
+            const body = [
+              `## Weekly Site Report — ${date}`,
+              ``,
+              `### Page status codes`,
+              '```',
+              status.trim(),
+              '```',
+              ``,
+              `### Rehosted image liveness (sample)`,
+              '```',
+              images.trim(),
+              '```',
+              ``,
+              `### Lighthouse audit (homepage)`,
+              `See the "Lighthouse CI on homepage" step in this workflow run's logs/artifacts for Performance / Accessibility / SEO / Best Practices scores and detailed findings.`,
+              ``,
+              `### Real traffic / conversions`,
+              `Not pulled here — GA4 (measurement ID G-689MH1TVSB) and Search Console are already live and have the real numbers. This report checks technical health (uptime, images, Lighthouse), not visitor data. Ask Claude to wire in a GA4 Data API pull (needs a service-account secret) if you want traffic numbers inside this same report instead of checking GA4 directly.`,
+              ``,
+              `_Automated weekly check. Anything showing an unexpected status code above needs a look — note only Sommsation/Strivers/Sequoia Benefits/Donblas should ever show 401._`,
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Weekly Site Report — ${date}`,
+              body,
+              labels: ['weekly-report'],
+            });

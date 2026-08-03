@@ -53,3 +53,7 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 ## Source history
 
 The original Claude Design handoff bundle (chat transcripts, early design explorations, uploaded case-study drafts) lives outside this repo and was deliberately **not** pushed here since this repo is public — don't assume that history is available in a fresh session unless the user provides it again.
+
+## Automation
+
+- **Weekly Site Report** — `.github/workflows/weekly-report.yml`, GitHub Action, runs every Monday 14:00 UTC forever (no session dependency, no expiry). Checks status codes on all public pages plus the 4 gated case studies (expects 401 on those — that's correct), spot-checks rehosted image liveness under `/assets/squarespace/`, runs a Lighthouse audit on the homepage, opens a GitHub Issue with results (triggers a GitHub email notification). Does not pull real GA4/Search Console numbers yet — those already exist and are viewable directly in GA4; wiring them into this report would need a GA4 Data API service-account secret, a separate task if wanted.
