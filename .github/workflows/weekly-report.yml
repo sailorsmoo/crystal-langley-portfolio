@@ -48,6 +48,7 @@ jobs:
           cat images.txt
 
       - name: Lighthouse CI on homepage
+        id: lhci
         uses: treosh/lighthouse-ci-action@v11
         with:
           urls: |
@@ -58,12 +59,39 @@ jobs:
 
       - name: Open weekly report issue
         uses: actions/github-script@v7
+        env:
+          LHCI_MANIFEST: ${{ steps.lhci.outputs.manifest }}
         with:
           script: |
             const fs = require('fs');
             const status = fs.readFileSync('status.txt', 'utf8');
             const images = fs.readFileSync('images.txt', 'utf8');
             const date = new Date().toISOString().slice(0, 10);
+
+            // Pull real Lighthouse category scores out of the action's own
+            // manifest output and format them inline, rather than pointing
+            // at logs/artifacts that live on a rotating blob-storage URL
+            // nobody can reliably fetch after the fact.
+            let lighthouseSection;
+            try {
+              const manifest = JSON.parse(process.env.LHCI_MANIFEST || '[]');
+              const run = manifest.find(r => r.isRepresentativeRun) || manifest[0];
+              if (!run) throw new Error('no lighthouse run in manifest');
+              const pct = (n) => Math.round(n * 100);
+              const s = run.summary;
+              lighthouseSection = [
+                `| Category | Score |`,
+                `|---|---|`,
+                `| Performance | ${pct(s.performance)}/100 |`,
+                `| Accessibility | ${pct(s.accessibility)}/100 |`,
+                `| Best Practices | ${pct(s['best-practices'])}/100 |`,
+                `| SEO | ${pct(s.seo)}/100 |`,
+                ``,
+                `Full HTML report (all individual audits, not just the category rollups): ${run.htmlPath || '(not uploaded this run)'}`,
+              ].join('\n');
+            } catch (e) {
+              lighthouseSection = `Lighthouse step ran but its results couldn't be parsed this run (${e.message}). Check the "Lighthouse CI on homepage" step in the Actions run directly.`;
+            }
 
             const body = [
               `## Weekly Site Report — ${date}`,
@@ -79,7 +107,7 @@ jobs:
               '```',
               ``,
               `### Lighthouse audit (homepage)`,
-              `See the "Lighthouse CI on homepage" step in this workflow run's logs/artifacts for Performance / Accessibility / SEO / Best Practices scores and detailed findings.`,
+              lighthouseSection,
               ``,
               `### Real traffic / conversions`,
               `Not pulled here — GA4 (measurement ID G-689MH1TVSB) and Search Console are already live and have the real numbers. This report checks technical health (uptime, images, Lighthouse), not visitor data. Ask Claude to wire in a GA4 Data API pull (needs a service-account secret) if you want traffic numbers inside this same report instead of checking GA4 directly.`,
