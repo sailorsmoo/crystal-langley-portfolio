@@ -5,10 +5,20 @@ Static HTML/CSS/JS site for crystallangley.com. No build step, no framework.
 ## Deploy
 
 - Netlify site: **silver-malabi-ff4ce6** (site id `75243fae-1118-49a2-8a63-fd4b6aa45a8d`), team PR, account crystal.langley@sommsation.com.
-- **GitHub → Netlify auto-deploy is NOT connected** (verified 2026-07-24 via the Netlify API from Crystal's Mac: `repo_url: None`, all deploys manual). An earlier session's claim that auto-deploy was live was wrong — that session couldn't reach api.netlify.com to check. Connecting the repo in the Netlify UI is still a worthwhile future step; until then, deploys are manual.
-- Manual deploy flow (Netlify CLI, from Crystal's Mac): copy the repo to a staging dir *excluding `.git` and `CLAUDE.md`*, then `netlify deploy --dir . --site 75243fae-1118-49a2-8a63-fd4b6aa45a8d` (add `--prod` after verifying the draft URL). The `[build] command = "rm -f CLAUDE.md"` in `netlify.toml` handles the same exclusion if git-based builds are ever connected.
+- **GitHub → Netlify auto-deploy is NOT connected.** Crystal tried linking it via Netlify's UI (2026-08-18) and hit "Access Denied" selecting the repo, despite the Netlify GitHub App having "All repositories" access on her `sailorsmoo` GitHub account (confirmed — not a GitHub permissions issue). Root cause undetermined; likely a Netlify-side account/session issue. Not resolved — deploys are still manual. Don't assume this is connected without checking.
+- **Drag-and-drop deploy (the Deploys page drop zone) does NOT deploy Edge Functions or process `netlify.toml`'s `[[edge_functions]]` config at all** — confirmed via Netlify's own docs/forums (2026-08-18). It only publishes static files. Any change to `netlify/edge-functions/case-study-auth.ts` or to which paths are gated in `netlify.toml` (e.g. adding a new gated case study) **requires a Netlify CLI deploy**, not drag-and-drop, or it will silently not take effect while everything else on the site looks fine.
+- **Working manual deploy flow (Netlify CLI, from Crystal's Mac, confirmed working 2026-08-18):**
+  ```
+  cd ~/Projects/crystal-langley-portfolio
+  git pull
+  netlify deploy --dir . --site 75243fae-1118-49a2-8a63-fd4b6aa45a8d --prod
+  ```
+  **Always `git pull` (or do a fresh `git clone`) immediately before deploying.** A stale local folder caused a real regression once already (2026-08-18): a CLI deploy from an out-of-date local copy briefly reverted the `/telltale` page's Password badge/link back to its old "In Progress" state on the live site, even though the correct version was already sitting on GitHub the whole time. If there's any doubt the local folder is current, `mv` it aside and do a fresh `git clone` rather than trying to reconcile it.
+  A successful CLI deploy's output includes an **"Edge function Logs:"** line — that line only appears when edge functions were actually processed. If a deploy's output doesn't have that line, edge function routing (the password gates) did NOT get updated by that deploy.
+  The `[build] command = "rm -f CLAUDE.md"` in `netlify.toml` strips this file from what actually gets published, whether deploying via CLI or (if it's ever connected) git-based builds.
+- **New environment variables may need a fresh deploy to take effect for Edge Functions** — observed 2026-08-18: adding `PW_TELLTALE` alone didn't immediately gate `/telltale`; running the CLI deploy again (with the var already saved) is what made it take effect. Don't assume a just-added `PW_*` var is live without redeploying.
 - Local canonical clone: `~/Projects/crystal-langley-portfolio`. (`~/Downloads/crystallangleysite` is an older pre-SEO copy — do not deploy from it.)
-- Note for Claude Code on the web: api.netlify.com is blocked by that environment's egress allowlist; deploys must happen from the Mac or via a future GitHub connection.
+- Note for Claude Code on the web: api.netlify.com (and crystallangley.com itself, and WebFetch to it) are blocked by that environment's egress allowlist — confirmed repeatedly. Deploys and live-site checks must happen from the Mac; a web session can only push to GitHub and has no way to verify the live site's actual state.
 
 ## Design system
 
