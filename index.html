@@ -184,9 +184,6 @@
   .motion__m{color:rgba(255,255,255,0.75);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;}
   .motion__frame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;}
   .motion__item.is-playing .motion__thumb,.motion__item.is-playing .motion__play,.motion__item.is-playing .motion__cap,.motion__item.is-playing::before{display:none;}
-  .motion__group{margin-top:clamp(28px,3.2vw,44px);}
-  .motion__group:first-child{margin-top:clamp(24px,3vw,40px);}
-  .motion__group-t{font-family:var(--serif);font-size:clamp(19px,2.1vw,25px);color:var(--ink);letter-spacing:-0.01em;}
 
   .caps__grid{display:grid;grid-template-columns:1fr;gap:0;}
   @media (min-width:620px){ .caps__grid{grid-template-columns:1fr 1fr;} }
@@ -384,27 +381,15 @@ document.addEventListener('click', function (e) {
           <div class="row__thumb" style="background-image:url('/assets/squarespace/donblas-512x512.png');"></div>
         </a>
 
-        <div class="row" data-wip>
+        <a class="row" href="/telltale">
           <div>
-            <div class="row__top"><span class="row__no">05 / 05</span><span class="row__badge row__badge--wip">In Progress</span></div>
+            <div class="row__top"><span class="row__no">05 / 05</span><span class="row__badge">Password</span></div>
             <h3 class="row__title">Telltale Games</h3>
             <div class="row__meta">UI / UX, Promoted to Lead · 2011 – 2018</div>
+            <span class="row__go">View case study →</span>
           </div>
           <div class="row__thumb" style="background-image:url('/assets/squarespace/telltalegames_512x512.png');"></div>
-        </div>
-      </section>
-
-      <!-- CAPABILITIES -->
-      <section class="block">
-        <div class="kicker label"><span class="kicker__no">—</span><span class="kicker__t">Capabilities</span></div>
-        <div class="caps__grid">
-          <div class="caps__item"><span class="caps__no">A</span><div><span class="caps__name">Product &amp; UI/UX Design</span><span class="caps__desc">The foundation. Interfaces shipped across web, iOS, Android, PlayStation, Xbox and Wii U since 2011.</span></div></div>
-          <div class="caps__item"><span class="caps__no">B</span><div><span class="caps__name">Design Systems</span><span class="caps__desc">Architecture from zero: governance, documentation, adoption.</span></div></div>
-          <div class="caps__item"><span class="caps__no">C</span><div><span class="caps__name">Creative Direction</span><span class="caps__desc">Teams of eight, vendors, production budgets, ship dates.</span></div></div>
-          <div class="caps__item"><span class="caps__no">D</span><div><span class="caps__name">Brand Systems</span><span class="caps__desc">Identity, voice and governance that survive someone else's hands.</span></div></div>
-          <div class="caps__item"><span class="caps__no">E</span><div><span class="caps__name">Editorial Design</span><span class="caps__desc">Product that reads like a magazine. People stay longer.</span></div></div>
-          <div class="caps__item"><span class="caps__no">F</span><div><span class="caps__name">AI Pipelines</span><span class="caps__desc">Yes, I use it. Generative stages with human QA gates, swapped as the tools change.</span></div></div>
-        </div>
+        </a>
       </section>
 
       <!-- MOTION -->
@@ -442,77 +427,16 @@ document.addEventListener('click', function (e) {
         </div>
       </section>
 
-      <!-- TELLTALE GAMES -->
-      <section class="block" id="telltale">
-        <div class="kicker label"><span class="kicker__no">—</span><span class="kicker__t">Telltale Games</span></div>
-        <p class="note label" style="max-width:44ch;margin-bottom:0;">UI/UX and motion work across four Telltale titles, 2010–2018.</p>
-        <div class="motion__group">
-          <div class="motion__group-t">The Wolf Among Us</div>
-          <div class="motion__grid">
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="184588864" data-title="The Wolf Among Us — Clip 1" aria-label="Play video: The Wolf Among Us — Clip 1 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 1</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136069718" data-title="The Wolf Among Us — Clip 2" aria-label="Play video: The Wolf Among Us — Clip 2 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 2</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136069719" data-title="The Wolf Among Us — Clip 3" aria-label="Play video: The Wolf Among Us — Clip 3 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 3</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          </div>
-        </div>
-        <div class="motion__group">
-          <div class="motion__group-t">Poker Night</div>
-          <div class="motion__grid">
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136067550" data-title="Poker Night — Clip 1" aria-label="Play video: Poker Night — Clip 1 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 1</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136065741" data-title="Poker Night — Clip 2" aria-label="Play video: Poker Night — Clip 2 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 2</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136064794" data-title="Poker Night — Clip 3" aria-label="Play video: Poker Night — Clip 3 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 3</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          </div>
-        </div>
-        <div class="motion__group">
-          <div class="motion__group-t">Game of Thrones</div>
-          <div class="motion__grid">
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="132364481" data-title="Game of Thrones" aria-label="Play video: Game of Thrones (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Game of Thrones</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          </div>
-        </div>
-        <div class="motion__group">
-          <div class="motion__group-t">Tales from the Borderlands</div>
-          <div class="motion__grid">
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130368574" data-title="Tales from the Borderlands — Clip 1" aria-label="Play video: Tales from the Borderlands — Clip 1 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 1</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="135841906" data-title="Tales from the Borderlands — Clip 2" aria-label="Play video: Tales from the Borderlands — Clip 2 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 2</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="135841256" data-title="Tales from the Borderlands — Clip 3" aria-label="Play video: Tales from the Borderlands — Clip 3 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 3</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130367157" data-title="Tales from the Borderlands — Clip 4" aria-label="Play video: Tales from the Borderlands — Clip 4 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 4</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130367156" data-title="Tales from the Borderlands — Clip 5" aria-label="Play video: Tales from the Borderlands — Clip 5 (Vimeo)" style="background:var(--ink);">
-            <span class="motion__play" aria-hidden="true">▶</span>
-            <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 5</span><span class="motion__m">Vimeo</span></span>
-          </div>
-          </div>
+      <!-- CAPABILITIES -->
+      <section class="block">
+        <div class="kicker label"><span class="kicker__no">—</span><span class="kicker__t">Capabilities</span></div>
+        <div class="caps__grid">
+          <div class="caps__item"><span class="caps__no">A</span><div><span class="caps__name">Product &amp; UI/UX Design</span><span class="caps__desc">The foundation. Interfaces shipped across web, iOS, Android, PlayStation, Xbox and Wii U since 2011.</span></div></div>
+          <div class="caps__item"><span class="caps__no">B</span><div><span class="caps__name">Design Systems</span><span class="caps__desc">Architecture from zero: governance, documentation, adoption.</span></div></div>
+          <div class="caps__item"><span class="caps__no">C</span><div><span class="caps__name">Creative Direction</span><span class="caps__desc">People management, vendors, production budgets, ship dates.</span></div></div>
+          <div class="caps__item"><span class="caps__no">D</span><div><span class="caps__name">Brand Systems</span><span class="caps__desc">Identity, voice and governance that survive someone else's hands.</span></div></div>
+          <div class="caps__item"><span class="caps__no">E</span><div><span class="caps__name">Editorial Design</span><span class="caps__desc">Product that reads like a magazine. People stay longer.</span></div></div>
+          <div class="caps__item"><span class="caps__no">F</span><div><span class="caps__name">AI Pipelines</span><span class="caps__desc">Yes, I use it. Generative stages with human QA gates, swapped as the tools change.</span></div></div>
         </div>
       </section>
 

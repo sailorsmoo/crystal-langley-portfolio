@@ -27,7 +27,7 @@ jobs:
             done
             echo ""
             echo "PASSWORD-GATED CASE STUDIES (expect 401 — that's correct/expected, keeps them out of Google):"
-            for path in "/sommsation/" "/strivers/" "/sequoia-benefits/" "/donblas/"; do
+            for path in "/sommsation/" "/strivers/" "/sequoia-benefits/" "/donblas/" "/telltale/"; do
               code=$(curl -s -o /dev/null -w "%{http_code}" "https://www.crystallangley.com${path}")
               echo "  ${path} -> ${code}"
             done
@@ -112,7 +112,7 @@ jobs:
               `### Real traffic / conversions`,
               `Not pulled here — GA4 (measurement ID G-689MH1TVSB) and Search Console are already live and have the real numbers. This report checks technical health (uptime, images, Lighthouse), not visitor data. Ask Claude to wire in a GA4 Data API pull (needs a service-account secret) if you want traffic numbers inside this same report instead of checking GA4 directly.`,
               ``,
-              `_Automated weekly check. Anything showing an unexpected status code above needs a look — note only Sommsation/Strivers/Sequoia Benefits/Donblas should ever show 401._`,
+              `_Automated weekly check. Anything showing an unexpected status code above needs a look — note only Sommsation/Strivers/Sequoia Benefits/Donblas/Telltale should ever show 401._`,
             ].join('\n');
 
             await github.rest.issues.create({
