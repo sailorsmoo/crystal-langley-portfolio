@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Strivers — Design system overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
+<style>
+:root{--sv-amber:#C9A84C;--sv-amber-light:#FFF8EC;--sv-dark:#111111;--sv-dark-card:#1E1E1E;--sv-dark-surface:#2A2A2A;--sv-g-50:#F7F7F7;--sv-g-200:#E5E5E5;--sv-g-400:#AAAAAA;--sv-g-600:#767676;--sv-g-900:#1A1A1A;--sv-white:#FFFFFF;--sv-mono:Menlo,ui-monospace,"SFMono-Regular",monospace}
+.ct{background:var(--sv-dark);padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px) clamp(64px,8vw,140px)}
+.ct__in{max-width:1080px;margin:0 auto}
+.ct__lede{max-width:60ch;margin:0 auto clamp(56px,7vw,110px);text-align:center}
+.ct__lede h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,44px);line-height:1.14;letter-spacing:-.01em;text-transform:none;color:var(--sv-white)}
+.ct__lede p{margin-top:18px;font-family:Poppins,sans-serif;font-weight:400;font-size:clamp(14px,1.2vw,16px);line-height:1.65;color:var(--sv-g-400);text-wrap:pretty}
+/* zigzag row */
+.zz{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(24px,4vw,72px);margin-bottom:clamp(48px,7vw,108px)}
+.zz:last-child{margin-bottom:0}
+.zz--r .zz__t{order:2}
+.zz__t{text-align:center;padding:0 clamp(8px,2vw,40px)}
+.zz__t h2{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,24px);line-height:1.25;letter-spacing:normal;text-transform:none;color:var(--sv-white)}
+.zz__t .k{margin-top:9px;font-family:Poppins,sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sv-amber)}
+.zz__t p{margin-top:20px;font-family:Poppins,sans-serif;font-weight:400;font-size:14px;line-height:1.55;color:var(--sv-g-600);text-wrap:balance}
+/* card — dark card surface, 4px radius measured off the specimen frames */
+.ctcard{background:var(--sv-dark-card);border-radius:4px;padding:24px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.ctcard--shot{padding:22px;display:flex;justify-content:center}
+.shot{margin:0;width:100%;max-width:288px;aspect-ratio:414/736;background:var(--sv-dark);border-radius:4px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.ctcard__k{font-family:Poppins,sans-serif;font-weight:700;font-size:16px;line-height:1.25;color:var(--sv-white)}
+/* donut */
+.dn{display:flex;align-items:center;gap:clamp(18px,2.6vw,40px);margin-top:22px;flex-wrap:wrap}
+.dn__g{position:relative;width:clamp(132px,15vw,168px);aspect-ratio:1;flex:0 0 auto}
+.dn__g .ring{position:absolute;inset:0;border-radius:50%}
+.dn__g .hub{position:absolute;inset:22%;border-radius:50%;background:var(--sv-dark-card);display:grid;place-items:center;align-content:center;text-align:center;line-height:1.1}
+.dn__g .hub span{display:block;font-family:Poppins,sans-serif;font-weight:600;font-size:10px;line-height:1.2;letter-spacing:.16em;text-transform:uppercase;color:var(--sv-g-600)}
+.dn__g .hub b{display:block;margin-top:5px;font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(19px,2.2vw,30px);line-height:1;letter-spacing:-.01em;color:var(--sv-white)}
+.dn__l{flex:1;min-width:150px;display:flex;flex-direction:column;gap:10px}
+.dn__l div{display:flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-weight:400;font-size:14px;color:var(--sv-g-200)}
+.dn__l i{width:8px;height:8px;border-radius:999px;flex:0 0 auto}
+.dn__l span{flex:1}
+.dn__l em{font-style:normal;font-family:var(--sv-mono);font-size:12.5px;color:var(--sv-g-600)}
+/* insight */
+.ins{margin-top:16px;font-family:Poppins,sans-serif;font-weight:400;font-size:14px;line-height:1.6;color:var(--sv-g-400);max-width:36ch}
+.ins__a{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;height:44px;padding:0 22px;border-radius:4px;border:0;background:var(--sv-amber);font-family:Poppins,sans-serif;font-weight:600;font-size:14px;letter-spacing:normal;text-transform:none;color:var(--sv-dark);transition:background .25s ease,color .25s ease}
+.ins__a:hover{background:var(--sv-amber-light);color:var(--sv-dark)}
+.ins__a svg{flex:0 0 auto}
+/* metric */
+.mt{margin-top:18px;font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,3.4vw,40px);line-height:1;letter-spacing:-.02em;color:var(--sv-white);display:flex;align-items:baseline;gap:6px}
+.mt small{font-size:.5em;font-weight:600;color:var(--sv-g-600)}
+.mt--a{color:var(--sv-amber)}
+.badge{display:inline-flex;align-items:center;height:22px;padding:0 10px;border-radius:4px;font-family:Poppins,sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;margin-left:6px;transform:translateY(-.4em)}
+.spark{display:block;width:100%;height:56px;margin-top:18px;overflow:visible}
+.mt__f{margin-top:14px;font-family:var(--sv-mono);font-size:11px;color:var(--sv-g-600)}
+@media(max-width:820px){.zz{grid-template-columns:1fr;gap:26px}.zz--r .zz__t{order:0}.zz__t{text-align:left;padding:0}.zz__t p{text-wrap:pretty}}
+
+/* ---- brand foundation plates ---- */
+.pl{background:var(--sv-dark-card);border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);padding:clamp(28px,4vw,64px) clamp(20px,3.4vw,56px);margin-bottom:clamp(40px,6vw,88px)}
+.pl__h{text-align:center;font-family:Poppins,sans-serif;font-weight:400;font-size:clamp(19px,2.1vw,26px);letter-spacing:normal;text-transform:none;color:var(--sv-g-600)}
+.pl__h b{font-weight:700;color:var(--sv-white)}
+.pl__s{max-width:54ch;margin:14px auto 0;text-align:center;font-family:Poppins,sans-serif;font-weight:400;font-size:14px;line-height:1.65;color:var(--sv-g-400);text-wrap:pretty}
+/* logo construction */
+.lgc{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(14px,2.4vw,40px);margin-top:clamp(28px,4vw,56px)}
+.lgc__m{position:relative;width:clamp(220px,32vw,414px);aspect-ratio:414/171;flex:0 0 auto}
+.lgc__m svg,.lgc__m img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lgc__m img{padding:0;object-fit:contain;left:-21.5%;top:11.1%;right:auto;bottom:auto;width:143.2%;height:142.1%}
+.lgc__side{font-family:Poppins,sans-serif;font-weight:400;font-size:13px;line-height:1.45}
+.lgc__side .a{color:var(--sv-g-600)}
+.lgc__side .b{display:block;font-weight:600;color:var(--sv-white)}
+.lgc__side--l{text-align:right}
+.lgc__spec{display:flex;justify-content:center;gap:clamp(30px,6vw,96px);margin-top:clamp(26px,3.4vw,48px);text-align:center;flex-wrap:wrap}
+.lgc__spec div{position:relative;padding-top:34px}
+.lgc__spec div::before{content:'';position:absolute;left:50%;top:0;width:1px;height:24px;background:rgba(255,255,255,.14)}
+.lgc__spec dt{font-family:Poppins,sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sv-white)}
+.lgc__spec dd{margin-top:7px;font-family:var(--sv-mono);font-size:12px;color:var(--sv-g-600)}
+/* type plate */
+.tp{position:relative;margin-top:clamp(30px,4.4vw,60px)}
+.tp__spec{position:relative}
+.tp__ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(140px,19vw,260px);line-height:.8;color:rgba(255,255,255,.035);user-select:none;pointer-events:none;z-index:0}
+.tp__row{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.6vw,44px);flex-wrap:wrap}
+.tp__w{display:flex;flex-direction:column;gap:5px;font-family:Poppins,sans-serif;font-size:13px;color:rgba(255,255,255,.14);text-align:right;flex:0 0 auto}
+.tp__w span:nth-child(-n+4){color:var(--sv-g-600)}
+.tp__name{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(44px,10vw,128px);line-height:.9;letter-spacing:-.045em;color:var(--sv-white);text-transform:none}
+.tp__name--alt{font-weight:400;font-size:clamp(34px,6.4vw,84px);letter-spacing:-.03em;color:var(--sv-amber)}
+.tp__pair{position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(20px,4vw,64px);margin-top:clamp(26px,3.4vw,44px);flex-wrap:wrap;text-align:center}
+.tp__pair div{max-width:28ch}
+.tp__pair dt{font-family:var(--sv-mono);font-size:11.5px;letter-spacing:.04em;color:var(--sv-amber)}
+.tp__pair dd{margin-top:8px;font-family:Poppins,sans-serif;font-size:13px;line-height:1.55;color:var(--sv-g-600)}
+/* size ruler — the six measured tiers */
+.rl{position:relative;z-index:1;margin-top:clamp(34px,4.6vw,64px)}
+.rl__lb{display:grid;grid-template-columns:repeat(6,1fr);font-family:var(--sv-mono);font-size:11.5px;color:var(--sv-g-600)}
+.rl__lb span{text-align:center}
+.rl__t{display:grid;grid-template-columns:repeat(6,1fr);height:44px;margin-top:12px}
+.rl__t i{position:relative;display:block;height:100%}
+.rl__t i::after{content:'';position:absolute;left:50%;bottom:0;width:1px;height:44px;background:rgba(201,168,76,.45)}
+/* palette strip — one accent, no semantics */
+.sem{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:2px;margin-top:clamp(28px,4vw,52px);border-radius:4px;overflow:hidden}
+.sem div{padding:20px 16px 18px}
+.sem dt{font-family:var(--sv-mono);font-size:11.5px;letter-spacing:.04em}
+.sem dd{margin-top:7px;font-family:Poppins,sans-serif;font-size:11.5px;line-height:1.45;opacity:.9}
+.sem .d{color:var(--sv-white)}
+.sem .l{color:var(--sv-dark)}
+/* findings */
+.fnd{padding:clamp(40px,5vw,80px) clamp(20px,4vw,64px);border-top:1px solid var(--line)}
+.fnd__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(18px,3vw,56px)}
+.fnd h2{font-size:clamp(18px,1.9vw,26px)}
+.fnd ol{list-style:none;counter-reset:f;display:flex;flex-direction:column}
+.fnd li{counter-increment:f;display:grid;grid-template-columns:34px minmax(0,1fr);gap:clamp(12px,2vw,26px);padding:20px 0;border-bottom:1px solid var(--line)}
+.fnd li:first-child{border-top:1px solid var(--line)}
+.fnd li::before{content:counter(f,decimal-leading-zero);font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:15px;color:var(--mute)}
+.fnd li>b{grid-column:2;display:block;font-size:14.5px;letter-spacing:.01em}
+.fnd li p{grid-column:2;margin-top:7px;font-size:14px;line-height:1.6;color:var(--mute);max-width:62ch;text-wrap:pretty}
+.fnd li.is-no>b::after{content:'  \00b7  does not carry over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B4432F}
+.fnd li.is-yes>b::after{content:'  \00b7  carries over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#96762B}
+@media(max-width:820px){.fnd__in{grid-template-columns:1fr}.lgc{grid-template-columns:1fr;justify-items:center}.lgc__side--l,.lgc__side{text-align:center}.tp__w{text-align:center}}
+a{color:var(--accent)}a:hover{color:var(--ink)}
+.deep{border-top:1px solid var(--line)}
+.deep__f{display:block;width:100%;border:0;background:#fff}
+.deep__lk{display:block;padding:18px clamp(20px,4vw,64px) 40px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/strivers">Strivers</a><a href="strivers-ds.html">Design system</a></nav></header>
+
+<div class="rule"><span class="lbl">Design System Overview</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Strivers tokens</span></div>
+
+<section class="ct">
+<div class="ct__in">
+<div class="ct__lede">
+<h1>The shipped screens, read against the system</h1>
+<p>A layout test, not a product screen. The alternating label-and-specimen rhythm, holding four real app screens against the tokens they were built from, to find out what a dark, single-accent system does with a one-number-per-card content model.</p>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Logo</b> Construction</div>
+<p class="pl__s">Strivers sat under The St. James as the parent brand. The primary lockup is an amber V over the wordmark, delivered as one flattened asset at 414 &times; 171 — there is no construction sheet behind it.</p>
+<div class="lgc">
+<div class="lgc__side lgc__side--l"><span class="a">Logo</span><span class="b">Construction</span></div>
+<div class="lgc__m">
+<svg viewBox="0 0 414 171" fill="none" aria-hidden="true">
+<g stroke="rgba(255,255,255,.07)" stroke-width="1">
+<path d="M0 0V171M69 0V171M138 0V171M207 0V171M276 0V171M345 0V171M414 0V171"/>
+<path d="M0 0H414M0 34H414M0 68H414M0 103H414M0 137H414M0 171H414"/>
+</g>
+<g stroke="rgba(201,168,76,.28)" stroke-width="1" stroke-dasharray="4 5" fill="none">
+<circle cx="207" cy="85" r="72"/><circle cx="207" cy="85" r="40"/>
+</g>
+<g stroke="rgba(201,168,76,.28)" stroke-width="1">
+<path d="M34 24L380 147M380 24L34 147"/>
+</g>
+</svg>
+<img src="/mono/assets/logos/strivers-lockup.svg" alt="Strivers primary lockup on a construction grid">
+</div>
+<div class="lgc__side"><span class="a">Project Name</span><span class="b">Strivers</span></div>
+</div>
+<dl class="lgc__spec">
+<div><dt>Ratio</dt><dd>414 : 171</dd></div>
+<div><dt>Radius</dt><dd>4px &middot; measured</dd></div>
+<div><dt>Geometry</dt><dd>drawn</dd></div>
+<div><dt>Lockups</dt><dd>3</dd></div>
+</dl>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Font</b> System</div>
+<p class="pl__s">One family does everything. Poppins carries display, headings, body and labels across six tiers, 10px to 32px, and the file declares no text styles — every size here was measured off a specimen frame. Menlo appears in the source sheet, but only to set hex labels.</p>
+<div class="tp">
+<div class="tp__spec">
+<div class="tp__ghost" aria-hidden="true">Aa</div>
+<div class="tp__row">
+<div class="tp__w"><span>Regular</span><span>Medium</span><span>SemiBold</span><span>Bold</span></div>
+<div class="tp__name">Poppins</div>
+</div>
+<div class="tp__row" style="margin-top:clamp(14px,2vw,26px)">
+<div class="tp__name tp__name--alt">Poppins</div>
+</div>
+</div>
+<dl class="tp__pair">
+<div><dt>font/family/all</dt><dd>Poppins &middot; every tier, four weights, no second face</dd></div>
+<div><dt>font/family/spec</dt><dd>Menlo &middot; hex labels in the colour sheet only &middot; not a product face</dd></div>
+</dl>
+<div class="rl">
+<div class="rl__lb"><span>10px</span><span>14px</span><span>14px</span><span>16px</span><span>24px</span><span>32px</span></div>
+<div class="rl__t"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Palette</b> Reach</div>
+<p class="pl__s">Eleven tokens: one accent, two amber values, three dark surfaces, six neutrals. No status colours at all — the honest version of this plate is mostly grey.</p>
+<dl class="sem">
+<div style="background:var(--sv-amber)"><dt class="l">amber</dt><dd class="l">the only non-neutral &middot; accent, CTA, active</dd></div>
+<div style="background:var(--sv-amber-light)"><dt class="l">amber light</dt><dd class="l">tinted ground &middot; light surfaces</dd></div>
+<div style="background:var(--sv-dark-surface)"><dt class="d">dark surface</dt><dd class="d">raised &middot; inputs, rows</dd></div>
+<div style="background:var(--sv-dark-card)"><dt class="d">dark card</dt><dd class="d">card ground</dd></div>
+<div style="background:var(--sv-dark)"><dt class="d">dark</dt><dd class="d">app ground</dd></div>
+</dl>
+</div>
+
+<div class="zz ">
+<div class="zz__t">
+<h2>Weekly Goal</h2>
+<div class="k">Progress · screens/weekly-goal</div>
+<p>Sessions logged against the target the athlete set at onboarding. One ring, one number, no legend.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/screens/weekly-goal.png" alt="Weekly goal screen" loading="lazy"></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Trainer Message</h2>
+<div class="k">Coaching · screens/trainer-video</div>
+<p>The intelligence slot in the real product is a person. A trainer records to camera and the card carries the note.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/screens/trainer-video.png" alt="Trainer video message screen" loading="lazy"></figure></div>
+</div>
+
+<div class="zz ">
+<div class="zz__t">
+<h2>Workout Summary</h2>
+<div class="k">Session recap · screens/workout-summary</div>
+<p>Duration, output and completion after the last set. The one screen where figures get display size.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/screens/workout-summary.png" alt="Workout summary screen" loading="lazy"></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Post-Workout Feedback</h2>
+<div class="k">Consistency · screens/feedback-good</div>
+<p>How it went, in three taps. This is the input that makes every number above trustworthy.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/screens/feedback-good.png" alt="Post workout feedback screen" loading="lazy"></figure></div>
+</div>
+</div>
+</section>
+
+<div class="rule"><span class="lbl">Findings</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">07 notes</span></div>
+
+<section class="fnd">
+<div class="fnd__in">
+<div><h2>Does it repurpose?</h2></div>
+<ol>
+<li class="is-yes"><b>The dark ground</b><p>Of the three systems this layout has been tested on, Strivers is the only one that can run it dark, and it is the better fit. The reference's whole effect depends on a specimen floating clear of its surround; on #111 with a #1E1E1E card and a 1px inset hairline, the separation comes from value rather than shadow, which is what this system already does everywhere else.</p></li>
+<li class="is-yes"><b>The alternating rhythm</b><p>Label block and specimen trading sides costs the system nothing and suits it: Strivers documents its own sections as halves, so this pacing is already the native layout, used slower.</p></li>
+<li class="is-no"><b>Semantic up and down</b><p>The sharpest gap of the three. Donblas has one semantic colour, Sequoia has five, Strivers has none — eleven tokens, of which amber is the only non-neutral. You can see it in the real screens above: progress, success and the positive feedback state all resolve to the same amber, because amber is the only colour available. That works once. Put four status cards on one screen and everything is either amber or grey, which is no signal at all. This content model needs a declared positive, caution and negative before it ships.</p></li>
+<li class="is-no"><b>Radius and elevation as tokens</b><p>The system tokenizes neither. The 4px corners on the cards and screen holders above were measured off specimen frames, and there is no shadow scale — dark systems rarely need one. So the card treatment framing these screens is a decision the layout made, not one the system supplied. Fine for an overview page, a real gap for a handoff.</p></li>
+<li class="is-yes"><b>The monospace voice, by accident</b><p>Strivers is the closest of the three to having a data face, and it did not mean to be: Menlo already appears in the source sheet setting hex labels. The plate captions and spec values above use it, and the instrumented quality the reference depends on arrives almost for free — though note the product screens themselves never do, so this would be a genuine addition. Promoting an annotation face to a product face is a small, defensible amendment — much smaller than adopting a third family from scratch.</p></li>
+<li class="is-no"><b>The logo construction plate</b><p>Kept as a frame, but the content is thinner than the frame implies. The lockup ships as one flattened 414 &times; 171 asset with the wordmark baked in, so the grid above is illustration, not derivation, and the labels say what is true — measured radius, drawn geometry, three lockups. The wordmark itself is a bitmap in the source files, which is the known gap in this project's material.</p></li>
+<li class="is-yes"><b>The content shape</b><p>Rather than invent four metric cards, the specimens above are the shipped screens — weekly goal, trainer message, workout summary, post-workout feedback. They map onto the reference’s four slots almost exactly, with one substitution worth noting: where the reference puts a machine insight, Strivers puts a trainer on camera. The copy constraint is the real borrow: two words in the label, one line in the caption, one number on the screen.</p></li>
+</ol>
+</div>
+</section>
+
+<div class="rule"><span class="lbl">In depth</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Strivers design system</span></div>
+<section class="deep"><iframe class="deep__f" src="strivers-ds.html?capture=1" title="Strivers design system — full reference" loading="lazy" scrolling="no"></iframe><a class="deep__lk" href="strivers-ds.html">Open the full system page &rarr;</a></section>
+<script>(function(){const f=document.querySelector('.deep__f');function fit(){try{const d=f.contentDocument;if(!d||!d.body)return;f.style.height=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight)+'px';}catch(e){f.style.height='2400px';}}f.addEventListener('load',function(){fit();setTimeout(fit,400);setTimeout(fit,1600);setTimeout(fit,4000);});setInterval(fit,2000);window.addEventListener('resize',fit);})();</script>
+
+<div class="ghost" aria-hidden="true">Crystal Langley</div>
+<script src="/mono/mono.js"></script>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sommsation — Design system overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/ds/fig-fonts.css">
+<link rel="stylesheet" href="/mono/mono.css">
+<link rel="stylesheet" href="/mono/ds/fig-tokens.css">
+<style>
+.ct{--sm-ink:var(--neutral-900);--sm-mute:var(--neutral-600);--sm-hair:var(--neutral-300);--sm-teal:var(--primary-500);--sm-gold:var(--secondary-500);--sm-serif:"Playfair Display",Georgia,serif;--sm-sans:"Futura PT",Archivo,sans-serif;background:var(--offwhite-white-2,#FEFDFA);padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px) clamp(64px,8vw,140px)}
+.ct__in{max-width:1080px;margin:0 auto}
+.ct__lede{max-width:56ch;margin:0 auto clamp(56px,7vw,110px);text-align:center}
+.ct__lede h1{font-family:var(--sm-serif);font-weight:600;font-size:clamp(30px,4vw,56px);line-height:1.08;letter-spacing:-.01em;text-transform:none;color:var(--sm-ink)}
+.ct__lede p{margin-top:20px;font-family:var(--sm-sans);font-weight:400;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:var(--sm-mute);text-wrap:pretty}
+/* zigzag row */
+.zz{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(24px,4vw,72px);margin-bottom:clamp(48px,7vw,108px)}
+.zz:last-child{margin-bottom:0}
+.zz--r .zz__t{order:2}
+.zz__t{text-align:center;padding:0 clamp(8px,2vw,40px)}
+.zz__t h2{font-family:var(--sm-serif);font-weight:600;font-size:clamp(22px,2.6vw,40px);line-height:1.12;letter-spacing:-.005em;text-transform:none;color:var(--sm-ink)}
+.zz__t .k{margin-top:12px;font-family:var(--sm-sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sm-gold)}
+.zz__t p{margin-top:20px;font-family:var(--sm-sans);font-weight:400;font-size:18px;line-height:1.5;color:var(--sm-mute);text-wrap:balance}
+.zz__t .y{display:block;margin-top:16px;font-family:var(--sm-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neutral-500)}
+/* card — radius/4xl desktop 18, m 6 */
+.ctcard{background:#fff;border-radius:18px;padding:14px;box-shadow:0 1px 2px rgba(27,27,27,.04),0 18px 44px -20px rgba(20,78,90,.18)}
+.shot{margin:0;width:100%;border-radius:10px;overflow:hidden;background:var(--neutral-100,#f4f3f2)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:12px 4px 3px;font-family:var(--sm-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neutral-500)}
+/* ---- foundation plates ---- */
+.pl{background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(27,27,27,.04),0 18px 44px -20px rgba(20,78,90,.18);padding:clamp(28px,4vw,64px) clamp(20px,3.4vw,56px);margin-bottom:clamp(40px,6vw,88px)}
+.pl__h{text-align:center;font-family:var(--sm-serif);font-weight:400;font-size:clamp(20px,2.4vw,34px);letter-spacing:normal;text-transform:none;color:var(--neutral-500)}
+.pl__h b{font-weight:600;color:var(--sm-ink)}
+.pl__s{max-width:56ch;margin:16px auto 0;text-align:center;font-family:var(--sm-sans);font-size:17px;line-height:1.55;color:var(--sm-mute);text-wrap:pretty}
+/* type plate */
+.tp{position:relative;margin-top:clamp(30px,4.4vw,60px)}
+.tp__ghost{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-family:var(--sm-serif);font-weight:600;font-size:clamp(150px,20vw,280px);line-height:.8;color:var(--secondary-50,#FDF6ED);user-select:none;pointer-events:none;z-index:0}
+.tp__row{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.6vw,44px);flex-wrap:wrap}
+.tp__w{display:flex;flex-direction:column;gap:6px;font-family:var(--sm-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neutral-500);text-align:right;flex:0 0 auto}
+.tp__name{font-family:var(--sm-serif);font-weight:600;font-size:clamp(46px,10vw,132px);line-height:.92;letter-spacing:-.02em;color:var(--sm-ink)}
+.tp__name--s{font-family:var(--sm-sans);font-weight:500;font-size:clamp(38px,8vw,104px);letter-spacing:-.01em;text-transform:none}
+.tp__pair{position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(20px,4vw,64px);margin-top:clamp(26px,3.4vw,44px);flex-wrap:wrap;text-align:center}
+.tp__pair div{max-width:28ch}
+.tp__pair dt{font-family:var(--sm-sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sm-gold)}
+.tp__pair dd{margin-top:9px;font-family:var(--sm-sans);font-size:15px;line-height:1.5;color:var(--neutral-500)}
+/* responsive scale table — the standout: sizes change by mode, not override */
+.sc{position:relative;z-index:1;margin-top:clamp(32px,4.4vw,58px);border-top:1px solid var(--sm-hair)}
+.sc__r{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1.1fr) 74px 74px;align-items:baseline;gap:clamp(10px,2vw,28px);padding:16px 0;border-bottom:1px solid var(--sm-hair)}
+.sc__r>span:nth-child(3),.sc__r>span:nth-child(4){text-align:right;font-variant-numeric:tabular-nums}
+.sc__h{padding:10px 0;font-family:var(--sm-sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--neutral-500);border-bottom:1px solid var(--sm-hair)}
+.sc__n{font-family:var(--sm-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neutral-500)}
+.sc__v{font-family:var(--sm-sans);font-size:15px;color:var(--sm-mute)}
+.sc__d,.sc__m{font-family:var(--sm-sans);font-size:15px;color:var(--sm-ink)}
+.sc__m{color:var(--neutral-500)}
+/* palette + semantics */
+.ramp{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:clamp(26px,3.4vw,48px);border-radius:10px;overflow:hidden}
+.ramp i{display:block;height:58px}
+.ramp--g{grid-template-columns:repeat(8,minmax(0,1fr));margin-top:2px}
+.ramp__k{display:flex;justify-content:space-between;margin-top:11px;font-family:var(--sm-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neutral-500)}
+.sem{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;margin-top:clamp(24px,3vw,40px);border-radius:10px;overflow:hidden}
+.sem div{padding:22px 18px 20px}
+.sem dt{font-family:var(--sm-sans);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.sem dd{margin-top:8px;font-family:var(--sm-sans);font-size:13px;line-height:1.45;opacity:.9}
+/* mode plate */
+.md{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(14px,2vw,26px);margin-top:clamp(28px,4vw,52px)}
+.md__c{border:1px solid var(--sm-hair);padding:22px 20px 20px}
+.md__c dt{font-family:var(--sm-sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sm-teal)}
+.md__c dd{margin:0}
+.md__c .r{display:flex;align-items:flex-end;gap:9px;margin-top:18px}
+.md__c .r i{display:block;width:34px;height:34px;background:var(--secondary-100,#F1E8DC);border:1px solid var(--secondary-300,#CEAF86)}
+.md__c .l{margin-top:16px;font-family:var(--sm-sans);font-size:13px;line-height:1.5;color:var(--neutral-500)}
+.md__c .l b{color:var(--sm-ink);font-weight:500}
+@media(max-width:820px){.zz{grid-template-columns:1fr;gap:26px}.zz--r .zz__t{order:0}.zz__t{text-align:left;padding:0}.zz__t p{text-wrap:pretty}.sc__r{grid-template-columns:minmax(0,1fr) 60px 60px}.sc__r>.sc__v{display:none}}
+/* findings */
+.fnd{padding:clamp(40px,5vw,80px) clamp(20px,4vw,64px);border-top:1px solid var(--line)}
+.fnd__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(18px,3vw,56px)}
+.fnd h2{font-size:clamp(18px,1.9vw,26px)}
+.fnd ol{list-style:none;counter-reset:f;display:flex;flex-direction:column}
+.fnd li{counter-increment:f;display:grid;grid-template-columns:34px minmax(0,1fr);gap:clamp(12px,2vw,26px);padding:20px 0;border-bottom:1px solid var(--line)}
+.fnd li:first-child{border-top:1px solid var(--line)}
+.fnd li::before{content:counter(f,decimal-leading-zero);font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:15px;color:var(--mute)}
+.fnd li>b{grid-column:2;display:block;font-size:14.5px;letter-spacing:.01em}
+.fnd li p{grid-column:2;margin-top:7px;font-size:14px;line-height:1.6;color:var(--mute);max-width:62ch;text-wrap:pretty}
+.fnd li.is-no>b::after{content:'  \00b7  does not carry over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#D2232A}
+.fnd li.is-yes>b::after{content:'  \00b7  carries over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#144E5A}
+@media(max-width:820px){.fnd__in{grid-template-columns:1fr}}
+a{color:var(--accent)}a:hover{color:var(--ink)}
+.deep{border-top:1px solid var(--line)}
+.deep__f{display:block;width:100%;border:0;background:#fff}
+.deep__lk{display:block;padding:18px clamp(20px,4vw,64px) 40px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/sommsation">Sommsation</a><a href="ds-snapshot.html">Design system</a></nav></header>
+
+<div class="rule"><span class="lbl">Design System Overview</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Sommsation tokens</span></div>
+
+<section class="ct">
+<div class="ct__in">
+<div class="ct__lede">
+<h1>The shipped surfaces, read against the system</h1>
+<p>A layout test, not a product screen. The alternating label-and-specimen rhythm, holding four real Sommsation surfaces against the library they were built from — 159 component sets, 146 tokens, four modes — to find where the system supports this content model and where it runs out.</p>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Font</b> System</div>
+<p class="pl__s">Two families, five tiers, one variable collection. Playfair Display sets display and title; Futura PT sets heading, body and caption. Both are the real licensed faces, loaded here — the only system in this portfolio where the specimen is not a stand-in.</p>
+<div class="tp">
+<div class="tp__ghost" aria-hidden="true">Aa</div>
+<div class="tp__row">
+<div class="tp__w"><span>SemiBold</span></div>
+<div class="tp__name">Playfair</div>
+</div>
+<div class="tp__row" style="margin-top:clamp(14px,2vw,26px)">
+<div class="tp__name tp__name--s">Futura PT</div>
+<div class="tp__w" style="text-align:left"><span>Book</span><span>Medium</span><span>Demi</span></div>
+</div>
+<dl class="tp__pair">
+<div><dt>face / display</dt><dd>Playfair Display SemiBold &middot; display and title only</dd></div>
+<div><dt>face / interface</dt><dd>Futura PT &middot; heading, body, caption, every control</dd></div>
+</dl>
+<div class="sc">
+<div class="sc__r"><span class="sc__h" style="border:0;padding:0">Tier</span><span class="sc__h" style="border:0;padding:0">Face</span><span class="sc__h" style="border:0;padding:0">Desktop</span><span class="sc__h" style="border:0;padding:0">Mobile</span></div>
+<div class="sc__r"><span class="sc__n">Display</span><span class="sc__v">Playfair SemiBold</span><span class="sc__d">56</span><span class="sc__m">48</span></div>
+<div class="sc__r"><span class="sc__n">Title</span><span class="sc__v">Playfair SemiBold</span><span class="sc__d">40</span><span class="sc__m">32</span></div>
+<div class="sc__r"><span class="sc__n">Heading</span><span class="sc__v">Futura PT Demi</span><span class="sc__d">32</span><span class="sc__m">24</span></div>
+<div class="sc__r"><span class="sc__n">Body</span><span class="sc__v">Futura PT Book</span><span class="sc__d">20</span><span class="sc__m">18</span></div>
+<div class="sc__r"><span class="sc__n">Caption</span><span class="sc__v">Futura PT Book</span><span class="sc__d">14</span><span class="sc__m">12</span></div>
+</div>
+</div>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Palette</b> and <b>Semantics</b></div>
+<p class="pl__s">A teal core, a gold secondary, eleven neutrals — and four declared semantic colours. This is the only system in the portfolio that can say good, careful and wrong without borrowing a ramp step.</p>
+<div class="ramp">
+<i style="background:var(--primary-50)"></i><i style="background:var(--primary-100)"></i><i style="background:var(--primary-200)"></i><i style="background:var(--primary-300)"></i><i style="background:var(--primary-400)"></i><i style="background:var(--primary-500)"></i><i style="background:var(--primary-600)"></i>
+</div>
+<div class="ramp__k"><span>Primary &middot; Sommsation teal</span><span>b500 is the brand core</span></div>
+<div class="ramp ramp--g">
+<i style="background:var(--secondary-50)"></i><i style="background:var(--secondary-100)"></i><i style="background:var(--secondary-200)"></i><i style="background:var(--secondary-300)"></i><i style="background:var(--secondary-400)"></i><i style="background:var(--secondary-500)"></i><i style="background:var(--secondary-600)"></i><i style="background:var(--secondary-800)"></i>
+</div>
+<div class="ramp__k"><span>Secondary &middot; gold</span><span>8 steps</span></div>
+<dl class="sem">
+<div style="background:var(--success-green800);color:#fff"><dt>success</dt><dd>order placed &middot; in stock &middot; confirmed</dd></div>
+<div style="background:var(--warning-y500);color:var(--neutral-900)"><dt>warning</dt><dd>low inventory &middot; allocation closing</dd></div>
+<div style="background:var(--error-error-red);color:#fff"><dt>error</dt><dd>declined &middot; sold out &middot; failed</dd></div>
+<div style="background:var(--darkteal-db100);color:#fff"><dt>dark teal</dt><dd>dark-mode ground</dd></div>
+</dl>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Four</b> Modes</div>
+<p class="pl__s">The structural idea worth stealing. Radius and spacing are not fixed values, they are variables with a mode per breakpoint — so a card is not restyled at each width, it resolves differently. Read honestly: only desktop moves the radii, tablet inherits mobile and changes component widths, and dark is a fourth mode on the same collection.</p>
+<div class="md">
+<div class="md__c"><dt>Mobile</dt><dd><div class="r"><i style="border-radius:2px"></i><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:10px"></i><i style="border-radius:16px"></i></div><div class="l">radius <b>s 2 &middot; m 4 &middot; l 6 &middot; 2xl 10 &middot; 4xl 16</b></div></dd></div>
+<div class="md__c"><dt>Tablet</dt><dd><div class="r"><i style="border-radius:2px"></i><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:10px"></i><i style="border-radius:16px"></i></div><div class="l">radius inherits mobile &middot; the mode changes <b>price card 295 &rarr; 332</b></div></dd></div>
+<div class="md__c"><dt>Desktop</dt><dd><div class="r"><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:8px"></i><i style="border-radius:12px"></i><i style="border-radius:18px"></i></div><div class="l">radius <b>s 4 &middot; m 6 &middot; l 8 &middot; 2xl 12 &middot; 4xl 18</b></div></dd></div>
+<div class="md__c" style="background:var(--darkteal-db100);border-color:var(--darkteal-db100)"><dt style="color:var(--secondary-300)">Dark</dt><dd><div class="r"><i style="border-radius:4px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:6px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:8px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:12px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:18px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i></div><div class="l" style="color:rgba(254,253,250,.7)">same geometry, inverted colour</div></dd></div>
+</div>
+</div>
+
+<div class="zz">
+<div class="zz__t">
+<h2>Web</h2>
+<div class="k">Commerce &middot; the primary surface</div>
+<p>Where the system is most itself: Playfair for the wine, Futura for everything asked of the customer.</p>
+<span class="y">Storefront and account</span>
+</div>
+<div class="ctcard"><figure class="shot"><img src="/mono/hero/app-web.png" alt="Sommsation web storefront" loading="lazy"><figcaption>Web &middot; storefront</figcaption></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Email</h2>
+<div class="k">Lifecycle &middot; Klaviyo</div>
+<p>The hardest surface to hold a system on, because the medium removes half of it. Type sizes and gold rules survive; tokens do not.</p>
+<span class="y">Campaign and lifecycle</span>
+</div>
+<div class="ctcard"><figure class="shot"><img src="/mono/hero/app-email.jpg" alt="Sommsation email campaign" loading="lazy"><figcaption>Email &middot; campaign</figcaption></figure></div>
+</div>
+
+<div class="zz">
+<div class="zz__t">
+<h2>Events</h2>
+<div class="k">Activation &middot; physical</div>
+<p>Print, signage and pour stations. The brand travels; the component library cannot.</p>
+<span class="y">On-site activation</span>
+</div>
+<div class="ctcard"><figure class="shot"><img src="/mono/hero/app-events.jpeg" alt="Sommsation event activation" loading="lazy"><figcaption>Events &middot; activation</figcaption></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Collateral</h2>
+<div class="k">Partner and trade</div>
+<p>Decks, one-sheets and producer material. Same two faces, same gold, no components at all.</p>
+<span class="y">Partner-facing</span>
+</div>
+<div class="ctcard"><figure class="shot"><img src="/mono/hero/app-collateral.jpg" alt="Sommsation partner collateral" loading="lazy"><figcaption>Collateral &middot; partner and trade</figcaption></figure></div>
+</div>
+
+</div>
+</section>
+
+<div class="rule"><span class="lbl">Findings</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">07 notes</span></div>
+
+<section class="fnd">
+<div class="fnd__in">
+<div><h2>Does it repurpose?</h2></div>
+<ol>
+<li class="is-yes"><b>Everything the reference needs already exists</b><p>This is the only one of the five where the layout asks for nothing the system lacks. Radius/4xl at 18px desktop is the card. The soft shadow sits inside the existing elevation language. Display and title are large enough to carry a specimen headline. Four semantic colours cover up, careful and down. After four overviews spent naming gaps, the useful result here is that there is no gap to name.</p></li>
+<li class="is-yes"><b>The four modes</b><p>The strongest structural idea in the portfolio, and it is invisible in a screenshot. Radius and spacing are variables with a mode per breakpoint, so a card resolves at 2px on mobile and 4px on desktop without a single override, and dark is a fourth mode on the same collection rather than a parallel theme. Worth noting that only desktop actually redefines the radius set — tablet exists to resize components, not to reshape them. Any of the other four systems would be improved more by adopting this than by adopting the layout.</p></li>
+<li class="is-yes"><b>The type plate, at full strength</b><p>Also the only system here whose faces are real. Playfair Display and Futura PT are both loaded and licensed, so the specimen is the typeface rather than a stand-in — Donblas shows Jost for Brandon Grotesque, Telltale shows Cinzel for Albertus. And because the scale is a variable collection, the plate can honestly print two numbers per tier instead of one.</p></li>
+<li class="is-no"><b>The monospace voice</b><p>Five systems, five times the same gap. Playfair and Futura PT, no mono, and here it is least defensible to add one: a luxury wine brand should not read instrumented. The right conclusion for this system is not to adopt a data face but to accept that this layout's captions will be set in Futura Book at caption size, and lose the effect.</p></li>
+<li class="is-no"><b>The library, past the first surface</b><p>The specimens above expose the real limit, and it is not the tokens. 159 component sets serve web. Email is built where components cannot go, events are printed, and collateral is decks — three of four surfaces carry the brand on two faces and a gold rule alone. The system is excellent and its reach is one surface wide. That is the gap worth documenting, not a missing colour.</p></li>
+<li class="is-yes"><b>The alternating rhythm</b><p>Cheap and correct, as everywhere else — and better suited here than to any of the others, because a luxury brand already paces its pages this way. This is the one system where the rhythm is not a borrow but a house habit.</p></li>
+<li class="is-no"><b>The content shape</b><p>The honest failure. The reference's model is one number and one sentence per card, and this brand's job is desire, not instrumentation: nothing in the four surfaces above is a metric, and forcing one in would work against every other decision in the system. Where Sequoia needed the model and lacked the palette, Sommsation has the palette and does not want the model.</p></li>
+</ol>
+</div>
+</section>
+
+<div class="rule"><span class="lbl">In depth</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Sommsation design system</span></div>
+<section class="deep"><iframe class="deep__f" src="ds-snapshot.html?capture=1" title="Sommsation design system — full reference" loading="lazy" scrolling="no"></iframe><a class="deep__lk" href="ds-snapshot.html">Open the full system page &rarr;</a></section>
+<script>(function(){const f=document.querySelector('.deep__f');function fit(){try{const d=f.contentDocument;if(!d||!d.body)return;f.style.height=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight)+'px';}catch(e){f.style.height='2400px';}}f.addEventListener('load',function(){fit();setTimeout(fit,400);setTimeout(fit,1600);setTimeout(fit,4000);});setInterval(fit,2000);window.addEventListener('resize',fit);})();</script>
+
+<div class="ghost" aria-hidden="true">Crystal Langley</div>
+<script src="/mono/mono.js"></script>
+</body></html>

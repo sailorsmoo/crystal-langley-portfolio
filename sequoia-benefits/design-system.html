@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sequoia — Content design test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@700&family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
+<style>
+:root{--sq-teal:#30BEC6;--sq-teal-2:#3BBCC4;--sq-teal-3:#2BB3BC;--sq-navy:#293A52;--sq-green:#94C53B;--sq-purple:#8075F2;--sq-bg:#F2F5F7;--sq-text:#2A3950;--sq-text-muted:rgba(42,57,80,.5);--sq-text-dim:#9B9B9B;--sq-surface:#FFFFFF;--sq-text-dark:#4A4A4A;--sq-orange:#F97316;--sq-emerald:#22C55E;--sq-violet:#8B5CF6;--sq-amber:#F59E0B;--sq-red:#EF4444}
+.ct{background:var(--sq-bg);padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px) clamp(64px,8vw,140px)}
+.ct__in{max-width:1080px;margin:0 auto}
+.ct__lede{max-width:60ch;margin:0 auto clamp(56px,7vw,110px);text-align:center}
+.ct__lede h1{font-family:"Roboto Slab",Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,44px);line-height:1.14;letter-spacing:normal;text-transform:none;color:var(--sq-text)}
+.ct__lede p{margin-top:18px;font-family:Roboto,sans-serif;font-size:clamp(15px,1.2vw,17px);line-height:1.6;color:var(--sq-text-muted);text-wrap:pretty}
+/* zigzag row */
+.zz{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(24px,4vw,72px);margin-bottom:clamp(48px,7vw,108px)}
+.zz:last-child{margin-bottom:0}
+.zz--r .zz__t{order:2}
+.zz__t{text-align:center;padding:0 clamp(8px,2vw,40px)}
+.zz__t h2{font-family:"Roboto Slab",Georgia,serif;font-weight:500;font-size:clamp(19px,1.9vw,25px);line-height:1.25;letter-spacing:normal;text-transform:none;color:var(--sq-text)}
+.zz__t .k{margin-top:8px;font-family:Roboto,sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sq-text-dim)}
+.zz__t p{margin-top:20px;font-family:Roboto,sans-serif;font-weight:400;font-size:14px;line-height:1.5;color:var(--sq-text-muted);text-wrap:balance}
+/* card — 5px radius, 1px flat shadow: the real Sequoia card */
+.ctcard{background:var(--sq-surface);border-radius:5px;box-shadow:0 1px 3px rgba(42,57,80,.1);padding:24px}
+.ctcard--shot{padding:12px}
+.shot{margin:0;width:100%;border-radius:3px;overflow:hidden;background:var(--sq-bg);box-shadow:inset 0 0 0 1px rgba(42,57,80,.08)}
+.shot img{display:block;width:100%;height:auto}
+.ctcard__k{font-family:Roboto,sans-serif;font-weight:700;font-size:16px;line-height:1.25;color:var(--sq-text)}
+/* donut */
+.dn{display:flex;align-items:center;gap:clamp(18px,2.6vw,40px);margin-top:22px;flex-wrap:wrap}
+.dn__g{position:relative;width:clamp(132px,15vw,168px);aspect-ratio:1;flex:0 0 auto}
+.dn__g .ring{position:absolute;inset:0;border-radius:50%}
+.dn__g .hub{position:absolute;inset:22%;border-radius:50%;background:var(--sq-surface);display:grid;place-items:center;align-content:center;text-align:center;line-height:1.1}
+.dn__g .hub span{display:block;font-family:Roboto,sans-serif;font-size:10px;line-height:1.2;letter-spacing:.1em;text-transform:uppercase;color:var(--sq-text-dim)}
+.dn__g .hub b{display:block;margin-top:4px;font-family:"Roboto Slab",Georgia,serif;font-weight:400;font-size:clamp(18px,2vw,28px);line-height:1;color:var(--sq-text)}
+.dn__l{flex:1;min-width:150px;display:flex;flex-direction:column;gap:10px}
+.dn__l div{display:flex;align-items:center;gap:10px;font-family:Roboto,sans-serif;font-size:14px;color:var(--sq-text)}
+.dn__l i{width:8px;height:8px;border-radius:999px;flex:0 0 auto}
+.dn__l span{flex:1}
+.dn__l em{font-style:normal;font-family:Roboto,sans-serif;font-weight:500;font-size:13px;color:var(--sq-text-muted);font-variant-numeric:tabular-nums}
+/* insight */
+.ins{margin-top:16px;font-family:Roboto,sans-serif;font-size:14px;line-height:1.55;color:var(--sq-text-muted);max-width:36ch}
+.ins__a{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;height:40px;padding:0 20px;border-radius:3px;border:1px solid var(--sq-teal);background:var(--sq-surface);font-family:Roboto,sans-serif;font-weight:500;font-size:14px;letter-spacing:normal;text-transform:none;color:var(--sq-teal);transition:background .25s ease,color .25s ease}
+.ins__a:hover{background:var(--sq-teal);color:#fff}
+.ins__a svg{flex:0 0 auto}
+/* metric */
+.mt{margin-top:18px;font-family:"Roboto Slab",Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1;color:var(--sq-text);display:flex;align-items:baseline;gap:6px}
+.mt small{font-size:.5em;color:var(--sq-text-dim)}
+.badge{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 10px;border-radius:3px;font-family:Roboto,sans-serif;font-weight:500;font-size:12px;color:#fff;white-space:nowrap;margin-left:4px;transform:translateY(-.35em)}
+.spark{display:block;width:100%;height:56px;margin-top:18px;overflow:visible}
+.mt__f{margin-top:14px;font-family:Roboto,sans-serif;font-size:12px;color:var(--sq-text-dim)}
+@media(max-width:820px){.zz{grid-template-columns:1fr;gap:26px}.zz--r .zz__t{order:0}.zz__t{text-align:left;padding:0}.zz__t p{text-wrap:pretty}}
+
+/* ---- brand foundation plates ---- */
+.pl{background:var(--sq-surface);border-radius:5px;box-shadow:0 1px 3px rgba(42,57,80,.1);padding:clamp(28px,4vw,64px) clamp(20px,3.4vw,56px);margin-bottom:clamp(40px,6vw,88px)}
+.pl__h{text-align:center;font-family:"Roboto Slab",Georgia,serif;font-weight:300;font-size:clamp(19px,2.1vw,27px);letter-spacing:normal;text-transform:none;color:var(--sq-text-dim)}
+.pl__h b{font-weight:500;color:var(--sq-text)}
+.pl__s{max-width:54ch;margin:14px auto 0;text-align:center;font-family:Roboto,sans-serif;font-size:14px;line-height:1.6;color:var(--sq-text-muted);text-wrap:pretty}
+/* logo construction */
+.lgc{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(14px,2.4vw,40px);margin-top:clamp(28px,4vw,56px)}
+.lgc__m{position:relative;width:clamp(196px,24vw,280px);aspect-ratio:1;flex:0 0 auto}
+.lgc__m svg,.lgc__m img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lgc__m img{padding:14%;object-fit:contain}
+.lgc__side{font-family:Roboto,sans-serif;font-size:13px;line-height:1.45}
+.lgc__side .a{color:var(--sq-text-dim)}
+.lgc__side .b{display:block;font-weight:500;color:var(--sq-text)}
+.lgc__side--l{text-align:right}
+.lgc__spec{display:flex;justify-content:center;gap:clamp(30px,6vw,96px);margin-top:clamp(26px,3.4vw,48px);text-align:center;flex-wrap:wrap}
+.lgc__spec div{position:relative;padding-top:34px}
+.lgc__spec div::before{content:'';position:absolute;left:50%;top:0;width:1px;height:24px;background:rgba(42,57,80,.14)}
+.lgc__spec dt{font-family:Roboto,sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sq-text)}
+.lgc__spec dd{margin-top:6px;font-family:Roboto,sans-serif;font-size:13px;color:var(--sq-text-dim)}
+/* type plate */
+.tp{position:relative;margin-top:clamp(30px,4.4vw,60px)}
+.tp__spec{position:relative}
+.tp__ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:"Roboto Slab",Georgia,serif;font-weight:300;font-size:clamp(140px,19vw,260px);line-height:.8;color:var(--sq-bg);user-select:none;pointer-events:none;z-index:0}
+.tp__row{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.6vw,44px);flex-wrap:wrap}
+.tp__w{display:flex;flex-direction:column;gap:5px;font-family:Roboto,sans-serif;font-size:13px;color:rgba(42,57,80,.16);text-align:right;flex:0 0 auto}
+.tp__w span:nth-child(-n+3){color:var(--sq-text-dim)}
+.tp__name{font-family:Roboto,sans-serif;font-weight:400;font-size:clamp(44px,10vw,132px);line-height:.9;letter-spacing:-.03em;color:var(--sq-text);text-transform:none}
+.tp__name--alt{font-family:"Roboto Slab",Georgia,serif;font-weight:400;font-size:clamp(36px,6.8vw,92px);letter-spacing:-.015em}
+.tp__pair{position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(20px,4vw,64px);margin-top:clamp(26px,3.4vw,44px);flex-wrap:wrap;text-align:center}
+.tp__pair div{max-width:28ch}
+.tp__pair dt{font-family:Roboto,sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sq-text)}
+.tp__pair dd{margin-top:7px;font-family:Roboto,sans-serif;font-size:13px;line-height:1.55;color:var(--sq-text-dim)}
+/* size ruler — Sequoia's seven real steps */
+.rl{position:relative;z-index:1;margin-top:clamp(34px,4.6vw,64px)}
+.rl__lb{display:grid;grid-template-columns:repeat(7,1fr);font-family:Roboto,sans-serif;font-size:11.5px;color:var(--sq-text-dim);font-variant-numeric:tabular-nums}
+.rl__lb span{text-align:center}
+.rl__t{display:grid;grid-template-columns:repeat(7,1fr);height:44px;margin-top:12px}
+.rl__t i{position:relative;display:block;height:100%}
+.rl__t i::after{content:'';position:absolute;left:50%;bottom:0;width:1px;height:44px;background:rgba(48,190,198,.4)}
+/* semantic strip — the one thing this system has and Donblas does not */
+.sem{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:2px;margin-top:clamp(28px,4vw,52px);border-radius:5px;overflow:hidden}
+.sem div{padding:20px 16px 18px;color:#fff}
+.sem dt{font-family:Roboto,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.sem dd{margin-top:6px;font-family:Roboto,sans-serif;font-size:11.5px;line-height:1.4;opacity:.92}
+@media(max-width:820px){.lgc{grid-template-columns:1fr;justify-items:center}.lgc__side--l,.lgc__side{text-align:center}.tp__w{text-align:center}}
+
+/* findings */
+.fnd{padding:clamp(40px,5vw,80px) clamp(20px,4vw,64px);border-top:1px solid var(--line)}
+.fnd__in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(18px,3vw,56px)}
+.fnd h2{font-size:clamp(18px,1.9vw,26px)}
+.fnd ol{list-style:none;counter-reset:f;display:flex;flex-direction:column}
+.fnd li{counter-increment:f;display:grid;grid-template-columns:34px minmax(0,1fr);gap:clamp(12px,2vw,26px);padding:20px 0;border-bottom:1px solid var(--line)}
+.fnd li:first-child{border-top:1px solid var(--line)}
+.fnd li::before{content:counter(f,decimal-leading-zero);font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:15px;color:var(--mute)}
+.fnd li>b{grid-column:2;display:block;font-size:14.5px;letter-spacing:.01em}
+.fnd li p{grid-column:2;margin-top:7px;font-size:14px;line-height:1.6;color:var(--mute);max-width:62ch;text-wrap:pretty}
+.fnd li.is-no>b::after{content:'  \00b7  does not carry over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sq-red)}
+.fnd li.is-yes>b::after{content:'  \00b7  carries over';font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sq-teal-3)}
+@media(max-width:820px){.fnd__in{grid-template-columns:1fr}}
+a{color:var(--accent)}a:hover{color:var(--ink)}
+.deep{border-top:1px solid var(--line)}
+.deep__f{display:block;width:100%;border:0;background:#fff}
+.deep__lk{display:block;padding:18px clamp(20px,4vw,64px) 40px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/sequoia-benefits">Sequoia</a><a href="sequoia-ds.html">Design system</a></nav></header>
+
+<div class="rule"><span class="lbl">Design System Overview</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Sequoia tokens</span></div>
+
+<section class="ct">
+<div class="ct__in">
+<div class="ct__lede">
+<h1>The shipped screens, read against the system</h1>
+<p>A layout test, not a product screen. The alternating label-and-specimen rhythm, holding the real App Market screens against the tokens they were built from, to find out where a marketplace system supports a one-number-per-card content model and where it runs out.</p>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Logo</b> Construction</div>
+<p class="pl__s">The icon mark is a square 36 &times; 36 glyph — an organic tree silhouette inside a fixed frame. Its proportions come from the icon slot it lives in, not from a circle grid.</p>
+<div class="lgc">
+<div class="lgc__side lgc__side--l"><span class="a">Logo</span><span class="b">Construction</span></div>
+<div class="lgc__m">
+<svg viewBox="0 0 288 288" fill="none" aria-hidden="true">
+<g stroke="rgba(42,57,80,.09)" stroke-width="1">
+<path d="M0 0V288M40 0V288M104 0V288M144 0V288M184 0V288M248 0V288M288 0V288"/>
+<path d="M0 0H288M0 40H288M0 104H288M0 144H288M0 184H288M0 248H288M0 288H288"/>
+</g>
+<g stroke="rgba(48,190,198,.34)" stroke-width="1" stroke-dasharray="4 5" fill="none">
+<circle cx="144" cy="144" r="104"/><circle cx="144" cy="144" r="64"/>
+</g>
+<g stroke="rgba(48,190,198,.34)" stroke-width="1">
+<path d="M40 40L248 248M248 40L40 248"/>
+</g>
+</svg>
+<img src="/mono/assets/sq/sequoia-mark.svg" alt="Sequoia icon mark on its construction grid">
+</div>
+<div class="lgc__side"><span class="a">Project Name</span><span class="b">Sequoia</span></div>
+</div>
+<dl class="lgc__spec">
+<div><dt>Ratio</dt><dd>1 : 1</dd></div>
+<div><dt>Radius</dt><dd>5px</dd></div>
+<div><dt>Geometry</dt><dd>organic</dd></div>
+<div><dt>Polarities</dt><dd>2</dd></div>
+</dl>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Font</b> System</div>
+<p class="pl__s">Two families, both freely available. Roboto carries body, labels, buttons and every app card; Roboto Slab carries headings, stat figures and marketplace titles. Seven size steps, four weights.</p>
+<div class="tp">
+<div class="tp__spec">
+<div class="tp__ghost" aria-hidden="true">Aa</div>
+<div class="tp__row">
+<div class="tp__w"><span>Light</span><span>Regular</span><span>Medium</span><span>Bold</span></div>
+<div class="tp__name">Roboto</div>
+</div>
+<div class="tp__row" style="margin-top:clamp(18px,2.4vw,32px)">
+<div class="tp__name tp__name--alt">Roboto Slab</div>
+</div>
+</div>
+<dl class="tp__pair">
+<div><dt>font/family/body</dt><dd>Roboto &middot; UI, controls, card copy &middot; 400/500/700</dd></div>
+<div><dt>font/family/display</dt><dd>Roboto Slab &middot; headings and figures &middot; 300/400/500</dd></div>
+</dl>
+<div class="rl">
+<div class="rl__lb"><span>11px</span><span>12px</span><span>14px</span><span>16px</span><span>20px</span><span>26px</span><span>30px</span></div>
+<div class="rl__t"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+</div>
+
+<div class="pl">
+<div class="pl__h"><b>Semantic</b> Colour</div>
+<p class="pl__s">Five declared status colours beyond the teal and navy core. This is what the layout was missing elsewhere: up and down do not have to borrow a ramp step here.</p>
+<dl class="sem">
+<div style="background:var(--sq-emerald)"><dt>emerald</dt><dd>healthy &middot; adopted &middot; in budget</dd></div>
+<div style="background:var(--sq-amber)"><dt>amber</dt><dd>watch &middot; renewal near</dd></div>
+<div style="background:var(--sq-orange)"><dt>orange</dt><dd>action needed</dd></div>
+<div style="background:var(--sq-red)"><dt>red</dt><dd>over &middot; failed &middot; revoked</dd></div>
+<div style="background:var(--sq-violet)"><dt>violet</dt><dd>informational &middot; new</dd></div>
+</dl>
+</div>
+
+<div class="zz ">
+<div class="zz__t">
+<h2>App Market</h2>
+<div class="k">Discovery · nine categories</div>
+<p>The storefront. Category pills, a teal hero and a search bar wide enough to be the primary action.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/assets/sq/scr-market.png" alt="App Market discovery screen" loading="lazy"></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Vendor Detail</h2>
+<div class="k">Overview · media and contact</div>
+<p>Where a decision gets made: tabs, a media carousel and a named contact rather than a form.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/assets/sq/scr-detail.png" alt="App Market vendor detail screen" loading="lazy"></figure></div>
+</div>
+
+<div class="zz ">
+<div class="zz__t">
+<h2>My Apps</h2>
+<div class="k">Provisioned · twelve tools</div>
+<p>The card grid the system is built for — 196px minimum, favourite and info per tile.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/assets/sq/scr-myapps.png" alt="My Apps screen with twelve provisioned tools" loading="lazy"></figure></div>
+</div>
+
+<div class="zz zz--r">
+<div class="zz__t">
+<h2>Reports</h2>
+<div class="k">Analytics · population and coverage</div>
+<p>The one screen with real charts: population map, plan distribution, platform analytics. This is where semantic colour earns its keep.</p>
+</div>
+<div class="ctcard ctcard--shot"><figure class="shot"><img src="/mono/assets/sq/scr-reports.png" alt="Reports screen with population map and distribution charts" loading="lazy"></figure></div>
+</div>
+</div>
+</section>
+
+<div class="rule"><span class="lbl">Findings</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">07 notes</span></div>
+
+<section class="fnd">
+<div class="fnd__in">
+<div><h2>Does it repurpose?</h2></div>
+<ol>
+<li class="is-yes"><b>The semantic set</b><p>This is the reverse of the Donblas result. Sequoia declares emerald, amber, orange, red and violet alongside the teal and navy core, so up and down never have to borrow a ramp step. The Reports screen above is the proof: plan distribution and coverage read as distinct series without any of them being teal, and the status badge — 22px tall, 3px radius — already carries request and added states across the App Market screens.</p></li>
+<li class="is-yes"><b>The alternating rhythm</b><p>Label block and specimen trading sides down the page costs nothing and reads as editorial rather than dashboard. It is a useful counterweight for a system whose native mode is a dense grid of 196px app cards — the same content, paced slowly, gives one number room to be read.</p></li>
+<li class="is-no"><b>The radius and shadow language</b><p>The reference's floating cards want 18px corners and a soft triple-layer shadow. Sequoia's card is 5px with a single <b>0 1px 3px</b> shadow, and its buttons and inputs are 3px. Honoured at source values, as above, the cards read crisp and administrative rather than premium and floating. That is a legitimate look, but it is not the reference's look, and softening it would mean inventing a radius step the system does not have.</p></li>
+<li class="is-no"><b>The monospace voice</b><p>Same gap as Donblas, same cause. Every eyebrow, legend figure and footnote in the reference is monospace, and that is what makes the layout feel instrumented. Sequoia declares Roboto and Roboto Slab and no mono. The legends above use Roboto Medium with tabular figures, which keeps the columns aligned and loses the instrumented quality. A data face would be a third family — worth it for an admin console, hard to justify for a storefront.</p></li>
+<li class="is-yes"><b>The display specimen, with a caveat</b><p>Setting both families at display size works, and it shows Roboto Slab doing something the product never asks of it. The system's real ceiling is 30px — the stat tile figure — so the specimen is a demonstration of the face, not of a token. The ruler underneath is honest: seven steps, 11px to 30px, and nothing above.</p></li>
+<li class="is-no"><b>The logo construction plate</b><p>Kept as a frame, but the content does not transfer. The mark is a 36 &times; 36 organic tree silhouette; there is no underlying construction, so the grid above is illustration rather than derivation, and the labels say what is true — 1:1, 5px, organic, two polarities. Sequoia also has three marks, not one: a dark-ground lockup, a tree, and the icon. A single centred specimen hides that.</p></li>
+<li class="is-yes"><b>The content shape</b><p>Four cards — utilisation, a recommendation, a trend and a variance — is close to the question an IT owner actually opens a marketplace with: what am I paying for, what should I do, is it getting better, am I over. The copy discipline the layout enforces, a two-word headline and a one-line caption, is more valuable here than the visual treatment, because the product's default is to show thirty app cards and no opinion.</p></li>
+</ol>
+</div>
+</section>
+
+<div class="rule"><span class="lbl">In depth</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Sequoia design system</span></div>
+<section class="deep"><iframe class="deep__f" src="sequoia-ds.html?capture=1" title="Sequoia design system — full reference" loading="lazy" scrolling="no"></iframe><a class="deep__lk" href="sequoia-ds.html">Open the full system page &rarr;</a></section>
+<script>(function(){const f=document.querySelector('.deep__f');function fit(){try{const d=f.contentDocument;if(!d||!d.body)return;f.style.height=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight)+'px';}catch(e){f.style.height='2400px';}}f.addEventListener('load',function(){fit();setTimeout(fit,400);setTimeout(fit,1600);setTimeout(fit,4000);});setInterval(fit,2000);window.addEventListener('resize',fit);})();</script>
+<div class="ghost" aria-hidden="true">Crystal Langley</div>
+<script src="/mono/mono.js"></script>
+</body></html>

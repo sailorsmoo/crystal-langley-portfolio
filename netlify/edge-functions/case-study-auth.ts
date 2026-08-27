@@ -34,6 +34,12 @@ function readCookie(request: Request, name: string): string | null {
   return null;
 }
 
+// The card below is the site's real password-gate component (.cx__box.ticked /
+// .cx__top / .gt__note / .cx__f / .gt__err / .cx__go, all defined in mono.css)
+// — the same markup mono.js used to build client-side before that flow was
+// stripped in favor of this edge function. Rendering it server-side with the
+// real classes, instead of a hand-rolled approximation, keeps this page
+// pixel-identical to the rest of the site.
 const gatePage = (segment: string, showError: boolean) => `<!doctype html>
 <html lang="en">
 <head>
@@ -43,35 +49,23 @@ const gatePage = (segment: string, showError: boolean) => `<!doctype html>
 <title>${displayName(segment)} — password required · Crystal Langley</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
 <style>
-  :root{--paper:#FFFFFF;--ink:#0B0B0C;--mute:#77777D;--line:#E3E3E6;--fill:#F0F0F2;--accent:#5E1F28}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--paper);color:var(--ink);font-family:Archivo,-apple-system,sans-serif;padding:24px}
-  .card{width:100%;max-width:420px;border:1px solid var(--ink);padding:48px 40px;background:var(--paper)}
-  .brand{font-family:'Archivo Narrow',Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:28px}
-  h1{font-family:'Archivo Narrow',Archivo,sans-serif;font-weight:700;text-transform:uppercase;font-size:32px;line-height:1.1;letter-spacing:-.01em;margin-bottom:10px}
-  p{font-size:13px;line-height:1.6;color:var(--mute);margin-bottom:28px}
-  .err{color:var(--accent);margin:-16px 0 20px;font-size:12px}
-  input{width:100%;border:1px solid var(--line);background:var(--fill);padding:13px 14px;font:inherit;font-size:14px;margin-bottom:12px;border-radius:0}
-  input:focus{outline:none;border-color:var(--ink)}
-  button{width:100%;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:13px 14px;font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
-  button:hover{background:var(--accent);border-color:var(--accent)}
-  .back{display:block;margin-top:22px;font-size:11.5px;color:var(--mute);text-decoration:none}
-  .back:hover{color:var(--ink)}
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .cx__box{width:100%;max-width:min(440px,100%)}
 </style>
 </head>
 <body>
-<main class="card">
-  <div class="brand">Crystal Langley</div>
-  <h1>${displayName(segment)}</h1>
-  <p>This case study is private. Enter the password you were given to view it.</p>
-  ${showError ? '<div class="err">That password isn&rsquo;t right &mdash; try again.</div>' : ""}
+<main class="cx__box ticked">
+  <div class="cx__top"><span class="lbl">Private project</span><a class="cx__x" href="/#work">Back</a></div>
+  <h2>${displayName(segment)}</h2>
+  <p class="gt__note">This case study is under NDA. Enter the password you were given, or ask me for one.</p>
   <form method="POST" autocomplete="off">
-    <input type="password" name="password" placeholder="Password" required autofocus aria-label="Password">
-    <button type="submit">View case study</button>
+    <div class="cx__f" style="margin-top:22px"><label><span>Password</span><input name="password" type="password" autocomplete="off" required autofocus></label></div>
+    <div class="gt__err${showError ? " on" : ""}">That password did not work. Try again.</div>
+    <div class="cx__go"><button type="submit">Unlock</button><div class="alt"><a href="mailto:yocrystallangley@gmail.com">Request access</a></div></div>
   </form>
-  <a class="back" href="/#work">&larr; Back to crystallangley.com</a>
 </main>
 </body>
 </html>`;
