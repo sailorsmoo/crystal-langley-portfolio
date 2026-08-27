@@ -1,262 +1,110 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Telltale Games Case Study — UI/UX &amp; Motion | Crystal Langley</title>
-<meta name="description" content="Crystal Langley's UI/UX and motion work across four Telltale Games titles — The Wolf Among Us, Poker Night, Game of Thrones, and Tales from the Borderlands — 2011 to 2018." />
-<link rel="canonical" href="https://www.crystallangley.com/telltale" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Telltale Games Case Study — UI/UX &amp; Motion | Crystal Langley" />
-<meta property="og:description" content="Crystal Langley's UI/UX and motion work across four Telltale Games titles — The Wolf Among Us, Poker Night, Game of Thrones, and Tales from the Borderlands — 2011 to 2018." />
-<meta property="og:url" content="https://www.crystallangley.com/telltale" />
-<meta property="og:image" content="https://www.crystallangley.com/assets/squarespace/telltale-hero-collage.png" />
-<meta property="og:site_name" content="Standard. — Crystal Langley" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Telltale Games Case Study — UI/UX &amp; Motion | Crystal Langley" />
-<meta name="twitter:description" content="Crystal Langley's UI/UX and motion work across four Telltale Games titles — The Wolf Among Us, Poker Night, Game of Thrones, and Tales from the Borderlands — 2011 to 2018." />
-<meta name="twitter:image" content="https://www.crystallangley.com/assets/squarespace/telltale-hero-collage.png" />
-<script>document.documentElement.className += ' js';document.documentElement.setAttribute('data-theme','bone');</script>
-<link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="case-study.css">
-<style>
-  /* Telltale — video grid reused from the homepage Motion section */
-  .motion__grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,24px);margin-top:clamp(24px,3vw,40px);}
-  @media (min-width:620px){ .motion__grid{grid-template-columns:repeat(2,1fr);} }
-  @media (min-width:960px){ .motion__grid{grid-template-columns:repeat(3,1fr);} }
-  .motion__item{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--cream-deep);border:1px solid var(--rule);cursor:pointer;}
-  .motion__thumb{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 400ms ease;}
-  .motion__item:hover .motion__thumb{transform:scale(1.03);}
-  .motion__item::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,0.6) 100%);z-index:1;}
-  .motion__play{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:var(--coral);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:15px;z-index:2;transition:transform 220ms ease;}
-  .motion__item:hover .motion__play{transform:scale(1.08);}
-  .motion__cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;z-index:2;display:flex;flex-direction:column;gap:3px;}
-  .motion__t{font-family:var(--serif);font-size:17px;line-height:1.15;color:#fff;}
-  .motion__m{color:rgba(255,255,255,0.75);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;}
-  .motion__group{margin-top:clamp(28px,3.2vw,44px);}
-  .motion__group:first-child{margin-top:0;}
-  .motion__group-t{font-family:var(--serif);font-size:clamp(19px,2.1vw,25px);color:var(--ink);letter-spacing:-0.01em;}
-  .video-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:56px 24px 24px;}
-  .video-modal.is-open{display:flex;}
-  .video-modal__backdrop{position:absolute;inset:0;background:rgba(10,9,7,0.9);}
-  .video-modal__box{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
-  .video-modal__box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
-  .video-modal__close{position:absolute;top:-46px;right:0;width:36px;height:36px;border-radius:50%;background:var(--cream);color:var(--ink);border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1;cursor:pointer;z-index:2;}
-  .video-modal__close:hover{background:var(--coral);border-color:var(--coral);color:var(--cream);}
-  @media (max-width:620px){ .video-modal__close{top:-42px;width:32px;height:32px;font-size:16px;} }
-</style>
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-689MH1TVSB');
-document.addEventListener('click', function (e) {
-  var a = e.target.closest && e.target.closest('a[href*="calendly.com"], a[href*="upwork.com"]');
-  if (!a) return;
-  gtag('event', a.href.indexOf('calendly.com') > -1 ? 'book_click' : 'upwork_click', {
-    link_url: a.href,
-    page_path: location.pathname
-  });
-});
-</script>
-</head>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Crystal Langley — Telltale Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
+<style>.tsec{display:grid;grid-template-columns:minmax(0,0.72fr) minmax(0,3.4fr);gap:clamp(20px,3vw,48px);padding:0 var(--pad) clamp(24px,3.2vw,46px)}
+.tsec__note h3{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-weight:600}
+.tsec__note p{max-width:40ch;font-size:14.5px;line-height:1.5;color:var(--mute);text-wrap:pretty;margin-top:12px}
+.tstills{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(12px,1.5vw,20px)}
+.tstills>div{position:relative;grid-column:span 3;aspect-ratio:16/9;background:var(--fill);border:1px solid var(--line);overflow:hidden}
+.tstills>div>img{width:100%;height:100%;object-fit:cover;display:block}
+.tcap{position:absolute;left:0;bottom:0;z-index:2;padding:6px 9px;background:rgba(10,10,11,.72);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(254,253,250,.82)}
+.tstills .s2{grid-column:span 2}.tstills .ar32{aspect-ratio:3/2}.tstills .s6{grid-column:span 6}.tstills .ar45{aspect-ratio:4/5}
+.tsub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:clamp(18px,2.4vw,40px);margin-top:clamp(20px,2.6vw,36px);padding-top:clamp(20px,2.6vw,36px);border-top:1px solid var(--line)}
+.tsec .vgrid,.tsec .vgroup{margin-top:clamp(20px,2.6vw,36px)}
+@media(max-width:820px){.tsec,.tsub{grid-template-columns:1fr}.tstills>div,.tstills .s2{grid-column:span 3}}
+.titlecards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(12px,1.4vw,20px)}.titlecards .tc{grid-column:span 2}.titlecards .tc:nth-child(4),.titlecards .tc:nth-child(5){grid-column:span 3}@media(max-width:820px){.titlecards{grid-template-columns:repeat(2,minmax(0,1fr))}.titlecards .tc,.titlecards .tc:nth-child(4),.titlecards .tc:nth-child(5){grid-column:span 1}}.titlecards .tc{position:relative;aspect-ratio:16/9;background:#0E0E10;overflow:hidden}.titlecards .tc img{width:100%;height:100%;object-fit:contain;display:block}.dlgstack{display:grid;grid-template-rows:repeat(3,1fr);gap:5px;width:100%;height:100%;background:#fff}.dlgrow{position:relative;overflow:hidden;background:#fff}.dlgrow img{position:absolute;left:-30%;top:0;width:160%;height:100%;object-fit:cover;object-position:center 82%}.dlgrow span{position:absolute;left:8px;top:6px;z-index:2;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#1E1F20;opacity:.6}.btnsheet{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:clamp(12px,1.6vw,22px);width:100%;height:100%;background:#DEDEDC;padding:18px;box-sizing:border-box}.btnsheet img{width:clamp(34px,4vw,46px);height:auto;display:block}.vgrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(20px,2.4vw,34px)}.vgroup{grid-column:1/-1;margin-top:clamp(22px,2.6vw,36px)}.vgroup__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}.vgroup__k .ln{flex:1;height:1px;background:var(--line)}.vgroup .vgrid{margin-top:12px}.vgrid--sm{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:14px}@media(max-width:640px){.vgrid,.vgrid--sm{grid-template-columns:1fr}}.vt--big .vt__k{font-size:10px}.vt--big .vt__t{font-size:clamp(15px,1.5vw,21px);letter-spacing:-.01em}.vt--big .vt__p{right:20px;top:20px;border-left-width:13px;border-top-width:9px;border-bottom-width:9px}.vt--big{padding:clamp(16px,1.8vw,24px)}.vt{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;aspect-ratio:16/9;padding:14px;background:#111;border:1px solid rgba(255,255,255,.14);color:#FEFDFA;text-align:left;cursor:pointer;overflow:hidden;font:inherit;transition:border-color .25s,transform .25s}.vt:hover{border-color:rgba(255,255,255,.4);transform:translateY(-2px)}.vt__k{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.55}.vt__t{font-size:13px;letter-spacing:.01em;line-height:1.25}.vgrid--sm .vt{padding:14px}.vgrid--sm .vt__t{font-size:13px}.vt__p{position:absolute;right:14px;top:14px;width:0;height:0;border-left:9px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent;opacity:.7}.vt.on{padding:0;border-color:transparent}.vt.on>span,.vt.on>i{display:none}.vt iframe{display:block;width:100%;height:100%;border:0}.lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(10,10,11,.94);padding:clamp(52px,5vw,72px) clamp(20px,4vw,64px) clamp(20px,4vw,64px)}
+.lbx.on{display:flex}
+.lbx__f{position:relative;width:min(1400px,100%,calc((100vh - 2*clamp(52px,5vw,72px)) * 16 / 9));aspect-ratio:16/9;max-height:100%;background:#000}
+.lbx__f iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lbx__t{position:absolute;left:0;bottom:calc(100% + 12px);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(254,253,250,.6)}
+.lbx__o{position:absolute;right:38px;bottom:calc(100% + 12px);display:none;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(254,253,250,.72);text-decoration:none;border-bottom:1px solid rgba(254,253,250,.3);padding-bottom:2px}
+.lbx__o:hover{color:#FEFDFA}
+.lbx__o.on{display:block}
+.lbx__x{position:absolute;right:0;bottom:calc(100% + 8px);width:26px;height:26px;padding:0;background:none;border:0;color:#FEFDFA;cursor:pointer;font:inherit;font-size:19px;line-height:1;opacity:.65}
+.lbx__x:hover{opacity:1}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
 <body>
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-  <nav class="drawer" id="drawer" aria-label="Mobile">
-    <a href="/#work">All work</a>
-    <a href="/#approach">Approach</a>
-    <a href="/#services">Services</a>
-    <a href="/#about">About</a>
-    <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
-  </nav>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/about">About</a><a href="#contact">Contact</a></nav></header>
+<section class="title" style="padding-bottom:clamp(18px,2vw,28px)"><div class="crumb"><a href="/#work">Work</a> / Telltale Games</div><h1>Telltale Games</h1><p class="lede">Eight years of game UI across five platforms, including the Game of the Year winning Walking Dead.</p></section>
+<div class="cover ticked on-dark reveal"><span class="cl tl">UI and UX, promoted to Lead</span><span class="cl tr">2011 to 2018</span><img src="/mono/hero/telltale.png" alt="Telltale Games" style="width:100%;height:100%;object-fit:cover;display:block"><span class="cl br">02 / 05</span></div>
+<section class="ctx" style="border-top:0;padding-top:clamp(34px,4.6vw,68px)"><h2 class="secword">Use Case</h2><div><p>Telltale Games shipped narrative games across web, mobile, PlayStation, Xbox and Wii U. I designed UI and UX there for eight years and was promoted to Lead.</p><p>The work included The Walking Dead, which won Game of the Year. Console certification meant every screen had to pass platform requirements on five targets without breaking the tone of the show.</p><dl class="meta" style="margin-top:clamp(24px,3vw,40px)"><div><dt>Role</dt><dd>UI and UX, promoted to Lead</dd></div><div><dt>Timeline</dt><dd>2011 to 2018</dd></div><div><dt>Scope</dt><dd>Game UI · Console · Platform</dd></div><div><dt>Industry</dt><dd>Games</dd></div></dl></div></section>
+<div class="rule"><span class="lbl">Demo reels</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">04 reels</span></div>
+<section class="prod reveal"><div class="prod__note"><b>Interface<br>in motion</b><p>Game UI is judged in motion: how a prompt enters, how long a choice holds, how a menu answers a controller. These reels cut across the eight years.</p></div>
+<div class="vgrid"><button class="vt vt--big" data-k="yt" data-id="mXz9SQx8pqQ" data-title="Game UI/UX Demo"><span class="vt__k">2017</span><span class="vt__t">Game UI/UX Demo</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt vt--big" data-k="yt" data-id="lXxosbrrwpk" data-title="Game Menu UI/UX Demo"><span class="vt__k">Menus</span><span class="vt__t">Game Menu UI/UX Demo</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt vt--big" data-k="vm" data-id="119782706" data-title="Game UI/UX Demo"><span class="vt__k">2014</span><span class="vt__t">Game UI/UX Demo</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt vt--big" data-k="vm" data-id="126876806" data-title="Game Menu UI/UX Demo"><span class="vt__k">Alt cut</span><span class="vt__t">Game Menu UI/UX Demo</span><i class="vt__p" aria-hidden="true"></i></button></div>
+</section>
+<div class="rule"><span class="lbl">The Walking Dead</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Game of the Year</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>The Walking Dead</h3><p>The title that set the house pattern: timed choice, four options, one line of consequence. Interface had to disappear into the panel art and still clear certification on five platforms. Episode select, exploration prompts and the end of episode recap all ran on the same grammar.</p></div><div><div class="tstills">
+<div class="s6 ticked"><img src="/mono/tt/twd.jpg" alt="The Walking Dead" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/twd-recap.webp" alt="End of episode choice recap, The Walking Dead" loading="lazy"><span class="tcap">Choice recap</span></div>
+<div class="s3 ticked"><img src="/mono/tt/twd-death.webp" alt="Death screen, The Walking Dead" loading="lazy"><span class="tcap">Fail state</span></div>
+<div class="s3 ticked"><img src="/mono/tt/twd-episodes.gif" alt="Episode select menu in motion" loading="lazy"><span class="tcap">Episode select · motion</span></div>
+<div class="s3 ticked"><img src="/mono/tt/twd-explore.gif" alt="Exploration prompts in motion" loading="lazy"><span class="tcap">Exploration · motion</span></div>
+</div></div></section>
+<div class="rule"><span class="lbl">Game of Thrones</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Type and dialogue system</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>Game of Thrones</h3><p>The deepest system work. Dialogue plates had to hold over firelight, snow and night interiors, so the plate was built in three tones with matching selected states, and every glyph was drawn for both controller and cursor.</p></div><div>
+<div class="tstills">
+<div class="s6 ticked"><img src="/mono/tt/got-hero.jpeg" alt="Game of Thrones: A Telltale Games Series" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/got-courtyard.jpg" alt="Dialogue scene, Game of Thrones" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/got-rider.png" alt="Concept environment, Game of Thrones" loading="lazy"></div>
+<div class="s3 ar32 ticked"><div class="dlgstack"><div class="dlgrow"><img src="/mono/tt/kit/bg-dark.png" alt=""><img src="/mono/tt/kit/sel-dark.png" alt=""><span>Dark</span></div><div class="dlgrow"><img src="/mono/tt/kit/bg-mid.png" alt=""><img src="/mono/tt/kit/sel-mid.png" alt=""><span>Mid</span></div><div class="dlgrow"><img src="/mono/tt/kit/bg-light.png" alt=""><img src="/mono/tt/kit/sel-light.png" alt=""><span>Light</span></div></div></div>
+<div class="s3 ar32 ticked"><div class="btnsheet"><img src="/mono/tt/kit/btn-y.png" alt="Y button"><img src="/mono/tt/kit/btn-b.png" alt="B button"><img src="/mono/tt/kit/btn-a.png" alt="A button"><img src="/mono/tt/kit/btn-x.png" alt="X button"><img src="/mono/tt/kit/cursor.png" alt="Cursor"></div></div>
+</div>
+<div class="tsub"><div><div class="bigaa" aria-hidden="true">Aa</div>
+<div class="fontspec">
+<div class="fr"><div class="fk">Display face</div><div class="fs" style="font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:30px;letter-spacing:.02em">ALBERTUS</div><div class="fm">Albertus Medium, Bold, Extra Bold</div></div>
+<div class="fr"><div class="fk">Dialogue face</div><div class="fs" style="font-family:'EB Garamond',Georgia,serif;font-weight:600;font-size:24px">Arno Pro Semibold</div><div class="fm">Semibold, Bold, Light Italic, Bold Italic Display</div></div>
+<div class="fr"><div class="fk">Line</div><div class="fs" style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:17px">I can build my own fire.</div><div class="fm">Set at reading distance, over live scene</div></div>
+<div class="fn">Two faces carried the whole interface: Albertus for headers and labels, Arno Pro for every spoken line. Both had to stay legible over moving art on five platforms. Albertus and Arno Pro are licensed faces and do not ship here: the specimens are set in Cinzel and EB Garamond as stand ins. The frame at right is the real thing.</div>
+</div></div><div><div class="frame ticked" style="aspect-ratio:16/9"><img src="/mono/tt/type-spec.jpg" alt="Albertus and Arno Pro type specimen over scene" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="slotcap">Type specimen tested over a live scene · Albertus and Arno Pro</div>
+<div class="vgrid vgrid--sm" style="grid-template-columns:1fr"><button class="vt" data-k="vm" data-id="132364481" data-title="Game of Thrones · 01"><span class="vt__k">Clip</span><span class="vt__t">Game of Thrones · 01</span><i class="vt__p" aria-hidden="true"></i></button></div>
+</div></div>
+</div></section>
+<div class="rule"><span class="lbl">Batman</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Case board and choice</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>Batman: The Telltale Series</h3><p>Two interfaces in one game: the detective case board, where players connect evidence, and the choice prompt carried over from the house pattern, restyled for Gotham.</p></div><div><div class="tstills">
+<div class="s6 ticked"><img src="/mono/tt/batman-hero.webp" alt="Batman: The Telltale Series" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/batman-map.jpg" alt="Case board, Gotham" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/batman-choice.jpg" alt="Choice prompt in scene, Batman" loading="lazy"></div>
+</div>
+<div class="vgrid vgrid--sm"><button class="vt" data-k="vm" data-id="1221596010" data-title="Batman · 01"><span class="vt__k">Clip</span><span class="vt__t">Batman · 01</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="1221596009" data-title="Batman · 02"><span class="vt__k">Clip</span><span class="vt__t">Batman · 02</span><i class="vt__p" aria-hidden="true"></i></button></div>
+</div></section>
+<div class="rule"><span class="lbl">The Wolf Among Us</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Two seasons</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>The Wolf Among Us</h3><p>Noir palette, heavy chroma. The interface leaned into the title’s magenta and cyan rather than staying neutral, which made legibility testing the whole job.</p></div><div><div class="tstills">
+<div class="s3 ticked"><img src="/mono/tt/wau1.jpg" alt="The Wolf Among Us" loading="lazy"></div>
+<div class="s3 ticked"><img src="/mono/tt/wau2.jpg" alt="The Wolf Among Us 2" loading="lazy"></div>
+</div>
+<div class="vgrid vgrid--sm"><button class="vt" data-k="vm" data-id="184588864" data-title="The Wolf Among Us · 01"><span class="vt__k">Clip</span><span class="vt__t">The Wolf Among Us · 01</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="136069718" data-title="The Wolf Among Us · 02"><span class="vt__k">Clip</span><span class="vt__t">The Wolf Among Us · 02</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="136069719" data-title="The Wolf Among Us · 03"><span class="vt__k">Clip</span><span class="vt__t">The Wolf Among Us · 03</span><i class="vt__p" aria-hidden="true"></i></button></div>
+</div></section>
+<div class="rule"><span class="lbl">Tales from the Borderlands</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">05 clips</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>Tales from the Borderlands</h3><p>The loudest of the five. Borderlands’ comic treatment meant the UI could break the house pattern, with heavier rules and a faster read.</p></div><div><div class="tstills">
+<div class="s6 ticked"><img src="/mono/tt/borderlands.jpg" alt="Tales from the Borderlands" loading="lazy"></div>
+</div>
+<div class="vgrid vgrid--sm"><button class="vt" data-k="vm" data-id="130368574" data-title="Tales from the Borderlands · 01"><span class="vt__k">Clip</span><span class="vt__t">Tales from the Borderlands · 01</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="135841906" data-title="Tales from the Borderlands · 02"><span class="vt__k">Clip</span><span class="vt__t">Tales from the Borderlands · 02</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="135841256" data-title="Tales from the Borderlands · 03"><span class="vt__k">Clip</span><span class="vt__t">Tales from the Borderlands · 03</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="130367157" data-title="Tales from the Borderlands · 04"><span class="vt__k">Clip</span><span class="vt__t">Tales from the Borderlands · 04</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="130367156" data-title="Tales from the Borderlands · 05"><span class="vt__k">Clip</span><span class="vt__t">Tales from the Borderlands · 05</span><i class="vt__p" aria-hidden="true"></i></button></div>
+</div></section>
+<div class="rule"><span class="lbl">Minecraft Story Mode</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Youngest audience</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>Minecraft Story Mode</h3><p>Built for the youngest players on the roster. Larger hit targets, longer choice timers, and a blockier take on the same underlying dialogue system.</p></div><div><div class="tstills">
+<div class="s6 ticked"><img src="/mono/tt/minecraft.jpg" alt="Minecraft Story Mode" loading="lazy"></div>
+</div></div></section>
+<div class="rule"><span class="lbl">Poker Night</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">03 clips</span></div>
+<section class="tsec reveal"><div class="tsec__note"><h3>Poker Night</h3><p>A table, four guests and a full hand of state to read at a glance. The furthest the UI ever got from narrative dialogue.</p></div><div><div class="tstills"><div class="s6 ticked"><img src="/mono/tt/poker-night.avif" alt="Poker Night at the Inventory" loading="lazy"></div></div>
+<div class="vgrid vgrid--sm"><button class="vt" data-k="vm" data-id="136067550" data-title="Poker Night · 01"><span class="vt__k">Clip</span><span class="vt__t">Poker Night · 01</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="136065741" data-title="Poker Night · 02"><span class="vt__k">Clip</span><span class="vt__t">Poker Night · 02</span><i class="vt__p" aria-hidden="true"></i></button><button class="vt" data-k="vm" data-id="136064794" data-title="Poker Night · 03"><span class="vt__k">Clip</span><span class="vt__t">Poker Night · 03</span><i class="vt__p" aria-hidden="true"></i></button></div></div></section>
+<section class="impact reveal"><b>5</b><span>Platforms shipped: web, mobile, PlayStation, Xbox and Wii U</span><div class="chips"><span class="chip"><i class="reticle"></i>8 years</span><span class="chip"><i class="reticle"></i>Game of the Year</span><span class="chip"><i class="reticle"></i>Promoted to Lead</span><span class="chip"><i class="reticle"></i>Narrative UI</span></div></section>
 
-  <div class="shell">
-    <aside class="rail">
-      <div class="rail__bar">
-        <a class="brand" href="/"><span class="brand__mark">Standard<span class="dot">.</span></span></a>
-        <button class="navToggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-      <div class="rail__top">
-        <a class="brand" href="/"><span class="brand__mark">Standard<span class="dot">.</span></span><span class="brand__sub">Crystal Langley</span></a>
-        <a class="backlink" href="/#work"><span aria-hidden="true">←</span> All work</a>
-        <div class="rail__crumb"><a href="/#work">Work</a> &nbsp;/&nbsp; Telltale Games</div>
-        <h1 class="rail__title">Telltale Games</h1>
-        <p class="rail__tag">UI/UX and motion work across four titles, promoted to lead over seven years shipping episodic narrative games.</p>
-        <div class="rail__meta">
-          <div><div class="meta__k">Role</div><div class="meta__v">UI/UX, Promoted to Lead</div></div>
-          <div><div class="meta__k">Timeline</div><div class="meta__v">2011 – 2018</div></div>
-          <div><div class="meta__k">Scope</div><div class="meta__v">UI/UX · Motion · Episodic Games</div></div>
-          <div><div class="meta__k">Industry</div><div class="meta__v">Games &amp; Interactive Entertainment</div></div>
-        </div>
-      </div>
-      <div class="rail__cta">
-        <span class="rail__status"><span class="dot-live"></span> Case study · 2011–2018</span>
-        <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
-      </div>
-    </aside>
-
-    <main class="feed">
-      <div class="hero-media dark">
-        <img class="bg" src="/assets/squarespace/telltale-hero-collage.png" alt="Collage of Telltale Games titles: The Wolf Among Us, Poker Night, Game of Thrones, and Tales from the Borderlands">
-      </div>
-
-      <section class="block">
-        <div class="block__inner">
-          <div class="eyebrow label">The Work</div>
-          <h2 class="h-sec reveal">Seven years of UI/UX and motion across four <em>Telltale titles.</em></h2>
-          <p class="body">Interfaces and motion work spanning The Wolf Among Us, Poker Night, Game of Thrones, and Tales from the Borderlands — episodic narrative games shipped to a large, active fan base, with a promotion to lead along the way.</p>
-        </div>
-      </section>
-
-      <section class="block block--deep block--wide">
-        <div class="block__inner">
-          <div class="eyebrow label">Selected Work</div>
-          <h2 class="h-sec reveal">Motion and UI clips, <em>by title.</em></h2>
-        </div>
-
-        <div class="motion__group">
-          <div class="motion__group-t">The Wolf Among Us</div>
-          <div class="motion__grid">
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="184588864" data-title="The Wolf Among Us — Clip 1" aria-label="Play video: The Wolf Among Us — Clip 1 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 1</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136069718" data-title="The Wolf Among Us — Clip 2" aria-label="Play video: The Wolf Among Us — Clip 2 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 2</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136069719" data-title="The Wolf Among Us — Clip 3" aria-label="Play video: The Wolf Among Us — Clip 3 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">The Wolf Among Us — Clip 3</span><span class="motion__m">Vimeo</span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="motion__group">
-          <div class="motion__group-t">Poker Night</div>
-          <div class="motion__grid">
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136067550" data-title="Poker Night — Clip 1" aria-label="Play video: Poker Night — Clip 1 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 1</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136065741" data-title="Poker Night — Clip 2" aria-label="Play video: Poker Night — Clip 2 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 2</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="136064794" data-title="Poker Night — Clip 3" aria-label="Play video: Poker Night — Clip 3 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Poker Night — Clip 3</span><span class="motion__m">Vimeo</span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="motion__group">
-          <div class="motion__group-t">Game of Thrones</div>
-          <div class="motion__grid">
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="132364481" data-title="Game of Thrones" aria-label="Play video: Game of Thrones (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Game of Thrones</span><span class="motion__m">Vimeo</span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="motion__group">
-          <div class="motion__group-t">Tales from the Borderlands</div>
-          <div class="motion__grid">
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130368574" data-title="Tales from the Borderlands — Clip 1" aria-label="Play video: Tales from the Borderlands — Clip 1 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 1</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="135841906" data-title="Tales from the Borderlands — Clip 2" aria-label="Play video: Tales from the Borderlands — Clip 2 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 2</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="135841256" data-title="Tales from the Borderlands — Clip 3" aria-label="Play video: Tales from the Borderlands — Clip 3 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 3</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130367157" data-title="Tales from the Borderlands — Clip 4" aria-label="Play video: Tales from the Borderlands — Clip 4 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 4</span><span class="motion__m">Vimeo</span></span>
-            </div>
-            <div class="motion__item reveal" tabindex="0" role="button" data-provider="vimeo" data-id="130367156" data-title="Tales from the Borderlands — Clip 5" aria-label="Play video: Tales from the Borderlands — Clip 5 (Vimeo)" style="background:var(--ink);">
-              <span class="motion__play" aria-hidden="true">▶</span>
-              <span class="motion__cap"><span class="motion__t" style="color:#fff;">Tales from the Borderlands — Clip 5</span><span class="motion__m">Vimeo</span></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta">
-        <h2 class="cta__title reveal">Let's build <em>together</em>.</h2>
-        <div class="cta__row">
-          <a class="cta__email" href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a>
-          <a class="btn" href="https://calendly.com/yocrystallangley/30min">Book an intro</a>
-          <p class="cta__meta label">Northern California · Available globally · Open to Director, VP + Principal roles</p>
-        </div>
-        <div class="cta__nav"><a href="/#work">← Back to all work</a><a href="mailto:yocrystallangley@gmail.com">Email</a></div>
-      </section>
-
-      <footer class="foot">
-        <div class="foot__markwrap"><p class="foot__mark" id="bigmark">Standard<span class="dot">.</span></p></div>
-        <div class="foot__bar label"><span>© 2026 Crystal Langley · Northern California</span><span><a href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a></span></div>
-      </footer>
-    </main>
-  </div>
-
-  <div class="video-modal" id="videoModal" aria-hidden="true">
-    <div class="video-modal__backdrop" data-video-close></div>
-    <div class="video-modal__box">
-      <button class="video-modal__close" type="button" aria-label="Close video" data-video-close>&times;</button>
-    </div>
-  </div>
-
-  <script src="case-study.js"></script>
-  <script>
-  /* Motion video tiles — click opens a lightbox overlay, video never leaves the site */
-  var videoModal=document.getElementById('videoModal');
-  var videoModalBox=videoModal?videoModal.querySelector('.video-modal__box'):null;
-  var videoModalLastFocus=null;
-  function openVideoModal(provider,id,title){
-    if(!videoModal||!videoModalBox) return;
-    var src = provider==='youtube'
-      ? 'https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0'
-      : 'https://player.vimeo.com/video/'+id+'?autoplay=1';
-    var iframe=document.createElement('iframe');
-    iframe.src=src;
-    iframe.title=title;
-    iframe.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
-    iframe.setAttribute('allowfullscreen','');
-    videoModalBox.appendChild(iframe);
-    videoModal.classList.add('is-open');
-    videoModal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    videoModalLastFocus=document.activeElement;
-    videoModal.querySelector('.video-modal__close').focus();
-  }
-  function closeVideoModal(){
-    if(!videoModal||!videoModalBox) return;
-    var iframe=videoModalBox.querySelector('iframe');
-    if(iframe) iframe.remove();
-    videoModal.classList.remove('is-open');
-    videoModal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-    if(videoModalLastFocus&&videoModalLastFocus.focus) videoModalLastFocus.focus();
-  }
-  if(videoModal){
-    videoModal.querySelectorAll('[data-video-close]').forEach(function(el){ el.addEventListener('click',closeVideoModal); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&videoModal.classList.contains('is-open')) closeVideoModal(); });
-  }
-  document.querySelectorAll('.motion__item').forEach(function(item){
-    function play(){
-      var provider=item.getAttribute('data-provider'), id=item.getAttribute('data-id'), title=item.getAttribute('data-title')||'Video';
-      openVideoModal(provider,id,title);
-    }
-    item.addEventListener('click', play);
-    item.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
-  });
-  </script>
-</body>
-</html>
+<section class="next"><div><div class="lbl">Next project</div><h2><a class="plain" href="/strivers">Strivers</a></h2></div><div class="lbl">03 / 05</div></section>
+<div class="ghost" aria-hidden="true">Crystal Langley</div>
+<footer><div class="foot"><h2>Let us build<br>something</h2><div class="links"><a href="https://www.upwork.com/services/product/design-figma-file-cleanup-design-system-audit-2058014733987472897?ref=fl_profile" data-ev="upwork_click">Upwork</a><a href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer" data-ev="book_click">Calendly</a><a href="mailto:yocrystallangley@gmail.com">Email</a><a href="/about">About</a></div></div><a class="cta" href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer" data-ev="book_click">Book a call</a></footer>
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Video player"><div class="lbx__f"><span class="lbx__t" id="lbxt"></span><a class="lbx__o" id="lbxo" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a><button class="lbx__x" id="lbxx" aria-label="Close video">✕</button></div></div>
+<script>(function(){var lb=document.getElementById('lbx'),fr=lb.querySelector('.lbx__f'),tt=document.getElementById('lbxt'),ol=document.getElementById('lbxo');
+function close(){lb.classList.remove('on');var f=fr.querySelector('iframe');if(f)f.remove();document.body.style.overflow='';}
+document.addEventListener('click',function(e){
+ if(e.target.closest('#lbxx')){close();return;}
+ if(e.target===lb){close();return;}
+ var b=e.target.closest('.vt');if(!b)return;
+ var yt=b.dataset.k==='yt';var src=yt?'https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0':'https://player.vimeo.com/video/'+b.dataset.id+'?autoplay=1';
+ ol.classList.toggle('on',yt);if(yt)ol.href='https://www.youtube.com/watch?v='+b.dataset.id;
+ var f=document.createElement('iframe');f.src=src;f.title=b.dataset.title;f.allow='autoplay; fullscreen; picture-in-picture';f.allowFullscreen=true;
+ var old=fr.querySelector('iframe');if(old)old.remove();
+ tt.textContent=b.dataset.title;fr.appendChild(f);lb.classList.add('on');document.body.style.overflow='hidden';
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close();});
+})();</script>
+<script src="/mono/mono.js"></script>
+</body></html>

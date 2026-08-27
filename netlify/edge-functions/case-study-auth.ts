@@ -40,28 +40,30 @@ const gatePage = (segment: string, showError: boolean) => `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>${displayName(segment)} — password required · Standard.</title>
-<link rel="stylesheet" href="/fonts.css">
+<title>${displayName(segment)} — password required · Crystal Langley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#F6F4EF;--ink:#191712;--accent:#A8452F;--muted:#726C61;--rule:rgba(25,23,18,.16)}
+  :root{--paper:#FFFFFF;--ink:#0B0B0C;--mute:#77777D;--line:#E3E3E6;--fill:#F0F0F2;--accent:#5E1F28}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',Menlo,monospace;padding:24px}
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--paper);color:var(--ink);font-family:Archivo,-apple-system,sans-serif;padding:24px}
   .card{width:100%;max-width:420px;border:1px solid var(--ink);padding:48px 40px;background:var(--paper)}
-  .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
-  h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:34px;line-height:1.15;margin-bottom:10px}
-  p{font-size:12.5px;line-height:1.6;color:var(--muted);margin-bottom:28px}
+  .brand{font-family:'Archivo Narrow',Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:28px}
+  h1{font-family:'Archivo Narrow',Archivo,sans-serif;font-weight:700;text-transform:uppercase;font-size:32px;line-height:1.1;letter-spacing:-.01em;margin-bottom:10px}
+  p{font-size:13px;line-height:1.6;color:var(--mute);margin-bottom:28px}
   .err{color:var(--accent);margin:-16px 0 20px;font-size:12px}
-  input{width:100%;border:1px solid var(--rule);background:#fff;padding:13px 14px;font:inherit;font-size:14px;margin-bottom:12px;border-radius:0}
+  input{width:100%;border:1px solid var(--line);background:var(--fill);padding:13px 14px;font:inherit;font-size:14px;margin-bottom:12px;border-radius:0}
   input:focus{outline:none;border-color:var(--ink)}
   button{width:100%;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:13px 14px;font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
   button:hover{background:var(--accent);border-color:var(--accent)}
-  .back{display:block;margin-top:22px;font-size:11.5px;color:var(--muted);text-decoration:none}
+  .back{display:block;margin-top:22px;font-size:11.5px;color:var(--mute);text-decoration:none}
   .back:hover{color:var(--ink)}
 </style>
 </head>
 <body>
 <main class="card">
-  <div class="brand">Standard. — Crystal Langley</div>
+  <div class="brand">Crystal Langley</div>
   <h1>${displayName(segment)}</h1>
   <p>This case study is private. Enter the password you were given to view it.</p>
   ${showError ? '<div class="err">That password isn&rsquo;t right &mdash; try again.</div>' : ""}

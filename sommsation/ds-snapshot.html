@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sommsation Global Design System — Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/ds/fig-fonts.css"><link rel="stylesheet" href="/mono/mono.css"><link rel="stylesheet" href="/mono/ds/fig-tokens.css"><link rel="stylesheet" href="/mono/ds/fig-assets.css">
+<style>body{background:#fff}
+body.capture header,body.capture .ds__head{display:none}
+body.capture .ds__stats{border-top:0}
+body.capture{padding:clamp(22px,2.4vw,34px) 0}
+.ds{padding:0 var(--pad) clamp(30px,4vw,64px)}
+.ds__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:var(--pad) var(--pad) clamp(18px,2vw,26px)}
+.ds__head h1{font-size:clamp(24px,2.6vw,38px)}
+.sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.ds__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 var(--pad)}
+.ds__stats div{padding:clamp(18px,2.2vw,30px) 16px clamp(18px,2.2vw,30px) 0}
+.ds__stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.ds__stats b{display:block;font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:clamp(30px,4vw,62px);line-height:.88;letter-spacing:-.02em}
+.ds__stats span{display:block;margin-top:11px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ds__scope{padding:clamp(22px,2.6vw,34px) var(--pad);border-bottom:1px solid var(--line)}
+.ds__scope span{display:block;max-width:56ch;font-size:clamp(16px,1.5vw,21px);line-height:1.4;color:var(--ink);text-wrap:pretty}
+.ds__sec{padding:clamp(34px,4vw,60px) 0 0}
+.ds__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-bottom:18px}
+.ds__k .ln{flex:1;height:1px;background:var(--line)}
+.ramp{display:grid;gap:2px}
+.ramp .hx{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.ramp .lb{margin-top:8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ramp.sm .lb{margin-top:7px;font-size:9px;letter-spacing:.1em}
+.ramp.xs{gap:1px}
+.ramp.xs .lb{margin-top:6px;font-size:8.5px;letter-spacing:.06em;text-align:center}
+.semi{display:flex;flex-wrap:wrap;gap:22px;margin-top:14px}
+.semi div{display:flex;align-items:center;gap:9px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.semi i{width:16px;height:16px;display:block}
+.type .row{display:grid;grid-template-columns:130px 1fr 128px;gap:20px;align-items:baseline;padding:16px 0}
+.type .k,.type .v{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.type .v{text-align:right}
+.scaleline{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px}
+.scaleline .u{text-align:center}
+.scaleline i{display:block;background:var(--ds-accent,#000);height:8px;margin:0 auto}
+.scaleline span{display:block;margin-top:8px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.radii div{width:56px}
+.radii i{display:block;height:42px;background:var(--ds-accent-soft,#eee);border:1px solid var(--ds-accent,#000)}
+.radii span{display:block;margin-top:7px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));grid-auto-flow:row dense;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px)}
+.tworow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(26px,3.4vw,58px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.pairrow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,3.6vw,60px);align-items:start;padding-top:clamp(34px,4vw,60px)}
+.pairrow>*+*{border-left:1px solid var(--line);padding-left:clamp(28px,3.6vw,60px)}
+.pairrow .ds__sec{padding-top:0}
+.showcase{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.showcase>*:nth-child(1){grid-area:2/1/3/2}
+.showcase>*:nth-child(2){grid-area:2/2/3/4}
+.showcase>*:nth-child(3){grid-area:1/1/2/4}
+.showcase>*:nth-child(4){grid-area:3/1/4/2}
+.showcase>*:nth-child(5){grid-area:3/2/4/4}
+@media(max-width:900px){.tworow,.pairrow,.showcase{grid-template-columns:1fr}.pairrow>*+*{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:clamp(26px,3vw,40px)}.showcase>*{grid-area:auto!important}}
+.cell{padding:0;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cell__t{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);overflow-wrap:anywhere}
+.cell__t b{color:var(--ink);font-weight:600}
+.cell__b{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.w2{grid-column:span 2}
+.wide{grid-column:1/-1}
+/* the bundle bakes Figma pixel widths measured against licensed faces that do
+   not ship here, so labelled chips get released to their content width */
+.cell--loose .fit__inner div[style*="width:"]{width:max-content!important}
+/* some families live inside a dark Split Content Block in Figma, so their text is
+   white by design; the parent fill does not travel when materialized standalone */
+.plate{background:var(--darkteal-db100);padding:18px 20px}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:clamp(16px,2vw,28px) 12px}
+.icons figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.icons svg{color:var(--ink)}
+.icons figcaption{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);line-height:1.35;overflow-wrap:normal;hyphens:none}
+.payicons{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px}
+.logo--white,.logo--white *{color:var(--offwhite-white)!important;fill:currentColor!important}
+.logo--blue,.logo--blue *{color:var(--primary-500)!important;fill:currentColor!important}
+/* extraction artifact: a bottom-only divider was emitted as a full border box */
+.cell--rule .fit__inner div[style*="border"]{border-top-width:0!important;border-left-width:0!important;border-right-width:0!important}
+.note{margin-top:16px;font-size:12.5px;color:var(--mute);max-width:64ch}
+@media(max-width:900px){.ds__stats{grid-template-columns:1fr 1fr}.ds__stats div:nth-child(3){padding-left:0;border-left:0}.w2{grid-column:span 1}}
+@media(max-width:600px){.type .row{grid-template-columns:1fr;gap:8px}.type .v{text-align:left}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/sommsation">Sommsation</a><a href="/about">About</a></nav></header>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="/mono/ds/Components.bundle.js"></script>
+<script src="/mono/ds/icon-data.global.js"></script>
+<script type="text/babel">
+/* ============================================================
+   DESIGN SYSTEM SNAPSHOT — STANDARDIZED TEMPLATE
+   Per project, edit only SYSTEM below. The renderer is generic.
+   Rules: every number is counted from the source file, never
+   estimated. Every ramp step shown is a real brand value; any
+   placeholder steps in the source collection are excluded and
+   the exclusion is stated. Components render from the library.
+   ============================================================ */
+const SYSTEM = {
+  name: 'Sommsation Global Design System',
+  meta: 'Built and owned across six years · Figma library in production',
+  source: 'Values read from the live library',
+  scope: n => 'An excerpt, not the full system. The library carries 159 component sets and 418 standalone symbols. Shown here are '+n+' families chosen to cover the range, set in Playfair Display and Futura PT.',
+  accent: '--primary-500',
+  accentSoft: '--primary-100',
+  stats: [
+    ['159','Component sets'],
+    ['418','Standalone symbols'],
+    ['146','Design tokens'],
+    ['4','Modes: mobile, tablet, desktop, dark']
+  ],
+  icons: {
+    ui: ['IconFavorite16','IconAdd16','IconAdd12','IconSubtract12','IconCheck20','IconConfirmCircleFilled16','IconVisibility20','IconDownCaret16','IconUpCaret16','IconCaretDown20','IconCaretUp20','IconLeftCaret24','IconRight16','IconDelivery16','IconGiftBox16','IconShippingCorkscrew32','IconLogo16'],
+    brand: ['IconsBrandVisaStyleDefault','IconsBrandMastercardStyleDefault','IconsBrandAmExStyleDefault','IconsBrandDiscoverStyleDefault'],
+    note: 'One icon set, drawn at 12, 16, 20, 24 and 32. Payment marks carry four styles each: default, inverted, monochrome and inverted monochrome.'
+  },
+  pairGroups: ['Navigation','Commerce'],
+  layouts: { Content: 'showcase' },
+  ramps: [
+    {label:'Primary · Sommsation teal', prefix:'--primary-', steps:['50','100','200','300','400','500','600'], size:'lg', flipAt:400,
+     note:'b500 is the brand core. Every surface, control state and dark-mode pairing resolves from this ramp through Figma Variables. Steps 700 to 950 in the source collection are periwinkle placeholders, not brand values, so they are excluded.'},
+    {label:'Secondary · gold', prefix:'--secondary-', steps:['50','100','200','300','400','500','600','800'], size:'md'},
+    {label:'Neutral', prefix:'--neutral-', steps:['50','100','200','300','400','500','600','700','800','900','950'], size:'sm'}
+  ],
+  semantic: [['Error','--error-error-red'],['Success','--success-green800'],['Warning','--warning-y500'],['Dark teal','--darkteal-db100']],
+  type: {
+    families: 'Playfair Display + Futura PT',
+    rows: [
+      ['Display','Playfair Display SemiBold','56 / 48',52,'serif'],
+      ['Title','Playfair Display SemiBold','40 / 32',38,'serif'],
+      ['Heading','Futura PT Demi','32 / 24',30,'sans'],
+      ['Body','Futura PT Book','20 / 18',20,'sans'],
+      ['Caption','Futura PT Book','14 / 12',14,'sans']
+    ],
+    serif:'"Playfair Display",serif', sans:'"Futura PT",Archivo,sans-serif',
+    note:'Sizes are desktop / mobile. The scale is a variable collection, so type resizes with the breakpoint mode instead of being overridden per screen.'
+  },
+  space: [4,8,12,16,24,32,48,64],
+  radius: [['2','s'],['4','m'],['6','l'],['8','xl'],['10','2xl'],['12','3xl'],['16','4xl'],['999','full']],
+  scaleNote: '27 float tokens',
+  // Component groups. Each cell: [title, variantNote, render, opts]
+  groups: [
+    ['Actions', W => [
+      ['Button','10 types', <><W.Button type="primary"/><W.Button type="secondary"/><W.Button type="tertiary"/></>, {scale:.66}],
+      ['ButtonMaster','4 sizes × 29 states', <div style={{display:'flex',flexDirection:'column',gap:12,alignItems:'flex-start'}}><W.ButtonMaster size="button_lg" state="primary"/><W.ButtonMaster size="button_md" state="primary"/><W.ButtonMaster size="button_sm" state="primary"/><W.ButtonMaster size="button_extrasm" state="primary"/></div>, {scale:.72, loose:true}],
+      ['ButtonMaster','3 of 29 states', <div style={{display:'flex',flexDirection:'column',gap:12,alignItems:'flex-start'}}><W.ButtonMaster size="button_md" state="active"/><W.ButtonMaster size="button_md" state="hover"/><W.ButtonMaster size="button_md" state="destructive"/></div>, {scale:.72, loose:true, fams:0}],
+      ['CTAS','6 types', <><W.CTAS type="add to cart"/><W.CTAS type="view wine"/><W.CTAS type="qty"/></>, {scale:.72, loose:true}],
+      ['ArrowLink','2 directions × 4 states', <div style={{display:'flex',flexDirection:'column',gap:18,alignItems:'flex-start'}}><W.ArrowLink direction="rightarrow" state="default"/><W.ArrowLink direction="leftarrow" state="default"/><W.ArrowLink direction="rightarrow" state="hover"/></div>, {scale:.82}]
+    ]],
+    ['Forms', W => [
+      ['Input field','8 states', <div style={{display:'flex',flexDirection:'column',gap:22}}><W.InputFieldNew property1="filled"/><W.InputFieldNew property1="error filled"/></div>, {scale:.62}],
+      ['ListField','5 states', <div style={{display:'flex',flexDirection:'column',gap:14}}><W.ListField state="hover"/><W.ListField state="filled"/></div>, {scale:.72, plate:true}],
+      ['Form Control','3 types × 4 states', <div style={{display:'flex',flexDirection:'column',gap:16}}><W.FormControlCheckBox leftControl={true} rightControl={false}/><W.FormControlRadio leftControl={true} rightControl={false}/><W.FormControlSwitch leftController={true} leftON={true} leftOFF={false} rightON={false} rightOFF={false} rightControl={false}/></div>, {scale:.5}]
+    ]],
+    ['Navigation', W => [
+      ['Nav-Item','2 types', <><W.NavItem type="default"/><W.NavItem type="highlighted"/></>, {scale:.82, loose:true}],
+      ['NavTab / Desktop','4 states', <><W.NavTabDesktop property1="default"/><W.NavTabDesktop property1="active"/><W.NavTabDesktop property1="hover"/></>, {scale:.82, loose:true}],
+      ['NavBreadcrumb','2 states', <><W.NavBreadcrumb property1="default"/><W.NavBreadcrumb property1="active"/></>, {scale:.82, loose:true}],
+      ['TabFilter / Desktop','7 states', <><W.TabFilterDesktop states="default"/><W.TabFilterDesktop states="active"/><W.TabFilterDesktop states="hover"/></>, {scale:.78, loose:true}],
+      ['Tab','3 states', <div style={{display:'flex',flexDirection:'column',gap:14,alignItems:'flex-start'}}><W.Tab state="default"/><W.Tab state="active"/><W.Tab state="hover"/></div>, {scale:.9, loose:true}]
+    ]],
+    ['Commerce', W => [
+      ['Primary-Badge','5 types', <div style={{display:'flex',flexDirection:'column',gap:12,alignItems:'flex-start'}}><W.PrimaryBadge type="exclusive"/><W.PrimaryBadge type="last chance"/><W.PrimaryBadge type="bundle"/><W.PrimaryBadge type="sold out"/></div>, {scale:.78, loose:true}],
+      ['2ndBadge','2 types', <div style={{display:'flex',flexDirection:'column',gap:12,alignItems:'flex-start'}}><W.NdBadge2 type="default"/><W.NdBadge2 type="does not ship to"/></div>, {scale:.78, loose:true}],
+      ['Reviews','6 ratings', <div style={{display:'flex',flexDirection:'column',gap:14,alignItems:'flex-start'}}><W.Reviews rating="5"/><W.Reviews rating="3.5"/><W.Reviews rating="no reviews"/></div>, {scale:.9, loose:true}],
+    ]],
+    ['Content', W => [
+      ['Product Card · horizontal','2 types', <W.DesktopProductCardHorizontal type="default" scores={true} secondaryBadges={true}/>, {scale:.82, fams:1}],
+      ['Price Card','3 breakpoints', <div style={{display:'flex',gap:18,alignItems:'flex-start'}}><W.PriceCard type="desktop"/><W.PriceCard type="tablet"/><W.PriceCard type="mobile"/></div>, {scale:.52, fams:1}],
+      ['StoryCard','2 states', <W.StoryCard state="default"/>, {scale:.66}],
+      ['Feature Item','2 types', <div style={{display:'flex',flexDirection:'column',gap:14,alignItems:'flex-start'}}><W.FeatureItem type="default"/><W.FeatureItem type="filled"/></div>, {scale:.86, plate:true}],
+      ['Accordion','2 states', <div style={{display:'flex',flexDirection:'column',gap:20}}><W.Accordion state="default"/><W.Accordion state="expanded"/></div>, {scale:.6, w2:true, fixRule:true}]
+    ]],
+  ],
+  brand: W => [
+    ['Logo_Master','5 colors', <div style={{display:'flex',flexDirection:'column',gap:0}}>
+      <div style={{padding:'26px 28px'}}><W.LogoMaster color="black"/></div>
+      <div className="logo--white" style={{padding:'26px 28px',background:'var(--black-950)'}}><W.LogoMaster color="white"/></div>
+      <div className="logo--blue" style={{padding:'26px 28px'}}><W.LogoMaster color="blue"/></div>
+    </div>, {scale:1.05, w2:true}],
+    ['Stamp','3 marks', <div style={{display:'flex',gap:38,alignItems:'center',padding:'22px 0'}}><W.Stamp type="smsn_dot" color="black"/><W.Stamp type="smsn_ring" color="black"/><W.Stamp type="smsn_stamp" color="black"/></div>, {scale:.72, w2:true}]
+  ],
+  closing: 'Real components from the Figma library, not redrawn. Variant counts are the source file\u2019s own. The library\u2019s licensed faces fall back here, so baked pixel widths are released to content width where a label would clip.'
+};
+
+/* ---------- generic renderer, no project specifics below ---------- */
+const V = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hex = rgb => { const m = rgb.match(/\d+/g); return m ? '#'+m.slice(0,3).map(x=>(+x).toString(16).padStart(2,'0')).join('').toUpperCase() : rgb; };
+const RAMP_H = {lg:'clamp(96px,13vw,168px)', md:'clamp(46px,6vw,74px)', sm:'30px'};
+const RAMP_CLS = {lg:'', md:'sm', sm:'xs'};
+const ICON_DATA = window.ICON_DATA || {};
+const Glyph = ({name, size=16}) => { const d = ICON_DATA[name]; if (!d) return null;
+  return <svg width={size} height={size} viewBox={d.viewBox} xmlns="http://www.w3.org/2000/svg" dangerouslySetInnerHTML={{__html: d.body}}/>; };
+const Sec = ({k, n, children}) => <section className="ds__sec"><div className="ds__k"><span>{k}</span><span className="ln"></span><span>{n}</span></div>{children}</section>;
+function Fit({s=0.62, children}){
+  const inner = React.useRef(null); const [h, setH] = React.useState(null);
+  React.useLayoutEffect(()=>{ const el = inner.current; if(!el) return;
+    const measure = () => setH(Math.ceil(el.offsetHeight * s));
+    measure(); const ro = new ResizeObserver(measure); ro.observe(el); return () => ro.disconnect();
+  },[s]);
+  return <div className="fit" style={{width:'100%',overflow:'hidden',height:h?h+'px':'auto'}}><div className="fit__inner" ref={inner} style={{transform:'scale('+s+')',transformOrigin:'top left',width:(100/s)+'%'}}>{children}</div></div>;
+}
+const Ramp = ({r}) => (
+  <div>
+    <div className={'ramp '+RAMP_CLS[r.size]} style={{gridTemplateColumns:'repeat('+r.steps.length+',minmax(0,1fr))'}}>
+      {r.steps.map(s=>{const v=V(r.prefix+s); const light = r.flipAt && +s>=r.flipAt;
+        return <div key={s}><div style={{height:RAMP_H[r.size],background:v,border:s==='50'?'1px solid var(--line)':'0',display:'flex',alignItems:'flex-end',padding:r.size==='lg'?'12px':'0'}}>
+          {r.size==='lg' && <span className="hx" style={{color:light?'#FEFDFA':'#0A0203'}}>{hex(v)}</span>}
+        </div><div className="lb">{s}</div></div>;})}
+    </div>
+    {r.note && <div className="note">{r.note}</div>}
+  </div>
+);
+const famCount = cells => cells.reduce((n,[,,,o={}]) => n + (o.fams === undefined ? 1 : o.fams), 0);
+function App(){
+  const W = window, S = SYSTEM;
+  const brandCells = S.brand ? S.brand(W) : [];
+  const groupCells = S.groups.map(([label, build]) => [label, build(W)]);
+  const totalFams = famCount(brandCells) + groupCells.reduce((n,[,c]) => n + famCount(c), 0);
+  React.useLayoutEffect(()=>{
+    document.documentElement.style.setProperty('--ds-accent', V(S.accent));
+    document.documentElement.style.setProperty('--ds-accent-soft', V(S.accentSoft));
+  },[]);
+  return (<>
+    <div className="ds__head"><div><h1>{S.name}</h1><div className="sub">{S.meta}</div></div></div>
+    <div className="ds__stats">{S.stats.map(([b,l])=><div key={l}><b>{b}</b><span>{l}</span></div>)}</div>
+    {S.scope && <div className="ds__scope"><span>{S.scope(totalFams)}</span></div>}
+    <div className="ds">
+      {S.brand && <Sec k="Brand" n={famCount(brandCells)+' families'}>
+        <div className="grid">{brandCells.map(([t, sub, node, o={}], i) => (
+          <div key={t+'-'+i} className={'cell'+(o.wide?' wide':'')+(o.w2?' w2':'')+(o.loose?' cell--loose':'')}>
+            <div className="cell__t"><b>{t}</b>{sub?' · '+sub:''}</div>
+            <div className="cell__b"><Fit s={o.scale||.62}>{o.plate ? <div className="plate">{node}</div> : node}</Fit></div>
+          </div>))}
+        </div>
+      </Sec>}
+      {S.icons && <Sec k="Icons" n={(S.icons.ui.length + S.icons.brand.length)+' of ~115 glyphs'}>
+        <div className="icons">{S.icons.ui.filter(n => ICON_DATA[n]).map(n => (
+          <figure key={n}><Glyph name={n} size={n.includes('32')?32:n.includes('24')?24:n.includes('20')?20:n.includes('12')?12:16}/><figcaption>{n.replace(/^Icon/,'').replace(/(\d+)$/,' $1')}</figcaption></figure>))}
+        </div>
+        <div className="payicons">{S.icons.brand.filter(n => ICON_DATA[n]).map(n => <Glyph key={n} name={n} size={38}/>)}</div>
+        <div className="note">{S.icons.note}</div>
+      </Sec>}
+      <Sec k="Primary and secondary" n={S.ramps[0].steps.length+' + '+S.ramps[1].steps.length+' steps'}>
+        <div className="tworow">{S.ramps.slice(0,2).map(r => <div key={r.label}>
+          <div className="ds__k" style={{paddingBottom:12}}><span>{r.label}</span><span className="ln"></span><span>{r.steps.length} steps</span></div>
+          <Ramp r={r}/></div>)}</div>
+      </Sec>
+      {S.ramps.slice(2).map(r => <Sec key={r.label} k={r.label} n={r.steps.length+' steps'}><Ramp r={r}/></Sec>)}
+      <Sec k="Semantic" n={S.semantic.length+' states'}>
+        <div className="semi">{S.semantic.map(([n,t])=><div key={n}><i style={{background:V(t)}}></i>{n} · {hex(V(t))}</div>)}</div>
+      </Sec>
+      <Sec k="Type" n={S.type.families}>
+        <div className="type">{S.type.rows.map(([n,f,s,px,fam])=>(
+          <div className="row" key={n}><div className="k">{n}</div>
+          <div style={{fontFamily:fam==='serif'?S.type.serif:S.type.sans,fontSize:px+'px',lineHeight:1.1}}>{S.name.split(' ')[0]}</div>
+          <div className="v">{f}<br/>{s}</div></div>))}</div>
+        <div className="note">{S.type.note}</div>
+      </Sec>
+      <Sec k="Space and radius" n={S.scaleNote}>
+        <div className="tworow">
+          <div className="scaleline">{S.space.map(v=><div className="u" key={v}><i style={{width:v+'px'}}></i><span>{v}</span></div>)}</div>
+          <div className="radii" style={{marginTop:0}}>{S.radius.map(([v,n])=><div key={n}><i style={{borderRadius:v+'px'}}></i><span>{n}</span></div>)}</div>
+        </div>
+      </Sec>
+      {(() => {
+        const renderGroup = (label, cells) => (
+          <Sec key={label} k={'Components · '+label} n={famCount(cells)+' families'}>
+            <div className={(S.layouts && S.layouts[label] === 'showcase') ? 'showcase' : 'grid'}>{cells.map(([t, sub, node, o={}], i) => (
+              <div key={t+'-'+i} className={'cell'+(o.wide?' wide':'')+(o.w2?' w2':'')+(o.loose?' cell--loose':'')+(o.fixRule?' cell--rule':'')}>
+                <div className="cell__t"><b>{t}</b>{sub?' · '+sub:''}</div>
+                <div className="cell__b"><Fit s={o.scale||.62}>{o.plate ? <div className="plate">{node}</div> : node}</Fit></div>
+              </div>))}
+            </div>
+          </Sec>);
+        const out = []; let pending = [];
+        groupCells.forEach(([label, cells]) => {
+          if (S.pairGroups && S.pairGroups.includes(label)) {
+            pending.push(renderGroup(label, cells));
+            if (pending.length === 2) { out.push(<div className="pairrow" key={'pair-'+label}>{pending}</div>); pending = []; }
+          } else out.push(renderGroup(label, cells));
+        });
+        if (pending.length) out.push(<div className="pairrow" key="pair-tail">{pending}</div>);
+        return out;
+      })()}
+    </div>
+  </>);
+}
+if (new URLSearchParams(location.search).get('capture') === '1') document.body.classList.add('capture');
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

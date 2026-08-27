@@ -1,0 +1,239 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --accent-1-100: rgb(209,226,227); /* @kind color */
+  --accent-1-200: rgb(188,225,227); /* @kind color */
+  --accent-1-300: rgb(166,224,227); /* @kind color */
+  --accent-1-50: rgb(227,238,238); /* @kind color */
+  --accent-2-100: rgb(12,47,54); /* @kind color */
+  --accent-2-200: rgb(6,41,48); /* @kind color */
+  --accent-2-300: rgb(1,31,37); /* @kind color */
+  --accent-2-50: rgb(38,70,77); /* @kind color */
+  --accent-3-100: rgb(213,197,186); /* @kind color */
+  --accent-3-200: rgb(205,174,148); /* @kind color */
+  --accent-3-300: rgb(195,164,138); /* @kind color */
+  --accent-3-50: rgb(234,226,220); /* @kind color */
+  --black-950: rgb(10,2,3); /* @kind color */
+  --black-black-2: rgb(10,2,3); /* @kind color */
+  --black-black: rgb(10,2,3); /* @kind color */
+  --darkteal-db100-2: rgb(12,47,54); /* @kind color */
+  --darkteal-db100: rgb(12,47,54); /* @kind color */
+  --darkteal-db50: rgb(38,70,77); /* @kind color */
+  --error-error-red: rgb(210,35,42); /* @kind color */
+  --error-r500-2: rgb(210,35,42); /* @kind color */
+  --error-r500: rgb(210,35,42); /* @kind color */
+  --font-family-body: "Futura PT";
+  --font-family-title: "Playfair Display";
+  --font-size-2xl: 32;
+  --font-size-2xs: 12;
+  --font-size-3xl: 40;
+  --font-size-4xl: 48;
+  --font-size-l: 20;
+  --font-size-md: 18;
+  --font-size-s: 16;
+  --font-size-xl: 24;
+  --font-size-xs: 14;
+  --font-weight-bold: "SemiBold";
+  --font-weight-book: "Book";
+  --font-weight-demi: "Demi";
+  --gold-g100-2: rgb(241,232,220); /* @kind color */
+  --gold-g100: rgb(241,232,220); /* @kind color */
+  --gold-g200: rgb(234,221,203); /* @kind color */
+  --gold-g300: rgb(206,175,134); /* @kind color */
+  --gold-g400: rgb(192,151,99); /* @kind color */
+  --gold-g500: rgb(185,140,82); /* @kind color */
+  --gold-g50: rgb(253,246,237); /* @kind color */
+  --gold-g600-2: rgb(185,130,59); /* @kind color */
+  --gold-g600: rgb(185,130,59); /* @kind color */
+  --gold-g800: rgb(158,90,3); /* @kind color */
+  --grey-gr100: rgb(243,243,243); /* @kind color */
+  --grey-gr200: rgb(238,238,238); /* @kind color */
+  --grey-gr300-2: rgb(232,231,230); /* @kind color */
+  --grey-gr300: rgb(232,231,230); /* @kind color */
+  --grey-gr400: rgb(212,210,208); /* @kind color */
+  --grey-gr500-2: rgb(165,160,154); /* @kind color */
+  --grey-gr500: rgb(165,160,154); /* @kind color */
+  --grey-gr50: rgb(249,249,249); /* @kind color */
+  --grey-gr600-2: rgb(139,133,126); /* @kind color */
+  --grey-gr600: rgb(139,133,126); /* @kind color */
+  --grey-gr800-2: rgb(52,48,44); /* @kind color */
+  --grey-gr800: rgb(52,48,44); /* @kind color */
+  --neutral-100: rgb(243,243,243); /* @kind color */
+  --neutral-200: rgb(238,238,238); /* @kind color */
+  --neutral-300: rgb(232,231,230); /* @kind color */
+  --neutral-400: rgb(212,210,208); /* @kind color */
+  --neutral-500: rgb(165,160,154); /* @kind color */
+  --neutral-50: rgb(249,249,249); /* @kind color */
+  --neutral-600: rgb(139,133,126); /* @kind color */
+  --neutral-700: rgb(79,79,79); /* @kind color */
+  --neutral-800: rgb(52,48,44); /* @kind color */
+  --neutral-900: rgb(27,27,27); /* @kind color */
+  --neutral-950: rgb(11,11,11); /* @kind color */
+  --offwhite-white-2: rgb(254,253,250); /* @kind color */
+  --offwhite-white: rgb(254,253,250); /* @kind color */
+  --padding-lg: 24;
+  --padding-md: 16;
+  --padding-sm: 12;
+  --padding-xl: 32;
+  --padding-xs: 8;
+  --padding-xxl: 48;
+  --padding-xxs: 4;
+  --padding-xxxl: 64;
+  --price-card: "Mobile";
+  --pricecard: 295;
+  --primary-100: rgb(190,202,205); /* @kind color */
+  --primary-200: rgb(147,166,172); /* @kind color */
+  --primary-300: rgb(104,130,139); /* @kind color */
+  --primary-400: rgb(61,95,106); /* @kind color */
+  --primary-500: rgb(20,78,90); /* @kind color */
+  --primary-50: rgb(212,219,222); /* @kind color */
+  --primary-600: rgb(30,58,66); /* @kind color */
+  --primary-700: rgb(81,101,177); /* @kind color */
+  --primary-800: rgb(22,46,53); /* @kind color */
+  --primary-900: rgb(60,74,115); /* @kind color */
+  --primary-950: rgb(35,42,67); /* @kind color */
+  --radius-none: 0;
+  --radius-radius-2xl: 10;
+  --radius-radius-3xl: 12;
+  --radius-radius-4xl: 16;
+  --radius-radius-full: 999;
+  --radius-radius-l: 6;
+  --radius-radius-m: 4;
+  --radius-radius-s: 2;
+  --radius-radius-xl: 8;
+  --secondary-100: rgb(241,232,220); /* @kind color */
+  --secondary-200: rgb(234,221,203); /* @kind color */
+  --secondary-300: rgb(206,175,134); /* @kind color */
+  --secondary-400: rgb(192,151,99); /* @kind color */
+  --secondary-500: rgb(185,140,82); /* @kind color */
+  --secondary-50: rgb(253,246,237); /* @kind color */
+  --secondary-600: rgb(185,130,59); /* @kind color */
+  --secondary-700: rgb(81,101,177); /* @kind color */
+  --secondary-800: rgb(158,90,3); /* @kind color */
+  --secondary-900: rgb(60,74,115); /* @kind color */
+  --secondary-950: rgb(35,42,67); /* @kind color */
+  --softgold-sg100: rgb(213,197,186); /* @kind color */
+  --softgold-sg50: rgb(234,226,220); /* @kind color */
+  --softteal-sb100: rgb(209,226,227); /* @kind color */
+  --softteal-sb50: rgb(227,238,238); /* @kind color */
+  --sommsationteal-b100: rgb(190,202,205); /* @kind color */
+  --sommsationteal-b300-2: rgb(104,130,139); /* @kind color */
+  --sommsationteal-b300: rgb(104,130,139); /* @kind color */
+  --sommsationteal-b400: rgb(61,95,106); /* @kind color */
+  --sommsationteal-b500-2: rgb(20,78,90); /* @kind color */
+  --sommsationteal-b500: rgb(20,78,90); /* @kind color */
+  --sommsationteal-b50: rgb(212,219,222); /* @kind color */
+  --sommsationteal-b600-2: rgb(30,58,66); /* @kind color */
+  --sommsationteal-b600: rgb(30,58,66); /* @kind color */
+  --spacing-padding-2xl: 52;
+  --spacing-padding-2xs: 12;
+  --spacing-padding-3xl: 64;
+  --spacing-padding-3xs: 8;
+  --spacing-padding-4xl: 72;
+  --spacing-padding-4xs: 4;
+  --spacing-padding-5xl: 80;
+  --spacing-padding-l: 40;
+  --spacing-padding-m: 32;
+  --spacing-padding-s: 24;
+  --spacing-padding-xl: 48;
+  --spacing-padding-xs: 16;
+  --stroke-stroke-2xl: 4;
+  --stroke-stroke-3xl: 5;
+  --stroke-stroke-l: 2;
+  --stroke-stroke-m: 1;
+  --stroke-stroke-s: 0.5;
+  --stroke-stroke-xl: 3;
+  --success-green500: rgb(142,214,150); /* @kind color */
+  --success-green800: rgb(66,171,87); /* @kind color */
+  --warning-y500: rgb(249,248,113); /* @kind color */
+  --white-50: rgb(254,253,250); /* @kind color */
+}
+
+:root[data-mode="desktop"] {
+  --font-family-body: "Futura PT";
+  --font-family-title: "Playfair Display";
+  --font-size-2xl: 40;
+  --font-size-2xs: 14;
+  --font-size-3xl: 48;
+  --font-size-4xl: 56;
+  --font-size-l: 24;
+  --font-size-md: 20;
+  --font-size-s: 18;
+  --font-size-xl: 32;
+  --font-size-xs: 14;
+  --font-weight-bold: "SemiBold";
+  --font-weight-book: "Book";
+  --font-weight-demi: "Demi";
+  --price-card: "Desktop";
+  --pricecard: 400;
+  --radius-none: 0;
+  --radius-radius-2xl: 12;
+  --radius-radius-3xl: 14;
+  --radius-radius-4xl: 18;
+  --radius-radius-full: 999;
+  --radius-radius-l: 8;
+  --radius-radius-m: 6;
+  --radius-radius-s: 4;
+  --radius-radius-xl: 10;
+  --spacing-padding-2xl: 64;
+  --spacing-padding-2xs: 16;
+  --spacing-padding-3xl: 72;
+  --spacing-padding-3xs: 12;
+  --spacing-padding-4xl: 72;
+  --spacing-padding-4xs: 8;
+  --spacing-padding-5xl: 80;
+  --spacing-padding-l: 48;
+  --spacing-padding-m: 40;
+  --spacing-padding-s: 32;
+  --spacing-padding-xl: 52;
+  --spacing-padding-xs: 24;
+  --stroke-stroke-2xl: 5;
+  --stroke-stroke-3xl: 6;
+  --stroke-stroke-l: 2.5;
+  --stroke-stroke-m: 1.5;
+  --stroke-stroke-s: 1;
+  --stroke-stroke-xl: 3.5;
+}
+
+:root[data-mode="tablet"] {
+  --price-card: "Tablet";
+  --pricecard: 332;
+}
+
+:root[data-theme="dark"], .dark {
+  --black-black: rgb(254,253,250); /* @kind color */
+  --darkteal-db100-2: rgb(12,47,54); /* @kind color */
+  --darkteal-db50: rgb(38,70,77); /* @kind color */
+  --error-r500-2: rgb(210,35,42); /* @kind color */
+  --gold-g100: rgb(241,232,220); /* @kind color */
+  --gold-g200: rgb(234,221,203); /* @kind color */
+  --gold-g300: rgb(206,175,134); /* @kind color */
+  --gold-g400: rgb(192,151,99); /* @kind color */
+  --gold-g500: rgb(185,140,82); /* @kind color */
+  --gold-g50: rgb(253,246,237); /* @kind color */
+  --gold-g600: rgb(185,130,59); /* @kind color */
+  --gold-g800: rgb(158,90,3); /* @kind color */
+  --grey-gr100: rgb(243,243,243); /* @kind color */
+  --grey-gr200: rgb(238,238,238); /* @kind color */
+  --grey-gr300-2: rgb(232,231,230); /* @kind color */
+  --grey-gr400: rgb(212,210,208); /* @kind color */
+  --grey-gr500-2: rgb(165,160,154); /* @kind color */
+  --grey-gr50: rgb(249,249,249); /* @kind color */
+  --grey-gr600-2: rgb(139,133,126); /* @kind color */
+  --grey-gr800: rgb(254,253,250); /* @kind color */
+  --offwhite-white-2: rgb(52,48,44); /* @kind color */
+  --softgold-sg100: rgb(213,197,186); /* @kind color */
+  --softgold-sg50: rgb(234,226,220); /* @kind color */
+  --softteal-sb100: rgb(209,226,227); /* @kind color */
+  --softteal-sb50: rgb(227,238,238); /* @kind color */
+  --sommsationteal-b100: rgb(190,202,205); /* @kind color */
+  --sommsationteal-b300: rgb(104,130,139); /* @kind color */
+  --sommsationteal-b400: rgb(61,95,106); /* @kind color */
+  --sommsationteal-b500-2: rgb(20,78,90); /* @kind color */
+  --sommsationteal-b50: rgb(212,219,222); /* @kind color */
+  --sommsationteal-b600: rgb(30,58,66); /* @kind color */
+  --success-green500: rgb(142,214,150); /* @kind color */
+  --success-green800: rgb(66,171,87); /* @kind color */
+  --warning-y500: rgb(249,248,113); /* @kind color */
+}

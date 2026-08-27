@@ -1,6 +1,9 @@
 # Static site — no framework, no build. Publish dir is the repo root.
-# The build command only strips repo-internal files from the published output
-# (it runs when Netlify builds from git; manual CLI deploys use a staging copy).
+# The build command strips repo-internal files from the published output.
+# WARNING: `netlify deploy` (CLI) runs this against your actual working
+# directory, not a staging copy — it deletes CLAUDE.md from disk on every
+# deploy (draft or --prod). Restore it with `git checkout HEAD -- CLAUDE.md`
+# after deploying, before doing any further edits (confirmed 2026-08-27).
 [build]
   publish = "."
   command = "rm -f CLAUDE.md"

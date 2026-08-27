@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Strivers Design System v1.0 — Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/mono/mono.css"><link rel="stylesheet" href="/mono/ds2/fig-assets.css">
+<style>:root{--sv-amber:#C9A84C;--sv-amber-light:#FFF8EC;--sv-dark:#111111;--sv-dark-card:#1E1E1E;--sv-dark-surface:#2A2A2A;--sv-g-50:#F7F7F7;--sv-g-200:#E5E5E5;--sv-g-400:#AAAAAA;--sv-g-600:#767676;--sv-g-900:#1A1A1A;--sv-white:#FFFFFF}</style>
+<style>body{background:#fff}
+body.capture header,body.capture .ds__head{display:none}
+body.capture .ds__stats{border-top:0}
+body.capture{padding:clamp(22px,2.4vw,34px) 0}
+.ds{padding:0 var(--pad) clamp(30px,4vw,64px)}
+.ds__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:var(--pad) var(--pad) clamp(18px,2vw,26px)}
+.ds__head h1{font-size:clamp(24px,2.6vw,38px)}
+.sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.ds__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 var(--pad)}
+.ds__stats div{padding:clamp(18px,2.2vw,30px) 16px clamp(18px,2.2vw,30px) 0}
+.ds__stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.ds__stats b{display:block;font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:clamp(30px,4vw,62px);line-height:.88;letter-spacing:-.02em}
+.ds__stats span{display:block;margin-top:11px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ds__scope{padding:clamp(22px,2.6vw,34px) var(--pad);border-bottom:1px solid var(--line)}
+.ds__scope span{display:block;max-width:56ch;font-size:clamp(16px,1.5vw,21px);line-height:1.4;color:var(--ink);text-wrap:pretty}
+.ds__sec{padding:clamp(34px,4vw,60px) 0 0}
+.ds__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-bottom:18px}
+.ds__k .ln{flex:1;height:1px;background:var(--line)}
+.ramp{display:grid;gap:2px}
+.ramp .hx{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.ramp .lb{margin-top:8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ramp.sm .lb{margin-top:7px;font-size:9px;letter-spacing:.1em}
+.ramp.xs{gap:1px}
+.tri1 .ds__k{color:var(--ink);font-size:10.5px}
+.tri1 .lb{color:var(--ink);font-size:10px}
+.tri1 .hx{font-size:15px}
+.tri1 .note{max-width:34ch}
+.tri2{opacity:.84}
+.tri2 .ds__k,.tri2 .lb{font-size:9px;letter-spacing:.1em}
+.tri3{opacity:.62}
+.tri3 .ds__k{font-size:9px;color:var(--mute)}
+.tri3 .lb{font-size:8px;letter-spacing:.05em}
+.ramp.xs .lb{margin-top:6px;font-size:8.5px;letter-spacing:.06em;text-align:center}
+.semi{display:flex;flex-wrap:wrap;gap:22px;margin-top:14px}
+.semi div{display:flex;align-items:center;gap:9px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.semi i{width:16px;height:16px;display:block}
+.type .row{display:grid;grid-template-columns:130px 1fr 128px;gap:20px;align-items:baseline;padding:16px 0}
+.type .k,.type .v{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.type .v{text-align:right}
+.scaleline{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px}
+.scaleline .u{text-align:center}
+.scaleline i{display:block;background:var(--ds-accent,#000);height:8px;margin:0 auto}
+.scaleline span{display:block;margin-top:8px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.radii div{width:56px}
+.radii i{display:block;height:42px;background:var(--ds-accent-soft,#eee);border:1px solid var(--ds-accent,#000)}
+.radii span{display:block;margin-top:7px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));grid-auto-flow:row dense;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px)}
+.tworow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(26px,3.4vw,58px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.trirow{display:grid;grid-template-columns:3.5fr 3fr 4.4fr;column-gap:clamp(20px,2.6vw,44px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.pairrow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,3.6vw,60px);align-items:start;padding-top:clamp(34px,4vw,60px)}
+.pairrow>*+*{border-left:1px solid var(--line);padding-left:clamp(28px,3.6vw,60px)}
+.pairrow .ds__sec{padding-top:0}
+.showcase{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.showcase>*:nth-child(1){grid-area:2/1/3/2}
+.showcase>*:nth-child(2){grid-area:2/2/3/4}
+.showcase>*:nth-child(3){grid-area:1/1/2/4}
+.showcase>*:nth-child(4){grid-area:3/1/4/2}
+.showcase>*:nth-child(5){grid-area:3/2/4/4}
+@media(max-width:900px){.tworow,.trirow,.pairrow,.showcase{grid-template-columns:1fr}.pairrow>*+*{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:clamp(26px,3vw,40px)}.showcase>*{grid-area:auto!important}}
+.cell{padding:0;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cell__t{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);overflow-wrap:anywhere}
+.cell__t b{color:var(--ink);font-weight:600}
+.cell__b{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.w2{grid-column:span 2}
+.wide{grid-column:1/-1}
+/* the bundle bakes Figma pixel widths measured against licensed faces that do
+   not ship here, so labelled chips get released to their content width */
+.cell--loose .fit__inner div[style*="width:"]{width:max-content!important}
+/* Volte is a licensed face and does not ship here; it is substituted with Poppins,
+   the file’s own geometric sans, so button labels render in a real face rather
+   than the system fallback. Called out in the type note. */
+[style*="Volte"],[style*="Volte"] *{font-family:Poppins,Archivo,sans-serif!important}
+/* the extractor emits some Figma auto-layout children as position:absolute;left:0,
+   so an icon and its label both land on the row origin and overlap. these cells get
+   their children returned to flow and the row laid out as the flex it was drawn as. */
+.cell--flow .fit__inner [style*="position: absolute"]{position:static!important}
+/* baked Figma text boxes were measured in Volte; the Poppins/Inter substitutes run
+   wider, so a fixed-width label slices mid-word. let those nodes spill inside the card. */
+.cell--spill .fit__inner *{overflow:visible!important;text-overflow:clip!important}
+/* Font Awesome 5 Pro is licensed and absent, so its glyph names printed as words */
+.fit__inner [style*="Font Awesome"]{font-size:0!important;line-height:1!important}
+.fit__inner [style*="Font Awesome"]::before{content:"\2605";font-family:Poppins,Archivo,sans-serif;font-size:14px;line-height:1}
+.cell--flow .fit__inner [style*="display: flex"]{gap:8px}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:clamp(16px,2vw,28px) 12px}
+.icons figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.icons svg{color:var(--ink)}
+.icons figcaption{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);line-height:1.35;overflow-wrap:normal;hyphens:none}
+.payicons{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px}
+/* extraction artifact: a bottom-only divider was emitted as a full border box */
+.cell--rule .fit__inner div[style*="border"]{border-top-width:0!important;border-left-width:0!important;border-right-width:0!important}
+.cell--nogray .fit__inner div[style*="rgb(229, 229, 229)"],.cell--nogray .fit__inner div[style*="rgb(229, 231, 235)"]{border-width:0!important}
+.cell--photo .fit__inner svg path{fill:transparent!important}
+.cell--photo .fit__inner svg{background:url(ds2/assets/af79d19debfe7b47.jpg) center/cover no-repeat}
+.halves{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.halves>.wide{grid-column:1/-1}
+@media(max-width:900px){.halves{grid-template-columns:1fr}}
+.fit__inner div[style*="rgb(30, 30, 30)"] div[style*="rgb(16, 24, 40)"]{border-color:rgba(255,255,255,.42)!important}
+.fit__inner div[style*="rgb(30, 30, 30)"] div[style*="rgb(16, 24, 40)"] span{color:#FEFDFA!important}
+.cell--rowpair .fit__inner>div{width:1336px!important}
+.cell--rowpair .fit__inner>div>div:nth-child(2){width:1336px!important;flex-direction:row!important;flex-wrap:wrap!important;column-gap:24px;height:auto!important;align-items:flex-start!important}
+.cell--rowpair .fit__inner>div>div:nth-child(2)>div:nth-child(1),.cell--rowpair .fit__inner>div>div:nth-child(2)>div:nth-child(2){flex:0 0 656px!important;width:656px!important;align-self:flex-start!important}
+.cell--rowpair .fit__inner>div>div:nth-child(2)>div:nth-child(3){flex:0 0 100%!important;width:100%!important}
+.logos{display:flex;flex-wrap:wrap;gap:clamp(16px,1.8vw,28px);align-items:flex-start}
+.logos figure{margin:0;display:flex;flex-direction:column;gap:12px;width:268px;flex:0 0 auto}
+.logos figure:first-child{width:286px}
+.logos figure:first-child .lp{padding:26px 18px}
+.logos .lp{display:flex;align-items:center;justify-content:center;padding:26px;border:0;height:150px;box-sizing:border-box}
+.logos .lp--dark{background:var(--sv-dark)}
+.logos .lp img{display:block;max-width:100%}
+.lk{position:relative;width:212px;height:80px}
+.lk .base{position:absolute;left:0;top:0;width:212px;display:block}
+.lk .wm{position:absolute;left:0;top:0;width:211.81px;display:block}
+.logos .crop{display:block;width:212px;height:44px;overflow:hidden}
+.logos .crop img{display:block;width:212px;margin-top:-36px}
+.logos figcaption{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+.mg{display:flex;gap:16px;flex-wrap:wrap}
+.mg figure{width:116.667px;padding:8px;box-sizing:border-box;border-radius:4px;margin:0;display:flex;flex-direction:column;gap:12px;align-items:center}
+.mg i{display:block;width:90px;height:90px;border-radius:4px;box-shadow:inset 0 0 0 1px rgb(227,230,232);background-position:center;background-size:contain;background-repeat:no-repeat;background-color:#fff}
+.mg figcaption{width:90px;font-family:Inter,system-ui,sans-serif;font-weight:400;font-size:13px;line-height:18px;text-align:center;color:#000}
+.mg .sel{box-shadow:inset 0 0 0 1px #CAA854}
+.note{margin-top:16px;font-size:12.5px;color:var(--mute);max-width:64ch}
+@media(max-width:900px){.ds__stats{grid-template-columns:1fr 1fr}.ds__stats div:nth-child(3){padding-left:0;border-left:0}.w2{grid-column:span 1}}
+@media(max-width:600px){.type .row{grid-template-columns:1fr;gap:8px}.type .v{text-align:left}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/strivers">Strivers</a><a href="/about">About</a></nav></header>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="/mono/ds2/Components.bundle.js"></script>
+<script type="text/babel">
+/* ============================================================
+   DESIGN SYSTEM SNAPSHOT — STANDARDIZED TEMPLATE
+   Per project, edit only SYSTEM below. The renderer is generic.
+   Rules: every number is counted from the source file, never
+   estimated. Every ramp step shown is a real brand value; any
+   placeholder steps in the source collection are excluded and
+   the exclusion is stated. Components render from the library.
+   ============================================================ */
+const SYSTEM = {
+  name: 'Strivers Design System',
+  meta: 'The St. James · consulting lead designer · 2020 to 2022 · v1.0',
+  scope: null,
+  accent: '--sv-amber',
+  accentSoft: '--sv-amber-light',
+  stats: [
+    ['9','Documented sections'],
+    ['11','Color tokens'],
+    ['6','Type tiers'],
+    ['2','Faces: Poppins, Menlo']
+  ],
+  ramps: [
+    {label:'Brand · amber', primary:true, names:[['Amber','--sv-amber'],['Amber Light','--sv-amber-light']], size:'lg', hex:true},
+    {label:'Dark surfaces', secondary:true, names:[['Dark','--sv-dark'],['Dark Card','--sv-dark-card'],['Dark Surface','--sv-dark-surface']], size:'md2'},
+    {label:'Neutral', tertiary:true, cols:3, names:[['White','--sv-white'],['Gray 50','--sv-g-50'],['Gray 200','--sv-g-200'],['Gray 400','--sv-g-400'],['Gray 600','--sv-g-600'],['Gray 900','--sv-g-900']], size:'xs'}
+  ],
+  semantic: [],
+  type: {
+    families: 'Poppins',
+    rows: [
+      ['Display','Poppins Bold','32',32,'sans'],
+      ['Heading 1','Poppins Bold','24',24,'sans'],
+      ['Heading 2','Poppins Bold','16',16,'sans'],
+      ['Body','Poppins Regular','14',14,'body'],
+      ['Body · gray','Poppins Medium','14',14,'body'],
+      ['Label','Poppins SemiBold','10',10,'body']
+    ],
+    serif:'Poppins,Archivo,sans-serif', sans:'Poppins,Archivo,sans-serif',
+    body:'Poppins,Archivo,sans-serif',
+    note:'Six tiers, all Poppins. The file defines no Figma text styles, so each size is measured from the specimen frames. Menlo carries the hex labels in the colour section only.'
+  },
+  space: [],
+  radii: [],
+  scaleNote: 'Measured from the specimen frames, not tokenized',
+  layouts: {Sections:'halves'},
+  pairGroups: [],
+  groups: [
+    ['Actions', W => [
+      ['Button','2 fills', <div style={{display:'flex',gap:12,alignItems:'flex-start'}}><W.Button/><W.Button2/></div>, {scale:1, fams:1}],
+      ['Filter chip','2 states', <div style={{display:'flex',gap:10,alignItems:'flex-start'}}><W.FilterChip/><W.FilterChip2/></div>, {scale:1, fams:1}],
+      ['Badge','2 types', <div style={{display:'flex',gap:10,alignItems:'flex-start'}}><W.Badge/><W.Badge2/></div>, {scale:1, fams:1}]
+    ]],
+    ['Cards', W => [
+      ['Goal card','1 type', <W.GoalCard/>, {scale:.9, fams:1, photo:true, w2:true}],
+      ['Muscle group tile','6 groups, 2 states', <div className="mg">{[['Full body','full-body',1],['Abs','abs'],['Back','back'],['Chest','chest'],['Arms','arms'],['Legs','legs']].map(([lb,f,sel])=>(
+        <figure key={f} className={sel?'sel':''}><i style={{backgroundImage:'url(assets/mg/'+f+'.png)'}}></i><figcaption>{lb}</figcaption></figure>
+      ))}</div>, {w2:true, scale:1, fams:1}]
+    ]],
+    ['Sections', W => [
+      ['Navigation','6 bars', <W.Section style={{borderWidth:0,padding:0}}/>, {scale:.78, fams:0, nogray:true}],
+      ['Cards','5 layouts', <W.Section2 style={{borderWidth:0,padding:0}}/>, {scale:.78, fams:0, nogray:true}],
+      ['Indicators','3 types', <W.Section3 style={{borderWidth:0,padding:0}}/>, {wide:true, scale:.78, fams:0, nogray:true, rowpair:true}]
+    ]]
+  ]
+};
+
+/* ---------- generic renderer, no project specifics below ---------- */
+const V = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hex = c => { c = (c||'').trim(); if (c[0] === '#') return c.toUpperCase(); const m = c.match(/\d+/g); return m ? '#'+m.slice(0,3).map(x=>(+x).toString(16).padStart(2,'0')).join('').toUpperCase() : c; };
+const RAMP_H = {lg:'clamp(96px,13vw,168px)', md:'clamp(46px,6vw,74px)', md2:'clamp(36px,4.2vw,50px)', sm:'30px', xs:'20px'};
+const RAMP_CLS = {lg:'', md:'sm', md2:'xs', sm:'xs', xs:'xs'};
+const ICON_DATA = window.ICON_DATA || {};
+const Glyph = ({name, size=16}) => { const d = ICON_DATA[name]; if (!d) return null;
+  return <svg width={size} height={size} viewBox={d.viewBox} xmlns="http://www.w3.org/2000/svg" dangerouslySetInnerHTML={{__html: d.body}}/>; };
+const Sec = ({k, n, children}) => <section className="ds__sec"><div className="ds__k"><span>{k}</span><span className="ln"></span><span>{n}</span></div>{children}</section>;
+function Fit({s=0.62, children}){
+  const box = React.useRef(null), inner = React.useRef(null);
+  const [st, setSt] = React.useState({h:null, k:s});
+  React.useLayoutEffect(()=>{ const el = inner.current, wrap = box.current; if(!el||!wrap) return;
+    const measure = () => {
+      const avail = wrap.clientWidth;
+      const nat = Math.max(el.scrollWidth, el.offsetWidth, 1);
+      const k = Math.min(s, avail / nat);
+      setSt(p => (Math.abs(p.k-k)<0.002 && p.h===Math.ceil(el.offsetHeight*k)) ? p : {h:Math.ceil(el.offsetHeight*k), k});
+    };
+    measure(); const ro = new ResizeObserver(measure); ro.observe(el); ro.observe(wrap); return () => ro.disconnect();
+  },[s]);
+  return <div className="fit" ref={box} style={{width:'100%',overflow:'hidden',height:st.h?st.h+'px':'auto'}}><div className="fit__inner" ref={inner} style={{transform:'scale('+st.k+')',transformOrigin:'top left',width:'max-content',maxWidth:(100/s)+'%'}}>{children}</div></div>;
+}
+const swatches = r => r.names || r.steps.map(s => [s, r.prefix + s]);
+const rampLen = r => swatches(r).length;
+const rgbOf = c => { c = (c||'').trim(); if (c[0] === '#') { let x = c.slice(1); if (x.length === 3) x = x.split('').map(d=>d+d).join(''); return [0,2,4].map(i=>parseInt(x.substr(i,2),16)); } const m = c.match(/\d+/g); return m ? m.slice(0,3).map(Number) : [255,255,255]; };
+const isLight = c => { const [r,g,b] = rgbOf(c); return (0.299*r + 0.587*g + 0.114*b) > 150; };
+const Ramp = ({r}) => (
+  <div>
+    <div className={'ramp '+RAMP_CLS[r.size]} style={{gridTemplateColumns:'repeat('+(r.cols||rampLen(r))+',minmax(0,1fr))',rowGap:r.cols?'14px':undefined}}>
+      {swatches(r).map(([lb,tok])=>{const v=V(tok);
+        return <div key={lb}><div style={{height:RAMP_H[r.size],background:v,border:isLight(v)?'1px solid var(--line)':'0',display:'flex',alignItems:'flex-end',padding:r.size==='lg'?'12px':'0'}}>
+          {(r.size==='lg'||r.hex) && <span className="hx" style={{color:isLight(v)?'#0A0203':'#FEFDFA'}}>{hex(v)}</span>}
+        </div><div className="lb">{lb}</div></div>;})}
+    </div>
+    {r.note && <div className="note">{r.note}</div>}
+  </div>
+);
+const famCount = cells => cells.reduce((n,[,,,o={}]) => n + (o.fams === undefined ? 1 : o.fams), 0);
+function App(){
+  const W = window, S = SYSTEM;
+  const brandCells = S.brand ? S.brand(W) : [];
+  const groupCells = S.groups.map(([label, build]) => [label, build(W)]);
+  const totalFams = famCount(brandCells) + groupCells.reduce((n,[,c]) => n + famCount(c), 0);
+  React.useLayoutEffect(()=>{
+    document.documentElement.style.setProperty('--ds-accent', V(S.accent));
+    document.documentElement.style.setProperty('--ds-accent-soft', V(S.accentSoft));
+  },[]);
+  return (<>
+    <div className="ds__head"><div><h1>{S.name}</h1><div className="sub">{S.meta}</div></div></div>
+    <div className="ds__stats">{S.stats.map(([b,l])=><div key={l}><b>{b}</b><span>{l}</span></div>)}</div>
+    {S.scope && <div className="ds__scope"><span>{S.scope(totalFams)}</span></div>}
+    <div className="ds">
+      {S.brand && <Sec k="Brand" n={famCount(brandCells)+' families'}>
+        <div className="grid">{brandCells.map(([t, sub, node, o={}], i) => (
+          <div key={t+'-'+i} className={'cell'+(o.wide?' wide':'')+(o.w2?' w2':'')+(o.loose?' cell--loose':'')+(o.flow?' cell--flow':'')+(o.spill?' cell--spill':'')}>
+            <div className="cell__t"><b>{t}</b>{sub?' · '+sub:''}</div>
+            <div className="cell__b"><Fit s={o.scale||.62}>{o.plate ? <div className="plate">{node}</div> : node}</Fit></div>
+          </div>))}
+        </div>
+      </Sec>}
+      {S.icons && <Sec k="Icons" n={(S.icons.ui.length + S.icons.brand.length)+' of ~115 glyphs'}>
+        <div className="icons">{S.icons.ui.filter(n => ICON_DATA[n]).map(n => (
+          <figure key={n}><Glyph name={n} size={n.includes('32')?32:n.includes('24')?24:n.includes('20')?20:n.includes('12')?12:16}/><figcaption>{n.replace(/^Icon/,'').replace(/(\d+)$/,' $1')}</figcaption></figure>))}
+        </div>
+        <div className="payicons">{S.icons.brand.filter(n => ICON_DATA[n]).map(n => <Glyph key={n} name={n} size={38}/>)}</div>
+        <div className="note">{S.icons.note}</div>
+      </Sec>}
+      <Sec k="Logos" n="3 lockups">
+        <div className="logos">
+          <figure><div className="lp"><img src="/mono/assets/logos/strivers-lockup.svg" alt="Strivers lockup" style={{width:246}}/></div><figcaption>Strivers primary lockup · amber and dark</figcaption></figure>
+          <figure><div className="lp"><div className="lk"><img className="base" src="/mono/assets/logos/strivers-dark.svg" alt=""/><img className="wm" src="/mono/assets/logos/strivers-primary-bw.png" alt="Strivers x The St. James, black"/></div></div><figcaption>Primary logo · black on light</figcaption></figure>
+          <figure><div className="lp lp--dark"><div className="lk"><img className="base" src="/mono/assets/logos/strivers-light.svg" alt=""/><img className="wm" src="/mono/assets/logos/strivers-primary-white.png" alt="Strivers x The St. James, white"/></div></div><figcaption>Primary logo · white on dark</figcaption></figure>
+        </div>
+        <div className="note">Strivers sat under The St. James as the parent brand: the amber V lockup for the app, the horizontal wordmark for headers and store frames in both polarities.</div>
+      </Sec>
+      <Sec k="Color" n={S.ramps.reduce((n,r)=>n+rampLen(r),0)+' values'}>
+        <div className="trirow">{S.ramps.map(r => <div key={r.label} className={r.tertiary?'tri3':r.secondary?'tri2':r.primary?'tri1':''}>
+          <div className="ds__k" style={{paddingBottom:12}}><span>{r.label}</span><span className="ln"></span><span>{rampLen(r)} values</span></div>
+          <Ramp r={r}/></div>)}</div>
+      </Sec>
+      {S.semantic.length > 0 && <Sec k="Semantic" n={S.semantic.length+' states'}>
+        <div className="semi">{S.semantic.map(([n,t])=><div key={n}><i style={{background:V(t)}}></i>{n} · {hex(V(t))}</div>)}</div>
+      </Sec>}
+      <Sec k="Type" n={S.type.families}>
+        <div className="type">{S.type.rows.map(([n,f,s,px,fam])=>(
+          <div className="row" key={n}><div className="k">{n}</div>
+          <div style={{fontFamily:fam==='serif'?S.type.serif:S.type.sans,fontSize:px+'px',lineHeight:1.1}}>{S.name.split(' ')[0]}</div>
+          <div className="v">{f}<br/>{s}</div></div>))}</div>
+        <div className="note">{S.type.note}</div>
+      </Sec>
+      {S.space.length > 0 && <Sec k="Space and radius" n={S.scaleNote}>
+        <div className="tworow">
+          <div className="scaleline">{S.space.map(v=><div className="u" key={v}><i style={{width:v+'px'}}></i><span>{v}</span></div>)}</div>
+          <div className="radii" style={{marginTop:0}}>{S.radius.map(([v,n])=><div key={n}><i style={{borderRadius:v+'px'}}></i><span>{n}</span></div>)}</div>
+        </div>
+      </Sec>}
+      {(() => {
+        const renderGroup = (label, cells) => (
+          <Sec key={label} k={'Components · '+label} n={famCount(cells) ? famCount(cells)+' families' : cells.length+' specimen plates'}>
+            <div className={(S.layouts && S.layouts[label] === 'showcase') ? 'showcase' : (S.layouts && S.layouts[label] === 'halves') ? 'halves' : 'grid'}>{cells.map(([t, sub, node, o={}], i) => (
+              <div key={t+'-'+i} className={'cell'+(o.wide?' wide':'')+(o.w2?' w2':'')+(o.loose?' cell--loose':'')+(o.flow?' cell--flow':'')+(o.spill?' cell--spill':'')+(o.fixRule?' cell--rule':'')+(o.nogray?' cell--nogray':'')+(o.photo?' cell--photo':'')+(o.rowpair?' cell--rowpair':'')}>
+                <div className="cell__t"><b>{t}</b>{sub?' · '+sub:''}</div>
+                <div className="cell__b"><Fit s={o.scale||.62}>{o.plate ? <div className="plate">{node}</div> : node}</Fit></div>
+              </div>))}
+            </div>
+          </Sec>);
+        const out = []; let pending = [];
+        groupCells.forEach(([label, cells]) => {
+          if (S.pairGroups && S.pairGroups.includes(label)) {
+            pending.push(renderGroup(label, cells));
+            if (pending.length === 2) { out.push(<div className="pairrow" key={'pair-'+label}>{pending}</div>); pending = []; }
+          } else out.push(renderGroup(label, cells));
+        });
+        if (pending.length) out.push(<div className="pairrow" key="pair-tail">{pending}</div>);
+        return out;
+      })()}
+    </div>
+  </>);
+}
+if (new URLSearchParams(location.search).get('capture') === '1') document.body.classList.add('capture');
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

@@ -1,0 +1,146 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --black-950: rgb(0,0,0); /* @kind color */
+  --error-r500: rgb(210,35,42); /* @kind color */
+  --font-family-body: "Manrope";
+  --font-family-title: "Brandon Grotesque";
+  --font-size-2xl: 32;
+  --font-size-2xs: 12;
+  --font-size-3xl: 40;
+  --font-size-4xl: 48;
+  --font-size-l: 20;
+  --font-size-md: 18;
+  --font-size-s: 16;
+  --font-size-xl: 24;
+  --font-size-xs: 14;
+  --font-weight-bold: "Bold";
+  --font-weight-medium: "Medium";
+  --grey-gr300: rgb(232,231,230); /* @kind color */
+  --grey-gr500: rgb(165,160,154); /* @kind color */
+  --grey-gr600: rgb(139,133,126); /* @kind color */
+  --neutral-100: rgb(223,224,229); /* @kind color */
+  --neutral-200: rgb(193,194,198); /* @kind color */
+  --neutral-300: rgb(160,162,166); /* @kind color */
+  --neutral-400: rgb(129,132,139); /* @kind color */
+  --neutral-500: rgb(101,106,115); /* @kind color */
+  --neutral-50: rgb(242,243,247); /* @kind color */
+  --neutral-600: rgb(84,90,101); /* @kind color */
+  --neutral-700: rgb(61,68,82); /* @kind color */
+  --neutral-800: rgb(38,44,55); /* @kind color */
+  --neutral-900: rgb(17,21,28); /* @kind color */
+  --neutral-950: rgb(6,8,12); /* @kind color */
+  --offwhite-white: rgb(254,253,250); /* @kind color */
+  --padding-lg: 24;
+  --padding-md: 16;
+  --padding-sm: 12;
+  --padding-xl: 32;
+  --padding-xs: 8;
+  --padding-xxl: 48;
+  --padding-xxs: 4;
+  --padding-xxxl: 64;
+  --price-card: "Mobile";
+  --pricecard: 295;
+  --primary-100: rgb(224,232,244); /* @kind color */
+  --primary-200: rgb(200,215,237); /* @kind color */
+  --primary-300: rgb(148,171,206); /* @kind color */
+  --primary-400: rgb(99,130,175); /* @kind color */
+  --primary-500: rgb(87,117,161); /* @kind color */
+  --primary-50: rgb(242,247,253); /* @kind color */
+  --primary-600: rgb(68,98,142); /* @kind color */
+  --primary-700: rgb(53,83,128); /* @kind color */
+  --primary-800: rgb(39,61,97); /* @kind color */
+  --primary-900: rgb(25,46,78); /* @kind color */
+  --primary-950: rgb(16,31,54); /* @kind color */
+  --radius-none: 0;
+  --radius-radius-2xl: 10;
+  --radius-radius-3xl: 12;
+  --radius-radius-4xl: 16;
+  --radius-radius-full: 999;
+  --radius-radius-l: 6;
+  --radius-radius-m: 4;
+  --radius-radius-s: 2;
+  --radius-radius-xl: 8;
+  --secondary-100: rgb(235,220,222); /* @kind color */
+  --secondary-200: rgb(227,206,210); /* @kind color */
+  --secondary-300: rgb(220,192,197); /* @kind color */
+  --secondary-400: rgb(209,172,179); /* @kind color */
+  --secondary-500: rgb(202,160,168); /* @kind color */
+  --secondary-50: rgb(241,232,233); /* @kind color */
+  --secondary-600: rgb(190,144,152); /* @kind color */
+  --secondary-700: rgb(174,129,138); /* @kind color */
+  --secondary-800: rgb(155,110,119); /* @kind color */
+  --secondary-900: rgb(125,78,87); /* @kind color */
+  --secondary-950: rgb(110,62,71); /* @kind color */
+  --sommsationteal-b500: rgb(20,78,90); /* @kind color */
+  --spacing-padding-2xl: 52;
+  --spacing-padding-2xs: 12;
+  --spacing-padding-3xl: 64;
+  --spacing-padding-3xs: 8;
+  --spacing-padding-4xl: 72;
+  --spacing-padding-4xs: 4;
+  --spacing-padding-5xl: 80;
+  --spacing-padding-l: 40;
+  --spacing-padding-m: 32;
+  --spacing-padding-s: 24;
+  --spacing-padding-xl: 48;
+  --spacing-padding-xs: 16;
+  --stroke-stroke-2xl: 4;
+  --stroke-stroke-3xl: 5;
+  --stroke-stroke-l: 2;
+  --stroke-stroke-m: 1;
+  --stroke-stroke-s: 0.5;
+  --stroke-stroke-xl: 3;
+  --white-50: rgb(255,255,255); /* @kind color */
+}
+
+:root[data-mode="desktop"] {
+  --font-family-body: "Manrope";
+  --font-family-title: "Brandon";
+  --font-size-2xl: 40;
+  --font-size-2xs: 14;
+  --font-size-3xl: 48;
+  --font-size-4xl: 56;
+  --font-size-l: 24;
+  --font-size-md: 20;
+  --font-size-s: 18;
+  --font-size-xl: 32;
+  --font-size-xs: 14;
+  --font-weight-bold: "Bold";
+  --font-weight-medium: "Medium";
+  --price-card: "Desktop";
+  --pricecard: 400;
+  --radius-none: 0;
+  --radius-radius-2xl: 12;
+  --radius-radius-3xl: 14;
+  --radius-radius-4xl: 18;
+  --radius-radius-full: 999;
+  --radius-radius-l: 8;
+  --radius-radius-m: 6;
+  --radius-radius-s: 4;
+  --radius-radius-xl: 10;
+  --spacing-padding-2xl: 64;
+  --spacing-padding-2xs: 16;
+  --spacing-padding-3xl: 72;
+  --spacing-padding-3xs: 12;
+  --spacing-padding-4xl: 72;
+  --spacing-padding-4xs: 8;
+  --spacing-padding-5xl: 80;
+  --spacing-padding-l: 48;
+  --spacing-padding-m: 40;
+  --spacing-padding-s: 32;
+  --spacing-padding-xl: 52;
+  --spacing-padding-xs: 24;
+  --stroke-stroke-2xl: 5;
+  --stroke-stroke-3xl: 6;
+  --stroke-stroke-l: 2.5;
+  --stroke-stroke-m: 1.5;
+  --stroke-stroke-s: 1;
+  --stroke-stroke-xl: 3.5;
+}
+
+:root[data-mode="tablet"] {
+  --price-card: "Tablet";
+  --pricecard: 332;
+}

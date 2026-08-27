@@ -1,0 +1,7 @@
+/* Futura PT — the library's real body face. Weight map: Book 400, Medium 500, Bold 700, Heavy 800.
+   The Figma variable font/weight/Demi resolves to Medium here, the closest shipped weight. */
+@font-face{font-family:"Futura PT";src:url("fonts/FuturaPT-Book.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Futura PT";src:url("fonts/FuturaPT-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Futura PT";src:url("fonts/FuturaPT-Medium.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Futura PT";src:url("fonts/FuturaPT-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Futura PT";src:url("fonts/FuturaPT-Heavy.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}

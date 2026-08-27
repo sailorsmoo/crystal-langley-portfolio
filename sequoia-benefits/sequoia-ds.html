@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sequoia Benefits Design System — Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
+<style>:root{--sq-teal:#30BEC6;--sq-teal-2:#3BBCC4;--sq-navy:#293A52;--sq-green:#94C53B;--sq-purple:#8075F2;--sq-bg:#F2F5F7;--sq-text:#2A3950;--sq-text-muted:rgba(42,57,80,.5);--sq-text-dim:#9B9B9B;--sq-surface:#FFFFFF;--sq-text-dark:#4A4A4A;--sq-orange:#F97316;--sq-emerald:#22C55E;--sq-violet:#8B5CF6;--sq-amber:#F59E0B;--sq-red:#EF4444}</style>
+<style>body{background:#fff}
+body.capture header,body.capture .ds__head{display:none}
+body.capture .ds__stats{border-top:0}
+body.capture{padding:clamp(22px,2.4vw,34px) 0}
+.ds{padding:0 var(--pad) clamp(30px,4vw,64px)}
+.ds__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:var(--pad) var(--pad) clamp(18px,2vw,26px)}
+.ds__head h1{font-size:clamp(24px,2.6vw,38px)}
+.sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.ds__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 var(--pad)}
+.ds__stats div{padding:clamp(18px,2.2vw,30px) 16px clamp(18px,2.2vw,30px) 0}
+.ds__stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.ds__stats b{display:block;font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:clamp(30px,4vw,62px);line-height:.88;letter-spacing:-.02em}
+.ds__stats span{display:block;margin-top:11px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ds__sec{padding:clamp(34px,4vw,60px) 0 0}
+.ds__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-bottom:18px}
+.ds__k .ln{flex:1;height:1px;background:var(--line)}
+.note{margin-top:16px;max-width:64ch;font-size:12.5px;line-height:1.55;color:var(--mute);text-wrap:pretty}
+.ramp{display:grid;gap:2px}
+.ramp .hx{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.ramp .lb{margin-top:8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ramp.sm .lb{margin-top:7px;font-size:9px;letter-spacing:.1em}
+.ramp.xs{gap:1px}
+.ramp.xs .lb{margin-top:6px;font-size:8.5px;letter-spacing:.06em}
+.tri1 .ds__k{color:var(--ink);font-size:10.5px}
+.tri1 .lb{color:var(--ink);font-size:10px}
+.tri1 .hx{font-size:15px}
+.tri2{opacity:.88}
+.tri2 .ds__k,.tri2 .lb{font-size:9px;letter-spacing:.1em}
+.tri3{opacity:.66}
+.tri3 .ds__k{font-size:9px;color:var(--mute)}
+.tri3 .lb{font-size:8px;letter-spacing:.05em}
+.semi{display:flex;flex-wrap:wrap;gap:22px;margin-top:14px}
+.semi div{display:flex;align-items:center;gap:9px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.semi i{width:16px;height:16px;display:block}
+.type .row{display:grid;grid-template-columns:150px 1fr 168px;gap:20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.type .row:first-child{border-top:0}
+.type .k,.type .v{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.type .v{text-align:right}
+.scaleline{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px}
+.scaleline .u{text-align:center}
+.scaleline i{display:block;background:var(--ds-accent,#000);height:8px;margin:0 auto}
+.scaleline span{display:block;margin-top:8px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.radii div{width:64px}
+.radii i{display:block;height:42px;background:var(--sq-bg);border:1px solid var(--sq-teal)}
+.radii span{display:block;margin-top:7px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii em{display:block;margin-top:3px;font-size:8.5px;letter-spacing:.06em;color:var(--mute);font-style:normal;opacity:.7}
+.trirow{display:grid;grid-template-columns:3.4fr 3fr 4.2fr;column-gap:clamp(20px,2.6vw,44px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.tworow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(26px,3.4vw,58px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));grid-auto-flow:row dense;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px)}
+.halves{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.halves>.wide{grid-column:1/-1}
+@media(max-width:900px){.trirow,.tworow,.halves{grid-template-columns:1fr}}
+.cell{padding:0;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cell__t{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);overflow-wrap:anywhere}
+.cell__t b{color:var(--ink);font-weight:600}
+.cell__b{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.w2{grid-column:span 2}
+.wide{grid-column:1/-1}
+.logos{display:flex;flex-wrap:wrap;gap:clamp(16px,1.8vw,28px);align-items:flex-start}
+.logos figure{margin:0;display:flex;flex-direction:column;gap:12px;width:260px;flex:0 0 auto}
+.logos .lp{display:flex;align-items:center;justify-content:center;padding:26px;height:120px;box-sizing:border-box;background:var(--sq-surface);border:1px solid var(--line)}
+.logos .lp--dark{background:var(--sq-navy);border-color:var(--sq-navy)}
+.logos figcaption{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+/* ---- Sequoia component specimens, authored at source values ---- */
+.sq{font-family:Roboto,Archivo,system-ui,sans-serif;color:var(--sq-text);-webkit-font-smoothing:antialiased}
+.sq *{box-sizing:border-box}
+.sq h1,.sq h2,.sq h3,.sq h4,.sq h5,.sq h6{text-transform:none;letter-spacing:normal;font-family:inherit;font-weight:inherit;margin:0}
+.sq a{border-bottom:0;text-decoration:none;color:inherit;letter-spacing:normal;text-transform:none}
+.sq a:hover{color:inherit}
+.sq b,.sq strong{letter-spacing:normal;text-transform:none}
+.sq p,.sq em,.sq span,.sq button,.sq i{letter-spacing:normal;text-transform:none}
+.sq-slab{font-family:"Roboto Slab",Georgia,serif;font-weight:400}
+.sq-plate{background:var(--sq-bg);padding:24px;width:100%;box-sizing:border-box}
+.sq-plate--w{background:var(--sq-surface);border:1px solid rgba(42,57,80,.08);border-radius:5px;padding:24px}
+.sq-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.sq-col{display:flex;flex-direction:column;gap:12px}
+.sq-cap{font-size:12px;color:var(--sq-text-dim)}
+/* tags + badges */
+.sq-tag{display:inline-flex;align-items:center;height:23px;padding:0 12px;border-radius:11.5px;font-size:12px;font-weight:500;white-space:nowrap}
+.sq-badge{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 10px;border-radius:3px;font-size:12px;font-weight:500;color:#fff;white-space:nowrap}
+/* buttons */
+.sq-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 20px;border-radius:3px;font-size:14px;font-weight:500;border:1px solid transparent;background:none;cursor:pointer;font-family:inherit;white-space:nowrap}
+.sq-btn--pri{background:var(--sq-teal);color:#fff}
+.sq-btn--out{border-color:var(--sq-teal);color:var(--sq-teal);background:#fff}
+.sq-btn--ghost{border-color:rgba(42,57,80,.18);color:var(--sq-text);background:#fff}
+.sq-ibtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:3px;border:1px solid var(--sq-teal);background:#fff;color:var(--sq-teal)}
+/* tabs */
+.sq-tabs{display:flex;gap:32px;background:#fff;border-radius:5px;padding:18px 24px 0;box-shadow:0 1px 3px rgba(42,57,80,.08)}
+.sq-tab{padding-bottom:14px;font-size:14px;color:var(--sq-text-muted);border-bottom:3px solid transparent;white-space:nowrap}
+.sq-tab.on{color:var(--sq-teal);border-bottom-color:var(--sq-teal);font-weight:500}
+.sq-sub{display:flex;gap:28px}
+.sq-sub span{font-size:15px;color:var(--sq-text-dim);padding-bottom:7px;border-bottom:3px solid transparent}
+.sq-sub span.on{color:var(--sq-teal);border-bottom-color:var(--sq-teal);font-weight:500}
+/* search */
+.sq-search{display:flex;align-items:center;gap:10px;height:40px;padding:0 14px;background:#fff;border:1px solid rgba(42,57,80,.12);border-radius:3px;flex:1;min-width:0}
+.sq-search span{font-size:14px;color:var(--sq-text-dim)}
+.sq-searchbar{display:flex;align-items:stretch;width:576px;max-width:100%}
+.sq-searchbar .sq-search{border-radius:3px 0 0 3px;border-right:0}
+.sq-searchbar button{width:94px;border:0;background:var(--sq-teal);color:#fff;font:500 14px/1 Roboto,sans-serif;border-radius:0 3px 3px 0;cursor:pointer}
+/* hero */
+.sq-hero{position:relative;overflow:hidden;border-radius:5px;padding:32px;background:linear-gradient(100deg,#30BEC6 0%,#3BBCC4 60%,#2BB3BC 100%);color:#fff;width:100%}
+.sq-hero h3{font:500 26px/1.2 "Roboto Slab",Georgia,serif;margin:0;text-transform:none;letter-spacing:normal;color:#fff}
+.sq-hero p{margin:10px 0 0;font-size:14px;max-width:32ch;line-height:1.45;opacity:.94}
+.sq-hero .sq-orb{position:absolute;right:44px;top:26px;width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.13)}
+.sq-hero .sq-fld{display:flex;align-items:center;gap:10px;margin-top:20px;width:296px;max-width:100%;height:40px;padding:0 14px;background:#fff;border-radius:3px;color:var(--sq-text-dim);font-size:14px}
+.sq-appbar{display:flex;align-items:center;gap:20px;border-radius:5px;padding:22px;background:linear-gradient(100deg,#30BEC6,#2BB3BC);color:#fff;width:100%}
+.sq-appbar i{display:flex;align-items:center;justify-content:center;width:80px;height:80px;flex:0 0 80px;background:#fff;border-radius:5px;font:700 34px/1 Roboto,sans-serif;color:var(--sq-teal);font-style:normal}
+.sq-appbar b{display:block;font:500 20px/1.2 "Roboto Slab",Georgia,serif}
+.sq-appbar span{display:block;margin-top:4px;font-size:14px;opacity:.94}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:18px}
+.icons figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center;padding:18px 8px;background:var(--sq-bg);border-radius:5px}
+.icons i{display:flex;align-items:center;justify-content:center;width:34px;height:34px}
+.icons i img{max-width:100%;max-height:100%;display:block;object-fit:contain}
+.icons figcaption{font:400 11px/1.35 Roboto,system-ui,sans-serif;color:var(--sq-text-muted)}
+/* category pills */
+.sq-cats{display:flex;flex-wrap:wrap;gap:28px;background:#fff;border-radius:5px;padding:24px;box-shadow:0 1px 3px rgba(42,57,80,.08)}
+.sq-cats figure{margin:0;width:74px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.sq-cats i{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--sq-teal);color:#fff;box-shadow:0 2px 8px rgba(48,190,198,.35)}
+.sq-cats figcaption{font-size:12px;line-height:1.3;color:var(--sq-text)}
+/* app cards */
+.sq-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px;width:100%}
+.sq-app{background:#fff;border-radius:5px;overflow:hidden;box-shadow:0 1px 3px rgba(42,57,80,.1);display:flex;flex-direction:column}
+.sq-app__t{position:relative;height:78px;background:var(--sq-bg);display:flex;align-items:center;justify-content:center}
+.sq-app__t i{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:8px;background:var(--sq-teal);color:#fff;font:700 26px/1 Roboto,sans-serif;font-style:normal}
+.sq-app__i{position:absolute;left:10px;top:9px;color:var(--sq-text-dim)}
+.sq-app__b{padding:14px 14px 12px}
+.sq-app__b b{display:block;font:700 16px/1.25 Roboto,sans-serif}
+.sq-app__b p{margin:7px 0 0;font-size:14px;line-height:1.4;color:var(--sq-text-muted)}
+.sq-app__f{margin-top:auto;padding:11px 14px;border-top:1px solid rgba(42,57,80,.08);font-size:14px;color:var(--sq-teal)}
+.sq-app--mk .sq-app__t{height:66px;justify-content:center;align-items:center}
+.sq-app--mk .sq-app__t b{font:700 20px/1 "Roboto Slab",Georgia,serif;color:#fff}
+.sq-app--mk .sq-app__t .sq-badge{position:absolute;left:9px;top:9px}
+/* message cards */
+.sq-msg{position:relative;display:flex;flex-direction:column;gap:8px;width:376px;max-width:100%;padding:16px 16px 14px 20px;background:#fff;border-radius:0 5px 5px 0;box-shadow:0 1px 3px rgba(42,57,80,.1)}
+.sq-msg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bar)}
+.sq-msg .sq-dots{color:var(--sq-text-dim);letter-spacing:2px;font-size:13px;line-height:1}
+.sq-msg b{font:700 14px/1.3 Roboto,sans-serif}
+.sq-msg em{font-size:14px;color:var(--sq-text-muted);font-style:italic}
+.sq-msg .sq-fr{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:2px}
+.sq-msg .sq-ic{display:flex;gap:12px;color:var(--sq-teal)}
+/* stat tiles */
+.sq-stats{display:flex;flex-wrap:wrap;gap:12px}
+.sq-stat{width:98px;height:88px;border-radius:5px;background:#fff;box-shadow:0 1px 3px rgba(42,57,80,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.sq-stat b{font:400 30px/1 "Roboto Slab",Georgia,serif}
+.sq-stat span{font-size:13px;color:var(--sq-text-muted)}
+.sq-stat.on{background:var(--sq-teal)}
+.sq-stat.on b,.sq-stat.on span{color:#fff}
+/* reporting */
+.sq-rep{background:#fff;border-radius:5px;padding:22px 24px;box-shadow:0 1px 3px rgba(42,57,80,.1);width:100%}
+.sq-rep__h{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.sq-rep__h b{font:500 18px/1.2 "Roboto Slab",Georgia,serif}
+.sq-rep__h a{font-size:14px;color:var(--sq-teal);text-decoration:none;border-bottom:0}
+.sq-figs{display:flex;flex-wrap:wrap;gap:34px;margin-top:18px}
+.sq-figs div b{display:block;font:400 30px/1 "Roboto Slab",Georgia,serif}
+.sq-figs div span{display:block;margin-top:7px;font-size:13px;color:var(--sq-text-muted)}
+.sq-donut{display:flex;gap:26px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.sq-donut .sq-d{width:104px;height:104px;border-radius:50%;position:relative;flex:0 0 auto}
+.sq-donut .sq-d::after{content:"";position:absolute;inset:22px;border-radius:50%;background:#fff}
+.sq-leg{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center;font-size:13px}
+.sq-leg i{width:9px;height:9px;border-radius:50%;display:block}
+.sq-leg span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+/* contact + trending */
+.sq-contact{display:flex;gap:18px;background:#fff;border-radius:5px;padding:22px;box-shadow:0 1px 3px rgba(42,57,80,.1);width:100%}
+.sq-contact .sq-av{width:76px;height:76px;flex:0 0 76px;border-radius:50%;background:linear-gradient(160deg,#BFD8DE,#9FC4CD);border:1px solid rgba(48,190,198,.5)}
+.sq-contact b{display:block;font:700 16px/1.3 Roboto,sans-serif}
+.sq-contact .sq-role{display:block;margin-top:3px;font-size:14px;color:var(--sq-text-muted)}
+.sq-contact p{margin:10px 0 0;font-size:14px;line-height:1.5;max-width:52ch}
+.sq-contact .sq-cta{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:14px;color:var(--sq-teal)}
+.sq-trend{width:318px;max-width:100%;background:#fff;border-radius:5px;padding:20px 22px;box-shadow:0 1px 3px rgba(42,57,80,.1)}
+.sq-trend b{display:block;font:700 14px/1.3 Roboto,sans-serif}
+.sq-trend a{display:block;padding:12px 0;font-size:14px;line-height:1.35;color:var(--sq-teal);text-decoration:none;border-bottom:1px solid rgba(42,57,80,.08)!important}
+.sq-trend a:last-child{border-bottom:0!important}
+.sq-trend a:first-of-type{padding-top:16px}
+.sq-navpair{display:flex;gap:22px;align-items:flex-start}
+.sq-navpair figure{margin:0;display:flex;flex-direction:column;gap:11px}
+.sq-navpair .fr{position:relative;background:var(--sq-navy);height:672px;overflow:hidden}
+.sq-navpair .fr img{display:block;width:100%;height:auto;transform-origin:top left}
+.sq-navpair .e{width:153px}
+.sq-navpair .c{width:52.5px}
+.sq-navpair .rsv img{width:63%;display:block;opacity:.96}
+.sq-navpair .rsv{position:absolute;left:0;top:0;right:0;height:66px;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 10px;line-height:1.3}
+.sq-navpair figcaption{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+.logos .lp img{display:block}
+.sq-ham{display:flex;flex-direction:column;gap:5px}
+.sq-ham i{display:block;width:24px;height:2px;background:currentColor}
+a{color:var(--ink)}a:hover{color:var(--mute)}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/sequoia-benefits">Sequoia</a><a href="/about">About</a></nav></header>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" data-presets="react">
+
+
+/* Sequoia Benefits design system snapshot.
+   Every value is read from the source design-system sheet, never estimated.
+   Specimens are authored at their documented sizes rather than scaled art. */
+
+const RG = { "plus": { "vb": "1263 36 15 15", "body": "<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1263 43.5C1263 39.36 1266.36 36 1270.5 36C1274.64 36 1278 39.36 1278 43.5C1278 47.64 1274.64 51 1270.5 51C1266.36 51 1263 47.64 1263 43.5ZM1271.25 44.25H1274.25V42.75H1271.25V39.75H1269.75V42.75H1266.75V44.25H1269.75V47.25H1271.25V44.25Z\" fill=\"currentColor\"/>" }, "search": { "vb": "687 38 14 14", "body": "<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M696.373 46.805H697.006L701 50.8073L699.807 52L695.805 48.0057V47.3734L695.589 47.1492C694.676 47.9337 693.492 48.4059 692.203 48.4059C689.329 48.4059 687 46.0766 687 43.203C687 40.3293 689.329 38 692.203 38C695.077 38 697.406 40.3293 697.406 43.203C697.406 44.4917 696.934 45.6764 696.149 46.5889L696.373 46.805ZM688.601 43.203C688.601 45.1961 690.21 46.805 692.203 46.805C694.196 46.805 695.805 45.1961 695.805 43.203C695.805 41.2098 694.196 39.6009 692.203 39.6009C690.21 39.6009 688.601 41.2098 688.601 43.203Z\" fill=\"currentColor\"/>" }, "filter": { "vb": "949 40.3335 14 9", "body": "<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M949 40.3335V41.8335H963V40.3335H949ZM954.444 49.3335H957.556V47.8335H954.444V49.3335ZM960.667 45.5835H951.333V44.0835H960.667V45.5835Z\" fill=\"currentColor\"/>" }, "doc": { "vb": "1068 35 13 16", "body": "<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1079.56 36.4545H1076.52C1076.23 35.5824 1075.44 35 1074.5 35C1073.56 35 1072.77 35.5824 1072.48 36.4545H1069.44C1068.65 36.4545 1068 37.108 1068 37.9091V49.5455C1068 50.3466 1068.65 51 1069.44 51H1079.56C1080.35 51 1081 50.3466 1081 49.5455V37.9091C1081 37.108 1080.35 36.4545 1079.56 36.4545ZM1074.5 36.4545C1074.93 36.4545 1075.22 36.7443 1075.22 37.1818C1075.22 37.6193 1074.93 37.9091 1074.5 37.9091C1074.07 37.9091 1073.78 37.6193 1073.78 37.1818C1073.78 36.7443 1074.07 36.4545 1074.5 36.4545ZM1069.44 37.9091V49.5455H1079.56V37.9091H1078.11V39.3636H1070.89V37.9091H1069.44Z\" fill=\"currentColor\"/>" }, "clock": { "vb": "88.5 3081.5 16 16", "body": "<path d=\"M96.5 3096.5C100.366 3096.5 103.5 3093.37 103.5 3089.5C103.5 3085.63 100.366 3082.5 96.5 3082.5C92.634 3082.5 89.5 3085.63 89.5 3089.5C89.5 3093.37 92.634 3096.5 96.5 3096.5Z\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M96.5 3085.5V3089.5L99.5 3091.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>" } };
+const Rg = ({ n, s = 16 }) => {const g = RG[n];const vb = g.vb.split(' ').map(Number);
+  return <svg width={s} height={s * (vb[3] / vb[2])} viewBox={g.vb} fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', flex: '0 0 auto' }} dangerouslySetInnerHTML={{ __html: g.body }} />;};
+const ring = (rows) => {const tot = rows.reduce((n, r) => n + +r[2], 0);let a = 0;
+  return 'conic-gradient(' + rows.map(([, c, v]) => {const from = a / tot * 100;a += +v;return 'var(' + c + ') ' + from.toFixed(3) + '% ' + (a / tot * 100).toFixed(3) + '%';}).join(',') + ')';};
+const Ic = ({ d, s = 16, sw = 1.6 }) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: d }} />;
+const P = {
+  search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  doc: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',
+  clock: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  check: '<path d="M4 12l5 5L20 6"/>',
+  card: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/>',
+  lines: '<path d="M4 7h16M4 12h16M4 17h10"/>',
+  person: '<circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/>',
+  filter: '<path d="M4 6h16M7 12h10M10 18h4"/>',
+  trash: '<path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/>',
+  avatar: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5a6.5 6.5 0 0 1 11 0"/>'
+};
+
+const SYSTEM = {
+  name: 'Sequoia Benefits Design System',
+  meta: 'Sequoia Consulting Group · product design · v1.0',
+  scope: null,
+  accent: '--sq-teal',
+  accentSoft: '--sq-bg',
+  stats: [
+  ['18', 'Documented sections'],
+  ['16', 'Color values'],
+  ['6', 'Type tiers'],
+  ['2', 'Faces: Roboto, Roboto Slab']],
+
+  ramps: [
+  { label: 'Brand · teal', primary: true, names: [['Teal Primary', '--sq-teal'], ['Teal Secondary', '--sq-teal-2']], size: 'lg', hex: true },
+  { label: 'Accent', secondary: true, names: [['Navy', '--sq-navy'], ['Green', '--sq-green'], ['Purple', '--sq-purple']], size: 'md2' },
+  { label: 'Text and surface', tertiary: true, cols: 3, names: [['Text Primary', '--sq-text'], ['Text Secondary', '--sq-text-muted'], ['Text Dim', '--sq-text-dim'], ['Text Dark', '--sq-text-dark'], ['Surface', '--sq-surface'], ['App Background', '--sq-bg']], size: 'xs' }],
+
+  semantic: [['Requested', '--sq-orange'], ['Added', '--sq-emerald'], ['Category', '--sq-violet'], ['Warning', '--sq-amber'], ['Error', '--sq-red']],
+  type: {
+    families: 'Roboto and Roboto Slab',
+    rows: [
+    ['Page title', 'Roboto Slab Regular', '24', 24, 'serif'],
+    ['Section header', 'Roboto Slab Regular', '18', 18, 'serif'],
+    ['Card title bold', 'Roboto Bold', '16', 16, 'sans'],
+    ['Card title medium', 'Roboto Medium', '14', 14, 'sans'],
+    ['Body / description', 'Roboto Regular', '14', 14, 'body'],
+    ['Caption / metadata', 'Roboto Regular', '12', 12, 'body']],
+
+    serif: '"Roboto Slab",Georgia,serif', sans: 'Roboto,Archivo,sans-serif', body: 'Roboto,Archivo,sans-serif',
+    note: 'Two faces, six tiers. Roboto Slab carries page and section headers and every large figure in the reporting cards; Roboto carries all interface text. Nothing below 12px ships.'
+  },
+  space: [4, 8, 12, 16, 24, 32, 48],
+  spaceNames: [['4', '2xs · badge dot, tight gap'], ['8', 'xs · inner padding tight'], ['12', 'sm · tag padding, badge'], ['16', 'md · card padding, icon spacing'], ['24', 'lg · section gap, card gap'], ['32', 'xl · mobile page padding'], ['48', '2xl · desktop section spacing']],
+  radius: [[5, 'Card', 'shadow-sm'], [11.5, 'Tag pill', ''], [3, 'Icon button', 'border'], [0, 'Bottom bar', 'teal'], [999, 'App category', 'shadow-teal'], [999, 'Avatar', 'border-teal']],
+  scaleNote: 'Seven steps, six radii, named in the source sheet',
+  logos: [
+  ['light', 'Hamburger · nav toggle · 24 × 16 · Navy'],
+  ['dark', 'Hamburger · nav toggle · 24 × 16 · White']],
+
+  logoNote: 'The wordmark plates in the source sheet are empty frames, so the horizontal lockup and tree mark are taken from shipped product artwork instead. The icon mark is the single green path drawn in the navigation rail frame.',
+  icons: [
+  ['my-medical', 'My Medical'],
+  ['hr', 'HR Resources'],
+  ['project', 'Project Planner'],
+  ['claims', 'Invoice Management'],
+  ['umbrella', 'Risk Management'],
+  ['401k', '401(k)'],
+  ['perks', 'Wellbeing'],
+  ['globe', 'Global'],
+  ['adp', 'ADP'],
+  ['grid', 'View All']],
+
+  iconNote: 'Ten marks carry the app shortcut rail. Each is a two-colour line glyph — navy structure with a single accent in coral, teal, violet, lime, green or magenta — so a shortcut is identifiable at 30px without reading its label. ADP is the one vendor logo carried at glyph size.',
+  layouts: { Navigation: 'halves', Banners: 'halves', Reporting: 'halves', 'Collab Center': 'halves' },
+  groups: [
+  ['Actions', () => [
+  ['Button', '3 variants', <div className="sq sq-row">
+        <button className="sq-btn sq-btn--pri"><Rg n="plus" s={15} />New Message</button>
+        <button className="sq-btn sq-btn--out">Visit Website</button>
+        <button className="sq-btn sq-btn--ghost"><Rg n="doc" s={14} />Saved Reports</button>
+      </div>, { wide: true, scale: 1, fams: 1 }],
+  ['Icon button', '1 type', <div className="sq sq-row">
+        <span className="sq-ibtn"><Ic d={P.trash} s={17} /></span>
+        <span className="sq-ibtn"><Rg n="filter" s={16} /></span>
+      </div>, { scale: 1, fams: 1 }],
+  ['Tag pill', '5 categories', <div className="sq sq-row" style={{ gap: 10 }}>
+        {[['Onboarding', '--sq-teal'], ['Payroll', '--sq-green'], ['Company', '--sq-purple'], ['Benefits', '--sq-teal'], ['HR', '--sq-green']].map(([t, c]) =>
+    <span key={t} className="sq-tag" style={{ color: 'var(' + c + ')', background: 'color-mix(in srgb, var(' + c + ') 14%, white)' }}>{t}</span>)}
+      </div>, { w2: true, scale: 1, fams: 1 }],
+  ['Status badge', '2 states', <div className="sq sq-row" style={{ gap: 10 }}>
+        <span className="sq-badge" style={{ background: 'var(--sq-navy)' }}>Requested</span>
+        <span className="sq-badge" style={{ background: 'var(--sq-teal)' }}><Ic d={P.check} s={12} sw={2.6} />Added</span>
+      </div>, { scale: 1, fams: 1 }]]],
+
+  ['Navigation', () => [
+  ['Desktop tabs', '4 tabs', <div className="sq" style={{ width: '100%' }}><div className="sq-tabs">
+        {['Home', 'My Communications', 'Guidance', 'Document Sharing'].map((t, i) => <span key={t} className={'sq-tab' + (i === 0 ? ' on' : '')}>{t}</span>)}
+      </div></div>, { scale: 1, fams: 1, plate: true }],
+  ['Mobile subnav', '3 views', <div className="sq sq-sub">
+        {['List', 'Calendar', 'Grid'].map((t, i) => <span key={t} className={i === 0 ? 'on' : ''}>{t}</span>)}
+      </div>, { scale: 1, fams: 1 }],
+  ['Sidebar', '2 states', <div className="sq sq-navpair">
+        <figure><div className="fr e"><img src="/mono/assets/sq/nav-expanded.svg" alt="Expanded navigation sidebar, 9 destinations" /><span className="rsv"><img src="/mono/assets/sq/sequoia-wordmark.png" alt="Sequoia wordmark" /></span></div><figcaption>Expanded · 233px wide<br />9 destinations · shown at 0.656</figcaption></figure>
+        <figure><div className="fr c"><img src="/mono/assets/sq/nav-rail.svg" alt="Collapsed navigation rail, icon only" /></div><figcaption>Collapsed · 80px wide<br />icon only · shown at 0.656</figcaption></figure>
+      </div>, { scale: 1, fams: 1 }],
+  ['Search bar', '2 widths', <div className="sq sq-col" style={{ width: '100%', gap: 18 }}>
+        <div>
+          <div className="sq-row" style={{ gap: 10 }}>
+            <div className="sq-search" style={{ maxWidth: 420 }}><Rg n="search" s={15} /><span>Search</span></div>
+            <span className="sq-ibtn"><Ic d={P.trash} s={16} /></span>
+            <span className="sq-ibtn"><Rg n="filter" s={15} /></span>
+          </div>
+          <div className="sq-cap" style={{ marginTop: 8 }}>Compact search with icon actions</div>
+        </div>
+        <div>
+          <div className="sq-searchbar"><div className="sq-search"><Rg n="search" s={15} /><span>Search across all articles, documents and requests</span></div><button>Search</button></div>
+          <div className="sq-cap" style={{ marginTop: 8 }}>Full-width search with teal CTA</div>
+        </div>
+      </div>, { scale: 1, fams: 1, plate: true }]]],
+
+  ['Banners', () => [
+  ['Hero banner', '1 type', <div className="sq" style={{ width: '100%' }}><div className="sq-hero">
+        <span className="sq-orb"></span>
+        <h3>Discover apps you'll love</h3>
+        <p>Find the right people-focused apps and put them right into the hands of your people.</p>
+        <div className="sq-fld"><Rg n="search" s={15} />Search for apps</div>
+      </div></div>, { wide: true, scale: 1, fams: 1 }]]],
+
+  ['Cards', () => [
+  ['App card', 'My Apps grid', <div className="sq" style={{ width: '100%' }}><div className="sq-apps">
+        {[['B', 'Benefits', "Administer employees' benefits with Sequoia Benefits Portal"], ['W', 'Wellbeing', 'Useful resource for running your wellness programs'], ['A', 'ADP', 'Payroll and HR solutions, plus tax, compliance and benefits'], ['B', 'BambooHR', 'Simple HR Software. Smart. Efficient. Simple.']].map(([l, n, d], i) =>
+      <div className="sq-app" key={i}><div className="sq-app__t"><span className="sq-app__i"><Ic d={P.info} s={15} /></span><i>{l}</i></div>
+          <div className="sq-app__b"><b>{n}</b><p>{d}</p></div><div className="sq-app__f">Open</div></div>)}
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }],
+  ['Marketplace card', '4 states', <div className="sq" style={{ width: '100%' }}><div className="sq-apps">
+        {[['Ginger.io', '--sq-teal', <span className="sq-badge" style={{ background: 'var(--sq-navy)' }}>Requested</span>, 'Requested'],
+      ['Headspace', '--sq-orange', null, 'Request'],
+      ['Cleo', '--sq-emerald', <span className="sq-badge" style={{ background: 'var(--sq-teal)' }}><Ic d={P.check} s={12} sw={2.6} />Added</span>, 'Added'],
+      ['Lyra', '--sq-violet', null, 'Request']].map(([n, c, badge, cta], i) =>
+      <div className="sq-app sq-app--mk" key={i}><div className="sq-app__t" style={{ background: 'var(' + c + ')' }}>{badge}<b>{n}</b></div>
+          <div className="sq-app__b"><b style={{ fontWeight: 400, fontSize: 14 }}>{n}</b><p>Live a happier, healthier life with just a few minutes</p></div>
+          <div className="sq-app__f">{cta}</div></div>)}
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }],
+  ['Message card', '3 categories', <div className="sq sq-col" style={{ gap: 14 }}>
+        {[['Please sign your I-9 this week', 'Please welcome our newest hire …', 'Onboarding', '--sq-teal'],
+    ['Welcome New Hire', 'Please welcome our newest hire …', 'Company', '--sq-purple'],
+    ['Important company announcement', 'We are announcing something really big …', 'Payroll', '--sq-green']].map(([t, p, tag, c]) =>
+    <div className="sq-msg" key={t} style={{ '--bar': 'var(' + c + ')' }}>
+            <span className="sq-dots">···</span><b>{t}</b><em>{p}</em>
+            <div className="sq-fr"><span className="sq-tag" style={{ color: 'var(' + c + ')', background: 'color-mix(in srgb, var(' + c + ') 14%, white)' }}>{tag}</span>
+            <span className="sq-ic"><Ic d={P.card} s={17} /><Ic d={P.lines} s={17} /><Ic d={P.person} s={17} /></span></div>
+          </div>)}
+      </div>, { w2: true, scale: 1, fams: 1, plate: true }],
+  ['Stat tile', '4 ranges, 2 states', <div className="sq"><div className="sq-stats" style={{ maxWidth: 220 }}>
+        {[['3', 'Today', 1], ['12', 'This Week'], ['42', 'This Month'], ['80', '3 Months']].map(([n, l, on]) =>
+      <div className={'sq-stat' + (on ? ' on' : '')} key={l}><b>{n}</b><span>{l}</span></div>)}
+      </div></div>, { scale: 1, fams: 1, plate: true }]]],
+
+  ['Reporting', () => [
+  ['People', '5 figures', <div className="sq" style={{ width: '100%' }}><div className="sq-rep">
+        <div className="sq-rep__h"><b>People</b><a href="#0">View More</a></div>
+        <div className="sq-figs">{[['634', 'Total employees'], ['55%', 'Male'], ['45%', 'Female'], ['35', 'Avg Age'], ['17', 'Over 60']].map(([n, l]) => <div key={l}><b>{n}</b><span>{l}</span></div>)}</div>
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }],
+  ['Total Rewards', '2 breakdowns', <div className="sq" style={{ width: '100%' }}><div className="sq-rep">
+        <div className="sq-rep__h"><b>Total Rewards</b><a href="#0">View More</a></div>
+        <div className="tworow" style={{ marginTop: 16 }}>
+          {[['Plan Type', [['Kaiser HMO', '--sq-amber', '132'], ['BlueCross Anthem PPO', '--sq-red', '353'], ['Plan 3', '--sq-teal', '7'], ['Plan 4', '--sq-violet', '12'], ['Plan 5', '--sq-green', '770']]],
+        ['Coverage Type', [['EE Only', '--sq-amber', '132'], ['EE + Spouse', '--sq-red', '353'], ['Type 3', '--sq-teal', '7'], ['Type 4', '--sq-violet', '12'], ['Type 5', '--sq-green', '770']]]].map(([t, rows]) =>
+        <div key={t}><div className="sq-cap" style={{ color: 'var(--sq-text-muted)' }}>{t}</div>
+            <div className="sq-donut"><div className="sq-d" style={{ background: ring(rows) }}></div>
+            <div className="sq-leg">{rows.map(([n, c, v]) => <React.Fragment key={n}><i style={{ background: 'var(' + c + ')' }}></i><span>{n}</span><span>{v}</span></React.Fragment>)}</div></div></div>)}
+        </div>
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }],
+  ['Platform Analytics', '3 groups', <div className="sq" style={{ width: '100%' }}><div className="sq-rep">
+        <div className="sq-rep__h"><b>Platform Analytics</b><a href="#0">View More</a></div>
+        <div className="sq-figs" style={{ gap: 48 }}>
+          <div style={{ minWidth: 180 }}><div className="sq-cap">Messages</div><div className="sq-figs" style={{ gap: 24, marginTop: 10 }}><div><b>632</b><span>Sent</span></div><div><b>93.5%</b><span>Open Ratio</span></div></div></div>
+          <div style={{ minWidth: 180 }}><div className="sq-cap">Documents</div><div className="sq-figs" style={{ gap: 24, marginTop: 10 }}><div><b>23</b><span>Upload Docs</span></div><div><b>879</b><span>Views</span></div></div></div>
+          <div><div className="sq-cap">Engagement</div><div className="sq-figs" style={{ gap: 24, marginTop: 10 }}><div><b>153</b><span>Avg. Daily Logins</span><b style={{ fontFamily: 'Roboto', fontSize: 14, fontWeight: 700, marginTop: 12 }}>Dashboard</b><span>Most Viewed Section</span></div></div></div>
+        </div>
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }]]],
+
+  ['Collab Center', () => [
+  ['Contact card', '1 type', <div className="sq" style={{ width: '100%' }}><div className="sq-contact">
+        <div className="sq-av"></div>
+        <div><b>Jonathan Moore</b><span className="sq-role">Client Service Manager</span>
+        <p>I am your primary point of contact at Sequoia, responsible for making sure your everyday needs are well coordinated by our team.</p>
+        <span className="sq-cta"><Ic d={P.avatar} s={16} />Contact me</span></div>
+      </div></div>, { wide: true, scale: 1, fams: 1, plate: true }],
+  ['Trending articles', 'Sidebar list', <div className="sq"><div className="sq-trend">
+        <b>Trending Articles</b>
+        {['How to prepare for a successful Open Enrollment', 'Paycheck distribution', 'Welcome to Sequoia', 'Sequoia One Open Enrollment 2018', 'Mobile app'].map((t) => <a href="#0" key={t}>{t}</a>)}
+      </div></div>, { scale: 1, fams: 1, plate: true }]]]]
+
+
+};
+
+/* ---------- generic renderer ---------- */
+const V = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hex = (c) => {c = (c || '').trim();if (c[0] === '#') return c.toUpperCase();const m = c.match(/[\d.]+/g);return m ? '#' + m.slice(0, 3).map((x) => Math.round(+x).toString(16).padStart(2, '0')).join('').toUpperCase() : c;};
+const RAMP_H = { lg: 'clamp(96px,13vw,168px)', md: 'clamp(46px,6vw,74px)', md2: 'clamp(36px,4.2vw,50px)', sm: '30px', xs: '20px' };
+const RAMP_CLS = { lg: '', md: 'sm', md2: 'xs', sm: 'xs', xs: 'xs' };
+const Sec = ({ k, n, children }) => <section className="ds__sec"><div className="ds__k"><span>{k}</span><span className="ln"></span><span>{n}</span></div>{children}</section>;
+function Fit({ s = 1, children }) {
+  const box = React.useRef(null),inner = React.useRef(null);
+  const [st, setSt] = React.useState({ h: null, k: s });
+  React.useLayoutEffect(() => {const el = inner.current,wrap = box.current;if (!el || !wrap) return;
+    const measure = () => {
+      const avail = wrap.clientWidth;
+      const nat = Math.max(el.scrollWidth, el.offsetWidth, 1);
+      const k = Math.min(s, avail / nat);
+      setSt((p) => Math.abs(p.k - k) < 0.002 && p.h === Math.ceil(el.offsetHeight * k) ? p : { h: Math.ceil(el.offsetHeight * k), k });
+    };
+    measure();const ro = new ResizeObserver(measure);ro.observe(el);ro.observe(wrap);return () => ro.disconnect();
+  }, [s]);
+  return <div className="fit" ref={box} style={{ width: '100%', overflow: 'hidden', height: st.h ? st.h + 'px' : 'auto' }}><div className="fit__inner" ref={inner} style={{ transform: 'scale(' + st.k + ')', transformOrigin: 'top left', width: s < 1 ? 'max-content' : '100%', maxWidth: s < 1 ? 100 / s + '%' : '100%' }}>{children}</div></div>;
+}
+const swatches = (r) => r.names;
+const rampLen = (r) => swatches(r).length;
+const rgbOf = (c) => {c = (c || '').trim();if (c[0] === '#') {let x = c.slice(1);if (x.length === 3) x = x.split('').map((d) => d + d).join('');return [0, 2, 4].map((i) => parseInt(x.substr(i, 2), 16));}const m = c.match(/[\d.]+/g);return m ? m.slice(0, 3).map(Number) : [255, 255, 255];};
+const isLight = (c) => {const [r, g, b] = rgbOf(c);return 0.299 * r + 0.587 * g + 0.114 * b > 150;};
+const Ramp = ({ r }) =>
+<div>
+    <div className={'ramp ' + RAMP_CLS[r.size]} style={{ gridTemplateColumns: 'repeat(' + (r.cols || rampLen(r)) + ',minmax(0,1fr))', rowGap: r.cols ? '14px' : undefined }}>
+      {swatches(r).map(([lb, tok]) => {const v = V(tok);
+      return <div key={lb}><div style={{ height: RAMP_H[r.size], background: v, border: isLight(v) ? '1px solid var(--line)' : '0', display: 'flex', alignItems: 'flex-end', padding: r.size === 'lg' ? '12px' : '0' }}>
+          {(r.size === 'lg' || r.hex) && <span className="hx" style={{ color: isLight(v) ? '#0A0203' : '#FEFDFA' }}>{hex(v)}</span>}
+        </div><div className="lb">{lb}</div></div>;})}
+    </div>
+    {r.note && <div className="note">{r.note}</div>}
+  </div>;
+
+const famCount = (cells) => cells.reduce((n, [,,, o = {}]) => n + (o.fams === undefined ? 1 : o.fams), 0);
+function App() {
+  const S = SYSTEM;
+  const groupCells = S.groups.map(([label, build]) => [label, build()]);
+  React.useLayoutEffect(() => {
+    document.documentElement.style.setProperty('--ds-accent', V(S.accent));
+    document.documentElement.style.setProperty('--ds-accent-soft', V(S.accentSoft));
+  }, []);
+  return <>
+    <div className="ds__head"><div><h1>{S.name}</h1><div className="sub">{S.meta}</div></div></div>
+    <div className="ds__stats">{S.stats.map(([b, l]) => <div key={l}><b>{b}</b><span>{l}</span></div>)}</div>
+    <div className="ds">
+      <Sec k="Logos" n="1 lockup, 1 mark, 2 polarities">
+        <div className="logos">
+          <figure><div className="lp" style={{ background: '#0f2623', padding: '30px 26px' }}><img src="/mono/assets/sq/sequoia-lockup.png" alt="Sequoia horizontal lockup" style={{ width: '100%', display: 'block' }} /></div><figcaption>Horizontal lockup · mark + wordmark · white on dark</figcaption></figure>
+          <figure><div className="lp" style={{ background: '#0f2623' }}><img src="/mono/assets/sq/sequoia-tree.png" alt="Sequoia tree mark" style={{ width: 76, display: 'block' }} /></div><figcaption>Tree mark · in white keyline circle</figcaption></figure>
+          <figure><div className="lp"><img src="/mono/assets/sq/sequoia-mark.svg" alt="Sequoia icon mark" style={{ width: 64 }} /></div><figcaption>Icon mark · 36 × 36 · Green #93C42C</figcaption></figure>
+          <figure><div className="lp lp--dark"><img src="/mono/assets/sq/sequoia-mark.svg" alt="Sequoia icon mark on navy" style={{ width: 64 }} /></div><figcaption>Icon mark · on Navy · nav rail header</figcaption></figure>
+        </div>
+        <div className="note">{S.logoNote}</div>
+      </Sec>
+      <Sec k="Color" n="10 documented, 1 derived">
+        <div className="trirow">{S.ramps.map((r) => <div key={r.label} className={r.tertiary ? 'tri3' : r.secondary ? 'tri2' : r.primary ? 'tri1' : ''}>
+          <div className="ds__k" style={{ paddingBottom: 12 }}><span>{r.label}</span><span className="ln"></span><span>{rampLen(r)} values</span></div>
+          <Ramp r={r} /></div>)}</div>
+      </Sec>
+      <Sec k="Semantic" n={S.semantic.length + ' derived states'}>
+        <div className="semi">{S.semantic.map(([n, t]) => <div key={n}><i style={{ background: V(t) }}></i>{n} · {hex(V(t))}</div>)}</div>
+        <div className="note">Five status colours drive the marketplace card headers and the reporting legends. None is named in the source sheet: each is read off the drawn components. They are not brand colours and never carry text.</div>
+      </Sec>
+      <Sec k="Type" n={S.type.families}>
+        <div className="type">{S.type.rows.map(([n, f, s, px, fam]) =>
+          <div className="row" key={n}><div className="k">{n}</div>
+          <div style={{ fontFamily: fam === 'serif' ? S.type.serif : S.type.sans, fontSize: px + 'px', lineHeight: 1.2, color: 'var(--sq-text)' }}>Sequoia</div>
+          <div className="v">{f}<br />{s}</div></div>)}</div>
+        <div className="note">{S.type.note}</div>
+      </Sec>
+      <Sec k="Iconography" n={S.icons.length + ' glyphs'}>
+        <div className="icons">{S.icons.map(([n, cap]) =>
+          <figure key={n}><i><img src={'assets/sq/ic/' + n + '.png'} alt={cap} /></i><figcaption>{cap}</figcaption></figure>)}
+        </div>
+        <div className="note">{S.iconNote}</div>
+      </Sec>
+      <Sec k="Space and radius" n={S.scaleNote}>
+        <div className="tworow">
+          <div>
+            <div className="scaleline">{S.space.map((v) => <div className="u" key={v}><i style={{ width: v + 'px' }}></i><span>{v}</span></div>)}</div>
+            <div className="note" style={{ fontSize: 11.5 }}>{S.spaceNames.map(([v, n]) => n).join(' · ')}</div>
+          </div>
+          <div className="radii" style={{ marginTop: 0 }}>{S.radius.map(([v, n, m], i) => <div key={n + i}><i style={{ borderRadius: v + 'px' }}></i><span>{n}</span><em>{v === 999 ? 'r=full' : 'r=' + v + 'px'}{m ? ' · ' + m : ''}</em></div>)}</div>
+        </div>
+      </Sec>
+      <div className="note" style={{ marginTop: 'clamp(30px,3.4vw,52px)' }}>Specimens are authored at the sizes and colours the sheet documents, on the App Background it names, rather than scaled art. One gap is the source’s, not the snapshot’s: every third-party app logo — Benefits, Wellbeing, ADP, Ginger.io, Headspace, Cleo — is a placed bitmap that exports as an empty reference from both the Figma file and the SVG sheet, so the app cards and the app banner stand in a letter avatar where the logo belongs.</div>
+      {groupCells.map(([label, cells]) =>
+      <Sec key={label} k={'Components · ' + label} n={famCount(cells) + (famCount(cells) === 1 ? ' family' : ' families')}>
+          <div className={S.layouts[label] === 'halves' ? 'halves' : 'grid'}>{cells.map(([t, sub, node, o = {}], i) =>
+          <div key={t + '-' + i} className={'cell' + (o.wide ? ' wide' : '') + (o.w2 ? ' w2' : '')}>
+              <div className="cell__t"><b>{t}</b>{sub ? ' · ' + sub : ''}</div>
+              <div className="cell__b"><Fit s={o.scale || 1}>{o.plate ? <div className="sq sq-plate">{node}</div> : node}</Fit></div>
+            </div>)}
+          </div>
+        </Sec>)}
+    </div>
+  </>;
+}
+if (new URLSearchParams(location.search).get('capture') === '1') document.body.classList.add('capture');
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body></html>

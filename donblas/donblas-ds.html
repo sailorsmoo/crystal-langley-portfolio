@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Donblas.AI Design System — Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&family=Manrope:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mono/mono.css">
+<style>:root{
+--db-p50:#F2F7FD;--db-p100:#E0E8F4;--db-p200:#C8D7ED;--db-p300:#94ABCE;--db-p400:#6382AF;--db-p500:#5775A1;--db-p600:#44628E;--db-p700:#355380;--db-p800:#273D61;--db-p900:#192E4E;--db-p950:#101F36;
+--db-s50:#F1E8E9;--db-s100:#EBDCDE;--db-s200:#E3CED2;--db-s300:#DCC0C5;--db-s400:#D1ACB3;--db-s500:#CAA0A8;--db-s600:#BE9098;--db-s700:#AE818A;--db-s800:#9B6E77;--db-s900:#7D4E57;--db-s950:#6E3E47;
+--db-n50:#F2F3F7;--db-n100:#DFE0E5;--db-n200:#C1C2C6;--db-n300:#A0A2A6;--db-n400:#81848B;--db-n500:#656A73;--db-n600:#545A65;--db-n700:#3D4452;--db-n800:#262C37;--db-n900:#11151C;--db-n950:#06080C;
+--db-black:#000000;--db-white:#FFFFFF;--db-offwhite:#FEFDFA;--db-gr300:#E8E7E6;--db-gr500:#A5A09A;--db-gr600:#8B857E;--db-error:#D2232A;--db-teal:#144E5A;
+--db-ink:#11151C;--db-body:#3D4452}</style>
+<style>body{background:#fff}
+body.capture header,body.capture .ds__head{display:none}
+body.capture .ds__stats{border-top:0}
+body.capture{padding:clamp(22px,2.4vw,34px) 0}
+.ds{padding:0 var(--pad) clamp(30px,4vw,64px)}
+.ds__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:var(--pad) var(--pad) clamp(18px,2vw,26px)}
+.ds__head h1{font-size:clamp(24px,2.6vw,38px)}
+.sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.ds__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 var(--pad)}
+.ds__stats div{padding:clamp(18px,2.2vw,30px) 16px clamp(18px,2.2vw,30px) 0}
+.ds__stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.ds__stats b{display:block;font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:clamp(30px,4vw,62px);line-height:.88;letter-spacing:-.02em}
+.ds__stats span{display:block;margin-top:11px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ds__sec{padding:clamp(34px,4vw,60px) 0 0}
+.ds__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-bottom:18px}
+.ds__k .ln{flex:1;height:1px;background:var(--line)}
+.note{margin-top:16px;max-width:64ch;font-size:12.5px;line-height:1.55;color:var(--mute);text-wrap:pretty}
+.ramp{display:grid;gap:2px}
+.ramp .hx{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.ramp .lb{margin-top:8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ramp.sm .lb{margin-top:7px;font-size:9px;letter-spacing:.1em}
+.ramp.xs{gap:1px}
+.ramp.xs .lb{margin-top:6px;font-size:8.5px;letter-spacing:.06em}
+.tri1 .ds__k{color:var(--ink);font-size:10.5px}
+.tri1 .lb{color:var(--ink);font-size:10px}
+.tri1 .hx{font-size:15px}
+.tri2{opacity:.88}
+.tri2 .ds__k,.tri2 .lb{font-size:9px;letter-spacing:.1em}
+.tri3{opacity:.66}
+.tri3 .ds__k{font-size:9px;color:var(--mute)}
+.tri3 .lb{font-size:8px;letter-spacing:.05em}
+.semi{display:flex;flex-wrap:wrap;gap:22px;margin-top:14px}
+.semi div{display:flex;align-items:center;gap:9px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.semi i{width:16px;height:16px;display:block}
+.type .row{display:grid;grid-template-columns:150px 1fr 168px;gap:20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.type .row:first-child{border-top:0}
+.type .k,.type .v{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.type .v{text-align:right}
+.scaleline{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px}
+.scaleline .u{text-align:center}
+.scaleline i{display:block;background:var(--ds-accent,#000);height:8px;margin:0 auto}
+.scaleline span{display:block;margin-top:8px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.radii div{width:64px}
+.radii i{display:block;height:42px;background:var(--sq-bg);border:1px solid var(--sq-teal)}
+.radii span{display:block;margin-top:7px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii em{display:block;margin-top:3px;font-size:8.5px;letter-spacing:.06em;color:var(--mute);font-style:normal;opacity:.7}
+.trirow{display:grid;grid-template-columns:3.4fr 3fr 4.2fr;column-gap:clamp(20px,2.6vw,44px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.tworow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(26px,3.4vw,58px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));grid-auto-flow:row dense;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px)}
+.halves{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.halves>.wide{grid-column:1/-1}
+@media(max-width:900px){.trirow,.tworow,.halves{grid-template-columns:1fr}}
+.cell{padding:0;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cell__t{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);overflow-wrap:anywhere}
+.cell__t b{color:var(--ink);font-weight:600}
+.cell__b{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.w2{grid-column:span 2}
+.wide{grid-column:1/-1}
+.logos{display:flex;flex-wrap:wrap;gap:clamp(16px,1.8vw,28px);align-items:flex-start}
+.logos figure{margin:0;display:flex;flex-direction:column;gap:12px;width:260px;flex:0 0 auto}
+.logos .lp{display:flex;align-items:center;justify-content:center;padding:26px;height:120px;box-sizing:border-box;background:var(--sq-surface);border:1px solid var(--line)}
+.logos .lp--dark{background:var(--sq-navy);border-color:var(--sq-navy)}
+.logos figcaption{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+.radii i{background:var(--db-n50);border:1px solid var(--db-p400)}
+/* ---- Donblas component specimens, authored at source values ---- */
+.db{font-family:Inter,system-ui,sans-serif;color:var(--db-body);-webkit-font-smoothing:antialiased}
+.db *{box-sizing:border-box}
+.db h1,.db h2,.db h3,.db h4{text-transform:none;letter-spacing:normal;font-family:inherit;font-weight:inherit;margin:0}
+.db a{border-bottom:0;text-decoration:none;color:inherit;letter-spacing:normal;text-transform:none}
+.db a:hover{color:inherit}
+.db b,.db strong,.db p,.db em,.db span,.db button,.db i{letter-spacing:normal;text-transform:none}
+.db-row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.db-col{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.db-cap{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--db-n400)}
+.db-plate{background:var(--db-n50);padding:24px;width:100%}
+/* Button: 200x56, r=6, pad 16/12, Gotham 16 uppercase ls .02em */
+.db-btn{width:200px;height:56px;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 12px;font-family:'Jost',Inter,sans-serif;font-weight:400;font-size:16px;line-height:1.5;letter-spacing:.02em;text-transform:uppercase;border:0;cursor:default}
+.db-btn svg{flex:0 0 auto}
+/* Input field: 358 wide, exterior h55, 0.5px border, Gotham label 14/700 + input 16/500 */
+.db-inp{width:358px;display:flex;flex-direction:column;gap:8px;font-family:'Jost',Inter,sans-serif}
+.db-inp .ex{height:55px;border:.5px solid var(--db-n400);padding:4px 8px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.db-inp .lb{font-weight:700;font-size:14px;line-height:1.5;letter-spacing:.02em;color:var(--db-p950)}
+.db-inp .it{display:flex;align-items:center;gap:8px;font-weight:500;font-size:16px;line-height:1.5;letter-spacing:.02em;color:var(--db-n700)}
+.db-inp .it span{flex:1}
+.db-inp .bt{display:flex;gap:8px;padding:4px 0;font-weight:500;font-size:14px;line-height:1.8;color:var(--db-n700)}
+.db-inp .bt span:first-child{flex:1}
+.db-inp .dd{border:.5px solid var(--db-n500);box-shadow:0 4px 6px -1px rgba(52,48,44,.1),0 2px 4px -2px rgba(52,48,44,.1);padding:0 8px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.db-inp .dd div{height:22px;display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;font-weight:500;font-size:12px;line-height:1.8;color:var(--db-n700)}
+.db-inp .dd div span{flex:1}
+/* Selection controls: 18x18, 1px #6382AF; checkbox r=2, radio r=full */
+.db-sel{width:328px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.db-sel .hd{display:flex;align-items:center;gap:12px}
+.db-sel .bx{width:18px;height:18px;border:1px solid var(--db-p400);flex:0 0 auto;display:grid;place-items:center;color:#fff}
+.db-sel .bx--cb{border-radius:2px}
+.db-sel .bx--rd{border-radius:999px}
+.db-sel .bx--rd i{display:block;width:8px;height:8px;border-radius:999px;background:currentColor}
+.db-sel .t1{flex:1;font-family:'Jost',Inter,sans-serif;font-weight:700;font-size:12px;line-height:1.5;color:#000}
+.db-sel .t2{font-family:'Jost',Inter,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:.02em;color:var(--db-n700)}
+/* Toggle: 26x16, knob 14, r=27.375 */
+.db-tg{width:26px;height:16px;border-radius:27.375px;position:relative;flex:0 0 auto}
+.db-tg i{position:absolute;top:1px;width:14px;height:14px;border-radius:75px;background:#fff;display:block}
+.db-tgrow{display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:11px;color:var(--db-n500)}
+/* Tab: 56x34, r=4, 1px #101F36, pad 8/16, Gotham 12 */
+.db-tab{height:34px;min-width:56px;border-radius:4px;border:1px solid var(--db-p950);padding:8px 16px;display:flex;align-items:center;justify-content:center;font-family:'Jost',Inter,sans-serif;font-weight:400;font-size:12px;line-height:1.5;color:var(--db-p950);white-space:nowrap}
+/* Accordion: 319 wide, h41, 1px/0.5px #3D4452, Gotham 16/500 */
+.db-acc{width:319px}
+.db-acc .r{border:1px solid var(--db-n700);border-bottom-width:.5px;padding:0 0 12px;display:flex;flex-direction:column;justify-content:center}
+.db-acc .r>div{height:29px;display:flex;justify-content:space-between;align-items:center;padding:0 12px}
+.db-acc .r span{flex:1;font-family:'Jost',Inter,sans-serif;font-weight:500;font-size:16px;line-height:1.8;color:var(--db-n700)}
+.db-acc .bd{border:1px solid var(--db-n700);border-top:0;padding:12px;font-family:Manrope,Inter,sans-serif;font-size:14px;line-height:1.7;color:var(--db-n500)}
+/* Price card: 400x544 desktop, label 115x37 r=6 6 0 0, container pad 32/24 */
+.db-pc{width:400px;display:flex;flex-direction:column;font-family:Inter,sans-serif}
+.db-pc .lbl{width:115px;height:37px;border-radius:6px 6px 0 0;background:var(--db-p700);display:flex;align-items:center;justify-content:center;padding:8px 12px;font-weight:700;font-size:12px;line-height:1.5;color:#fff}
+.db-pc .ct{background:var(--db-p700);padding:32px 24px;display:flex;flex-direction:column;gap:16px}
+.db-pc .hd{background:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;line-height:1.5;color:var(--db-p700)}
+.db-pc .ds{font-weight:500;font-size:12px;line-height:1.8;color:#fff}
+.db-pc .sh{font-weight:700;font-size:24px;line-height:1.5;color:#fff}
+.db-pc .sp{border-top:1.5px solid var(--db-n50)}
+.db-pc .fl{display:flex;flex-direction:column;gap:16px}
+.db-pc .fi{display:flex;align-items:center;gap:12px;font-weight:500;font-size:14px;line-height:1.8;color:#fff}
+.db-pc .fi i{width:20px;height:20px;border-radius:999px;background:#fff;display:grid;place-items:center;flex:0 0 auto;color:var(--db-p700)}
+.db-pc .fi i.o{background:transparent;box-shadow:inset 0 0 0 1px #fff;color:#fff}
+/* Logo plates */
+.logos .lp{height:150px}
+.dbmark{display:block;width:74px;height:91px;background:currentColor;-webkit-mask:url(assets/db/donblas-mark.svg) center/contain no-repeat;mask:url(assets/db/donblas-mark.svg) center/contain no-repeat}
+.dblock{display:flex;align-items:center;gap:16px;color:currentColor}
+.dblock .dbmark{width:52px;height:64px}
+.dblock em{font-family:'Jost',Inter,sans-serif;font-style:normal;font-weight:500;font-size:26px;letter-spacing:.01em;line-height:1}
+/* icon grid */
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:16px}
+.icons figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:16px 8px;background:var(--db-n50)}
+.icons i{display:flex;align-items:center;justify-content:center;width:24px;height:24px;color:var(--db-p900)}
+.icons figcaption{font-family:Inter,sans-serif;font-size:9.5px;letter-spacing:.04em;color:var(--db-n400);line-height:1.35}
+.dual{display:flex;gap:10px;align-items:baseline}
+.dual b{font-family:"Archivo Narrow",Archivo,sans-serif;font-size:13px;letter-spacing:.04em}
+.dual span{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+a{color:var(--ink)}a:hover{color:var(--mute)}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-689MH1TVSB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-689MH1TVSB');</script></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/donblas">Donblas</a><a href="/about">About</a></nav></header>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="/mono/db/db-icons.js"></script>
+<script type="text/babel" data-presets="react">
+
+/* Donblas.AI design system snapshot.
+   Every value is read from the source Figma file's variable collections and
+   component symbols, never estimated. Specimens are authored at documented sizes. */
+
+const MARK = "<g transform=\"translate(204.896 140.524) scale(1.000000 1.000000) translate(0 0)\"><path d=\"M 132.895 1.815 C 150.303 4.729 167.199 11.207 182.759 19.636 C 190.531 23.782 197.258 28.665 205.278 32.218 C 212.409 35.401 219.847 37.816 227.689 38.306 C 251.298 40.327 279.867 30.886 298.417 49.547 C 310.4 62.284 310.684 82.829 303.417 98.086 C 301.88 101.566 298.556 107.156 295.95 108.634 C 291.691 110.73 294.158 102.287 294.492 100.217 C 296.607 92.047 295.471 83.553 290.807 76.418 C 286.442 68.947 278.324 65.546 269.907 64.705 C 255.053 62.974 239.51 65.615 224.627 63.42 C 202.034 60.41 183.084 50.324 163.045 40.828 C 144.774 31.847 125.53 26.323 105.292 23.817 C 70.972 19.063 36.985 28.335 5.742 42.018 C 3.462 43.027 -3.311 46.265 1.963 40.527 C 20.696 21.889 46.551 11.396 71.248 4.779 C 78.23 2.913 85.659 2.609 92.792 1.842 C 98.093 1.174 103.068 0.152 108.661 0.011 C 112.652 -0.079 116.659 0.384 120.635 0.681 C 124.843 0.986 128.767 1.199 132.77 1.797 L 132.895 1.815 Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g><g transform=\"translate(208.069 217.968) scale(1.000000 1.000000) translate(0 0)\"><path d=\"M 254.18 0.119 C 265.793 1.152 273.054 11.609 277.206 21.61 C 283.065 36.167 286.851 52.491 288.39 68.371 C 290.253 88.124 285.573 91.584 281.276 109.065 C 279.294 117.494 281.38 125.064 284.803 132.622 C 288.963 141.568 292.11 150.635 297.787 159.327 C 300.741 163.85 301.272 165.018 304.668 169.157 C 309.297 174.797 293.537 184.475 288.959 189.67 C 284.367 194.139 281.043 200.384 284.39 205.974 C 285.735 208.219 287.196 210.251 286.951 213.251 C 286.771 215.452 282.504 221.921 283.482 219.844 C 284.078 218.577 283.572 215.973 282.549 215.003 C 279.809 212.407 275.194 213.944 271.96 214.654 C 262.579 216.957 253.538 220.412 244.627 223.396 C 231.55 227.809 258.881 230.833 261.949 230.7 C 265.485 230.756 269.264 230.442 272.302 231.465 C 278.285 233.055 280.498 241.264 275.991 245.564 C 271.776 249.486 264.674 249.064 259.3 248.038 C 257.022 247.463 253.549 246.756 253.313 247.428 C 253.021 247.822 253.415 248.698 254.348 249.889 C 255.696 251.664 257.984 254.371 260.228 255.5 C 262.38 256.582 264.796 256.979 264.796 256.979 C 266.261 260.747 267.975 265.88 269.374 270.839 C 271.307 277.693 269.485 287.431 263.264 291.167 C 257.417 294.837 247.219 294.707 240.334 293.931 C 228.105 291.754 209.683 287.524 198.258 282.948 C 165.235 269.168 123.511 245.987 98.871 218.874 C 89.931 208.876 83.642 196.585 78.692 184.032 C 75.058 174.165 71.784 180.653 64.884 182.206 C 41.026 185.804 20.386 159.692 10.213 141.036 C 4.745 130.58 1.199 119.075 0.092 107.387 C -0.606 94.907 2.601 82.647 11.438 73.395 C 17.401 66.807 25.76 63.225 34.474 62.544 C 60.138 60.203 75.778 85.454 81.111 107.692 C 86.726 131.607 103.459 146.41 125.915 154.332 C 139.057 158.676 122.774 148.51 120.632 145.9 C 108.974 135.162 100.687 121.744 95.108 107.019 C 93.695 102.942 91.15 98.175 92.603 93.942 C 93.371 91.718 96.118 89.887 98.623 88.602 C 127.835 74.096 155.707 57.043 181.702 37.376 C 187.198 33.253 192.554 29.534 198.103 25.326 C 204.766 20.338 211.084 14.823 218.088 10.343 C 223.319 6.969 228.963 4.045 234.969 2.294 C 240.795 0.702 248.039 -0.349 254.064 0.107 L 254.18 0.119 Z M 263.339 88.043 C 264.54 86.186 267.887 86.023 266.83 83.804 C 264.602 79.127 262.396 77.56 258.6 75.196 C 252.235 71.233 245.159 68.755 238.35 66.878 C 232.634 65.318 227.603 64.941 221.637 65.135 C 208.422 65.969 196.413 72.209 185.22 78.503 C 182.851 79.832 180.264 81.196 178.057 82.707 C 176.824 83.584 176.064 84.098 176.034 84.553 C 176.043 84.605 176.078 84.647 176.137 84.678 C 177.344 85.024 180.402 83.844 181.963 83.456 C 189.281 81.342 196.579 79.75 204.125 78.847 C 218.133 77.374 233.629 78.225 245.408 86.594 C 247.156 88.066 250.796 90.836 249.907 92.902 L 249.874 92.952 C 249.062 94.038 246.656 94.121 245.113 94.212 C 242.446 94.301 239.794 94.968 237.222 95.289 C 233.201 95.748 228.452 96.548 224.136 97.752 C 215.623 100.17 206.794 103.137 198.555 105.879 C 192.156 107.969 188.216 107.064 194.951 108.618 C 199.243 109.608 205.279 111.886 208.57 113.405 C 210.716 114.395 213.031 115.46 215.255 116.541 C 216.618 117.204 216.789 117.443 216.265 116.815 C 215.627 116.05 212.814 114.092 213.849 113.751 C 216.447 112.896 222.892 112.059 223.828 112.002 C 224.972 111.931 224.849 111.72 225.095 112.477 C 225.137 112.604 226.723 115.738 228.821 118.58 C 231.213 121.821 238.368 124.656 242.405 124.054 C 245.196 123.444 244.61 123.344 243.055 121.294 C 241.674 119.472 240.76 114.987 241.332 112.231 C 241.618 110.851 242.035 109.847 242.373 109.341 C 242.477 109.184 242.165 111.059 242.893 112.633 C 243.744 114.475 247.398 114.124 249.598 113.709 C 254.212 112.837 255.742 112.04 259.441 109.915 C 264.525 106.995 265.671 105.542 267.879 103.641 C 268.265 103.308 268.04 103.384 267.544 103.557 C 265.783 104.172 260.394 105.433 258.399 105.535 C 251.164 105.904 256.587 105.484 259.396 99.51 M 68.413 159.128 C 70.082 158.071 69.347 154.98 69.027 153.133 C 68.307 149.62 66.943 146.543 65.109 143.447 C 60.806 135.398 49.148 126.887 55.218 116.897 C 59.318 109.042 71.667 113.728 68.099 102.88 C 66.465 97.88 63.885 93.269 60.518 89.234 C 57.052 85.026 53.014 81.084 48.254 78.744 C 40.141 74.845 28.868 74.116 21.876 80.501 C 13.904 87.733 13.73 99.703 14.254 109.836 C 14.713 119.476 17.391 128.366 22.487 136.686 C 25.508 141.667 29.302 146.508 34.917 148.288 C 38.647 149.431 42.473 148.016 46.233 147.585 C 57.621 146.151 64.433 160.37 68.366 159.149 L 68.413 159.128 Z M 259.983 182.855 C 258.992 182.524 258.138 183.121 257.544 184.606 C 256.143 187.796 257.634 192.064 260.842 193.673 C 265.64 196.324 271.05 194.532 276.169 192.714 C 279.621 191.306 284.427 189.166 285.098 185.181 C 284.963 180.482 277.179 185.753 274.377 186.611 C 271.276 187.556 267.959 188.765 265.107 188.218 C 262.845 187.73 261.547 183.392 260.05 182.878 L 259.983 182.855 Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g><g transform=\"translate(0 282.572) scale(1.000000 1.000000) translate(0 0)\"><path d=\"M 112.914 2.394 C 116.946 1.454 121.117 0.404 125.261 0.046 C 129.769 -0.319 130.782 1.456 130.744 6.388 C 130.903 16.83 130.33 31.457 131.111 41.759 C 133.962 72.596 142.132 102.169 155.651 130.445 C 159.583 138.654 163.669 146.455 167.503 154.691 C 168.867 157.561 170.135 160.383 170.828 163.506 C 172.101 168.506 171.207 173.671 170.699 178.675 C 170.07 185.023 170.053 192.121 169.096 198.18 C 167.802 207.763 166.058 217.263 164.982 226.92 C 163.44 236.947 161.631 247.045 159.714 256.757 C 158.715 261.38 158.16 268.565 151.372 265.971 C 147.868 264.657 144.511 262.576 141.181 260.831 C 126.342 252.718 110.885 244.719 96.352 236.009 C 73.702 223.18 52.774 206.933 34.459 188.416 C 31.695 185.622 30.854 185.041 29.048 183.031 C -0.8 149.815 -0.116 114.253 0.03 108.62 C 0.917 74.395 17.333 54.555 26.953 44.234 C 49.566 21.835 83.08 9.5 112.914 2.394 Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g><g transform=\"translate(222.762 491.086) scale(1.000000 1.000000) translate(0 0)\"><path d=\"M 50.555 1.914 C 68.129 24.143 77.299 54.634 85.373 81.553 C 87.11 87.158 87.92 93.037 89.433 98.728 C 91.236 104.747 93.477 98.694 94.443 95.865 C 95.342 93.196 96.26 90.502 97.187 87.933 C 104.696 66.927 115.644 45.563 131.318 29.265 C 133.104 27.42 140.674 20.422 142.317 21.838 C 142.576 22.314 142.143 23.531 141.315 25.164 C 140.437 26.894 139.169 29.084 138.232 31.09 C 131.371 45.605 125.744 60.738 120.717 75.933 C 116.695 88.26 113.788 100.184 112.177 113.402 C 111.214 120.004 111.152 126.76 111.904 133.37 C 112.585 139.184 113.885 144.377 115.695 149.866 C 126.362 182.539 143.008 213.151 156.128 245.198 C 157.581 248.239 162.334 261.721 156.183 252.892 C 135.263 219.587 110.138 190.12 80.936 163.536 C 63.684 147.828 44.724 133.723 25.775 119.953 C 20.14 115.904 14.619 111.726 8.963 107.65 C 6.057 105.523 1.905 103.259 0.481 100.076 C -0.906 97.205 0.969 93.676 2.807 91.085 C 5.29 87.55 7.852 83.93 10.047 80.171 C 23.876 56.706 34.011 31.994 42.336 5.912 C 43.644 1.858 46.194 -2.586 50.477 1.836 L 50.555 1.914 Z\" fill=\"currentColor\" fill-rule=\"nonzero\"></path></g>";
+const Mark = ({ w = 74 }) => <svg width={w} height={w * 746.932 / 607} viewBox="0 0 607 746.932" style={{ display: 'block', flex: '0 0 auto' }} dangerouslySetInnerHTML={{ __html: MARK }} />;
+const FIG = (typeof window !== 'undefined' && window.DB_ICONS) || {};
+const Ig = ({ n, s = 24 }) => { const g = FIG[n]; if (!g) return null;
+  return <svg width={s} height={s} viewBox={g.viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" style={{display:'block',flex:'0 0 auto'}} dangerouslySetInnerHTML={{ __html: g.body }} />; };
+const Ic = ({ d, s = 16, sw = 1.6 }) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: d }} />;
+const P = {
+  caret: '<path d="M6 9l6 6 6-6"/>',
+  check: '<path d="M4 12l5 5L20 6"/>',
+  eye: '<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>',
+  x: '<path d="M6 6l12 12M18 6L6 18"/>'
+};
+
+const SYSTEM = {
+  name: 'Donblas.AI Design System',
+  meta: 'Donblas.AI · brand and product system · responsive, three modes',
+  accent: '--db-p900',
+  accentSoft: '--db-n50',
+  stats: [
+    ['91', 'Variables, 5 collections'],
+    ['9 / 70', 'Component families drawn'],
+    ['47', 'Icon glyphs'],
+    ['3', 'Breakpoint modes']],
+
+  logoNote: 'The mark is composed from the four vector paths the file draws it with, at the exact offsets the lockup frame specifies, so the geometry is the file’s own. The file ships the mark in five colourways — black, dark blue, mauve, light purple and white — plus favicon and stacked lockups. The wordmark is set in the title face rather than traced: the file stores it as ten separate vector fragments that do not survive extraction as one shape.',
+
+  ramps: [
+    { label: 'Primary', primary: true, size: 'lg', names: [['50','--db-p50'],['100','--db-p100'],['200','--db-p200'],['300','--db-p300'],['400','--db-p400'],['500','--db-p500'],['600','--db-p600'],['700','--db-p700'],['800','--db-p800'],['900','--db-p900'],['950','--db-p950']], cols: 4 },
+    { label: 'Secondary', secondary: true, size: 'md2', names: [['50','--db-s50'],['100','--db-s100'],['200','--db-s200'],['300','--db-s300'],['400','--db-s400'],['500','--db-s500'],['600','--db-s600'],['700','--db-s700'],['800','--db-s800'],['900','--db-s900'],['950','--db-s950']], cols: 3 },
+    { label: 'Neutral', tertiary: true, size: 'xs', names: [['50','--db-n50'],['100','--db-n100'],['200','--db-n200'],['300','--db-n300'],['400','--db-n400'],['500','--db-n500'],['600','--db-n600'],['700','--db-n700'],['800','--db-n800'],['900','--db-n900'],['950','--db-n950']], cols: 3 }],
+
+  support: [['Black 950','--db-black'],['White 50','--db-white'],['Offwhite','--db-offwhite'],['Grey gr300','--db-gr300'],['Grey gr500','--db-gr500'],['Grey gr600','--db-gr600'],['Error r500','--db-error'],['Sommsation Teal b500','--db-teal']],
+
+  type: {
+    families: '2 faces, 9 tiers, 2 modes',
+    title: "'Jost', Inter, sans-serif",
+    body: 'Manrope, Inter, sans-serif',
+    rows: [
+      ['4xl', 'font/size/4xl', 48, 56, 'title'],
+      ['3xl', 'font/size/3xl', 40, 48, 'title'],
+      ['2xl', 'font/size/2xl', 32, 40, 'title'],
+      ['xl', 'font/size/xl', 24, 32, 'title'],
+      ['l', 'font/size/l', 20, 24, 'body'],
+      ['md', 'font/size/md', 18, 20, 'body'],
+      ['s', 'font/size/s', 16, 18, 'body'],
+      ['xs', 'font/size/xs', 14, 14, 'body'],
+      ['2xs', 'font/size/2xs', 12, 14, 'body']],
+    note: 'Two families and two weights are declared as variables: font/family/title is Brandon Grotesque, font/family/body is Manrope, with Medium and Bold the only weights named. Nine size steps each carry a mobile and a desktop value, so the scale is responsive at the token level rather than by override. Brandon Grotesque is a licensed face with no web release, so the title rows here are set in Jost — the nearest geometric sans available in the browser. Manrope is the real face. Component specimens below that the file sets in Gotham are likewise shown in Jost.'
+  },
+
+  icons: [
+    ['IconAdd', 'Add'], ['IconCaretDown', 'Caret down'], ['IconCaretUp', 'Caret up'],
+    ['IconCellPhone', 'Cell phone'], ['IconCheck', 'Check'], ['IconClose', 'Close'],
+    ['IconDelete', 'Delete'], ['IconEdit', 'Edit'], ['IconEvent', 'Event'],
+    ['IconMinus', 'Minus'], ['IconUser', 'User'], ['IconVisibility', 'Visibility'],
+    ['IconMenu', 'Menu']],
+  iconNote: 'Thirteen glyph families, each drawn at four discrete sizes — 16, 20, 24 and 32 — rather than scaled from one master, which is what makes the set 47 components rather than 13. Shown at 24. Menu exists only at 32; User and Visibility-Off are incomplete at the smaller sizes in the source.',
+
+  space: [['4xs',4,8],['3xs',8,12],['2xs',12,16],['xs',16,24],['s',24,32],['m',32,40],['l',40,48],['xl',48,52],['2xl',52,64],['3xl',64,72],['4xl',72,72],['5xl',80,80]],
+  radius: [['none',0,0],['s',2,4],['m',4,6],['l',6,8],['xl',8,10],['2xl',10,12],['3xl',12,14],['4xl',16,18],['full',999,999]],
+  stroke: [['s',0.5,1],['m',1,1.5],['l',2,2.5],['xl',3,3.5],['2xl',4,5],['3xl',5,6]],
+
+  layouts: { Buttons: 'halves', 'Selection controls': 'halves', Navigation: 'halves' },
+  groups: [
+    ['Buttons', () => {
+      const B = (label, st, icon) => <button className="db-btn" style={st}>{label}{icon ? <Ic d={P.caret} s={20} /> : null}</button>;
+      return [
+        ['Button', '8 variants · Type', <div className="db db-row" style={{ gap: 20 }}>
+          {B('Primary CTA', { background: 'var(--db-p900)', color: '#fff' })}
+          {B('Primary CTA', { background: 'var(--db-p950)', color: '#fff' })}
+          {B('Secondary CTA', { background: '#fff', boxShadow: 'inset 0 0 0 1px var(--db-p900)', color: 'var(--db-p900)' })}
+          {B('Secondary CTA', { background: 'var(--db-p900)', color: '#fff' })}
+          {B('Tertiary CTA', { background: 'var(--db-p300)', color: 'var(--db-p950)' })}
+          {B('Tertiary CTA', { background: 'var(--db-p400)', color: '#fff' })}
+          {B('Quat CTA', { background: '#fff', boxShadow: 'inset 0 0 0 1px var(--db-p700)', color: 'var(--db-p700)' }, true)}
+          {B('Quat CTA', { background: 'var(--db-p900)', color: '#fff' }, true)}
+        </div>, { wide: true, scale: 1, fams: 1 }],
+        ['Tab', '3 states · State', <div className="db db-row" style={{ gap: 12 }}>
+          <span className="db-tab" style={{ background: 'var(--db-p950)', color: '#fff' }}>Link</span>
+          <span className="db-tab">Link</span>
+          <span className="db-tab" style={{ background: 'var(--db-p50)' }}>Link</span>
+        </div>, { scale: 1, fams: 1 }],
+        ['Feature item', '2 variants · Type', <div className="db db-plate" style={{ background: 'var(--db-p700)' }}><div className="db-pc" style={{ width: 'auto' }}><div className="fl">
+          <span className="fi"><i><Ic d={P.check} s={13} /></i>Included in this tier</span>
+          <span className="fi"><i className="o"></i>Not included in this tier</span>
+        </div></div></div>, { scale: 1, fams: 1 }]];
+    }],
+
+    ['Inputs', () => {
+      const F = (o) => <div className="db db-inp">
+        <div>
+          <div className="ex" style={o.exs}>
+            <span className="lb" style={o.lbs}>Label</span>
+            <span className="it" style={o.its}><span>{o.val || 'Input text'}</span><Ic d={P.eye} s={20} /></span>
+          </div>
+          {o.dd ? <div className="dd">{['Option 1','Option 2','Option 3','Option 4'].map((t,i)=>
+            <div key={t}><span>{t}</span>{i===0?<Ic d={P.caret} s={16}/>:null}</div>)}</div> : null}
+          <div className="bt" style={o.bts}><span>{o.help || 'This is helper text.'}</span><span>0/255</span></div>
+        </div>
+      </div>;
+      return [
+        ['Input field', '8 variants · Property 1', <div className="db-row" style={{ gap: 28 }}>
+          {F({})}
+          {F({ val: 'Filled value', its: { color: 'var(--db-n800)' } })}
+          {F({ exs: { borderColor: 'var(--db-p700)', borderWidth: 1.5 }, lbs: { color: '#232A43' }, its: { color: '#4F4F4F' } })}
+          {F({ exs: { borderColor: 'var(--db-error)' }, lbs: { color: 'var(--db-error)' }, its: { color: '#FF0000' }, bts: { color: 'var(--db-error)' }, help: 'This field is required.' })}
+          {F({ exs: { background: 'var(--db-n50)', borderColor: 'var(--db-n200)' }, lbs: { color: 'var(--db-n400)' }, its: { color: 'var(--db-n300)' }, help: 'Cannot edit' })}
+          {F({ dd: true, help: 'Options open' })}
+        </div>, { wide: true, scale: .92, fams: 1 }]];
+    }],
+
+    ['Selection controls', () => {
+      const Row = (kind, o) => <div className="db db-sel">
+        <div className="hd">
+          <span className={'bx bx--' + kind} style={o.bs}>{kind === 'cb' && o.on ? <Ic d={P.check} s={12} sw={2.4} /> : null}{kind === 'rd' && o.on ? <i></i> : null}</span>
+          <span className="t1" style={o.ts}>Make this a default card</span>
+        </div>
+        <span className="t2" style={o.ts}>Check this box to send a gift message to the recipient</span>
+      </div>;
+      return [
+        ['Checkbox', '4 states · State', <div className="db-col" style={{ gap: 20 }}>
+          {Row('cb', {})}
+          {Row('cb', { on: true, bs: { background: 'var(--db-p400)' } })}
+          {Row('cb', { bs: { background: '#D1D1D1', borderColor: '#D1D1D1' }, ts: { color: 'var(--db-n300)' } })}
+          {Row('cb', { on: true, bs: { background: '#888888', borderColor: '#888888' }, ts: { color: 'var(--db-n300)' } })}
+        </div>, { scale: 1, fams: 1 }],
+        ['Radio button', '4 states · State', <div className="db-col" style={{ gap: 20 }}>
+          {Row('rd', {})}
+          {Row('rd', { on: true, bs: { background: 'var(--db-p400)', color: '#fff' } })}
+          {Row('rd', { bs: { background: '#D1D1D1', borderColor: '#D1D1D1' }, ts: { color: 'var(--db-n300)' } })}
+          {Row('rd', { on: true, bs: { background: '#888888', borderColor: '#888888', color: '#fff' }, ts: { color: 'var(--db-n300)' } })}
+        </div>, { scale: 1, fams: 1 }],
+        ['Toggle', '4 states · State', <div className="db db-col" style={{ gap: 16 }}>
+          <span className="db-tgrow"><i className="db-tg" style={{ background: 'var(--db-p400)' }}><i style={{ left: 11 }}></i></i>On</span>
+          <span className="db-tgrow"><i className="db-tg" style={{ background: 'var(--db-n200)' }}><i style={{ left: 1 }}></i></i>Off</span>
+          <span className="db-tgrow" style={{ opacity: .5 }}><i className="db-tg" style={{ background: 'var(--db-p200)' }}><i style={{ left: 11 }}></i></i>On · disabled</span>
+          <span className="db-tgrow" style={{ opacity: .5 }}><i className="db-tg" style={{ background: 'var(--db-n100)' }}><i style={{ left: 1 }}></i></i>Off · disabled</span>
+        </div>, { scale: 1, fams: 1 }],
+        ['Accordion', '2 states · State', <div className="db db-col" style={{ gap: 20 }}>
+          <div className="db-acc"><div className="r"><div><span>Item</span><Ic d={P.caret} s={20} /></div></div></div>
+          <div className="db-acc">
+            <div className="r"><div><span>Item</span><span style={{ transform: 'rotate(180deg)', display: 'block' }}><Ic d={P.caret} s={20} /></span></div></div>
+            <div className="bd">Expanded state carries the answer body at 14 / 1.7 in the body face.</div>
+          </div>
+        </div>, { scale: 1, fams: 1 }]];
+    }],
+
+    ['Commerce', () => [
+      ['Price card', '3 breakpoints · Type', <div className="db db-row" style={{ gap: 24, alignItems: 'flex-start' }}>
+        <div className="db-pc">
+          <span className="lbl">Most Popular</span>
+          <div className="ct">
+            <div className="hd"><span>Price Card</span></div>
+            <p className="ds">A brief description explaning the offering (e.g., a wine club)and its unique value proposition.</p>
+            <p className="sh">$425/month</p>
+            <div className="sp"></div>
+            <div className="fl">
+              {[1,2,3,4,5].map((i)=><span className="fi" key={i}><i><Ic d={P.check} s={13} /></i>Feature included in tier</span>)}
+              <span className="fi"><i className="o"></i>Feature not in tier</span>
+            </div>
+          </div>
+        </div>
+        <div className="db-col" style={{ gap: 10 }}>
+          <span className="db-cap">Desktop · 400 wide</span>
+          <span className="db-cap">Tablet · 332 wide</span>
+          <span className="db-cap">Mobile · 295 wide</span>
+          <span className="db-cap" style={{ marginTop: 10, textTransform: 'none', letterSpacing: '.02em', lineHeight: 1.6, maxWidth: '28ch' }}>Card width is a variable, not a media query: the Responsive Component Rules collection carries PriceCard = 400 / 332 / 295 across its three modes.</span>
+        </div>
+      </div>, { wide: true, scale: .88, fams: 1 }]]]]
+};
+/* ---------- generic renderer ---------- */
+const V = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hex = (c) => {c = (c || '').trim();if (c[0] === '#') return c.toUpperCase();const m = c.match(/[\d.]+/g);return m ? '#' + m.slice(0, 3).map((x) => Math.round(+x).toString(16).padStart(2, '0')).join('').toUpperCase() : c;};
+const RAMP_H = { lg: 'clamp(96px,13vw,168px)', md: 'clamp(46px,6vw,74px)', md2: 'clamp(36px,4.2vw,50px)', sm: '30px', xs: '20px' };
+const RAMP_CLS = { lg: '', md: 'sm', md2: 'xs', sm: 'xs', xs: 'xs' };
+const Sec = ({ k, n, children }) => <section className="ds__sec"><div className="ds__k"><span>{k}</span><span className="ln"></span><span>{n}</span></div>{children}</section>;
+function Fit({ s = 1, children }) {
+  const box = React.useRef(null),inner = React.useRef(null);
+  const [st, setSt] = React.useState({ h: null, k: s });
+  React.useLayoutEffect(() => {const el = inner.current,wrap = box.current;if (!el || !wrap) return;
+    const measure = () => {
+      const avail = wrap.clientWidth;
+      const nat = Math.max(el.scrollWidth, el.offsetWidth, 1);
+      const k = Math.min(s, avail / nat);
+      setSt((p) => Math.abs(p.k - k) < 0.002 && p.h === Math.ceil(el.offsetHeight * k) ? p : { h: Math.ceil(el.offsetHeight * k), k });
+    };
+    measure();const ro = new ResizeObserver(measure);ro.observe(el);ro.observe(wrap);return () => ro.disconnect();
+  }, [s]);
+  return <div className="fit" ref={box} style={{ width: '100%', overflow: 'hidden', height: st.h ? st.h + 'px' : 'auto' }}><div className="fit__inner" ref={inner} style={{ transform: 'scale(' + st.k + ')', transformOrigin: 'top left', width: s < 1 ? 'max-content' : '100%', maxWidth: s < 1 ? 100 / s + '%' : '100%' }}>{children}</div></div>;
+}
+const swatches = (r) => r.names;
+const rampLen = (r) => swatches(r).length;
+const rgbOf = (c) => {c = (c || '').trim();if (c[0] === '#') {let x = c.slice(1);if (x.length === 3) x = x.split('').map((d) => d + d).join('');return [0, 2, 4].map((i) => parseInt(x.substr(i, 2), 16));}const m = c.match(/[\d.]+/g);return m ? m.slice(0, 3).map(Number) : [255, 255, 255];};
+const isLight = (c) => {const [r, g, b] = rgbOf(c);return 0.299 * r + 0.587 * g + 0.114 * b > 150;};
+const Ramp = ({ r }) =>
+<div>
+    <div className={'ramp ' + RAMP_CLS[r.size]} style={{ gridTemplateColumns: 'repeat(' + (r.cols || rampLen(r)) + ',minmax(0,1fr))', rowGap: r.cols ? '14px' : undefined }}>
+      {swatches(r).map(([lb, tok]) => {const v = V(tok);
+      return <div key={lb}><div style={{ height: RAMP_H[r.size], background: v, border: isLight(v) ? '1px solid var(--line)' : '0', display: 'flex', alignItems: 'flex-end', padding: r.size === 'lg' ? '12px' : '0' }}>
+          {(r.size === 'lg' || r.hex) && <span className="hx" style={{ color: isLight(v) ? '#0A0203' : '#FEFDFA' }}>{hex(v)}</span>}
+        </div><div className="lb">{lb}</div></div>;})}
+    </div>
+    {r.note && <div className="note">{r.note}</div>}
+  </div>;
+
+const famCount = (cells) => cells.reduce((n, [,,, o = {}]) => n + (o.fams === undefined ? 1 : o.fams), 0);
+
+function App() {
+  const S = SYSTEM;
+  const groupCells = S.groups.map(([label, build]) => [label, build()]);
+  React.useLayoutEffect(() => {
+    document.documentElement.style.setProperty('--ds-accent', V(S.accent));
+    document.documentElement.style.setProperty('--ds-accent-soft', V(S.accentSoft));
+  }, []);
+  return <>
+    <div className="ds__head"><div><h1>{S.name}</h1><div className="sub">{S.meta}</div></div></div>
+    <div className="ds__stats">{S.stats.map(([b, l]) => <div key={l}><b>{b}</b><span>{l}</span></div>)}</div>
+    <div className="ds">
+      <Sec k="Logos" n="1 mark, 5 colourways">
+        <div className="logos">
+          <figure><div className="lp" style={{ background: '#fff', color: 'var(--db-black)' }}><Mark /></div><figcaption>Mark · black</figcaption></figure>
+          <figure><div className="lp" style={{ background: '#fff', color: 'var(--db-p900)' }}><Mark /></div><figcaption>Mark · dark blue #192E4E</figcaption></figure>
+          <figure><div className="lp" style={{ background: '#fff', color: 'var(--db-s900)' }}><Mark /></div><figcaption>Mark · mauve #7D4E57</figcaption></figure>
+          <figure><div className="lp" style={{ background: 'var(--db-p950)', borderColor: 'var(--db-p950)', color: '#fff' }}><Mark /></div><figcaption>Mark · white on dark</figcaption></figure>
+          <figure style={{ width: 320 }}><div className="lp" style={{ background: '#fff', color: 'var(--db-p900)' }}><span className="dblock"><Mark w={52} /><em>Donblas.AI</em></span></div><figcaption>Horizontal lockup · mark + wordmark</figcaption></figure>
+        </div>
+        <div className="note">{S.logoNote}</div>
+      </Sec>
+      <Sec k="Color" n="35 in Colors, 6 ungrouped">
+        <div className="trirow">{S.ramps.map((r) => <div key={r.label} className={r.tertiary ? 'tri3' : r.secondary ? 'tri2' : 'tri1'}>
+          <div className="ds__k" style={{ paddingBottom: 12 }}><span>{r.label}</span><span className="ln"></span><span>{rampLen(r)} values</span></div>
+          <Ramp r={r} /></div>)}</div>
+      </Sec>
+      <Sec k="Support" n={S.support.length + ' ungrouped values'}>
+        <div className="semi">{S.support.map(([n, t]) => <div key={n}><i style={{ background: V(t), boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.12)' }}></i>{n} · {hex(V(t))}</div>)}</div>
+        <div className="note">Six colours sit outside the three ramps, in the Ungrouped collection: a warm grey trio, one error red, an off-white paper tone, and Sommsation Teal — carried over from the sister brand rather than native to Donblas.</div>
+      </Sec>
+      <Sec k="Type" n={S.type.families}>
+        <div className="type">{S.type.rows.map(([n, tok, m, d, fam]) =>
+          <div className="row" key={n}><div className="k">{n}<br />{tok}</div>
+            <div style={{ fontFamily: fam === 'title' ? S.type.title : S.type.body, fontWeight: fam === 'title' ? 500 : 400, fontSize: d + 'px', lineHeight: 1.2, color: 'var(--db-ink)' }}>Donblas.AI</div>
+            <div className="v">{m} mobile<br />{d} desktop</div></div>)}</div>
+        <div className="note">{S.type.note}</div>
+      </Sec>
+      <Sec k="Iconography" n="47 glyphs, 13 families">
+        <div className="icons">{S.icons.map(([base, cap]) => {
+          const n = [24, 20, 32, 16].map((s) => base + s).find((k) => FIG[k]);
+          return n ? <figure key={base}><i><Ig n={n} s={24} /></i><figcaption>{cap}</figcaption></figure> : null;
+        })}</div>
+        <div className="note">{S.iconNote}</div>
+      </Sec>
+      <Sec k="Space, radius and stroke" n="27 global tokens, 2 modes">
+        <div className="trirow">
+          <div>
+            <div className="ds__k" style={{ paddingBottom: 12 }}><span>Spacing</span><span className="ln"></span><span>12 steps</span></div>
+            <div className="scaleline">{S.space.map(([n, m, d]) => <div className="u" key={n}><i style={{ width: d + 'px' }}></i><span>{n}</span></div>)}</div>
+            <div className="note" style={{ fontSize: 11.5 }}>{S.space.map(([n, m, d]) => n + ' ' + m + '/' + d).join(' · ')}</div>
+          </div>
+          <div>
+            <div className="ds__k" style={{ paddingBottom: 12 }}><span>Radius</span><span className="ln"></span><span>9 steps</span></div>
+            <div className="radii" style={{ marginTop: 0 }}>{S.radius.map(([n, m, d]) => <div key={n}><i style={{ borderRadius: d + 'px' }}></i><span>{n}</span><em>{d === 999 ? 'full' : m + '/' + d + 'px'}</em></div>)}</div>
+          </div>
+          <div>
+            <div className="ds__k" style={{ paddingBottom: 12 }}><span>Stroke</span><span className="ln"></span><span>6 steps</span></div>
+            <div className="db-col" style={{ gap: 14 }}>{S.stroke.map(([n, m, d]) =>
+              <div key={n} className="dual" style={{ width: '100%', alignItems: 'center', gap: 14 }}>
+                <i style={{ display: 'block', flex: 1, borderTop: d + 'px solid var(--db-p700)' }}></i>
+                <b>{n}</b><span>{m}/{d}</span>
+              </div>)}</div>
+          </div>
+        </div>
+        <div className="note">Every global token carries a mobile and a desktop value; the pairs above read mobile/desktop, and the drawn specimens use the desktop value. Radius and stroke step up together at the larger breakpoint, so a card corner and its keyline stay in proportion.</div>
+      </Sec>
+      <div className="note" style={{ marginTop: 'clamp(30px,3.4vw,52px)' }}>Specimens are authored at the sizes, radii, strokes and colours the file's symbols carry, not scaled art. Two honest gaps: the source does not override button text colour per variant, so contrast on the eight fills is inferred from each fill's luminance; and Brandon Grotesque and Gotham are licensed faces with no web release, shown here in Jost. Coverage is partial by choice: the file declares 70 component sets, and this snapshot draws the nine atomic families a system is judged on. The remaining sets are responsive page blocks — Header, Hero, Content-Row, FullScreen-Block, Split-Content, Table and Footer, each triplicated across desktop, tablet and mobile — which belong in a layout appendix rather than here.</div>
+      {groupCells.map(([label, cells]) =>
+        <Sec key={label} k={'Components · ' + label} n={famCount(cells) + (famCount(cells) === 1 ? ' family' : ' families')}>
+          <div className={S.layouts[label] === 'halves' ? 'halves' : 'grid'}>{cells.map(([t, sub, node, o = {}], i) =>
+            <div key={t + '-' + i} className={'cell' + (o.wide ? ' wide' : '') + (o.w2 ? ' w2' : '')}>
+              <div className="cell__t"><b>{t}</b>{sub ? ' · ' + sub : ''}</div>
+              <div className="cell__b"><Fit s={o.scale || 1}>{node}</Fit></div>
+            </div>)}
+          </div>
+        </Sec>)}
+    </div>
+  </>;
+}
+if (new URLSearchParams(location.search).get('capture') === '1') document.body.classList.add('capture');
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body></html>
