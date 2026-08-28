@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sommsation — Design system overview</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sommsation: Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/mono/ds/fig-fonts.css">
 <link rel="stylesheet" href="/mono/mono.css">
@@ -94,13 +94,13 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 <section class="ct">
 <div class="ct__in">
 <div class="ct__lede">
-<h1>The shipped surfaces, read against the system</h1>
-<p>A layout test, not a product screen. The alternating label-and-specimen rhythm, holding four real Sommsation surfaces against the library they were built from — 159 component sets, 146 tokens, four modes — to find where the system supports this content model and where it runs out.</p>
+<h1>Six years of Sommsation, in one system</h1>
+<p>I built this system over six years as VP Design and Creative: 159 component sets, 146 tokens, four modes. It was composable enough to stand up fast for sister projects and companies, and it developed in parallel with Sommsation's overall brand tone and aesthetic, the digital system and the external brand built together instead of in sequence.</p>
 </div>
 
 <div class="pl">
 <div class="pl__h"><b>Font</b> System</div>
-<p class="pl__s">Two families, five tiers, one variable collection. Playfair Display sets display and title; Futura PT sets heading, body and caption. Both are the real licensed faces, loaded here — the only system in this portfolio where the specimen is not a stand-in.</p>
+<p class="pl__s">Two families carry the whole system. Playfair Display sets display and title; Futura PT sets heading, body and caption.</p>
 <div class="tp">
 <div class="tp__ghost" aria-hidden="true">Aa</div>
 <div class="tp__row">
@@ -128,7 +128,7 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 
 <div class="pl">
 <div class="pl__h"><b>Palette</b> and <b>Semantics</b></div>
-<p class="pl__s">A teal core, a gold secondary, eleven neutrals — and four declared semantic colours. This is the only system in the portfolio that can say good, careful and wrong without borrowing a ramp step.</p>
+<p class="pl__s">A teal core, a gold secondary, eleven neutrals, and four semantic colors I added specifically so the system could say good, careful and wrong without borrowing a ramp step.</p>
 <div class="ramp">
 <i style="background:var(--primary-50)"></i><i style="background:var(--primary-100)"></i><i style="background:var(--primary-200)"></i><i style="background:var(--primary-300)"></i><i style="background:var(--primary-400)"></i><i style="background:var(--primary-500)"></i><i style="background:var(--primary-600)"></i>
 </div>
@@ -147,19 +147,19 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 
 <div class="pl">
 <div class="pl__h"><b>Four</b> Modes</div>
-<p class="pl__s">The structural idea worth stealing. Radius and spacing are not fixed values, they are variables with a mode per breakpoint — so a card is not restyled at each width, it resolves differently. Read honestly: only desktop moves the radii, tablet inherits mobile and changes component widths, and dark is a fourth mode on the same collection.</p>
+<p class="pl__s">Radius and spacing aren't fixed values, they're variables with a mode per breakpoint, so a card doesn't get restyled at each width, it resolves differently. Only desktop actually redefines the radius set; tablet inherits mobile and just resizes components. Dark is a fourth mode on the same collection, not a parallel theme.</p>
 <div class="md">
 <div class="md__c"><dt>Mobile</dt><dd><div class="r"><i style="border-radius:2px"></i><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:10px"></i><i style="border-radius:16px"></i></div><div class="l">radius <b>s 2 &middot; m 4 &middot; l 6 &middot; 2xl 10 &middot; 4xl 16</b></div></dd></div>
 <div class="md__c"><dt>Tablet</dt><dd><div class="r"><i style="border-radius:2px"></i><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:10px"></i><i style="border-radius:16px"></i></div><div class="l">radius inherits mobile &middot; the mode changes <b>price card 295 &rarr; 332</b></div></dd></div>
 <div class="md__c"><dt>Desktop</dt><dd><div class="r"><i style="border-radius:4px"></i><i style="border-radius:6px"></i><i style="border-radius:8px"></i><i style="border-radius:12px"></i><i style="border-radius:18px"></i></div><div class="l">radius <b>s 4 &middot; m 6 &middot; l 8 &middot; 2xl 12 &middot; 4xl 18</b></div></dd></div>
-<div class="md__c" style="background:var(--darkteal-db100);border-color:var(--darkteal-db100)"><dt style="color:var(--secondary-300)">Dark</dt><dd><div class="r"><i style="border-radius:4px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:6px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:8px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:12px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:18px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i></div><div class="l" style="color:rgba(254,253,250,.7)">same geometry, inverted colour</div></dd></div>
+<div class="md__c" style="background:var(--darkteal-db100);border-color:var(--darkteal-db100)"><dt style="color:var(--secondary-300)">Dark</dt><dd><div class="r"><i style="border-radius:4px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:6px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:8px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:12px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i><i style="border-radius:18px;background:var(--darkteal-db50);border-color:var(--secondary-500)"></i></div><div class="l" style="color:rgba(254,253,250,.7)">same geometry, inverted color</div></dd></div>
 </div>
 </div>
 
 <div class="zz">
 <div class="zz__t">
 <h2>Web</h2>
-<div class="k">Commerce &middot; the primary surface</div>
+<div class="k">Commerce &middot; The DTC Marketplace</div>
 <p>Where the system is most itself: Playfair for the wine, Futura for everything asked of the customer.</p>
 <span class="y">Storefront and account</span>
 </div>
@@ -170,7 +170,7 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 <div class="zz__t">
 <h2>Email</h2>
 <div class="k">Lifecycle &middot; Klaviyo</div>
-<p>The hardest surface to hold a system on, because the medium removes half of it. Type sizes and gold rules survive; tokens do not.</p>
+<p>The hardest surface to hold a system on, because the medium removes half of it. Type sizes and the gold rule survive the jump into email, and component tokens are already being extended here too.</p>
 <span class="y">Campaign and lifecycle</span>
 </div>
 <div class="ctcard"><figure class="shot"><img src="/mono/hero/app-email.jpg" alt="Sommsation email campaign" loading="lazy"><figcaption>Email &middot; campaign</figcaption></figure></div>
@@ -180,7 +180,7 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 <div class="zz__t">
 <h2>Events</h2>
 <div class="k">Activation &middot; physical</div>
-<p>Print, signage and pour stations. The brand travels; the component library cannot.</p>
+<p>Print, signage, pour stations. The brand travels further than the component library does.</p>
 <span class="y">On-site activation</span>
 </div>
 <div class="ctcard"><figure class="shot"><img src="/mono/hero/app-events.jpeg" alt="Sommsation event activation" loading="lazy"><figcaption>Events &middot; activation</figcaption></figure></div>
@@ -190,7 +190,7 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 <div class="zz__t">
 <h2>Collateral</h2>
 <div class="k">Partner and trade</div>
-<p>Decks, one-sheets and producer material. Same two faces, same gold, no components at all.</p>
+<p>Decks, one-sheets, producer material. Same two faces, same gold rule, no components at all.</p>
 <span class="y">Partner-facing</span>
 </div>
 <div class="ctcard"><figure class="shot"><img src="/mono/hero/app-collateral.jpg" alt="Sommsation partner collateral" loading="lazy"><figcaption>Collateral &middot; partner and trade</figcaption></figure></div>
@@ -203,21 +203,21 @@ a{color:var(--accent)}a:hover{color:var(--ink)}
 
 <section class="fnd">
 <div class="fnd__in">
-<div><h2>Does it repurpose?</h2></div>
+<div><h2>What holds, what doesn't</h2></div>
 <ol>
-<li class="is-yes"><b>Everything the reference needs already exists</b><p>This is the only one of the five where the layout asks for nothing the system lacks. Radius/4xl at 18px desktop is the card. The soft shadow sits inside the existing elevation language. Display and title are large enough to carry a specimen headline. Four semantic colours cover up, careful and down. After four overviews spent naming gaps, the useful result here is that there is no gap to name.</p></li>
-<li class="is-yes"><b>The four modes</b><p>The strongest structural idea in the portfolio, and it is invisible in a screenshot. Radius and spacing are variables with a mode per breakpoint, so a card resolves at 2px on mobile and 4px on desktop without a single override, and dark is a fourth mode on the same collection rather than a parallel theme. Worth noting that only desktop actually redefines the radius set — tablet exists to resize components, not to reshape them. Any of the other four systems would be improved more by adopting this than by adopting the layout.</p></li>
-<li class="is-yes"><b>The type plate, at full strength</b><p>Also the only system here whose faces are real. Playfair Display and Futura PT are both loaded and licensed, so the specimen is the typeface rather than a stand-in — Donblas shows Jost for Brandon Grotesque, Telltale shows Cinzel for Albertus. And because the scale is a variable collection, the plate can honestly print two numbers per tier instead of one.</p></li>
-<li class="is-no"><b>The monospace voice</b><p>Five systems, five times the same gap. Playfair and Futura PT, no mono, and here it is least defensible to add one: a luxury wine brand should not read instrumented. The right conclusion for this system is not to adopt a data face but to accept that this layout's captions will be set in Futura Book at caption size, and lose the effect.</p></li>
-<li class="is-no"><b>The library, past the first surface</b><p>The specimens above expose the real limit, and it is not the tokens. 159 component sets serve web. Email is built where components cannot go, events are printed, and collateral is decks — three of four surfaces carry the brand on two faces and a gold rule alone. The system is excellent and its reach is one surface wide. That is the gap worth documenting, not a missing colour.</p></li>
-<li class="is-yes"><b>The alternating rhythm</b><p>Cheap and correct, as everywhere else — and better suited here than to any of the others, because a luxury brand already paces its pages this way. This is the one system where the rhythm is not a borrow but a house habit.</p></li>
-<li class="is-no"><b>The content shape</b><p>The honest failure. The reference's model is one number and one sentence per card, and this brand's job is desire, not instrumentation: nothing in the four surfaces above is a metric, and forcing one in would work against every other decision in the system. Where Sequoia needed the model and lacked the palette, Sommsation has the palette and does not want the model.</p></li>
+<li class="is-yes"><b>The system covers everything I asked of it here.</b><p>Radius/4xl at 18px is the card. The soft shadow sits inside the elevation language I already built. Display and title are large enough to carry a headline on their own. Four semantic colors cover up, careful and down. I didn't have to invent anything to make this page work, and that's the real test of a system, not the page.</p></li>
+<li class="is-yes"><b>The four modes are the strongest structural idea in the system, and you'd never see it in a screenshot.</b><p>Radius and spacing are variables with a mode per breakpoint, so a card resolves at 2px on mobile and 4px on desktop without a single override, and dark is a fourth mode on the same collection rather than a parallel theme. Tablet exists to resize components, not to reshape them. This is the piece of Sommsation I'd bring into any new system.</p></li>
+<li class="is-yes"><b>The type plate is the one place on this whole site where the specimen isn't a stand-in.</b><p>Playfair Display and Futura PT are both loaded and licensed here, so what you're reading is the actual typeface. Because the scale is a variable collection rather than fixed styles, the plate above can honestly show two numbers per tier instead of one.</p></li>
+<li class="is-yes"><b>No monospace here.</b><p>Every other system on this site has a mono gap worth naming. This one doesn't need closing. A luxury wine brand shouldn't read instrumented, and captions staying in Futura Book at caption size is the right call.</p></li>
+<li class="is-no"><b>159 component sets serve the web best.</b><p>Email is the harder surface to extend into, and that work is already underway. Events get printed and collateral is decks, so two of the four surfaces above still carry the brand on two faces and a gold rule alone. The system's reach is still growing past its strongest surface.</p></li>
+<li class="is-yes"><b>The alternating rhythm reads as a house habit here.</b><p>A luxury brand already paces its pages this way, so pairing a label block against a specimen down the page costs nothing and fits.</p></li>
+<li class="is-no"><b>This system was never built to hold a metric, and I wouldn't force one into it now.</b><p>Sommsation's job is desire, not instrumentation. Nothing across the four surfaces above is a number on a card. Forcing one in would work against every other decision in the system.</p></li>
 </ol>
 </div>
 </section>
 
 <div class="rule"><span class="lbl">In depth</span><span class="ln"></span><i class="reticle"></i><span class="ln"></span><span class="lbl">Sommsation design system</span></div>
-<section class="deep"><iframe class="deep__f" src="ds-snapshot.html?capture=1" title="Sommsation design system — full reference" loading="lazy" scrolling="no"></iframe><a class="deep__lk" href="ds-snapshot.html">Open the full system page &rarr;</a></section>
+<section class="deep"><iframe class="deep__f" src="ds-snapshot.html?capture=1" title="Sommsation design system, full reference" loading="lazy" scrolling="no"></iframe><a class="deep__lk" href="ds-snapshot.html">Open the full system page &rarr;</a></section>
 <script>(function(){const f=document.querySelector('.deep__f');function fit(){try{const d=f.contentDocument;if(!d||!d.body)return;f.style.height=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight)+'px';}catch(e){f.style.height='2400px';}}f.addEventListener('load',function(){fit();setTimeout(fit,400);setTimeout(fit,1600);setTimeout(fit,4000);});setInterval(fit,2000);window.addEventListener('resize',fit);})();</script>
 
 <div class="ghost" aria-hidden="true">Crystal Langley</div>
