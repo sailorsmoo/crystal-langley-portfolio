@@ -79,7 +79,7 @@ footer{padding:clamp(44px,6vw,88px) var(--pad);border-top:1px solid var(--line);
 .about p{max-width:56ch;font-size:clamp(15px,1.15vw,17px);line-height:1.62;text-wrap:pretty}
 .about p+p{margin-top:16px}
 .portrait{aspect-ratio:4/5;background:var(--fill);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
-.portrait__main{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;display:block}
+.portrait__main{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;object-position:center 15%;display:block}
 .portrait__strip{display:grid;grid-template-columns:1fr 1fr;gap:2px;flex:0 0 26%}
 .portrait__strip img{width:100%;height:100%;object-fit:cover;display:block}
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
