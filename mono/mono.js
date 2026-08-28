@@ -5,7 +5,7 @@ document.querySelectorAll('[data-ev]').forEach(n=>n.addEventListener('click',()=
 const CX = document.createElement('dialog');
 CX.className = 'cx';
 CX.innerHTML = `<div class="cx__box ticked"><div class="cx__top"><span class="lbl">Contact</span><button class="cx__x" type="button" data-cx-close>Close</button></div>
-<h2>Let us build<br>something</h2><p class="sub">Tell me what you are building and what it needs. I read every one of these.</p>
+<h2>Let us build<br>something</h2><p class="sub">Tell me what you are building and what it needs.</p>
 <div class="cx__f"><label><span>Name</span><input name="name" type="text" autocomplete="name" required></label><label><span>Email</span><input name="email" type="email" autocomplete="email" required></label><label><span>What you need</span><textarea name="msg" rows="2"></textarea></label></div>
 <div class="cx__go"><button type="button" data-cx-send>Send it</button><div class="alt"><a href="https://calendly.com/yocrystallangley/30min" target="_blank" rel="noopener noreferrer" data-ev="book_click">Book 30 minutes</a><a href="mailto:yocrystallangley@gmail.com">yocrystallangley@gmail.com</a><a href="https://www.upwork.com/services/product/design-figma-file-cleanup-design-system-audit-2058014733987472897?ref=fl_profile" data-ev="upwork_click">Upwork</a></div></div></div>`;
 document.body.appendChild(CX);
