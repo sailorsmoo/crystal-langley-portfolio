@@ -80,6 +80,9 @@ footer{padding:clamp(44px,6vw,88px) var(--pad);border-top:1px solid var(--line);
 .about p+p{margin-top:16px}
 .portrait{aspect-ratio:4/5;background:var(--fill);border:1px solid var(--line);overflow:hidden}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.about-collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.about-collage .ticked{aspect-ratio:1/1;background:var(--fill);overflow:hidden}
+.about-collage img{width:100%;height:100%;object-fit:cover;display:block}
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
