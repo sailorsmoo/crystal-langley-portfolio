@@ -5,8 +5,8 @@ the raw component-catalog pages (ds-snapshot.html etc, which are structured spec
 prose). This is the copy exactly as it's live on the site right now, already run through
 the same cleanup as the design-system pages: no em dashes, American spelling throughout.
 
-Structure: homepage, about, then the five case studies in the order they appear on the
-homepage (Sommsation, Telltale, Strivers, Sequoia Benefits, Donblas).
+Structure: homepage, about, then the six case studies in the order they appear on the
+homepage (Sommsation, Telltale, Strivers, Sequoia Benefits, Donblas, SaliencePoint).
 
 ---
 
@@ -26,14 +26,15 @@ homepage (Sommsation, Telltale, Strivers, Sequoia Benefits, Donblas).
 - GOTY — Game of the Year winning Walking Dead
 - 6 — Years building Sommsation
 
-### Selected work (five tiles)
-Each tile shows role, dates, project name, and a private badge (01 through 05).
+### Selected work (six tiles)
+Each tile shows role, dates, project name, and a private badge (01 through 06).
 
 1. Sommsation — VP Design and Creative — 2020 to 2026
 2. Telltale Games — UI and UX, Lead — 2011 to 2018
 3. Strivers — Consulting Lead Designer — 2020 to 2022
 4. Sequoia Benefits — Product Designer — 2019 to 2020
 5. Donblas — Brand and Creative Direction — 2026
+6. SaliencePoint — VP of Design and Creative — 2025
 
 ### Approach
 I treat creative, brand and marketing as operable systems, not one off projects. A system keeps working after the launch and after I leave. That is the whole method.
@@ -246,5 +247,47 @@ Caption: Donblas.AI Design System · 91 variables across 5 collections · 33 ram
 
 ### In the app (desktop + mobile)
 Caption: The marketing site, scrolling at reading pace, one system across both widths: hero, proof numbers, capability grid on mauve, collaboration block and the numbered services list.
+
+**Next:** SaliencePoint
+
+---
+
+## SaliencePoint (06 / 06, private)
+
+**Crumb:** Work / SaliencePoint / Private
+**H1:** SaliencePoint
+**Lede:** Modern point of sale for wineries, built as a joint venture between Sommsation and Halter Ranch. Full brand and design system, never launched.
+**Cover labels:** VP of Design and Creative · Feb to Sep 2025
+
+### Use Case
+SaliencePoint is all-in-one winery operations software: tasting room point of sale, wine club, product and inventory management, order management, customer profiles, and payments, tax and compliance in one purpose-built system. It began as Alice, the POS and ecommerce stack Halter Ranch ran in house. In early 2025 Sommsation and Halter Ranch agreed to turn it into a SaaS product, with Halter Ranch as client one and Sommsation's pipeline of 250 plus wineries as the first market. The venture needed a brand, a name and a URL before it could sell. Two names were explored, Salience Point and Goldberry. Salience Point won.
+
+I led brand strategy, the brand guidelines framework, the identity system, the Figma design system and the product website, positioned against the patchwork of generic POS and legacy winery software the pitch named as the problem. The system is production ready: color tokens on four scales, a 4pt spacing scale, a nine step type scale and specified component behavior. The product never reached commercial launch. The system is complete regardless.
+
+**Meta:** Role: VP of Design and Creative · Timeline: Feb to Sep 2025 · Scope: Brand Identity, Design System, Product Website, Sales Collateral · Industry: Winery POS & Operations SaaS
+
+### Process (04 steps)
+1. **Strategy** — Name the venture and position it: one platform against the patchwork of generic POS and legacy winery tools. Salience Point over Goldberry.
+2. **Identity** — Network mark, stacked wordmark, teal and bronze palette, a single type family in two weights. "One Platform. Ultimate Control."
+3. **System** — Color, type, spacing, grid and component pages in Figma, specified to build from.
+4. **Website and collateral** — Marketing site and product screens at desktop, tablet and mobile widths, plus the Who We Are one-pager for the sales team.
+
+### Positioning (nine features)
+Tagline: One Platform. Ultimate Control.
+Running a winery shouldn't mean wrestling with complicated systems built in the past. SaliencePoint unites tasting room sales, clubs, inventory management and more, eliminating the patchwork of tools that slow wineries down. Unlike generic POS systems or legacy winery software, it is modern, intuitive and designed to scale.
+
+Features: unified POS, wine club management, product management, inventory tracking, employee management, order management, omni-channel customer profiles, payments/tax/compliance, guided winery setup.
+
+### Design system (real type specimen)
+One family, two weights (Demi 605, Regular 383), nine sizes from 12 to 48, every named style at 1.8 line height. SFT Schrifted Sans Var, supplied by the designer.
+Caption: SaliencePoint Design System · 4 color scales · 9 type sizes · 10 spacing tokens · 5 button variants
+
+### In the app (desktop + tablet + mobile)
+Caption: Home, features, pricing and account, carried across three widths in one header, hero, content row and footer grammar; dark teal sections against the cream ground, bronze reserved for "Contact a Specialist."
+
+### Impact
+250+ — Wineries in the launch pipeline the brand was built to sell into. Chips: Sommsation and Halter Ranch venture · 9 product features · 4 color scales · 4pt grid · Never launched.
+
+**Next:** Sommsation
 
 No "Next" link (last project, loops back implicitly to the index).
