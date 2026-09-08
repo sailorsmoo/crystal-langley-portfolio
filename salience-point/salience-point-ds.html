@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SaliencePoint Design System — Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/mono/mono.css"><link rel="stylesheet" href="sp-fonts.css">
+<style>:root{--sp-p50:#f1fafa;--sp-p300:#8acdd6;--sp-p500:#3793a3;--sp-p700:#2d6271;--sp-p900:#284651;--sp-p950:#0a1418;--sp-s50:#bfe1e2;--sp-s200:#5fadb1;--sp-s400:#377077;--sp-t50:#fdf9ed;--sp-t100:#f9eecc;--sp-t200:#f3dd94;--sp-t300:#e09320;--sp-t400:#c67019;--sp-n50:#f6f6f6;--sp-n950:#0b0b0b;--ds-accent:#c67019}
+body{background:#fff}
+body.capture header,body.capture .ds__head{display:none}
+body.capture .ds__stats{border-top:0}
+body.capture{padding:clamp(22px,2.4vw,34px) 0}
+.ds{padding:0 var(--pad) clamp(30px,4vw,64px)}
+.ds__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:var(--pad) var(--pad) clamp(18px,2vw,26px)}
+.ds__head h1{font-size:clamp(24px,2.6vw,38px)}
+.sub{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.ds__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 var(--pad)}
+.ds__stats div{padding:clamp(18px,2.2vw,30px) 16px clamp(18px,2.2vw,30px) 0}
+.ds__stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.ds__stats b{display:block;font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:clamp(30px,4vw,62px);line-height:.88;letter-spacing:-.02em}
+.ds__stats span{display:block;margin-top:11px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ds__scope{padding:clamp(22px,2.6vw,34px) var(--pad);border-bottom:1px solid var(--line)}
+.ds__scope span{display:block;max-width:56ch;font-size:clamp(16px,1.5vw,21px);line-height:1.4;color:var(--ink);text-wrap:pretty}
+.ds__sec{padding:clamp(34px,4vw,60px) 0 0}
+.ds__k{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-bottom:18px}
+.ds__k .ln{flex:1;height:1px;background:var(--line)}
+.trirow{display:grid;grid-template-columns:3.5fr 3fr 4.4fr;column-gap:clamp(20px,2.6vw,44px);row-gap:clamp(24px,3vw,40px);align-items:start}.trirow>div{min-width:0}
+.ramp{display:grid;gap:2px;align-items:start}
+.ramp>div>div:first-child{display:flex;align-items:flex-end;padding:12px}
+.ramp .hx{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em}
+.ramp .lb{margin-top:8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tri1 .ds__k{color:var(--ink);font-size:10.5px}.tri1 .lb{color:var(--ink);font-size:10px}.tri1 .hx{font-size:15px}
+.tri2{opacity:.84}.tri2 .ds__k,.tri2 .lb{font-size:9px;letter-spacing:.1em}
+.tri3{opacity:.62}.tri3 .ds__k{font-size:9px}.tri3 .lb{font-size:8px;letter-spacing:.05em;text-align:center;margin-top:6px}.tri3 .ramp>div>div:first-child{padding:0}
+.lg>div>div:first-child{height:clamp(96px,13vw,168px);overflow:hidden}.lg .hx{white-space:nowrap}.tri1 .lb{white-space:nowrap}.md>div>div:first-child{height:clamp(36px,4.2vw,50px);padding:0!important}.xs>div>div:first-child{height:20px}
+.light{border:1px solid var(--line)}
+.type .row{display:grid;grid-template-columns:130px 1fr 128px;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.type .k,.type .v{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.type .v{text-align:right}
+.tworow{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(26px,3.4vw,58px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.scaleline{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px}
+.scaleline .u{text-align:center}
+.scaleline i{display:block;background:var(--ds-accent);height:8px;margin:0 auto}
+.scaleline span{display:block;margin-top:8px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.radii{display:flex;flex-wrap:wrap;gap:16px}
+.radii div{width:96px}
+.radii i{display:block;height:42px;background:var(--sp-t100);border:1px solid var(--ds-accent)}
+.radii span{display:block;margin-top:7px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+.note{margin-top:16px;font-size:12.5px;color:var(--mute);max-width:64ch;text-wrap:pretty}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.halves{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,2.4vw,38px);row-gap:clamp(26px,3vw,46px);align-items:start}
+.wide{grid-column:1/-1}
+.cell{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cell__t{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.cell__t b{color:var(--ink);font-weight:600}
+.cell__b{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+/* SaliencePoint specimens, rendered from token values */
+.sp{font-family:"SFT Schrifted Sans Var",Archivo,system-ui,sans-serif;color:var(--sp-p950)}.sp [style*="font-weight:600"],.sp .pill,.sp .card h4,.sp .card .price,.sp .hdr nav,.sp .row2 h3{font-weight:605}.sp [style*="font-weight:400"]{font-weight:383}
+.pill{display:inline-flex;align-items:center;justify-content:center;padding:12px 26px;border-radius:999px;font-weight:600;font-size:13px;line-height:1;color:#fff;border:1px solid transparent;white-space:nowrap}
+.pill.out{background:transparent;color:var(--sp-p950);border-color:var(--sp-p950)}
+.pill.dis{opacity:.4}
+.hdr{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 28px;background:var(--sp-t50)}
+.hdr img{height:44px;display:block}
+.hdr nav{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--sp-p950)}
+.hdr nav a{color:inherit;padding:0}
+.hdr nav a.on{color:var(--sp-t400)}
+.hero{width:100%;overflow:hidden;padding:0;min-height:0}.hero img{display:block;width:100%;height:auto}
+.row2{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--sp-p950);color:#fff;gap:clamp(20px,3vw,44px);padding:clamp(24px,3vw,44px)}
+.row2 img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transform:scale(1.02)}
+.row2 h3{font-family:inherit;font-weight:605;text-transform:none;letter-spacing:0;font-size:clamp(20px,2.2vw,30px);line-height:1.2}
+.row2 p{font-size:13px;line-height:1.8;margin:12px 0 20px;color:rgba(255,255,255,.85)}
+.row2 div{align-self:center}
+.card{width:260px;border:1px solid var(--sp-p950);border-radius:8px;padding:20px;background:var(--sp-t50)}
+.card h4{font-family:inherit;font-weight:605;text-transform:none;letter-spacing:0;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.card h4 i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--sp-p950);display:block}
+.card.sel h4 i{background:var(--sp-p950);box-shadow:inset 0 0 0 3px var(--sp-t50)}
+.card .price{font-weight:600;font-size:26px;margin:12px 0 14px}
+.card ul{list-style:none;display:grid;gap:9px;font-size:12px}
+.card li{display:flex;align-items:center;gap:9px}
+.card li i{width:14px;height:14px;border-radius:50%;background:var(--sp-t400);display:block;flex:0 0 auto}
+.card li.off{color:#77777d}.card li.off i{background:transparent;border:1px solid #aaa}
+.tog{width:44px;height:24px;border-radius:999px;background:var(--sp-s200);position:relative;display:inline-block}
+.tog::after{content:'';position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:#fff}
+.tog.off{background:#d9d9d9}.tog.off::after{right:auto;left:3px}
+.field{width:260px;border:1px solid var(--sp-s200);background:var(--sp-p950);color:var(--sp-s200);font-size:12px;padding:12px 14px}
+.logos{display:flex;flex-wrap:wrap;gap:clamp(16px,1.8vw,28px)}
+.logos figure{margin:0;display:flex;flex-direction:column;gap:12px;width:286px}
+.logos .lp{display:flex;align-items:center;justify-content:center;height:150px;padding:26px;background:var(--sp-t50)}
+.logos .lp img{display:block;max-width:100%;max-height:100%}
+.logos figcaption{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+@media(max-width:1180px){.lg .hx{display:none}.tri1 .lb{white-space:normal}}
+@media(max-width:900px){.ds__stats{grid-template-columns:1fr 1fr}.ds__stats div:nth-child(3){padding-left:0;border-left:0}.trirow,.tworow,.halves,.row2{grid-template-columns:1fr}}
+@media(max-width:600px){.type .row{grid-template-columns:1fr;gap:8px}.type .v{text-align:left}.hdr nav{display:none}}
+</style></head>
+<body>
+<header><div class="mark"><a class="plain" href="/">Crystal Langley</a></div><nav><a href="/#work">Work</a><a href="/salience-point">SaliencePoint</a><a href="salience-point-ds.html">Design system</a></nav></header>
+<div class="ds__head"><div><h1>SaliencePoint Design System</h1><div class="sub">Sommsation and Halter Ranch venture · brand and systems · 2025</div></div></div>
+<div class="ds__stats"><div><b>4</b><span>Color scales, 50 to 950</span></div><div><b>9</b><span>Type sizes, 12 to 48</span></div><div><b>10</b><span>Spacing tokens on a 4pt grid</span></div><div><b>5</b><span>Button variants</span></div></div>
+<div class="ds__scope"><span>One family, two weights, four color scales and a single accent, built for all-in-one winery operations software sold under "One Platform. Ultimate Control."</span></div>
+<div class="ds">
+<section class="ds__sec"><div class="ds__k"><span>Logo</span><span class="ln"></span><span>1 lockup</span></div>
+<div class="logos"><figure><div class="lp"><img src="/mono/assets/sp/logo.png" alt="SaliencePoint lockup"></div><figcaption>Network mark with a bronze node · wordmark stacked, Demi</figcaption></figure></div>
+<div class="note">The mark is a node network inside a circle. The one bronze node is the only place the accent appears in the identity itself; everywhere else bronze is reserved for the call to action.</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Color</span><span class="ln"></span><span>16 values</span></div>
+<div class="trirow">
+<div class="tri1"><div class="ds__k" style="padding-bottom:12px"><span>Primary · teal blue</span><span class="ln"></span><span>6 values</span></div><div class="ramp lg" style="grid-template-columns:repeat(6,minmax(0,1fr))">
+<div><div class="light" style="background:var(--sp-p50)"><span class="hx">#F1FAFA</span></div><div class="lb">50</div></div>
+<div><div style="background:var(--sp-p300)"><span class="hx" style="color:#0a1418">#8ACDD6</span></div><div class="lb">300</div></div>
+<div><div style="background:var(--sp-p500)"><span class="hx" style="color:#fff">#3793A3</span></div><div class="lb">500</div></div>
+<div><div style="background:var(--sp-p700)"><span class="hx" style="color:#fff">#2D6271</span></div><div class="lb">700</div></div>
+<div><div style="background:var(--sp-p900)"><span class="hx" style="color:#fff">#284651</span></div><div class="lb">900</div></div>
+<div><div style="background:var(--sp-p950)"><span class="hx" style="color:#fff">#0A1418</span></div><div class="lb">950</div></div></div></div>
+<div class="tri2"><div class="ds__k" style="padding-bottom:12px"><span>Secondary · deep teal</span><span class="ln"></span><span>3 values</span></div><div class="ramp md" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+<div><div style="background:var(--sp-s50)"></div><div class="lb">50 · #BFE1E2</div></div>
+<div><div style="background:var(--sp-s200)"></div><div class="lb">200 · #5FADB1</div></div>
+<div><div style="background:var(--sp-s400)"></div><div class="lb">400 · #377077</div></div></div>
+<div class="ds__k" style="padding:26px 0 12px"><span>Tertiary · gold to bronze</span><span class="ln"></span><span>5 values</span></div><div class="ramp md" style="grid-template-columns:repeat(5,minmax(0,1fr))">
+<div><div class="light" style="background:var(--sp-t50)"></div><div class="lb">50</div></div>
+<div><div style="background:var(--sp-t100)"></div><div class="lb">100</div></div>
+<div><div style="background:var(--sp-t200)"></div><div class="lb">200</div></div>
+<div><div style="background:var(--sp-t300)"></div><div class="lb">300</div></div>
+<div><div style="background:var(--sp-t400)"></div><div class="lb">400 · Accent</div></div></div></div>
+<div class="tri3"><div class="ds__k" style="padding-bottom:12px"><span>Neutral</span><span class="ln"></span><span>50 to 950</span></div><div class="ramp xs" style="grid-template-columns:1fr"><div><div style="background:linear-gradient(90deg,var(--sp-n50),var(--sp-n950))"></div><div class="lb" style="text-align:left">#F6F6F6 to #0B0B0B · intermediate steps present in the file, not listed here</div></div></div>
+<div class="note">Accent #C67019 is the tertiary 400 step, not a separate token. Main dark #0A1418 is primary 950. Paper on the shipped pages is tertiary 50.</div></div>
+</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Type</span><span class="ln"></span><span>SFT Schrifted Sans Var · 2 weights</span></div>
+<div class="type sp">
+<div class="row"><div class="k">Title / 3xlarge</div><div style="font-weight:600;font-size:48px;line-height:1.1">One Platform.</div><div class="v">Demi 605<br>48</div></div>
+<div class="row"><div class="k">Title / 2xlarge</div><div style="font-weight:600;font-size:40px;line-height:1.1">Ultimate Control.</div><div class="v">Demi 605<br>40</div></div>
+<div class="row"><div class="k">Title / xlarge · book</div><div style="font-weight:400;font-size:32px;line-height:1.1">Empower Your Winery to Thrive.</div><div class="v">Regular 383<br>32</div></div>
+<div class="row"><div class="k">Title / large</div><div style="font-weight:600;font-size:24px;line-height:1.1">Why SaliencePoint?</div><div class="v">Demi 605<br>24</div></div>
+<div class="row"><div class="k">Title / medium · small</div><div style="font-weight:600;font-size:20px;line-height:1.1">Personal Details</div><div class="v">Demi 605<br>20 / 18</div></div>
+<div class="row"><div class="k">Body / large · medium</div><div style="font-weight:400;font-size:18px;line-height:1.8">Streamline winery sales, inventory and operations.</div><div class="v">Regular 383<br>18 / 16</div></div>
+<div class="row"><div class="k">Body / base · caption</div><div style="font-weight:400;font-size:14px;line-height:1.8">Consent is not a condition of purchase. Msg and data rates may apply.</div><div class="v">Regular 383<br>14 / 12</div></div>
+</div>
+<div class="note">Named scale: Title/small through Title/3xlarge, each in bold and book, plus Body/caption, base, medium, large. Every style sits at 1.8 line height.</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Space and radius</span><span class="ln"></span><span>4pt grid</span></div>
+<div class="tworow"><div class="scaleline"><div class="u"><i style="width:4px"></i><span>4</span></div><div class="u"><i style="width:8px"></i><span>8</span></div><div class="u"><i style="width:12px"></i><span>12</span></div><div class="u"><i style="width:16px"></i><span>16</span></div><div class="u"><i style="width:24px"></i><span>24</span></div><div class="u"><i style="width:32px"></i><span>32</span></div><div class="u"><i style="width:40px"></i><span>40</span></div><div class="u"><i style="width:48px"></i><span>48</span></div><div class="u"><i style="width:64px"></i><span>64</span></div><div class="u"><i style="width:80px"></i><span>80</span></div></div>
+<div class="radii"><div><i style="border-radius:999px"></i><span>Pill · buttons</span></div><div><i style="border-radius:8px"></i><span>Card · observed</span></div></div></div>
+<div class="note">Mobile scale shown. Desktop runs the same ten steps, slightly wider. Card radius is measured from the pricing and account screens, not tokenized in the file.</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Components · Actions</span><span class="ln"></span><span>3 families</span></div>
+<div class="grid sp">
+<div class="cell"><div class="cell__t"><b>Button</b> · 5 variants</div><div class="cell__b"><span class="pill" style="background:var(--sp-t400)">Contact a Specialist</span><span class="pill" style="background:var(--sp-p700)">Log Out</span><span class="pill" style="background:var(--sp-t300);color:var(--sp-p950)">Learn More</span><span class="pill" style="background:var(--sp-p950)">Get More Information</span><span class="pill out">Get Quote</span></div><div class="cell__t">Primary · Secondary · Tertiary · Quaternary · Nav CTA</div></div>
+<div class="cell"><div class="cell__t"><b>Toggle</b> · 2 states</div><div class="cell__b"><span class="tog"></span><span class="tog off"></span></div></div>
+<div class="cell"><div class="cell__t"><b>Text field</b> · on dark</div><div class="cell__b"><div class="field">First Name*</div></div></div>
+</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Components · Cards</span><span class="ln"></span><span>1 family</span></div>
+<div class="grid sp">
+<div class="cell"><div class="cell__t"><b>Plan card</b> · default</div><div class="cell__b"><div class="card"><h4>Salience Core <i></i></h4><div class="price">$225/month</div><ul><li><i></i>Customer Profiles</li><li><i></i>Product Management</li><li class="off"><i></i>2 to 10 service providers</li></ul></div></div></div>
+<div class="cell"><div class="cell__t"><b>Plan card</b> · selected</div><div class="cell__b"><div class="card sel"><h4>Salience Pro <i></i></h4><div class="price">$400/month</div><ul><li><i></i>Customer Profiles</li><li><i></i>Product Management</li><li><i></i>Inventory Management</li><li class="off"><i></i>Culinary</li></ul></div></div></div>
+</div></section>
+<section class="ds__sec"><div class="ds__k"><span>Modules</span><span class="ln"></span><span>3 patterns</span></div>
+<div class="halves sp">
+<div class="cell wide"><div class="cell__t"><b>Header</b> · desktop, light</div><div class="cell__b"><div class="hdr"><img src="/mono/assets/sp/logo.png" alt="SaliencePoint"><nav><span class="pill out" style="padding:10px 26px">Get Quote</span><a>Features</a><a>Pricing</a><a class="on">Log In</a></nav></div></div></div>
+<div class="cell"><div class="cell__t"><b>Hero</b> · dark teal over photography</div><div class="cell__b"><div class="hero"><img src="/mono/assets/sp/hero.jpg" alt="Homepage hero as designed. One Platform. Ultimate Control."></div></div></div>
+<div class="cell"><div class="cell__t"><b>Content row</b> · photo and headline</div><div class="cell__b"><div class="row2"><img src="/mono/assets/sp/photo-winery.jpg" alt="Winery owners in the vineyard"><div><h3>Empower Your Winery to Thrive.</h3><p>Running a winery shouldn't mean wrestling with complicated systems built in the past. One platform for tasting room sales, clubs, inventory and more.</p><span class="pill" style="background:var(--sp-t400)">Contact a Specialist</span></div></div></div></div>
+</div>
+<div class="note">Photography is of real winery people, not stock renders.</div></section>
+</div>
+<script>if(new URLSearchParams(location.search).get('capture')==='1')document.body.classList.add('capture');</script>
+</body></html>

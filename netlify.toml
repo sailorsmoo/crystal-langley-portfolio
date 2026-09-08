@@ -52,3 +52,9 @@
 [[edge_functions]]
   path = "/telltale/*"
   function = "case-study-auth"
+[[edge_functions]]
+  path = "/salience-point"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/salience-point/*"
+  function = "case-study-auth"
