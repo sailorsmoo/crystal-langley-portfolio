@@ -27,14 +27,14 @@ homepage (Sommsation, SaliencePoint, Telltale, Strivers, Sequoia Benefits, Donbl
 - 6 — Years building Sommsation
 
 ### Selected work (six tiles)
-Each tile shows role, dates, project name, and a private badge (01 through 06).
+Each tile shows role, dates, project name, a private badge (01 through 06), and a category tag.
 
-1. Sommsation — VP Design and Creative — 2020 to 2026
-2. SaliencePoint — VP of Design and Creative — 2025
-3. Telltale Games — UI and UX, Lead — 2011 to 2018
-4. Strivers — Consulting Lead Designer — 2020 to 2022
-5. Sequoia Benefits — Product Designer — 2019 to 2020
-6. Donblas — Brand and Creative Direction — 2026
+1. Sommsation — VP Design and Creative — 2020 to 2026 — tag: DTC Digital Product
+2. SaliencePoint — VP of Design and Creative — 2025 — tag: B2B SaaS
+3. Telltale Games — UI and UX, Lead — 2011 to 2018 — tag: Digital Product
+4. Strivers — Consulting Lead Designer — 2020 to 2022 — tag: Digital Product
+5. Sequoia Benefits — Product Designer — 2019 to 2020 — tag: B2B SaaS
+6. Donblas — Brand and Creative Direction — 2026 — tag: B2B SaaS
 
 ### Approach
 I treat creative, brand and marketing as operable systems, not one off projects. A system keeps working after the launch and after I leave. That is the whole method.
@@ -118,7 +118,10 @@ SaliencePoint is all-in-one winery operations software: tasting room point of sa
 
 I led brand strategy, the brand guidelines framework, the identity system, the Figma design system and the product website, positioned against the patchwork of generic POS and legacy winery software the pitch named as the problem. The system is production ready: color tokens on four scales, a 4pt spacing scale, a nine step type scale and specified component behavior. The product never reached commercial launch. The system is complete regardless.
 
-**Meta:** Role: VP of Design and Creative · Timeline: Feb to Sep 2025 · Scope: Brand Identity, Design System, Product Website, Sales Collateral · Industry: Winery POS & Operations SaaS
+**Meta:** Role: VP of Design and Creative · Timeline: Feb to Sep 2025 · Scope: Brand Identity, Design System, Product Website, Sales Collateral · Industry: B2B SaaS, Winery POS & Operations
+
+### SEO (added 2026-09-07)
+Homepage meta description, OG/Twitter description and JSON-LD knowsAbout now mention B2B SaaS product work by name (the one page Google can actually crawl). The SaliencePoint page itself got a full description/canonical/OG/Twitter block targeting "B2B SaaS" too, for completeness and link-preview quality, but since the page is password-gated, Google only ever sees the gate page at this URL, not this meta block. The real ranking lever is the always-public homepage: the new "B2B SaaS" tag chip on the tile plus the sitewide meta update.
 
 ### Process (04 steps)
 1. **Strategy** — Name the venture and position it: one platform against the patchwork of generic POS and legacy winery tools. Salience Point over Goldberry.
