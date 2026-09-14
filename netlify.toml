@@ -58,3 +58,11 @@
 [[edge_functions]]
   path = "/salience-point/*"
   function = "case-study-auth"
+
+# Time-boxed client proposal (2026-09-14). Password in PW_GQI, expiry in EXP_GQI.
+[[edge_functions]]
+  path = "/gqi"
+  function = "case-study-auth"
+[[edge_functions]]
+  path = "/gqi/*"
+  function = "case-study-auth"

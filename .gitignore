@@ -1,2 +1,5 @@
 .netlify/
 .DS_Store
+
+# Time-boxed client proposal, deployed from the local folder only, never committed (public repo)
+gqi/
