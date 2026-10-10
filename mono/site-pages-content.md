@@ -22,9 +22,9 @@ homepage (Sommsation, SaliencePoint, Telltale, Strivers, Sequoia Benefits, Donbl
 
 **Stats:**
 - 15+ — Years UI UX and product design
-- 8 — Years at Telltale Games
-- GOTY — Game of the Year winning Walking Dead
-- 6 — Years building Sommsation
+- 10+ — Years of creative direction
+- 10+ — Design systems built
+- 8M+ — Telltale players, including GOTY Walking Dead
 
 ### Selected work (six tiles)
 Each tile shows role, dates, project name, a private badge (01 through 06), and a category tag.
